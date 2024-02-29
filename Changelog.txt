@@ -1,0 +1,63 @@
+WinHubX nasce dalla collaborazione di due appassionati del settore, volendo condividere le proprie conoscenze in modo semplice e alla portata di tutti, offrendo varie soluzioni a portata di pochi click.
+Con questo tool avrai la possibilità di scaricare ISO di Windows (STOCK e LITE), installare Office, e molto altro ancora nella sezione Tools!
+È un progetto in continua evoluzione, quindi seguite gli aggiornamenti per non perdervi le novità!
+
+Changelog
+
+23/02/2024 - v1.0.0.0:
+- Lancio ufficiale del tool
+- Creazione loghi
+- Creazione sezione Home
+
+- Creazione sezione Windows
+- Creazione sotto-sezione Windows 7 (Stock e Lite - 32bit e 64bit)
+- Creazione sotto-sezione Windows 8.1 (Stock e Lite - 32bit e 64bit)
+- Creazione sotto-sezione Windows 10 (Stock e Lite - ARM64, 32bit e 64bit)
+- Creazione sotto-sezione Windows 11 (Stock e Lite - ARM64 e 64bit)
+
+- Creazione sezione Office (2019, 2021, 365, 2024)
+- Creazione sotto-sezione Office 2019 Online (32bit e 64bit)
+- Creazione sotto-sezione Office 2021 Online (32bit e 64bit)
+- Creazione sotto-sezione Office 365 Online (32bit e 64bit)
+
+- Creazione sezione Tools
+- Creazione sotto-sezione WinCustomizer (download)
+- Creazione sotto-sezione WIMToolKit (download)
+- Creazione sotto-sezione DaRT (download)
+- Creazione sotto-sezione Rufus4Lite (portable)
+- Creazione sotto-sezione Microsoft PC Manager (setup)
+- Creazione sotto-sezione RST Driver (zip)
+- Creazione sotto-sezione CheckHW (bat automatizzato)
+
+- Implementazione funzionalità "Copia codice hash SHA256"
+- Implementazione funzionalità "Visualizza Changelog"
+- Implementazione funzionalità "Contatta i Developers"
+- Implementazione funzionalità "Sostieni i Developers"
+
+
+
+Cose da fare Nico:
+
+link Kofi
+
+link win7 stock
+link win7 lite
+link win8.1 stock
+link win8.1 lite
+link win10 stock (+arm?)
+link win10 lite
+log win10 lite
+link win11 stock (+arm?)
+link win11 lite
+
+link office2019 online
+link office2019 offline
+hash office2019 offline
+link office2021 online
+link office2021 offline
+hash office2021 offline
+link office365 online
+link office365 offline
+hash office365 offline
+
+link dart
