@@ -254,5 +254,15 @@ namespace WinHubX.Forms.Windows
                 }
             }
         }
+
+        private void btnWin10AIO32_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnWin10AIO64_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Reflection;
 using System.Windows.Forms;
 using WinHubX.Dialog;
 
@@ -208,5 +209,61 @@ namespace WinHubX
 
         #endregion
 
+        #region AttivaOffice
+        private void btnAttivaOffice_Click(object sender, EventArgs e)
+        {
+            string fileName = "WinHubXOfficeAttivatore.cmd";
+            string resourceName = "WinHubX.Resources.WinHubXOfficeAttivatore.cmd"; string tempPath = Path.GetTempPath();
+            string tempFilePath = Path.Combine(tempPath, fileName);
+            try
+            {
+                using (Stream resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
+                {
+                    if (resourceStream != null)
+                    {
+                        using (FileStream fileStream = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write))
+                        {
+                            resourceStream.CopyTo(fileStream);
+                        }
+                    }
+                }
+                Process.Start(tempFilePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Errore nell'avviare l'applicazione: {ex.Message}");
+            }
+        }
+        #endregion
+
+        private void btn2021Online_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnScrubber_Click(object sender, EventArgs e)
+        {
+            string fileName = "WinHubXScrubber.cmd";
+            string resourceName = "WinHubX.Resources.WinHubXScrubber.cmd"; string tempPath = Path.GetTempPath();
+            string tempFilePath = Path.Combine(tempPath, fileName);
+            try
+            {
+                using (Stream resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
+                {
+                    if (resourceStream != null)
+                    {
+                        using (FileStream fileStream = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write))
+                        {
+                            resourceStream.CopyTo(fileStream);
+                        }
+                    }
+                }
+                Process.Start(tempFilePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Errore nell'avviare l'applicazione: {ex.Message}");
+            }
+        }
     }
 }

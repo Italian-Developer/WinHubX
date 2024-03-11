@@ -52,6 +52,9 @@
     <None Remove="Resources\Rufus4Lite.exe" />
     <None Remove="Resources\WIMToolkit.ps1" />
     <None Remove="Resources\WinCustomizer.ps1" />
+    <None Remove="Resources\WinHubXOfficeAttivatore.cmd" />
+    <None Remove="Resources\WinHubXScrubber.cmd" />
+    <None Remove="Resources\WinHubXWindowsAttivatore.bat" />
   </ItemGroup>
 
   <ItemGroup>
@@ -188,6 +191,15 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Product Sans Black.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinHubXOfficeAttivatore.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinHubXScrubber.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinHubXWindowsAttivatore.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

@@ -36,6 +36,7 @@
             btnWin12 = new Button();
             lblInfoWin12 = new Label();
             label1 = new Label();
+            btnAttivaWin = new Button();
             SuspendLayout();
             // 
             // btnWin7
@@ -43,10 +44,10 @@
             btnWin7.Cursor = Cursors.Hand;
             btnWin7.FlatAppearance.BorderSize = 0;
             btnWin7.FlatStyle = FlatStyle.Flat;
-            btnWin7.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWin7.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin7.ForeColor = Color.White;
             btnWin7.Image = Properties.Resources.pngWin7;
-            btnWin7.Location = new Point(84, 76);
+            btnWin7.Location = new Point(84, 26);
             btnWin7.Name = "btnWin7";
             btnWin7.Size = new Size(347, 90);
             btnWin7.TabIndex = 5;
@@ -60,10 +61,10 @@
             btnWin8dot1.Cursor = Cursors.Hand;
             btnWin8dot1.FlatAppearance.BorderSize = 0;
             btnWin8dot1.FlatStyle = FlatStyle.Flat;
-            btnWin8dot1.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWin8dot1.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin8dot1.ForeColor = Color.White;
             btnWin8dot1.Image = Properties.Resources.pngWin8dot1;
-            btnWin8dot1.Location = new Point(599, 76);
+            btnWin8dot1.Location = new Point(599, 26);
             btnWin8dot1.Name = "btnWin8dot1";
             btnWin8dot1.Size = new Size(347, 88);
             btnWin8dot1.TabIndex = 6;
@@ -77,10 +78,10 @@
             btnWin11.Cursor = Cursors.Hand;
             btnWin11.FlatAppearance.BorderSize = 0;
             btnWin11.FlatStyle = FlatStyle.Flat;
-            btnWin11.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWin11.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin11.ForeColor = Color.White;
             btnWin11.Image = Properties.Resources.pngWin;
-            btnWin11.Location = new Point(599, 210);
+            btnWin11.Location = new Point(599, 160);
             btnWin11.Name = "btnWin11";
             btnWin11.Size = new Size(347, 88);
             btnWin11.TabIndex = 8;
@@ -94,10 +95,10 @@
             btnWin10.Cursor = Cursors.Hand;
             btnWin10.FlatAppearance.BorderSize = 0;
             btnWin10.FlatStyle = FlatStyle.Flat;
-            btnWin10.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWin10.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin10.ForeColor = Color.White;
             btnWin10.Image = Properties.Resources.pngWin10;
-            btnWin10.Location = new Point(84, 210);
+            btnWin10.Location = new Point(84, 160);
             btnWin10.Name = "btnWin10";
             btnWin10.Size = new Size(347, 90);
             btnWin10.TabIndex = 7;
@@ -112,10 +113,10 @@
             btnWinLive.Enabled = false;
             btnWinLive.FlatAppearance.BorderSize = 0;
             btnWinLive.FlatStyle = FlatStyle.Flat;
-            btnWinLive.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWinLive.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWinLive.ForeColor = Color.White;
             btnWinLive.Image = Properties.Resources.pngWinLive;
-            btnWinLive.Location = new Point(84, 343);
+            btnWinLive.Location = new Point(84, 293);
             btnWinLive.Name = "btnWinLive";
             btnWinLive.Size = new Size(347, 120);
             btnWinLive.TabIndex = 9;
@@ -129,10 +130,10 @@
             btnWin12.Enabled = false;
             btnWin12.FlatAppearance.BorderSize = 0;
             btnWin12.FlatStyle = FlatStyle.Flat;
-            btnWin12.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWin12.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin12.ForeColor = Color.White;
             btnWin12.Image = Properties.Resources.pngWinWhat;
-            btnWin12.Location = new Point(599, 358);
+            btnWin12.Location = new Point(599, 308);
             btnWin12.Name = "btnWin12";
             btnWin12.Size = new Size(347, 90);
             btnWin12.TabIndex = 10;
@@ -143,11 +144,11 @@
             // lblInfoWin12
             // 
             lblInfoWin12.AutoSize = true;
-            lblInfoWin12.Font = new Font("Product Sans", 23.9999981F, FontStyle.Italic);
+            lblInfoWin12.Font = new Font("Microsoft Sans Serif", 23.9999981F, FontStyle.Italic);
             lblInfoWin12.ForeColor = Color.Coral;
-            lblInfoWin12.Location = new Point(645, 460);
+            lblInfoWin12.Location = new Point(645, 410);
             lblInfoWin12.Name = "lblInfoWin12";
-            lblInfoWin12.Size = new Size(255, 51);
+            lblInfoWin12.Size = new Size(260, 46);
             lblInfoWin12.TabIndex = 79;
             lblInfoWin12.Text = "coming soon!\r\n";
             lblInfoWin12.TextAlign = ContentAlignment.MiddleCenter;
@@ -155,14 +156,31 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Product Sans", 23.9999981F, FontStyle.Italic);
+            label1.Font = new Font("Microsoft Sans Serif", 23.9999981F, FontStyle.Italic);
             label1.ForeColor = Color.Coral;
-            label1.Location = new Point(135, 460);
+            label1.Location = new Point(135, 410);
             label1.Name = "label1";
-            label1.Size = new Size(255, 51);
+            label1.Size = new Size(260, 46);
             label1.TabIndex = 80;
             label1.Text = "coming soon!\r\n";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnAttivaWin
+            // 
+            btnAttivaWin.Cursor = Cursors.Hand;
+            btnAttivaWin.FlatAppearance.BorderSize = 0;
+            btnAttivaWin.FlatStyle = FlatStyle.Flat;
+            btnAttivaWin.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAttivaWin.ForeColor = Color.White;
+            btnAttivaWin.Image = Properties.Resources.pngWin;
+            btnAttivaWin.Location = new Point(319, 470);
+            btnAttivaWin.Name = "btnAttivaWin";
+            btnAttivaWin.Size = new Size(418, 88);
+            btnAttivaWin.TabIndex = 81;
+            btnAttivaWin.Text = "Attiva Windows";
+            btnAttivaWin.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAttivaWin.UseVisualStyleBackColor = true;
+            btnAttivaWin.Click += btnAttivaWin_Click;
             // 
             // FormWin
             // 
@@ -170,6 +188,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
             ClientSize = new Size(1030, 570);
+            Controls.Add(btnAttivaWin);
             Controls.Add(label1);
             Controls.Add(lblInfoWin12);
             Controls.Add(btnWin12);
@@ -194,5 +213,6 @@
         private Button btnWin12;
         private Label lblInfoWin12;
         private Label label1;
+        private Button btnAttivaWin;
     }
 }

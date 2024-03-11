@@ -1,4 +1,6 @@
-﻿using WinHubX.Forms.Windows;
+﻿using System.Diagnostics;
+using System.Reflection;
+using WinHubX.Forms.Windows;
 
 namespace WinHubX
 {
@@ -50,6 +52,31 @@ namespace WinHubX
             formWin11.FormBorderStyle = FormBorderStyle.None;
             form1.PnlFormLoader.Controls.Add(formWin11);
             formWin11.Show();
+        }
+
+        private void btnAttivaWin_Click(object sender, EventArgs e)
+        {
+            string fileName = "WinHubXWindowsAttivatore.bat";
+            string resourceName = "WinHubX.Resources.WinHubXWindowsAttivatore.bat"; string tempPath = Path.GetTempPath();
+            string tempFilePath = Path.Combine(tempPath, fileName);
+            try
+            {
+                using (Stream resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
+                {
+                    if (resourceStream != null)
+                    {
+                        using (FileStream fileStream = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write))
+                        {
+                            resourceStream.CopyTo(fileStream);
+                        }
+                    }
+                }
+                Process.Start(tempFilePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Errore nell'avviare l'applicazione: {ex.Message}");
+            }
         }
 
         //private void btnAIO32_Click(object sender, EventArgs e)

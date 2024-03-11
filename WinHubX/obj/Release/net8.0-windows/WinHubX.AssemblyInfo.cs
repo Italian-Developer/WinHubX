@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WinHubX")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.1")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b865befccfa2205dd9745b6be8a3d51a2c77cd01")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("WinHubX")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WinHubX")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.1")]

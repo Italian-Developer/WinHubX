@@ -49,11 +49,11 @@ namespace WinHubX.Forms.Windows
             // lblHashInfo
             // 
             lblHashInfo.AutoSize = true;
-            lblHashInfo.Font = new Font("Product Sans", 10.1999989F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblHashInfo.Font = new Font("Microsoft Sans Serif", 10.1999989F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblHashInfo.ForeColor = Color.Coral;
             lblHashInfo.Location = new Point(294, 539);
             lblHashInfo.Name = "lblHashInfo";
-            lblHashInfo.Size = new Size(446, 21);
+            lblHashInfo.Size = new Size(453, 20);
             lblHashInfo.TabIndex = 50;
             lblHashInfo.Text = "usa il tasto destro sui bottoni per copiare il codice SHA256!";
             // 
@@ -61,11 +61,11 @@ namespace WinHubX.Forms.Windows
             // 
             btnInfoWin10Lite.AutoSize = true;
             btnInfoWin10Lite.Cursor = Cursors.Hand;
-            btnInfoWin10Lite.Font = new Font("Product Sans", 18F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
+            btnInfoWin10Lite.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
             btnInfoWin10Lite.ForeColor = Color.Coral;
             btnInfoWin10Lite.Location = new Point(767, 379);
             btnInfoWin10Lite.Name = "btnInfoWin10Lite";
-            btnInfoWin10Lite.Size = new Size(57, 38);
+            btnInfoWin10Lite.Size = new Size(56, 36);
             btnInfoWin10Lite.TabIndex = 49;
             btnInfoWin10Lite.Text = "qui";
             btnInfoWin10Lite.Click += btnInfoWin10Lite_Click;
@@ -73,11 +73,11 @@ namespace WinHubX.Forms.Windows
             // lblInfoWin10Lite
             // 
             lblInfoWin10Lite.AutoSize = true;
-            lblInfoWin10Lite.Font = new Font("Product Sans", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblInfoWin10Lite.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblInfoWin10Lite.ForeColor = Color.Coral;
             lblInfoWin10Lite.Location = new Point(234, 342);
             lblInfoWin10Lite.Name = "lblInfoWin10Lite";
-            lblInfoWin10Lite.Size = new Size(543, 76);
+            lblInfoWin10Lite.Size = new Size(553, 72);
             lblInfoWin10Lite.TabIndex = 48;
             lblInfoWin10Lite.Text = "      Edizioni incluse: Pro e LTSC\r\nPer il dettaglio su questa versione, clicca";
             lblInfoWin10Lite.TextAlign = ContentAlignment.MiddleCenter;
@@ -87,7 +87,7 @@ namespace WinHubX.Forms.Windows
             btnWin10Lite64.Cursor = Cursors.Hand;
             btnWin10Lite64.FlatAppearance.BorderSize = 0;
             btnWin10Lite64.FlatStyle = FlatStyle.Flat;
-            btnWin10Lite64.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWin10Lite64.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin10Lite64.ForeColor = Color.White;
             btnWin10Lite64.Location = new Point(540, 416);
             btnWin10Lite64.Name = "btnWin10Lite64";
@@ -103,7 +103,7 @@ namespace WinHubX.Forms.Windows
             btnWin10Lite32.Cursor = Cursors.Hand;
             btnWin10Lite32.FlatAppearance.BorderSize = 0;
             btnWin10Lite32.FlatStyle = FlatStyle.Flat;
-            btnWin10Lite32.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWin10Lite32.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin10Lite32.ForeColor = Color.White;
             btnWin10Lite32.Location = new Point(334, 416);
             btnWin10Lite32.Name = "btnWin10Lite32";
@@ -117,22 +117,22 @@ namespace WinHubX.Forms.Windows
             // lblWin10Lite
             // 
             lblWin10Lite.AutoSize = true;
-            lblWin10Lite.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblWin10Lite.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblWin10Lite.ForeColor = Color.White;
             lblWin10Lite.Location = new Point(299, 287);
             lblWin10Lite.Name = "lblWin10Lite";
-            lblWin10Lite.Size = new Size(442, 55);
+            lblWin10Lite.Size = new Size(440, 51);
             lblWin10Lite.TabIndex = 45;
             lblWin10Lite.Text = "Windows 10 Lite AiO";
             // 
             // lblInfoWin10AIO
             // 
             lblInfoWin10AIO.AutoSize = true;
-            lblInfoWin10AIO.Font = new Font("Product Sans", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblInfoWin10AIO.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblInfoWin10AIO.ForeColor = Color.Coral;
             lblInfoWin10AIO.Location = new Point(550, 139);
             lblInfoWin10AIO.Name = "lblInfoWin10AIO";
-            lblInfoWin10AIO.Size = new Size(463, 38);
+            lblInfoWin10AIO.Size = new Size(484, 36);
             lblInfoWin10AIO.TabIndex = 44;
             lblInfoWin10AIO.Text = "Edizioni incluse: Consumer e LTSC";
             lblInfoWin10AIO.TextAlign = ContentAlignment.MiddleCenter;
@@ -142,7 +142,7 @@ namespace WinHubX.Forms.Windows
             btnWin10AIO64.Cursor = Cursors.Hand;
             btnWin10AIO64.FlatAppearance.BorderSize = 0;
             btnWin10AIO64.FlatStyle = FlatStyle.Flat;
-            btnWin10AIO64.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWin10AIO64.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin10AIO64.ForeColor = Color.White;
             btnWin10AIO64.Location = new Point(827, 180);
             btnWin10AIO64.Name = "btnWin10AIO64";
@@ -151,6 +151,7 @@ namespace WinHubX.Forms.Windows
             btnWin10AIO64.Text = "64bit";
             btnWin10AIO64.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnWin10AIO64.UseVisualStyleBackColor = true;
+            btnWin10AIO64.Click += btnWin10AIO64_Click;
             btnWin10AIO64.MouseUp += btnWin10AIO64_MouseUp;
             // 
             // btnWin10AIO32
@@ -158,7 +159,7 @@ namespace WinHubX.Forms.Windows
             btnWin10AIO32.Cursor = Cursors.Hand;
             btnWin10AIO32.FlatAppearance.BorderSize = 0;
             btnWin10AIO32.FlatStyle = FlatStyle.Flat;
-            btnWin10AIO32.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWin10AIO32.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin10AIO32.ForeColor = Color.White;
             btnWin10AIO32.Location = new Point(621, 180);
             btnWin10AIO32.Name = "btnWin10AIO32";
@@ -167,16 +168,17 @@ namespace WinHubX.Forms.Windows
             btnWin10AIO32.Text = "32bit";
             btnWin10AIO32.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnWin10AIO32.UseVisualStyleBackColor = true;
+            btnWin10AIO32.Click += btnWin10AIO32_Click;
             btnWin10AIO32.MouseUp += btnWin10AIO32_MouseUp;
             // 
             // lblWin10AIO
             // 
             lblWin10AIO.AutoSize = true;
-            lblWin10AIO.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblWin10AIO.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblWin10AIO.ForeColor = Color.White;
             lblWin10AIO.Location = new Point(280, 88);
             lblWin10AIO.Name = "lblWin10AIO";
-            lblWin10AIO.Size = new Size(478, 55);
+            lblWin10AIO.Size = new Size(480, 51);
             lblWin10AIO.TabIndex = 41;
             lblWin10AIO.Text = "Windows 10 Stock AiO";
             // 
@@ -206,11 +208,11 @@ namespace WinHubX.Forms.Windows
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Product Sans", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Coral;
             label1.Location = new Point(35, 139);
             label1.Name = "label1";
-            label1.Size = new Size(454, 38);
+            label1.Size = new Size(472, 36);
             label1.TabIndex = 51;
             label1.Text = "Edizioni incluse: Pro ed Enterprise";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -220,7 +222,7 @@ namespace WinHubX.Forms.Windows
             btnWin10ARM64.Cursor = Cursors.Hand;
             btnWin10ARM64.FlatAppearance.BorderSize = 0;
             btnWin10ARM64.FlatStyle = FlatStyle.Flat;
-            btnWin10ARM64.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWin10ARM64.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin10ARM64.ForeColor = Color.White;
             btnWin10ARM64.Location = new Point(190, 180);
             btnWin10ARM64.Name = "btnWin10ARM64";
