@@ -1,5 +1,4 @@
-﻿using WinHubX.Dialog;
-using WinHubX.Dialog.Tools;
+﻿using WinHubX.Dialog.Tools;
 
 namespace WinHubX
 {

@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace WinHubX.Dialog.Tools
 {
@@ -33,7 +24,7 @@ namespace WinHubX.Dialog.Tools
         private NotifyIcon notifyIcon;
         public DialogWIMToolKit()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             notifyIcon = new NotifyIcon
             {
                 Icon = SystemIcons.Information,
@@ -93,5 +84,5 @@ namespace WinHubX.Dialog.Tools
             }
         }
     }
-    
+
 }

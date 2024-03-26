@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using System.Reflection;
-using System.Windows.Forms;
 using WinHubX.Dialog;
 
 namespace WinHubX

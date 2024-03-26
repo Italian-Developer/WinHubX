@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using WinHubX.Forms.Base;
 
 namespace WinHubX
 {
@@ -54,6 +55,8 @@ namespace WinHubX
             bottoni.Add(btnWin);
             bottoni.Add(btnOffice);
             bottoni.Add(btnTools);
+            bottoni.Add(btnSettaggi);
+            bottoni.Add(btnDebloat);
 
             swap_pnlNav(btnHome);
 
@@ -139,6 +142,36 @@ namespace WinHubX
         private void btnMnmz_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnSettaggi_Click(object sender, EventArgs e)
+        {
+            swap_pnlNav(btnSettaggi);
+
+            lblPanelTitle.Text = "Settaggi";
+            PnlFormLoader.Controls.Clear();
+            FormSettaggi formSettaggi = new(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formSettaggi.FormBorderStyle = FormBorderStyle.None;
+            PnlFormLoader.Controls.Add(formSettaggi);
+            formSettaggi.Show();
+        }
+        private void btnSettaggi_Leave(object sender, EventArgs e)
+        {
+        }
+
+        private void btnDebloat_Click(object sender, EventArgs e)
+        {
+            swap_pnlNav(btnDebloat);
+
+            lblPanelTitle.Text = "Debloat";
+            PnlFormLoader.Controls.Clear();
+            FormDebloat formDebloat = new(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formDebloat.FormBorderStyle = FormBorderStyle.None;
+            PnlFormLoader.Controls.Add(formDebloat);
+            formDebloat.Show();
+        }
+        private void btnDebloat_Leave(object sender, EventArgs e)
+        {
         }
     }
 }

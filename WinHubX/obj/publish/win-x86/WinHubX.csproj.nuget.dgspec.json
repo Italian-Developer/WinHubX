@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gregorio\\source\\repos\\WinHubX\\WinHubX\\WinHubX.csproj": {}
+    "C:\\Users\\Nico\\Downloads\\WinHubX-development powershell corretto (1)\\WinHubX-development powershell corretto\\WinHubX-development\\WinHubX\\WinHubX.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gregorio\\source\\repos\\WinHubX\\WinHubX\\WinHubX.csproj": {
+    "C:\\Users\\Nico\\Downloads\\WinHubX-development powershell corretto (1)\\WinHubX-development powershell corretto\\WinHubX-development\\WinHubX\\WinHubX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gregorio\\source\\repos\\WinHubX\\WinHubX\\WinHubX.csproj",
+        "projectUniqueName": "C:\\Users\\Nico\\Downloads\\WinHubX-development powershell corretto (1)\\WinHubX-development powershell corretto\\WinHubX-development\\WinHubX\\WinHubX.csproj",
         "projectName": "WinHubX",
-        "projectPath": "C:\\Users\\Gregorio\\source\\repos\\WinHubX\\WinHubX\\WinHubX.csproj",
-        "packagesPath": "C:\\Users\\Gregorio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gregorio\\source\\repos\\WinHubX\\WinHubX\\obj\\publish\\win-x86\\",
+        "projectPath": "C:\\Users\\Nico\\Downloads\\WinHubX-development powershell corretto (1)\\WinHubX-development powershell corretto\\WinHubX-development\\WinHubX\\WinHubX.csproj",
+        "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nico\\Downloads\\WinHubX-development powershell corretto (1)\\WinHubX-development powershell corretto\\WinHubX-development\\WinHubX\\obj\\publish\\win-x86\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Gregorio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Nico\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -48,8 +43,40 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.1, )",
+              "version": "[8.0.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.PowerShell.Commands.Diagnostics": {
+              "target": "Package",
+              "version": "[7.4.1, )"
+            },
+            "Microsoft.PowerShell.Commands.Management": {
+              "target": "Package",
+              "version": "[7.4.1, )"
+            },
+            "Microsoft.PowerShell.Commands.Utility": {
+              "target": "Package",
+              "version": "[7.4.1, )"
+            },
+            "Microsoft.PowerShell.ConsoleHost": {
+              "target": "Package",
+              "version": "[7.4.1, )"
+            },
+            "Microsoft.PowerShell.Native": {
+              "target": "Package",
+              "version": "[7.4.0, )"
+            },
+            "Microsoft.PowerShell.SDK": {
+              "target": "Package",
+              "version": "[7.4.1, )"
+            },
+            "Microsoft.WSMan.Management": {
+              "target": "Package",
+              "version": "[7.4.1, )"
+            },
+            "System.Management.Automation": {
+              "target": "Package",
+              "version": "[7.4.1, )"
             }
           },
           "imports": [
@@ -66,15 +93,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
-              "version": "[8.0.1, 8.0.1]"
+              "version": "[8.0.0, 8.0.0]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x86",
-              "version": "[8.0.1, 8.0.1]"
+              "version": "[8.0.0, 8.0.0]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
-              "version": "[8.0.1, 8.0.1]"
+              "version": "[8.0.0, 8.0.0]"
             }
           ],
           "frameworkReferences": {
@@ -85,7 +112,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

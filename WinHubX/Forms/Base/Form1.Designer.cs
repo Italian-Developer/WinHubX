@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            btnSettaggi = new Button();
             btnTools = new Button();
             btnOffice = new Button();
             btnWin = new Button();
@@ -42,6 +43,7 @@
             btnMnmz = new Button();
             pictureBox2 = new PictureBox();
             lblPanelTitle = new Label();
+            btnDebloat = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -51,6 +53,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(64, 60, 59);
+            panel1.Controls.Add(btnDebloat);
+            panel1.Controls.Add(btnSettaggi);
             panel1.Controls.Add(btnTools);
             panel1.Controls.Add(btnOffice);
             panel1.Controls.Add(btnWin);
@@ -62,16 +66,36 @@
             panel1.Size = new Size(250, 720);
             panel1.TabIndex = 0;
             // 
+            // btnSettaggi
+            // 
+            btnSettaggi.Dock = DockStyle.Top;
+            btnSettaggi.FlatAppearance.BorderSize = 0;
+            btnSettaggi.FlatStyle = FlatStyle.Flat;
+            btnSettaggi.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSettaggi.ForeColor = SystemColors.Window;
+            btnSettaggi.Image = Properties.Resources.pngTools;
+            btnSettaggi.ImageAlign = ContentAlignment.MiddleRight;
+            btnSettaggi.Location = new Point(0, 449);
+            btnSettaggi.Name = "btnSettaggi";
+            btnSettaggi.Padding = new Padding(5, 0, 10, 0);
+            btnSettaggi.Size = new Size(250, 75);
+            btnSettaggi.TabIndex = 2;
+            btnSettaggi.Text = "Settaggi";
+            btnSettaggi.TextAlign = ContentAlignment.MiddleLeft;
+            btnSettaggi.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnSettaggi.UseVisualStyleBackColor = true;
+            btnSettaggi.Click += btnSettaggi_Click;
+            // 
             // btnTools
             // 
             btnTools.Dock = DockStyle.Top;
             btnTools.FlatAppearance.BorderSize = 0;
             btnTools.FlatStyle = FlatStyle.Flat;
-            btnTools.Font = new Font("Product Sans", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTools.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnTools.ForeColor = SystemColors.Window;
             btnTools.Image = Properties.Resources.pngTools;
             btnTools.ImageAlign = ContentAlignment.MiddleRight;
-            btnTools.Location = new Point(0, 375);
+            btnTools.Location = new Point(0, 374);
             btnTools.Name = "btnTools";
             btnTools.Padding = new Padding(5, 0, 10, 0);
             btnTools.Size = new Size(250, 75);
@@ -88,11 +112,11 @@
             btnOffice.Dock = DockStyle.Top;
             btnOffice.FlatAppearance.BorderSize = 0;
             btnOffice.FlatStyle = FlatStyle.Flat;
-            btnOffice.Font = new Font("Product Sans", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnOffice.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnOffice.ForeColor = SystemColors.Window;
             btnOffice.Image = Properties.Resources.pngOffice;
             btnOffice.ImageAlign = ContentAlignment.MiddleRight;
-            btnOffice.Location = new Point(0, 300);
+            btnOffice.Location = new Point(0, 299);
             btnOffice.Name = "btnOffice";
             btnOffice.Padding = new Padding(5, 0, 10, 0);
             btnOffice.Size = new Size(250, 75);
@@ -109,11 +133,11 @@
             btnWin.Dock = DockStyle.Top;
             btnWin.FlatAppearance.BorderSize = 0;
             btnWin.FlatStyle = FlatStyle.Flat;
-            btnWin.Font = new Font("Product Sans", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWin.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin.ForeColor = SystemColors.Window;
             btnWin.Image = Properties.Resources.pngWin;
             btnWin.ImageAlign = ContentAlignment.MiddleRight;
-            btnWin.Location = new Point(0, 225);
+            btnWin.Location = new Point(0, 224);
             btnWin.Name = "btnWin";
             btnWin.Padding = new Padding(5, 0, 10, 0);
             btnWin.Size = new Size(250, 75);
@@ -130,11 +154,11 @@
             btnHome.Dock = DockStyle.Top;
             btnHome.FlatAppearance.BorderSize = 0;
             btnHome.FlatStyle = FlatStyle.Flat;
-            btnHome.Font = new Font("Product Sans", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHome.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHome.ForeColor = SystemColors.Window;
             btnHome.Image = Properties.Resources.pngHome;
             btnHome.ImageAlign = ContentAlignment.MiddleRight;
-            btnHome.Location = new Point(0, 150);
+            btnHome.Location = new Point(0, 149);
             btnHome.Name = "btnHome";
             btnHome.Padding = new Padding(5, 0, 10, 0);
             btnHome.Size = new Size(250, 75);
@@ -152,7 +176,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(250, 150);
+            panel2.Size = new Size(250, 149);
             panel2.TabIndex = 0;
             // 
             // pictureBox1
@@ -161,7 +185,7 @@
             pictureBox1.Image = Properties.Resources.pngLogoWHX;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(250, 150);
+            pictureBox1.Size = new Size(250, 149);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -169,17 +193,17 @@
             // pnlNav
             // 
             pnlNav.BackColor = Color.FromArgb(0, 126, 249);
-            pnlNav.Location = new Point(0, 162);
+            pnlNav.Location = new Point(0, 163);
             pnlNav.Name = "pnlNav";
-            pnlNav.Size = new Size(3, 50);
+            pnlNav.Size = new Size(3, 51);
             pnlNav.TabIndex = 1;
             // 
             // PnlFormLoader
             // 
             PnlFormLoader.Dock = DockStyle.Bottom;
-            PnlFormLoader.Location = new Point(250, 150);
+            PnlFormLoader.Location = new Point(250, 149);
             PnlFormLoader.Name = "PnlFormLoader";
-            PnlFormLoader.Size = new Size(1030, 570);
+            PnlFormLoader.Size = new Size(1030, 571);
             PnlFormLoader.TabIndex = 2;
             // 
             // btnClose
@@ -224,13 +248,33 @@
             // lblPanelTitle
             // 
             lblPanelTitle.AutoSize = true;
-            lblPanelTitle.Font = new Font("Product Sans Black", 28F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPanelTitle.Font = new Font("Microsoft Sans Serif", 28F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPanelTitle.ForeColor = Color.White;
-            lblPanelTitle.Location = new Point(250, 90);
+            lblPanelTitle.Location = new Point(250, 91);
             lblPanelTitle.Name = "lblPanelTitle";
-            lblPanelTitle.Size = new Size(155, 59);
+            lblPanelTitle.Size = new Size(152, 54);
             lblPanelTitle.TabIndex = 5;
             lblPanelTitle.Text = "Home";
+            // 
+            // btnDebloat
+            // 
+            btnDebloat.Dock = DockStyle.Top;
+            btnDebloat.FlatAppearance.BorderSize = 0;
+            btnDebloat.FlatStyle = FlatStyle.Flat;
+            btnDebloat.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDebloat.ForeColor = SystemColors.Window;
+            btnDebloat.Image = Properties.Resources.pngTools;
+            btnDebloat.ImageAlign = ContentAlignment.MiddleRight;
+            btnDebloat.Location = new Point(0, 524);
+            btnDebloat.Name = "btnDebloat";
+            btnDebloat.Padding = new Padding(5, 0, 10, 0);
+            btnDebloat.Size = new Size(250, 75);
+            btnDebloat.TabIndex = 3;
+            btnDebloat.Text = "Debloat";
+            btnDebloat.TextAlign = ContentAlignment.MiddleLeft;
+            btnDebloat.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnDebloat.UseVisualStyleBackColor = true;
+            btnDebloat.Click += btnDebloat_Click;
             // 
             // Form1
             // 
@@ -274,5 +318,7 @@
         private Button btnMnmz;
         private PictureBox pictureBox2;
         public Label lblPanelTitle;
+        private Button btnSettaggi;
+        private Button btnDebloat;
     }
 }

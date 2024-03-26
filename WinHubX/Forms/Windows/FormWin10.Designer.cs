@@ -63,7 +63,7 @@ namespace WinHubX.Forms.Windows
             btnInfoWin10Lite.Cursor = Cursors.Hand;
             btnInfoWin10Lite.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
             btnInfoWin10Lite.ForeColor = Color.Coral;
-            btnInfoWin10Lite.Location = new Point(767, 379);
+            btnInfoWin10Lite.Location = new Point(763, 379);
             btnInfoWin10Lite.Name = "btnInfoWin10Lite";
             btnInfoWin10Lite.Size = new Size(56, 36);
             btnInfoWin10Lite.TabIndex = 49;
@@ -75,7 +75,7 @@ namespace WinHubX.Forms.Windows
             lblInfoWin10Lite.AutoSize = true;
             lblInfoWin10Lite.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblInfoWin10Lite.ForeColor = Color.Coral;
-            lblInfoWin10Lite.Location = new Point(234, 342);
+            lblInfoWin10Lite.Location = new Point(208, 343);
             lblInfoWin10Lite.Name = "lblInfoWin10Lite";
             lblInfoWin10Lite.Size = new Size(553, 72);
             lblInfoWin10Lite.TabIndex = 48;
@@ -130,7 +130,7 @@ namespace WinHubX.Forms.Windows
             lblInfoWin10AIO.AutoSize = true;
             lblInfoWin10AIO.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblInfoWin10AIO.ForeColor = Color.Coral;
-            lblInfoWin10AIO.Location = new Point(550, 139);
+            lblInfoWin10AIO.Location = new Point(545, 139);
             lblInfoWin10AIO.Name = "lblInfoWin10AIO";
             lblInfoWin10AIO.Size = new Size(484, 36);
             lblInfoWin10AIO.TabIndex = 44;

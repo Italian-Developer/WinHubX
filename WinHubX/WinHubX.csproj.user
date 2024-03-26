@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_LastSelectedProfileId>C:\Users\Gregorio\source\repos\WinHubX\WinHubX\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+    <_LastSelectedProfileId>C:\Users\Nico\Downloads\WinHubX-development powershell corretto %281%29\WinHubX-development powershell corretto\WinHubX-development\WinHubX\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="Dialog\InfoDialog.cs">
@@ -34,16 +34,34 @@
     <Compile Update="Forms\Base\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Base\FormDebloat.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Base\FormHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Base\FormOffice.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Base\FormSettaggi.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Base\FormTools.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Base\FormWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Settaggi\FormDefender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Settaggi\FormPrivacy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Settaggi\FormUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Settaggi\FormUtility.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Windows\FormWin10.cs">
