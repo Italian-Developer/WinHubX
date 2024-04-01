@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\Nico\Downloads\WinHubX-development powershell corretto %281%29\WinHubX-development powershell corretto\WinHubX-development\WinHubX\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Dialog\InfoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialog\OfficeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialog\Tools\DialogCheckHW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialog\Tools\DialogDaRT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialog\Tools\DialogMsPCManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialog\Tools\DialogRSTDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialog\Tools\DialogRufus4Lite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialog\Tools\DialogWIMToolKit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialog\Tools\DialogWinCustomizer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Base\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Base\FormDebloat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Base\FormHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Base\FormOffice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Base\FormSettaggi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Base\FormTools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Base\FormWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Settaggi\FormPersonalizzazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Settaggi\FormDefender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Settaggi\FormPrivacy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Settaggi\FormRipristinoSO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Settaggi\FormUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Settaggi\FormUtility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Windows\FormWin10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Windows\FormWin11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Windows\FormWin7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Windows\FormWin8Dot1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Windows\FormWinAiO_32.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Windows\FormWinAiO_64.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
