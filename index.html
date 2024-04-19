@@ -11,16 +11,27 @@
     padding: 0;
     background-color: #f0f0f0;
     display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  header h1, footer h1 {
+    margin: 0;
+  }
+  main {
+    flex: 1;
+    display: flex;
   }
   aside {
     width: 200px;
     background-color: #333;
     color: #fff;
     padding: 20px;
-  }
-  aside h1 {
-    color: #fff;
-    text-align: center;
   }
   aside ul {
     list-style-type: none;
@@ -37,26 +48,9 @@
   aside ul li a:hover {
     text-decoration: underline;
   }
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-  }
-  header h1 {
-    margin: 0;
-  }
-  main {
+  section {
     flex: 1;
     padding: 20px;
-  }
-  section {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   section h2 {
     margin-top: 0;
@@ -69,62 +63,46 @@
     padding: 10px;
     border-radius: 5px;
   }
-  footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    width: 100%;
-  }
 </style>
 </head>
 <body>
-<aside>
-  <h1>WinHubX</h1>
-  <nav>
-    <ul>
-      <li><a href="#intro">Introduzione</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#troubleshoot">Risoluzione problemi</a></li>
-      <li><a href="#download">Scarica Windows/Office</a></li>
-      <li><a href="#docs">Documentazione</a></li>
-      <li><a href="#news">Notizie</a></li>
-      <li><a href="#credits">Crediti</a></li>
-      <li><a href="#contact">Contattaci</a></li>
-    </ul>
-  </nav>
-</aside>
 <header>
   <h1>WinHubX</h1>
 </header>
 <main>
-  <section id="intro">
-    <h2>Introduzione</h2>
-    <p>Descrizione dello strumento.</p>
-  </section>
-  <section id="download">
-    <h2>Scaricamento</h2>
-    <h3>Metodo 1 - PowerShell (Consigliato)</h3>
-    <p>Fai clic destro sul menu Start di Windows e seleziona PowerShell o Terminale (Non CMD).</p>
-    <p>Copia e incolla il codice qui sotto e premi invio</p>
-    <pre><code>iwr https://massgrave.dev/get | iex</code></pre>
-    <p>Vedrai le opzioni di attivazione. Segui le istruzioni a schermo.</p>
-    <p>Questo è tutto.</p>
+  <aside>
+    <h1>WinHubX</h1>
+    <nav>
+      <ul>
+        <li><a href="#intro">Introduzione</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#troubleshoot">Risoluzione problemi</a></li>
+        <li><a href="#download">Scarica Windows/Office</a></li>
+        <li><a href="#docs">Documentazione</a></li>
+        <li><a href="#news">Notizie</a></li>
+        <li><a href="#credits">Crediti</a></li>
+        <li><a href="#contact">Contattaci</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <section>
+    <section id="intro">
+      <h2>Introduzione</h2>
+      <p>Descrizione dello strumento.</p>
+    </section>
+    <section id="download">
+      <h2>Scaricamento</h2>
+      <h3>Metodo 1 - PowerShell (Consigliato)</h3>
+      <p>Fai clic destro sul menu Start di Windows e seleziona PowerShell o Terminale (Non CMD).</p>
+      <p>Copia e incolla il codice qui sotto e premi invio</p>
+      <pre><code>in arrivo</code></pre>
+      <p>Vedrai le opzioni di attivazione. Segui le istruzioni a schermo.</p>
+      <p>Questo è tutto.</p>
+    </section>
   </section>
 </main>
 <footer>
-  <nav>
-    <ul>
-      <li><a href="#intro">Introduzione</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#troubleshoot">Risoluzione Problemi</a></li>
-      <li><a href="#download">Scarica Windows / Office</a></li>
-      <li><a href="#docs">Documentazione</a></li>
-      <li><a href="#news">Notizie</a></li>
-      <li><a href="#credits">Crediti</a></li>
-      <li><a href="#contact">Contattaci</a></li>
-    </ul>
-  </nav>
+  <h1>WinHubX</h1>
 </footer>
 </body>
 </html>
