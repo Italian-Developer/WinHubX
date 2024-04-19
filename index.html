@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +15,7 @@
     background-color: #333;
     color: #fff;
     padding: 20px;
+    text-align: center; /* Centrato il titolo come nell'immagine */
   }
   header h1 {
     margin: 0;
@@ -23,6 +24,7 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+    overflow: hidden; /* Assicura che il nav non esca dai limiti */
   }
   nav ul li {
     display: inline;
@@ -31,6 +33,7 @@
   nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 16px; /* Dimensione testo aggiustata per corrispondere all'immagine */
   }
   nav ul li a:hover {
     text-decoration: underline;
@@ -47,14 +50,32 @@
   }
   section h2 {
     margin-top: 0;
+    color: #333; /* Colore titolo sezione come nell'immagine */
   }
   section h3 {
     margin-top: 0;
+    color: #333; /* Colore sottotitolo sezione come nell'immagine */
   }
   pre {
     background-color: #f4f4f4;
     padding: 10px;
     border-radius: 5px;
+    margin-top: 10px; /* Spazio sopra il blocco di codice */
+    font-family: Consolas, 'Courier New', Courier, monospace; /* Font per il codice */
+    white-space: pre-wrap; /* Assicura che il testo vada a capo */
+  }
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center; /* Footer centrato come nell'immagine */
+    position: fixed; /* Footer fissato in basso */
+    bottom: 0;
+    width: 100%;
+  }
+  footer nav ul li a {
+    color: #bbb; /* Colore link footer come nell'immagine */
+    font-size: 14px; /* Dimensione testo footer */
   }
 </style>
 </head>
@@ -63,43 +84,46 @@
   <h1>WinHubX</h1>
   <nav>
     <ul>
-      <li><a href="#intro">Intro</a></li>
+      <li><a href="#intro">Introduzione</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="#troubleshoot">Troubleshoot</a></li>
-      <li><a href="#download">Download Windows / Office</a></li>
-      <li><a href="#docs">Docs</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#credits">Credits</a></li>
-      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#troubleshoot">Risoluzione Problemi</a></li>
+      <li><a href="#download">Scarica Windows / Office</a></li>
+      <li><a href="#docs">Documentazione</a></li>
+      <li><a href="#news">Notizie</a></li>
+      <li><a href="#credits">Crediti</a></li>
+      <li><a href="#contact">Contattaci</a></li>
     </ul>
   </nav>
 </header>
 <main>
   <section id="intro">
-    <h2>Intro</h2>
-    <p>Descrizione tool.</p>
+    <h2>Introduzione</h2>
+    <p>Descrizione dello strumento.</p>
   </section>
   <section id="download">
-    <h2>Come scaricarlo Download</h2>
-    <h3>Method 1 - PowerShell (Recommended)</h3>
-    <p>Right-click on the Windows start menu and select PowerShell or Terminal (Not CMD).</p>
-    <p>Copy and paste the code below and press enter</p>
-    <pre><code>in arrivo</code></pre>
+    <h2>Scaricamento</h2>
+    <h3>Metodo 1 - PowerShell (Consigliato)</h3>
+    <p>Fai clic destro sul menu Start di Windows e seleziona PowerShell o Terminale (Non CMD).</p>
+    <p>Copia e incolla il codice qui sotto e premi invio</p>
+    <pre><code>iwr https://massgrave.dev/get | iex</code></pre>
+    <p>Vedrai le opzioni di attivazione. Segui le istruzioni a schermo.</p>
+    <p>Questo è tutto.</p>
   </section>
 </main>
 <footer>
   <nav>
     <ul>
-      <li><a href="#intro">Intro</a></li>
+      <li><a href="#intro">Introduzione</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="#troubleshoot">Troubleshoot</a></li>
-      <li><a href="#download">Download Windows / Office</a></li>
-      <li><a href="#docs">Docs</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#credits">Credits</a></li>
-      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#troubleshoot">Risoluzione Problemi</a></li>
+      <li><a href="#download">Scarica Windows / Office</a></li>
+      <li><a href="#docs">Documentazione</a></li>
+      <li><a href="#news">Notizie</a></li>
+      <li><a href="#credits">Crediti</a></li>
+      <li><a href="#contact">Contattaci</a></li>
     </ul>
   </nav>
 </footer>
 </body>
 </html>
+
