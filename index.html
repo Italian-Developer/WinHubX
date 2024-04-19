@@ -10,35 +10,34 @@
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+    display: flex;
   }
-  header {
+  aside {
+    width: 200px;
     background-color: #333;
     color: #fff;
     padding: 20px;
-    text-align: center; /* Centrato il titolo come nell'immagine */
   }
-  header h1 {
-    margin: 0;
+  aside h1 {
+    color: #fff;
   }
-  nav ul {
+  aside ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    overflow: hidden; /* Assicura che il nav non esca dai limiti */
   }
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
+  aside ul li {
+    margin-bottom: 10px;
   }
-  nav ul li a {
+  aside ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 16px; /* Dimensione testo aggiustata per corrispondere all'immagine */
   }
-  nav ul li a:hover {
+  aside ul li a:hover {
     text-decoration: underline;
   }
   main {
+    flex: 1;
     padding: 20px;
   }
   section {
@@ -50,80 +49,49 @@
   }
   section h2 {
     margin-top: 0;
-    color: #333; /* Colore titolo sezione come nell'immagine */
   }
   section h3 {
     margin-top: 0;
-    color: #333; /* Colore sottotitolo sezione come nell'immagine */
   }
   pre {
     background-color: #f4f4f4;
     padding: 10px;
     border-radius: 5px;
-    margin-top: 10px; /* Spazio sopra il blocco di codice */
-    font-family: Consolas, 'Courier New', Courier, monospace; /* Font per il codice */
-    white-space: pre-wrap; /* Assicura che il testo vada a capo */
   }
   footer {
+    text-align: center;
+    padding: 10px;
     background-color: #333;
     color: #fff;
-    padding: 10px;
-    text-align: center; /* Footer centrato come nell'immagine */
-    position: fixed; /* Footer fissato in basso */
+    position: fixed;
     bottom: 0;
-    width: 100%;
-  }
-  footer nav ul li a {
-    color: #bbb; /* Colore link footer come nell'immagine */
-    font-size: 14px; /* Dimensione testo footer */
+    width: calc(100% - 200px);
   }
 </style>
 </head>
 <body>
-<header>
+<aside>
   <h1>WinHubX</h1>
   <nav>
     <ul>
       <li><a href="#intro">Introduzione</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="#troubleshoot">Risoluzione Problemi</a></li>
-      <li><a href="#download">Scarica Windows / Office</a></li>
+      <li><a href="#troubleshoot">Risoluzione problemi</a></li>
+      <li><a href="#download">Scarica Windows/Office</a></li>
       <li><a href="#docs">Documentazione</a></li>
       <li><a href="#news">Notizie</a></li>
       <li><a href="#credits">Crediti</a></li>
       <li><a href="#contact">Contattaci</a></li>
     </ul>
   </nav>
-</header>
+</aside>
 <main>
-  <section id="intro">
-    <h2>Introduzione</h2>
-    <p>Descrizione dello strumento.</p>
-  </section>
-  <section id="download">
-    <h2>Scaricamento</h2>
-    <h3>Metodo 1 - PowerShell (Consigliato)</h3>
-    <p>Fai clic destro sul menu Start di Windows e seleziona PowerShell.</p>
-    <p>Copia e incolla il codice qui sotto e premi invio</p>
-    <pre><code>in arrivo</code></pre>
-    <p>Vedrai le opzioni di attivazione. Segui le istruzioni a schermo.</p>
-    <p>Questo è tutto.</p>
-  </section>
+  <!-- ... il resto del tuo codice HTML per il contenuto principale ... -->
 </main>
 <footer>
-  <nav>
-    <ul>
-      <li><a href="#intro">Introduzione</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#troubleshoot">Risoluzione Problemi</a></li>
-      <li><a href="#download">Scarica Windows / Office</a></li>
-      <li><a href="#docs">Documentazione</a></li>
-      <li><a href="#news">Notizie</a></li>
-      <li><a href="#credits">Crediti</a></li>
-      <li><a href="#contact">Contattaci</a></li>
-    </ul>
-  </nav>
+  <!-- ... il tuo codice HTML per il footer ... -->
 </footer>
 </body>
 </html>
+
 
