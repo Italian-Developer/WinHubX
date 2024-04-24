@@ -14,12 +14,7 @@ set "DebloatApp=%~9"
 
 for %%I in ("%selectedFile%") do set "dest_path=%%~dpI"
 
-rem export windows edition
-if "%windowsEdition%"=="Home" (
-    set "index=1"
-) else (
-    set "index=5"
-)
+for /f "tokens=2" %%A in ("%windowsEdition%") do set "index=%%A"
 
 title WinHubX Debloat ISO 10
 
@@ -34,10 +29,16 @@ IF EXIST "C:\ISO\WinISO" (
 
 :domande
 set /p answer3=":"
-if /i "%answer3%"=="si" ( goto :cartellaISO1 )
+if /i "%answer3%"=="si" ( goto :eliminacartella )
 if /i "%answer3%"=="no" ( goto :winfolder1 )
 else ( echo  ATTENZIONE! I valori accettati sono solamente 'si' e 'no'. 
 goto :domande )
+
+:eliminacartella
+echo Elimino la cartella, attendi...
+dism /unmount-image /mountdir:C:\mount\mount /discard >NUL
+rmdir "C:\ISO\WinISO" /s /q
+goto :cartellaISO1
 
 :isofolder1
 cls 
@@ -54,7 +55,7 @@ mkdir "C:\mount\mount"
 cls
 rem estraggo iso
 powerShell -Command "Write-Host 'Sto estraendo la iso in C:\ISO\WinISO... Attendi!' -ForegroundColor Green; exit"  
-Risorse\7z.exe x -y -o"C:\ISO\WinISO" "%selectedFile%" > nul
+%TEMP%\RisorseCreaISO\7z.exe x -y -o"C:\ISO\WinISO" "%selectedFile%" > nul
 IF %errorlevel% equ 0 (
   powerShell -Command "Write-Host 'Estrazione della ISO completata!' -ForegroundColor Green; exit" && timeout 04 >nul && cls
 ) ELSE (
@@ -66,7 +67,7 @@ IF NOT EXIST "C:\ISO\WinISO\sources\$OEM$\$$\Panther" (
 )
 
 rem copy unattended.xml
-copy "Risorse\unattend10.xml" "C:\ISO\WinISO\sources\$OEM$\$$\Panther\unattend.xml"
+copy "%TEMP%\RisorseCreaISO\unattend10.xml" "C:\ISO\WinISO\sources\$OEM$\$$\Panther\unattend.xml"
 
 rem check if wim or esd
 IF EXIST "C:\ISO\WinISO\sources\install.wim" (
@@ -84,7 +85,7 @@ dism /export-image /SourceImageFile:C:\ISO\WinISO\sources\install.esd /SourceInd
 IF %errorlevel% equ 0 (
   powerShell -Command "Write-Host 'Immagine esportata con successo!' -ForegroundColor Green; exit" && timeout 04 >nul && cls
 ) ELSE (
-  color 4 && echo "ERRORE: Impossibile esportare l''immagine!" && pause && del "resources\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
+  color 4 && echo "ERRORE: Impossibile esportare l''immagine!" && pause && del "%TEMP%\RisorseCreaISO\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
 )
 goto :copy_esd1
 
@@ -95,7 +96,7 @@ dism /Export-Image /SourceImageFile:"C:\ISO\WinISO\sources\install.wim" /SourceI
 IF %errorlevel% equ 0 (
   powerShell -Command "Write-Host 'Immagine esportata con successo!' -ForegroundColor 7; exit" && timeout 04 >nul && cls
 ) ELSE (
-  color 4 && echo "ERRORE: Impossibile esportare l''immagine!" && pause && del "Risorse\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
+  color 4 && echo "ERRORE: Impossibile esportare l''immagine!" && pause && del "%TEMP%\RisorseCreaISO\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
 )
 
 :copy_wim1
@@ -105,14 +106,14 @@ del "C:\ISO\WinISO\sources\install.wim"
 IF %errorlevel% equ 0 (
   powerShell -Command "Write-Host 'Old install.wim eliminato!' -ForegroundColor 7; exit" && timeout 04 >nul && cls
 ) ELSE (
-  color 4 && echo "ERRORE: Impossibile eliminare old install.wim!" && pause && del "Risorse\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
+  color 4 && echo "ERRORE: Impossibile eliminare old install.wim!" && pause && del "%TEMP%\RisorseCreaISO\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
 )
 
 move "C:\ISO\WinISO\sources\install_pro.wim" "C:\ISO\WinISO\sources\install.wim"
 IF %errorlevel% equ 0 (
   powerShell -Command "Write-Host 'Il nuovo install.wim e'' stato spostato con successo!' -ForegroundColor 7; exit" && timeout 04 >nul && cls
 ) ELSE (
-  color 4 && echo "ERRORE: Impossibile spostare il nuovo install.wim!" && pause && del "Risorse\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
+  color 4 && echo "ERRORE: Impossibile spostare il nuovo install.wim!" && pause && del "%TEMP%\RisorseCreaISO\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
 )
 goto :mountwim1
 
@@ -123,7 +124,7 @@ del "C:\ISO\WinISO\sources\install.esd"
 IF %errorlevel% equ 0 (
   powerShell -Command "Write-Host 'Old install.esd eliminato!' -ForegroundColor Green; exit" && timeout 04 >nul && cls
 ) ELSE (
-  color 4 && echo "ERRORE: Impossibile eliminare old install.esd!" && pause && del "resources\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
+  color 4 && echo "ERRORE: Impossibile eliminare old install.esd!" && pause && del "%TEMP%\RisorseCreaISO\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
 )
 goto :mountwim1
 
@@ -136,14 +137,17 @@ goto :menuprincipalee1
 
 rem menuprincipale
 :menuprincipalee1
+reg load HKLM\TK_SOFTWARE "C:\mount\mount\Windows\System32\config\SOFTWARE" 
+Reg add "HKLM\TK_SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE" /v "BypassNRO" /t REG_DWORD /d "1" /f
+reg unload HKLM\TK_SOFTWARE 
 cls
 
 rem delete edge
 if "%edgeRemovalPreference%"=="RemoveEdge" (
 cls
 echo > C:\mount\mount\Windows\noedge.pref
-copy "Risorse\OperaGXSetup.exe" "C:\mount\mount"
-copy "Risorse\PowerRun.exe" "C:\mount\mount\Windows"
+copy "%TEMP%\RisorseCreaISO\OperaGXSetup.exe" "C:\mount\mount"
+copy "%TEMP%\RisorseCreaISO\PowerRun.exe" "C:\mount\mount\Windows"
 )
 
 if "%OttimizzaSO%"=="Ottimizza" (
@@ -158,7 +162,7 @@ rem disable defender
 cls
 if "%defenderPreference%"=="DisableWindowsDefender" (
 echo > C:\mount\mount\Windows\nodefender.pref
-copy "Risorse\PowerRun.exe" "C:\mount\mount\Windows"
+copy "%TEMP%\RisorseCreaISO\PowerRun.exe" "C:\mount\mount\Windows"
 )
 
 if "%Processi%"=="RimuoviProcessi" (
@@ -178,13 +182,14 @@ powerShell -Command "Write-Host 'Completato' -ForegroundColor Green; exit"
 :tweaksbatt10
 rem copy batch file
 cls
-copy "Risorse\tweaks10.bat" "C:\mount\mount\Windows"
-copy "Risorse\WinCustomizerDebloat3.0.ps1" "C:\mount\mount\Windows"
-copy "Risorse\WinCustomizerAttivatore.bat" "C:\mount\mount\Windows"
-copy "Risorse\start10.ps1" "C:\mount\mount\Windows"
-copy "Risorse\lower-ram-usage.reg" "C:\mount\mount\Windows"
-copy "Risorse\WinCustomizerStartDebloat.bat" "C:\mount\mount\Windows"
-copy "Risorse\unpin_start_tiles.ps1" "C:\mount\mount\Windows"
+copy "%TEMP%\RisorseCreaISO\tweaks10.bat" "C:\mount\mount\Windows"
+copy "%TEMP%\RisorseCreaISO\WinHubXDebloat3.0.ps1" "C:\mount\mount\Windows"
+copy "%TEMP%\RisorseCreaISO\WinHubXAttivatore.bat" "C:\mount\mount\Windows"
+copy "%TEMP%\RisorseCreaISO\start10.ps1" "C:\mount\mount\Windows"
+copy "%TEMP%\RisorseCreaISO\lower-ram-usage.reg" "C:\mount\mount\Windows"
+copy "%TEMP%\RisorseCreaISO\WinHubXStartDebloat.bat" "C:\mount\mount\Windows"
+copy "%TEMP%\RisorseCreaISO\unpin_start_tiles.ps1" "C:\mount\mount\Windows"
+copy "%TEMP%\RisorseCreaISO\PowerRun.exe" "C:\mount\mount\Windows"
 
 :fine1
 cls
@@ -196,11 +201,11 @@ cls
 rem rebuild image 
 cls
 powerShell -Command "Write-Host 'Creando la ISO' -ForegroundColor 7; exit"  
-Risorse\oscdimg -m -o -u2 -bootdata:2#p0,e,bC:\ISO\WinISO\boot\etfsboot.com#pEF,e,bC:\ISO\WinISO\efi\microsoft\boot\efisys.bin C:\ISO\WinISO C:\ISO\WindowsISO_edited.iso
+%TEMP%\RisorseCreaISO\oscdimg -m -o -u2 -bootdata:2#p0,e,bC:\ISO\WinISO\boot\etfsboot.com#pEF,e,bC:\ISO\WinISO\efi\microsoft\boot\efisys.bin C:\ISO\WinISO C:\ISO\WindowsISO_edited.iso
 IF %errorlevel% equ 0 (
   powerShell -Command "Write-Host 'ISO creata con successo!' -ForegroundColor 7; exit" && timeout 04 >nul && cls
 ) ELSE (
-  color 4 && echo "ERRORE: Impossibile creare la ISO!" && pause && del "Risorse\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
+  color 4 && echo "ERRORE: Impossibile creare la ISO!" && pause && del "%TEMP%\RisorseCreaISO\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
 )
 
 rem copy the iso and clean
@@ -209,24 +214,24 @@ copy "C:\ISO\WindowsISO_edited.iso" "C:\"
 IF %errorlevel% equ 0 (
   powerShell -Command "Write-Host 'ISO copiata con successo!' -ForegroundColor 7; exit" && timeout 04 >nul && cls
 ) ELSE (
-  color 4 && echo "ERRORE: Impossibile copiare la ISO in C!" && pause && del "Risorse\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
+  color 4 && echo "ERRORE: Impossibile copiare la ISO in C!" && pause && del "%TEMP%\RisorseCreaISO\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
 )
 
 rmdir "C:\ISO" /s /q
 IF %errorlevel% equ 0 (
   powerShell -Command "Write-Host 'La directory1 usata per la creazione della ISO e'' stata eliminata con successo!' -ForegroundColor 7; exit" && timeout 04 >nul && cls
 ) ELSE (
-  color 4 && echo "ERRORE: Impossibile eliminare la directory1 usata per la creazione della ISO!" && pause && del "Risorsenattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
+  color 4 && echo "ERRORE: Impossibile eliminare la directory1 usata per la creazione della ISO!" && pause && del "%TEMP%\RisorseCreaISO\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
 )
 
 rmdir "C:\mount" /s /q
 IF %errorlevel% equ 0 (
   powerShell -Command "Write-Host 'La directory2 usata per la creazione della ISO e'' stata eliminata con successo!' -ForegroundColor 7; exit" && timeout 04 >nul && cls
 ) ELSE (
-  color 4 && echo "ERRORE: Impossibile eliminare la directory2 usatq per la creazione della ISO!" && pause && del "Risorse\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
+  color 4 && echo "ERRORE: Impossibile eliminare la directory2 usatq per la creazione della ISO!" && pause && del "%TEMP%\RisorseCreaISO\unattend_edited.xml" /q && rmdir "C:\mount" /s /q && rmdir "C:\ISO" /s /q && exit /b 1
 )
 
-powerShell -Command "Write-Host 'Processo completato troverari la tua ISO in C:! -ForegroundColor Green; exit"
+powerShell -Command "Write-Host 'Processo completato troverai la tua ISO in C:!' -ForegroundColor Green; exit"
 timeout 7
 endlocal
 exit

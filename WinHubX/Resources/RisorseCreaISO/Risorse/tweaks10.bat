@@ -86,8 +86,8 @@ sc config DiagTrack start=disabled
 sc config dmwappushservice start=disabled
 
 rem copy Attivatore Win
-copy "C:\Windows\WinCustomizerAttivatore.bat" "C:\Users\%username%\Desktop"
-copy "C:\Windows\WinCustomizerStartDebloat.bat" "C:\Users\%username%\Desktop"
+copy "C:\Windows\WinHubXAttivatore.bat" "C:\Users\%username%\Desktop"
+copy "C:\Windows\WinHubXStartDebloat.bat" "C:\Users\%username%\Desktop"
 
 rem unpin from start the tiles
 powerShell -ExecutionPolicy Bypass -File "C:\Windows\unpin_start_tiles.ps1"

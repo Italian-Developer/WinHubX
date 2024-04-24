@@ -6554,11 +6554,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nico\\Desktop\\WinHubX Corretto\\WinHubX-development\\WinHubX\\WinHubX.csproj",
+      "projectUniqueName": "C:\\Users\\Nico\\Desktop\\WinHubX-development\\WinHubX\\WinHubX.csproj",
       "projectName": "WinHubX",
-      "projectPath": "C:\\Users\\Nico\\Desktop\\WinHubX Corretto\\WinHubX-development\\WinHubX\\WinHubX.csproj",
+      "projectPath": "C:\\Users\\Nico\\Desktop\\WinHubX-development\\WinHubX\\WinHubX.csproj",
       "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nico\\Desktop\\WinHubX Corretto\\WinHubX-development\\WinHubX\\obj\\",
+      "outputPath": "C:\\Users\\Nico\\Desktop\\WinHubX-development\\WinHubX\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

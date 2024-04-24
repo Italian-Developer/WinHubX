@@ -48,7 +48,6 @@ namespace WinHubX.Dialog.Tools
 
                 try
                 {
-                    // Estrai il file zip dalla risorsa incorporata e salvalo nel percorso scelto dall'utente
                     using (Stream resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
                     {
                         if (resourceStream != null)

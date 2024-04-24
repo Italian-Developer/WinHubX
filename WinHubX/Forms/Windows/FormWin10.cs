@@ -127,7 +127,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/uygo2n5ytiul",
+                        FileName = "https://devuploads.com/sp9ant0xnrdi",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
@@ -156,7 +156,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/cpv4k191sy00",
+                        FileName = "https://devuploads.com/0pehkl5b13n0",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
@@ -173,7 +173,7 @@ namespace WinHubX.Forms.Windows
             if (e.Button == MouseButtons.Right)
             {
 
-                Clipboard.SetText("ae84df01bdd0a038d0ed60b2af3dba08bfefa0fd8e4297bddb3f90e16b6fa4d6");
+                Clipboard.SetText("aa762fe9425ef8aa87629bb83a42f413cf93af18a78e9de50832d2e94c0fc46f");
 
                 notifyIcon.BalloonTipTitle = "SHA256 copiato!";
                 notifyIcon.BalloonTipText = "Il codice hash è stato copiato negli appunti.";
@@ -185,7 +185,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/0up8pc2rl5qp",
+                        FileName = "https://devuploads.com/1nu72xmuzr6z",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
@@ -214,7 +214,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/l8czyal3q98c",
+                        FileName = "https://devuploads.com/odrngsc8f1eq",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
@@ -231,7 +231,7 @@ namespace WinHubX.Forms.Windows
             if (e.Button == MouseButtons.Right)
             {
 
-                Clipboard.SetText("8a5e5e1feaf6e85a7afec162357d22673d11f7190f5d37d20936c44f8301ac42");
+                Clipboard.SetText("cab8b6eb81f4839d363f0734a9e1ac88089052c261ea4cf825d5031b698f37a1");
 
                 notifyIcon.BalloonTipTitle = "SHA256 copiato!";
                 notifyIcon.BalloonTipText = "Il codice hash è stato copiato negli appunti.";
@@ -243,7 +243,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/2nyv53dz1izk",
+                        FileName = "https://devuploads.com/fwo3go6kq33p",
                         UseShellExecute = true
                     };
                     Process.Start(psi);

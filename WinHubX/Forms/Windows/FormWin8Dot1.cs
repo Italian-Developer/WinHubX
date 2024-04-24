@@ -125,7 +125,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/kwo0ujca5v3n",
+                        FileName = "https://devuploads.com/9wdb0uk51m6g",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
@@ -154,7 +154,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/a2qjbwjazwlz",
+                        FileName = "https://devuploads.com/8q32qyn95jfw",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
@@ -183,7 +183,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/bsa3bhugnhjt",
+                        FileName = "https://devuploads.com/mg4ze7i19bz7",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
@@ -212,7 +212,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/6qk33fwtxn7v",
+                        FileName = "https://devuploads.com/28rezh08f1mn",
                         UseShellExecute = true
                     };
                     Process.Start(psi);

@@ -123,7 +123,7 @@ namespace WinHubX.Forms.Windows
             if (e.Button == MouseButtons.Right)
             {
 
-                Clipboard.SetText("fb09fb0acb96c13d93e75f978a1f4ebf240ae8948c5205aef8a278969cf055be");
+                Clipboard.SetText("33f25e59292289c670db5cb414c64e4c85bf10da4e2bf2c8fe6ecfd05143ebef");
 
                 notifyIcon.BalloonTipTitle = "SHA256 copiato!";
                 notifyIcon.BalloonTipText = "Il codice hash è stato copiato negli appunti.";
@@ -135,7 +135,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/0m4q4ahlf3ya",
+                        FileName = "https://devuploads.com/7tq1eq4xk1tv",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
@@ -152,7 +152,7 @@ namespace WinHubX.Forms.Windows
             if (e.Button == MouseButtons.Right)
             {
 
-                Clipboard.SetText("5852ee1779da524a03b83329e81b8b08da66d363a5cc1027c78e553809656a60");
+                Clipboard.SetText("653ac29c986d6aa81caad249c7792a8faa4842d48223509f0af92ad7747d3146");
 
                 notifyIcon.BalloonTipTitle = "SHA256 copiato!";
                 notifyIcon.BalloonTipText = "Il codice hash è stato copiato negli appunti.";
@@ -164,7 +164,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/67a2lix9pwsy",
+                        FileName = "https://devuploads.com/49u1n3j6giug",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
@@ -193,7 +193,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/6qg4t95jndjx",
+                        FileName = "https://devuploads.com/tro32p5g6t2p",
                         UseShellExecute = true
                     };
                     Process.Start(psi);

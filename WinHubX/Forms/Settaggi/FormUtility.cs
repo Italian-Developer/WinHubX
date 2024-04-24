@@ -1,5 +1,4 @@
-﻿using System.Management.Automation;
-using WinHubX.Forms.Base;
+﻿using WinHubX.Forms.Base;
 
 namespace WinHubX.Forms.Settaggi
 {

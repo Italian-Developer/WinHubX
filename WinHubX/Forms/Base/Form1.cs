@@ -1,10 +1,7 @@
+using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using WinHubX.Forms.Base;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Diagnostics;
-using System.IO;
 
 namespace WinHubX
 {
@@ -18,7 +15,7 @@ namespace WinHubX
         {
             base.WndProc(ref m);
             if (m.Msg == WM_NCHITTEST)
-                m.Result = (IntPtr)(HT_CAPTION);
+                m.Result = HT_CAPTION;
         }
         #endregion
 
@@ -59,10 +56,11 @@ namespace WinHubX
             bottoni.Add(btnHome);
             bottoni.Add(btnWin);
             bottoni.Add(btnOffice);
-            bottoni.Add(btnTools);
             bottoni.Add(btnSettaggi);
             bottoni.Add(btnDebloat);
             bottoni.Add(btnCreaISO);
+            bottoni.Add(btnMonitoraggio);
+            bottoni.Add(btnTools);
 
             swap_pnlNav(btnHome);
 
@@ -125,21 +123,6 @@ namespace WinHubX
         {
         }
 
-        private void btnTools_Click(object sender, EventArgs e)
-        {
-            swap_pnlNav(btnTools);
-
-            lblPanelTitle.Text = "Tools";
-            PnlFormLoader.Controls.Clear();
-            FormTools formTools = new FormTools() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            formTools.FormBorderStyle = FormBorderStyle.None;
-            PnlFormLoader.Controls.Add(formTools);
-            formTools.Show();
-        }
-        private void btnTools_Leave(object sender, EventArgs e)
-        {
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -182,7 +165,9 @@ namespace WinHubX
 
         private void btnCreaISO_Click(object sender, EventArgs e)
         {
-             swap_pnlNav(btnCreaISO);
+            swap_pnlNav(btnCreaISO);
+            string assemblyNamee = Assembly.GetExecutingAssembly().GetName().Name;
+            ExtractEmbeddedResourceFolder($"{assemblyNamee}.Resources.RisorseCreaISO");
             try
             {
                 string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
@@ -193,8 +178,35 @@ namespace WinHubX
 
                 // Start the process
                 StartPowerShell(ps1FilePath);
-            } finally { }
+            }
+            finally { }
         }
+
+        public static void ExtractEmbeddedResourceFolder(string resourceFolder)
+        {
+            string tempFolderPath = Path.GetTempPath();
+            string targetFolderPath = Path.Combine(tempFolderPath, "RisorseCreaISO");
+            Directory.CreateDirectory(targetFolderPath);
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string[] resourceNames = assembly.GetManifestResourceNames();
+            foreach (string resourceName in resourceNames)
+            {
+                if (resourceName.StartsWith(resourceFolder))
+                {
+                    // This will strip out the resourceFolder prefix and the "Risorse." part from the file name
+                    string relativePath = resourceName.Substring(resourceFolder.Length + 1).Replace("Risorse.", "");
+                    string path = Path.Combine(targetFolderPath, relativePath);
+                    string directory = Path.GetDirectoryName(path);
+                    Directory.CreateDirectory(directory);
+                    using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+                    using (FileStream fileStream = new FileStream(path, FileMode.Create))
+                    {
+                        stream.CopyTo(fileStream);
+                    }
+                }
+            }
+        }
+
 
         private byte[] LoadEmbeddedResource(string resourcePath)
         {
@@ -228,6 +240,32 @@ namespace WinHubX
             }
         }
         private void btnCreaISO_Leave(object sender, EventArgs e)
+        {
+        }
+
+        private void btnMonitoraggio_Click(object sender, EventArgs e)
+        {
+            swap_pnlNav(btnMonitoraggio);
+            lblPanelTitle.Text = "Monitoraggio";
+            PnlFormLoader.Controls.Clear();
+            FormMonitoraggio formMonitoraggio = new(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formMonitoraggio.FormBorderStyle = FormBorderStyle.None;
+            PnlFormLoader.Controls.Add(formMonitoraggio);
+            formMonitoraggio.Show();
+        }
+
+        private void btnTools_Click(object sender, EventArgs e)
+        {
+            swap_pnlNav(btnTools);
+
+            lblPanelTitle.Text = "Tools";
+            PnlFormLoader.Controls.Clear();
+            FormTools formTools = new FormTools() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formTools.FormBorderStyle = FormBorderStyle.None;
+            PnlFormLoader.Controls.Add(formTools);
+            formTools.Show();
+        }
+        private void btnTools_Leave(object sender, EventArgs e)
         {
         }
     }

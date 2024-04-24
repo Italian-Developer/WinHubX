@@ -1,17 +1,4 @@
-﻿using Markdig.Syntax;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Management.Automation;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using WinHubX.Forms.Base;
-using static Microsoft.ApplicationInsights.MetricDimensionNames.TelemetryContext;
-using static System.Net.Mime.MediaTypeNames;
+﻿using WinHubX.Forms.Base;
 
 namespace WinHubX.Forms.Settaggi
 {
@@ -375,33 +362,6 @@ namespace WinHubX.Forms.Settaggi
                     {
                         FileName = "powershell.exe",
                         Arguments = "Set-ItemProperty -Path \"HKLM:\\SOFTWARE\\Policies\\Microsoft\\WindowsFirewall\\StandardProfile\" -Name \"EnableFirewall\" -Type DWord -Value 0",
-                        UseShellExecute = false,
-                        CreateNoWindow = true,
-                        RedirectStandardOutput = true,
-                        RedirectStandardError = true
-                    };
-
-                    using (var process = System.Diagnostics.Process.Start(startInfo))
-                    {
-                        process.WaitForExit();
-
-                        var output = process.StandardOutput.ReadToEnd();
-                        var error = process.StandardError.ReadToEnd();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred: {ex.Message}");
-                }
-            }
-            else if (DisabilitaDefender.CheckedItems.Contains("Disabilita Windows Defender"))
-            {
-                try
-                {
-                    var startInfo = new System.Diagnostics.ProcessStartInfo()
-                    {
-                        FileName = "powershell.exe",
-                        Arguments = "Set-ItemProperty -Path \"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\" -Name \"DisableAntiSpyware\" -Type DWord -Value 1; Remove-ItemProperty -Path \"HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\" -Name \"WindowsDefender\" -ErrorAction SilentlyContinue; Remove-ItemProperty -Path \"HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\" -Name \"SecurityHealth\" -ErrorAction SilentlyContinue; Set-ItemProperty -Path \"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Real-Time Protection\" -Name \"DisableRealtimeMonitoring\" -Type DWord -Value 1; Set-ItemProperty -Path \"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Real-Time Protection\" -Name \"DisableBehaviorMonitoring\" -Type DWord -Value 1; Set-ItemProperty -Path \"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Real-Time Protection\" -Name \"DisableOnAccessProtection\" -Type DWord -Value 1; Set-ItemProperty -Path \"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Real-Time Protection\" -Name \"DisableScanOnRealtimeEnable\" -Type DWord -Value 1",
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
@@ -996,4 +956,4 @@ namespace WinHubX.Forms.Settaggi
         }
     }
 }
- 
+

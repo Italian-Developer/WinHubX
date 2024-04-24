@@ -293,7 +293,7 @@ $groupBoxProject.Controls.Add($radioButtonProjectNo)
 
 # Create donate button
 $donateButton = New-Object System.Windows.Forms.Button
-$donateButton.Location = New-Object System.Drawing.Point(240, 455) 
+$donateButton.Location = New-Object System.Drawing.Point(240, 445) 
 $donateButton.Size = New-Object System.Drawing.Size(100,23) 
 $donateButton.Text = "Donate"
 $donateButton.Add_Click({
@@ -303,12 +303,12 @@ $form.Controls.Add($donateButton)
 
 # Create OK button
 $buildButton = New-Object System.Windows.Forms.Button
-$buildButton.Location = New-Object System.Drawing.Point(360,455) 
+$buildButton.Location = New-Object System.Drawing.Point(360,445) 
 $buildButton.Size = New-Object System.Drawing.Size(100,23) 
 $buildButton.Text = "Build!"
 $buildButton.Add_Click({
 
-    if (-not ($radioButtonx64.Checked -or $radioButtonx32.Checked -or $radioButtonarm64.Checked )) {
+    if (-not ($radioButtonx64.Checked -or $radioButtonx32.Checked)) {
     [System.Windows.Forms.MessageBox]::Show("Seleziona la tua architettura.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
      return
     }
@@ -368,16 +368,19 @@ $buildButton.Add_Click({
     return
     }
 
-    $architettura = if ($radioButtonx64.Checked) { "x64" } if ($radioButtonarm64.Cheked) { "arm64" } else { "x32" }
+    Remove-Item -Path "C:\configuration-x64-complete.xml" | out-null
+    Remove-Item -Path "C:\configuration-x32-complete.xml" | out-null
+
+    $architettura = if ($radioButtonx64.Checked) { "x64" } else { "x32" }
     $VersioneOffice = if ($radioButton2021.Checked) { "2021" } else { "365" }
-    $word = if ($radioButtonWordSi.Checked) { "Word" } else { "" }
-    $excel = if ($radioButtonExcelSi.Checked) { "Excel" } else { "" }
-    $powerpoint = if ($radioButtonPowerPointSi.Checked) { "PowerPoint" } else { "" }
-    $acces = if ($radioButtonAccessSi.Checked) { "Access" } else { "" }
-    $onedrive = if ($radioButtonOneDriveSi.Checked) { "OneDrive" } else { "" }
-    $OneNote = if ($radioButtonOneNoteSi.Checked) { "OneNote" } else { "" }
-    $outlook= if ($radioButtonOutlookSi.Checked) { "Outlook" } else { "" }
-    $publisher = if ($radioButtonPublisherSi.Checked) { "Publisher" } else { "" }
+    $word = if ($radioButtonWordSi.Checked) { "" } else { "Word" }
+    $excel = if ($radioButtonExcelSi.Checked) { "" } else { "Excel" }
+    $powerpoint = if ($radioButtonPowerPointSi.Checked) { "" } else { "PowerPoint" }
+    $acces = if ($radioButtonAccessSi.Checked) { "" } else { "Access" }
+    $onedrive = if ($radioButtonOneDriveSi.Checked) { "" } else { "OneDrive" }
+    $OneNote = if ($radioButtonOneNoteSi.Checked) { "" } else { "OneNote" }
+    $outlook= if ($radioButtonOutlookSi.Checked) { "" } else { "Outlook" }
+    $publisher = if ($radioButtonPublisherSi.Checked) { "" } else { "Publisher" }
     
  if ($VersioneOffice -eq "2021") {
     # Create the configuration XML
@@ -528,7 +531,7 @@ cls
     )
 
     $argumentString = $arguments -join ' '
-    Start-Process -FilePath "$path_to_use\installeroffice.bat" -ArgumentList "$argumentString" 
+    Start-Process -FilePath "$env:TEMP\OfficePersonalizzato\Resources.OfficePersonalizzato.installeroffice.bat" -ArgumentList "$argumentString" 
 
 
 

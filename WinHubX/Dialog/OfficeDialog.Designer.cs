@@ -39,11 +39,12 @@
             btnOfficeOnline64.Cursor = Cursors.Hand;
             btnOfficeOnline64.FlatAppearance.BorderSize = 0;
             btnOfficeOnline64.FlatStyle = FlatStyle.Flat;
-            btnOfficeOnline64.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnOfficeOnline64.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnOfficeOnline64.ForeColor = Color.White;
-            btnOfficeOnline64.Location = new Point(300, 170);
+            btnOfficeOnline64.Location = new Point(262, 128);
+            btnOfficeOnline64.Margin = new Padding(3, 2, 3, 2);
             btnOfficeOnline64.Name = "btnOfficeOnline64";
-            btnOfficeOnline64.Size = new Size(156, 71);
+            btnOfficeOnline64.Size = new Size(136, 53);
             btnOfficeOnline64.TabIndex = 74;
             btnOfficeOnline64.Text = "64bit";
             btnOfficeOnline64.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -55,11 +56,12 @@
             btnOfficeOnline32.Cursor = Cursors.Hand;
             btnOfficeOnline32.FlatAppearance.BorderSize = 0;
             btnOfficeOnline32.FlatStyle = FlatStyle.Flat;
-            btnOfficeOnline32.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnOfficeOnline32.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnOfficeOnline32.ForeColor = Color.White;
-            btnOfficeOnline32.Location = new Point(300, 80);
+            btnOfficeOnline32.Location = new Point(262, 60);
+            btnOfficeOnline32.Margin = new Padding(3, 2, 3, 2);
             btnOfficeOnline32.Name = "btnOfficeOnline32";
-            btnOfficeOnline32.Size = new Size(156, 71);
+            btnOfficeOnline32.Size = new Size(136, 53);
             btnOfficeOnline32.TabIndex = 75;
             btnOfficeOnline32.Text = "32bit";
             btnOfficeOnline32.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -68,28 +70,29 @@
             // 
             // lblOnline
             // 
-            lblOnline.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblOnline.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblOnline.ForeColor = Color.White;
             lblOnline.Image = Properties.Resources.pngOnline;
             lblOnline.ImageAlign = ContentAlignment.MiddleLeft;
-            lblOnline.Location = new Point(50, 180);
+            lblOnline.Location = new Point(28, 149);
             lblOnline.Name = "lblOnline";
-            lblOnline.Size = new Size(211, 71);
+            lblOnline.Size = new Size(185, 53);
             lblOnline.TabIndex = 76;
             lblOnline.Text = "Online";
             lblOnline.TextAlign = ContentAlignment.MiddleRight;
             // 
             // OfficeDialog
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(500, 340);
+            ClientSize = new Size(438, 255);
             Controls.Add(lblOnline);
             Controls.Add(btnOfficeOnline32);
             Controls.Add(btnOfficeOnline64);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             Name = "OfficeDialog";
             Text = "OfficeDialog";
             ResumeLayout(false);

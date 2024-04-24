@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wDu+iGZQ7yiLddCQ1PM5SGfq2xyxFWJTxDX6oyWL6vIMa17w9V2ChGJLeN8HJgfUYpX1TUOwXyoDFJAmxdWHlQ==",
+  "dgSpecHash": "VK2sI9yX+hWBLaQTxG/gzrvGolq8ALbJWNPLCp/CK3cesAsMd+ZUfxbzTkmyDaq8FsOZkG2yoih/kLyKrCPbEw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nico\\Desktop\\WinHubX no imagini\\WinHubX-development powershell corretto\\WinHubX-development\\WinHubX\\WinHubX.csproj",
+  "projectFilePath": "C:\\Users\\Nico\\Desktop\\WinHubX-development\\WinHubX\\WinHubX.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nico\\.nuget\\packages\\jetbrains.annotations\\2021.2.0\\jetbrains.annotations.2021.2.0.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\json.more.net\\1.9.3\\json.more.net.1.9.3.nupkg.sha512",

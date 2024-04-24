@@ -280,9 +280,6 @@ Set-ItemProperty -Path "HKCU:\Control Panel\Accessibility\StickyKeys" "Flags" "5
 Set-ItemProperty -Path "HKCU:\Control Panel\Accessibility\Keyboard Response" "Flags" "122"
 Set-ItemProperty -Path "HKCU:\Control Panel\Accessibility\ToggleKeys" "Flags" "58"
 
-Write-Output "Disable Edge desktop shortcut on new profiles"
-New-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Explorer" -Name DisableEdgeDesktopShortcutCreation -PropertyType DWORD -Value 1
-
 Write-Output "Restoring old volume slider"
 New-FolderForced -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\MTCUVC"
 Set-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\MTCUVC" "EnableMtcUvc" 0
@@ -305,34 +302,6 @@ New-FolderForced -Path "HKLM:\Software\Policies\Microsoft\Windows\Explorer"
 Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\Explorer" "DisableSearchBoxSuggestions" 1
 
 Write-Output "Removing user folders under This PC"
-# Remove Desktop from This PC
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}"
-Remove-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}"
-# Remove Documents from This PC
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A8CDFF1C-4878-43be-B5FD-F8091C1C60D0}"
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{d3162b92-9365-467a-956b-92703aca08af}"
-Remove-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A8CDFF1C-4878-43be-B5FD-F8091C1C60D0}"
-Remove-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{d3162b92-9365-467a-956b-92703aca08af}"
-# Remove Downloads from This PC
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{374DE290-123F-4565-9164-39C4925E467B}"
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{088e3905-0323-4b02-9826-5d99428e115f}"
-Remove-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{374DE290-123F-4565-9164-39C4925E467B}"
-Remove-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{088e3905-0323-4b02-9826-5d99428e115f}"
-# Remove Music from This PC
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{1CF1260C-4DD0-4ebb-811F-33C572699FDE}"
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{3dfdf296-dbec-4fb4-81d1-6a3438bcf4de}"
-Remove-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{1CF1260C-4DD0-4ebb-811F-33C572699FDE}"
-Remove-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{3dfdf296-dbec-4fb4-81d1-6a3438bcf4de}"
-# Remove Pictures from This PC
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{3ADD1653-EB32-4cb0-BBD7-DFA0ABB5ACCA}"
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{24ad3ad4-a569-4530-98e1-ab02f9417aa8}"
-Remove-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{3ADD1653-EB32-4cb0-BBD7-DFA0ABB5ACCA}"
-Remove-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{24ad3ad4-a569-4530-98e1-ab02f9417aa8}"
-# Remove Videos from This PC
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A0953C92-50DC-43bf-BE83-3742FED03C9C}"
-Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{f86fa3ab-70d2-4fc7-9c99-fcbf05467f3a}"
-Remove-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A0953C92-50DC-43bf-BE83-3742FED03C9C}"
-Remove-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{f86fa3ab-70d2-4fc7-9c99-fcbf05467f3a}"
 # Remove 3D Objects from This PC
 Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
 Remove-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
@@ -917,6 +886,96 @@ $registryName = "dontdisplaylastusername"
 
 # Set the registry value to dword:00000000
 New-ItemProperty -Path $registryPath -Name $registryName -Value 0 -PropertyType DWORD -Force
+
+
+function Install-WinGet() {
+
+    $progressPreference = 'silentlyContinue'
+
+    $wc = New-Object net.webclient
+    $msu_url = 'https://aka.ms/getwinget'
+    $local_msu_url = "Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+    $wc.Downloadfile($msu_url, $local_msu_url)
+
+    $wc = New-Object net.webclient
+    $msu_url = 'https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx'
+    $local_msu_url = "Microsoft.VCLibs.x64.14.00.Desktop.appx"
+    $wc.Downloadfile($msu_url, $local_msu_url)
+
+    $wc = New-Object net.webclient
+    $msu_url = 'https://github.com/microsoft/microsoft-ui-xaml/releases/download/v2.8.6/Microsoft.UI.Xaml.2.8.x64.appx'
+    $local_msu_url = "Microsoft.UI.Xaml.2.8.x64.appx"
+    $wc.Downloadfile($msu_url, $local_msu_url)
+
+    Add-AppxPackage Microsoft.VCLibs.x64.14.00.Desktop.appx
+    Add-AppxPackage Microsoft.UI.Xaml.2.8.x64.appx
+    Add-AppxPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+}
+
+if (Test-Path ~\AppData\Local\Microsoft\WindowsApps\winget.exe){
+    Write-Host 'Winget Already Installed'
+    }  
+    else{
+    Write-Host 'Installing Winget'
+    Install-WinGet
+}
+
+# That's the JSON where the configs are stored
+$integratedServicesPath = "C:\Windows\System32\IntegratedServicesRegionPolicySet.json"
+
+if (Test-Path $integratedServicesPath) {
+
+    # Get the permissions (ACL) of the original file
+    $acl = Get-Acl -Path $integratedServicesPath
+
+    # Take ownership of the file
+    takeown /f $integratedServicesPath /a 
+
+    # Grant the full control to be able to edit it
+    icacls $integratedServicesPath /grant Administrators:F
+
+    # Read the JSON
+    $jsonContent = Get-Content $integratedServicesPath | ConvertFrom-Json
+
+    # Edit the JSON to allow uninstall
+    foreach ($policy in $jsonContent.policies) {
+        if ($policy.'$comment' -like "*Edge*" -and $policy.'$comment' -like "*uninstall*") {
+            $policy.defaultState = 'enabled'
+            # Set region to all ISO 3166-1 alpha-2 country codes
+            $allCountryCodes = @("AT", "BE", "BG", "CH", "CY", "CZ", "DE", "DK", "EE", "ES", "FI", "FR", "GF", "GP", "GR", "HR", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MT", "MQ", "NL", "NO", "PL", "PT", "RE", "RO", "SE", "SI", "SK", "YT", "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BF", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "DJ", "DM", "DO", "DZ", "EC", "EG", "EH", "ER", "ET", "FK", "FM", "FO", "GA", "GB", "GD", "GE", "GG", "GH", "GI", "GL", "GM", "GN", "GQ", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HT", "ID", "IL", "IM", "IN", "IO", "IQ", "IR", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LK", "LR", "LS", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MR", "MS", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PM", "PN", "PR", "PS", "PW", "PY", "QA", "RE", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SG", "SH", "SJ", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TT", "TV", "TW", "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW")
+            $policy.conditions.region.enabled = $allCountryCodes
+        }
+    }
+
+    # Write the JSON file to another location to avoid the 'permission denied' error
+    $jsonContent | ConvertTo-Json -Depth 100 | Set-Content -Path "C:\BK_IntegratedServicesRegionPolicySet.json"
+
+    # Move the new JSON file to C:\Windows\System32\IntegratedServicesRegionPolicySet.json
+    Copy-Item C:\BK_IntegratedServicesRegionPolicySet.json C:\Windows\System32\IntegratedServicesRegionPolicySet.json
+
+    # Set the original permissions to the new file
+    Set-Acl -Path $integratedServicesPath -AclObject $acl
+
+    # Kill edge processes
+    Stop-Process -Name "MsEdge" -Force -ErrorAction SilentlyContinue | Out-Null
+
+    # Uninstall with winget
+    winget uninstall "Microsoft Edge" --accept-source-agreements --silent | out-null
+
+    Write-Host "Done, file edited."
+    Write-Host "If Edge is still present, that means you have not installed the KB that enables that feature."
+    Write-Host "Please install the latest updates from Windows Update and retry."
+    
+    Start-Sleep 05
+
+}
+else {
+    # File does not exist
+    Write-Host "The file $integratedServicesPath does not exist. Install the latest updates from windows update and retry!"
+    Start-Sleep 05
+    exit
+}
+
 
 Start-Process -FilePath "C:\Windows\tweaks.bat" -wait
 

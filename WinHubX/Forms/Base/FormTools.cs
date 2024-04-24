@@ -9,9 +9,9 @@ namespace WinHubX
             InitializeComponent();
         }
 
-        private void btnWinC_Click(object sender, EventArgs e)
+        private void btnKasperky_Click(object sender, EventArgs e)
         {
-            DialogWinCustomizer dialogWinC = new DialogWinCustomizer()
+            DialogKasperskyLive dialogWinC = new DialogKasperskyLive()
             {
                 TopMost = true,
                 FormBorderStyle = FormBorderStyle.None,

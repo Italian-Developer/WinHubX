@@ -60,15 +60,15 @@ move "%windir%\SystemApps\Microsoft.Windows.Cortana_cw5n1h2txyewy" "%windir%\Sys
 rem fix indexing was turned off
 sc config wsearch start=auto
 
-regedit /s "C:\windows\lower-ram-usage.reg.reg"
+regedit /s "C:\Windows\lower-ram-usage.reg.reg"
 
 rem disable telemetry
 sc config DiagTrack start=disabled
 sc config dmwappushservice start=disabled
 
 rem copy Attivatore Win
-copy "C:\Windows\WinCustomizerAttivatore.bat" "C:\Users\%username%\Desktop"
-copy "C:\Windows\WinCustomizerStartDebloat.bat" "C:\Users\%username%\Desktop"
+copy "C:\Windows\WinHubXAttivatore.bat" "C:\Users\%username%\Desktop"
+copy "C:\Windows\WinHubXStartDebloat.bat" "C:\Users\%username%\Desktop"
 
 rem disable widgets
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarDa /t REG_DWORD /d 0 /f

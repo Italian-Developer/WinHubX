@@ -42,9 +42,10 @@
             btnBack.FlatAppearance.BorderSize = 0;
             btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.Image = Properties.Resources.pngBackArrow;
-            btnBack.Location = new Point(12, 12);
+            btnBack.Location = new Point(10, 9);
+            btnBack.Margin = new Padding(3, 2, 3, 2);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(55, 55);
+            btnBack.Size = new Size(48, 41);
             btnBack.TabIndex = 7;
             btnBack.UseMnemonic = false;
             btnBack.UseVisualStyleBackColor = true;
@@ -58,10 +59,9 @@
             DisabilitaUtility.ForeColor = Color.White;
             DisabilitaUtility.FormattingEnabled = true;
             DisabilitaUtility.Items.AddRange(new object[] { "Disabilita Background App", "Disabilita Feedback", "Disabilita Advertising ID", "Disabilita Filtro Smart Screen", "Disabilita Wifi Sense", "Disabilita Desktop Remoto", "Disabilita attivazione del Numlock in avvio", "Disabilita News e Interessi", "Disabilita Index File", "Disabilita Edge PDF", "Disabilita Mappe", "Disabilita UWP apps", "Disabilita Esperienze Personalizzate Microsoft" });
-            DisabilitaUtility.Location = new Point(90, 74);
-            DisabilitaUtility.Margin = new Padding(3, 4, 3, 4);
+            DisabilitaUtility.Location = new Point(79, 42);
             DisabilitaUtility.Name = "DisabilitaUtility";
-            DisabilitaUtility.Size = new Size(448, 377);
+            DisabilitaUtility.Size = new Size(392, 312);
             DisabilitaUtility.TabIndex = 8;
             // 
             // AbilitaUtility
@@ -72,10 +72,9 @@
             AbilitaUtility.ForeColor = Color.White;
             AbilitaUtility.FormattingEnabled = true;
             AbilitaUtility.Items.AddRange(new object[] { "Abilita Background App", "Abilita Feedback", "Abilita Advertising ID", "Abilita Filtro Smart Screen", "Abilita Wifi Sense", "Abilita Desktop Remoto", "Abilita attivazione del Numlock in avvio", "Abilita News e Interessi", "Abilita Risparmio Energetico Personalizzato", "Abilita Mappe", "Abilita UWP apps", "Abilita Esperienze Personalizzate Microsoft", "Migliora uso SSD" });
-            AbilitaUtility.Location = new Point(578, 74);
-            AbilitaUtility.Margin = new Padding(3, 4, 3, 4);
+            AbilitaUtility.Location = new Point(506, 44);
             AbilitaUtility.Name = "AbilitaUtility";
-            AbilitaUtility.Size = new Size(431, 377);
+            AbilitaUtility.Size = new Size(377, 312);
             AbilitaUtility.TabIndex = 9;
             // 
             // btnAvviaSelezionatiUti
@@ -85,9 +84,10 @@
             btnAvviaSelezionatiUti.FlatStyle = FlatStyle.Flat;
             btnAvviaSelezionatiUti.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAvviaSelezionatiUti.ForeColor = Color.White;
-            btnAvviaSelezionatiUti.Location = new Point(422, 485);
+            btnAvviaSelezionatiUti.Location = new Point(360, 381);
+            btnAvviaSelezionatiUti.Margin = new Padding(3, 2, 3, 2);
             btnAvviaSelezionatiUti.Name = "btnAvviaSelezionatiUti";
-            btnAvviaSelezionatiUti.Size = new Size(180, 74);
+            btnAvviaSelezionatiUti.Size = new Size(233, 36);
             btnAvviaSelezionatiUti.TabIndex = 23;
             btnAvviaSelezionatiUti.Text = "Avvia Selezionati";
             btnAvviaSelezionatiUti.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -99,9 +99,9 @@
             lblWin7Lite.AutoSize = true;
             lblWin7Lite.Font = new Font("Microsoft Sans Serif", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblWin7Lite.ForeColor = Color.White;
-            lblWin7Lite.Location = new Point(90, 28);
+            lblWin7Lite.Location = new Point(79, 7);
             lblWin7Lite.Name = "lblWin7Lite";
-            lblWin7Lite.Size = new Size(268, 39);
+            lblWin7Lite.Size = new Size(218, 31);
             lblWin7Lite.TabIndex = 24;
             lblWin7Lite.Text = "Disabilita Utility";
             // 
@@ -110,18 +110,18 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(578, 28);
+            label1.Location = new Point(506, 9);
             label1.Name = "label1";
-            label1.Size = new Size(219, 39);
+            label1.Size = new Size(178, 31);
             label1.TabIndex = 25;
             label1.Text = "Abilita Utility";
             // 
             // FormUtility
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(1030, 571);
+            ClientSize = new Size(901, 428);
             Controls.Add(label1);
             Controls.Add(lblWin7Lite);
             Controls.Add(btnAvviaSelezionatiUti);
@@ -129,6 +129,7 @@
             Controls.Add(DisabilitaUtility);
             Controls.Add(btnBack);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FormUtility";
             Text = "FormUtility";
             ResumeLayout(false);

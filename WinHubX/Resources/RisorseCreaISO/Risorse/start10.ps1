@@ -28,7 +28,7 @@ while (-not $success) {
 ########################################################
 
 # check for process
-Write-Host -fore Green 'The debloat process will start shortly, the mouse and keyboard will be disabled until the operations are completed'
+Write-Host -fore Green 'Il processo di debloat inizierà a breve attendi.'
 
 while ($true) {
     $process = Get-Process -Name SecurityHealthSystray -ErrorAction SilentlyContinue

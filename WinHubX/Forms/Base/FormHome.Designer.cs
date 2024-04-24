@@ -34,8 +34,8 @@
             nickSparrow = new PictureBox();
             btnChangelog = new Button();
             btnKofi = new Button();
-            tgNico = new Button();
-            tgGreg = new Button();
+            tgWinHubX = new Button();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)imgHomeLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nickSparrow).BeginInit();
             SuspendLayout();
@@ -43,21 +43,23 @@
             // imgHomeLogo
             // 
             imgHomeLogo.Image = Properties.Resources.homeLogo;
-            imgHomeLogo.Location = new Point(680, 0);
+            imgHomeLogo.Location = new Point(598, 0);
+            imgHomeLogo.Margin = new Padding(3, 2, 3, 2);
             imgHomeLogo.Name = "imgHomeLogo";
-            imgHomeLogo.Size = new Size(350, 245);
+            imgHomeLogo.Size = new Size(303, 175);
+            imgHomeLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             imgHomeLogo.TabIndex = 0;
             imgHomeLogo.TabStop = false;
             // 
             // lblInfoWinAIO64
             // 
             lblInfoWinAIO64.AutoSize = true;
-            lblInfoWinAIO64.Font = new Font("Product Sans", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblInfoWinAIO64.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblInfoWinAIO64.ForeColor = Color.White;
-            lblInfoWinAIO64.Location = new Point(12, 85);
-            lblInfoWinAIO64.MaximumSize = new Size(680, 0);
+            lblInfoWinAIO64.Location = new Point(8, 19);
+            lblInfoWinAIO64.MaximumSize = new Size(595, 0);
             lblInfoWinAIO64.Name = "lblInfoWinAIO64";
-            lblInfoWinAIO64.Size = new Size(677, 324);
+            lblInfoWinAIO64.Size = new Size(595, 234);
             lblInfoWinAIO64.TabIndex = 92;
             lblInfoWinAIO64.Text = resources.GetString("lblInfoWinAIO64.Text");
             lblInfoWinAIO64.TextAlign = ContentAlignment.MiddleLeft;
@@ -65,9 +67,11 @@
             // nickSparrow
             // 
             nickSparrow.Image = Properties.Resources.nicksparrow;
-            nickSparrow.Location = new Point(680, 321);
+            nickSparrow.Location = new Point(643, 247);
+            nickSparrow.Margin = new Padding(3, 2, 3, 2);
             nickSparrow.Name = "nickSparrow";
-            nickSparrow.Size = new Size(350, 146);
+            nickSparrow.Size = new Size(199, 84);
+            nickSparrow.SizeMode = PictureBoxSizeMode.StretchImage;
             nickSparrow.TabIndex = 93;
             nickSparrow.TabStop = false;
             // 
@@ -76,13 +80,14 @@
             btnChangelog.Cursor = Cursors.Hand;
             btnChangelog.FlatAppearance.BorderSize = 0;
             btnChangelog.FlatStyle = FlatStyle.Flat;
-            btnChangelog.Font = new Font("Product Sans", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnChangelog.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnChangelog.ForeColor = Color.Coral;
-            btnChangelog.Location = new Point(698, 251);
+            btnChangelog.Location = new Point(609, 193);
+            btnChangelog.Margin = new Padding(3, 2, 3, 2);
             btnChangelog.Name = "btnChangelog";
-            btnChangelog.Size = new Size(320, 64);
+            btnChangelog.Size = new Size(280, 60);
             btnChangelog.TabIndex = 94;
-            btnChangelog.Text = "v1.0.0.0 - Changelog";
+            btnChangelog.Text = "v2.2.0.0 - Changelog";
             btnChangelog.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnChangelog.UseVisualStyleBackColor = true;
             btnChangelog.Click += btnChangelog_Click;
@@ -92,56 +97,59 @@
             btnKofi.Cursor = Cursors.Hand;
             btnKofi.FlatAppearance.BorderSize = 0;
             btnKofi.FlatStyle = FlatStyle.Flat;
-            btnKofi.Font = new Font("Product Sans", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnKofi.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnKofi.ForeColor = Color.Coral;
             btnKofi.Image = Properties.Resources.pngCoffee;
-            btnKofi.Location = new Point(698, 473);
+            btnKofi.Location = new Point(-2, 278);
+            btnKofi.Margin = new Padding(3, 2, 3, 2);
             btnKofi.Name = "btnKofi";
-            btnKofi.Size = new Size(320, 85);
+            btnKofi.Size = new Size(280, 64);
             btnKofi.TabIndex = 95;
             btnKofi.Text = "se vuoi sostenere il\r\nprogetto, clicca qui!";
             btnKofi.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnKofi.UseVisualStyleBackColor = true;
             btnKofi.Click += btnKofi_Click;
             // 
-            // tgNico
+            // tgWinHubX
             // 
-            tgNico.Cursor = Cursors.Hand;
-            tgNico.FlatStyle = FlatStyle.Flat;
-            tgNico.Image = Properties.Resources.pngTelegram;
-            tgNico.Location = new Point(797, 427);
-            tgNico.Name = "tgNico";
-            tgNico.Size = new Size(26, 26);
-            tgNico.TabIndex = 96;
-            tgNico.UseVisualStyleBackColor = true;
-            tgNico.Click += tgNico_Click;
+            tgWinHubX.Cursor = Cursors.Hand;
+            tgWinHubX.FlatStyle = FlatStyle.Flat;
+            tgWinHubX.ForeColor = Color.FromArgb(37, 38, 39);
+            tgWinHubX.Image = Properties.Resources.pngTelegram;
+            tgWinHubX.Location = new Point(812, 370);
+            tgWinHubX.Margin = new Padding(3, 2, 3, 2);
+            tgWinHubX.Name = "tgWinHubX";
+            tgWinHubX.Size = new Size(57, 43);
+            tgWinHubX.TabIndex = 96;
+            tgWinHubX.UseVisualStyleBackColor = true;
+            tgWinHubX.Click += tgWinHubX_Click;
             // 
-            // tgGreg
+            // label3
             // 
-            tgGreg.Cursor = Cursors.Hand;
-            tgGreg.FlatStyle = FlatStyle.Flat;
-            tgGreg.Image = Properties.Resources.pngTelegram;
-            tgGreg.Location = new Point(829, 427);
-            tgGreg.Name = "tgGreg";
-            tgGreg.Size = new Size(26, 26);
-            tgGreg.TabIndex = 97;
-            tgGreg.UseVisualStyleBackColor = true;
-            tgGreg.Click += tgGreg_Click;
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Coral;
+            label3.Location = new Point(4, 380);
+            label3.Name = "label3";
+            label3.Size = new Size(714, 18);
+            label3.TabIndex = 97;
+            label3.Text = "Per assistenza (problemi WinHubX, come installare ISO, suggerimenti per WinHubX) contattaci su telegram";
             // 
             // FormHome
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(1030, 570);
-            Controls.Add(tgGreg);
-            Controls.Add(tgNico);
+            ClientSize = new Size(901, 428);
+            Controls.Add(tgWinHubX);
+            Controls.Add(label3);
             Controls.Add(btnKofi);
             Controls.Add(btnChangelog);
             Controls.Add(nickSparrow);
             Controls.Add(lblInfoWinAIO64);
             Controls.Add(imgHomeLogo);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FormHome";
             Text = "FormHome";
             ((System.ComponentModel.ISupportInitialize)imgHomeLogo).EndInit();
@@ -157,7 +165,7 @@
         private PictureBox nickSparrow;
         private Button btnChangelog;
         private Button btnKofi;
-        private Button tgNico;
-        private Button tgGreg;
+        private Button tgWinHubX;
+        private Label label3;
     }
 }

@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Management.Automation;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using WinHubX.Forms.Base;
+﻿using WinHubX.Forms.Base;
 
 namespace WinHubX.Forms.Settaggi
 {
@@ -329,12 +319,12 @@ namespace WinHubX.Forms.Settaggi
 
         private void btnUpdateEssential_Click(object sender, EventArgs e)
         {
-                try
+            try
+            {
+                var startInfo = new System.Diagnostics.ProcessStartInfo()
                 {
-                    var startInfo = new System.Diagnostics.ProcessStartInfo()
-                    {
-                        FileName = "powershell.exe",
-                        Arguments = @"
+                    FileName = "powershell.exe",
+                    Arguments = @"
                 Set-ItemProperty -Path ""HKLM:\SOFTWARE\Policies\Microsoft\Windows\Device Metadata"" -Name ""PreventDeviceMetadataFromNetwork"" -Type DWord -Value 1;
                 Set-ItemProperty -Path ""HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching"" -Name ""DontPromptForWindowsUpdate"" -Type DWord -Value 1;
                 Set-ItemProperty -Path ""HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching"" -Name ""DontSearchWindowsUpdate"" -Type DWord -Value 1;
@@ -343,24 +333,24 @@ namespace WinHubX.Forms.Settaggi
                 Set-ItemProperty -Path ""HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU"" -Name ""NoAutoRebootWithLoggedOnUsers"" -Type DWord -Value 1;
                 Set-ItemProperty -Path ""HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU"" -Name ""AUPowerManagement"" -Type DWord -Value 0
             ",
-                        UseShellExecute = false,
-                        CreateNoWindow = true,
-                        RedirectStandardOutput = true,
-                        RedirectStandardError = true
-                    };
+                    UseShellExecute = false,
+                    CreateNoWindow = true,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true
+                };
 
-                    using (var process = System.Diagnostics.Process.Start(startInfo))
-                    {
-                        process.WaitForExit();
-
-                        var output = process.StandardOutput.ReadToEnd();
-                        var error = process.StandardError.ReadToEnd();
-                    }
-                }
-                catch (Exception ex)
+                using (var process = System.Diagnostics.Process.Start(startInfo))
                 {
-                    MessageBox.Show($"An error occurred: {ex.Message}");
+                    process.WaitForExit();
+
+                    var output = process.StandardOutput.ReadToEnd();
+                    var error = process.StandardError.ReadToEnd();
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
             MessageBox.Show("Modifiche apportate con successo", "WinHubX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

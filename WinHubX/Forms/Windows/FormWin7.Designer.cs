@@ -187,7 +187,7 @@
             btnInfoWin7Lite.Cursor = Cursors.Hand;
             btnInfoWin7Lite.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
             btnInfoWin7Lite.ForeColor = Color.Coral;
-            btnInfoWin7Lite.Location = new Point(641, 276);
+            btnInfoWin7Lite.Location = new Point(666, 276);
             btnInfoWin7Lite.Name = "btnInfoWin7Lite";
             btnInfoWin7Lite.Size = new Size(46, 29);
             btnInfoWin7Lite.TabIndex = 25;

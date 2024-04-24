@@ -69,9 +69,10 @@
             btnBack.FlatAppearance.BorderSize = 0;
             btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.Image = Properties.Resources.pngBackArrow;
-            btnBack.Location = new Point(12, 12);
+            btnBack.Location = new Point(10, 9);
+            btnBack.Margin = new Padding(3, 2, 3, 2);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(55, 55);
+            btnBack.Size = new Size(48, 41);
             btnBack.TabIndex = 40;
             btnBack.UseMnemonic = false;
             btnBack.UseVisualStyleBackColor = true;
@@ -82,9 +83,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Italic);
             label3.ForeColor = Color.Coral;
-            label3.Location = new Point(173, 63);
+            label3.Location = new Point(151, 47);
             label3.Name = "label3";
-            label3.Size = new Size(116, 32);
+            label3.Size = new Size(89, 26);
             label3.TabIndex = 53;
             label3.Text = "Taskbar";
             label3.TextAlign = ContentAlignment.BottomCenter;
@@ -94,9 +95,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Italic);
             label1.ForeColor = Color.Coral;
-            label1.Location = new Point(177, 160);
+            label1.Location = new Point(155, 120);
             label1.Name = "label1";
-            label1.Size = new Size(123, 32);
+            label1.Size = new Size(94, 26);
             label1.TabIndex = 56;
             label1.Text = "Orologio";
             label1.TextAlign = ContentAlignment.BottomCenter;
@@ -106,9 +107,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Italic);
             label2.ForeColor = Color.Coral;
-            label2.Location = new Point(737, 63);
+            label2.Location = new Point(645, 47);
             label2.Name = "label2";
-            label2.Size = new Size(73, 32);
+            label2.Size = new Size(59, 26);
             label2.TabIndex = 59;
             label2.Text = "UAC";
             label2.TextAlign = ContentAlignment.BottomCenter;
@@ -118,9 +119,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Italic);
             label4.ForeColor = Color.Coral;
-            label4.Location = new Point(702, 160);
+            label4.Location = new Point(614, 122);
             label4.Name = "label4";
-            label4.Size = new Size(175, 32);
+            label4.Size = new Size(135, 26);
             label4.TabIndex = 62;
             label4.Text = "Tasto Destro";
             label4.TextAlign = ContentAlignment.BottomCenter;
@@ -130,9 +131,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Italic);
             label5.ForeColor = Color.Coral;
-            label5.Location = new Point(95, 248);
+            label5.Location = new Point(83, 189);
             label5.Name = "label5";
-            label5.Size = new Size(286, 32);
+            label5.Size = new Size(221, 26);
             label5.TabIndex = 65;
             label5.Text = "Risparmio Energetico";
             label5.TextAlign = ContentAlignment.BottomCenter;
@@ -142,9 +143,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Italic);
             label6.ForeColor = Color.Coral;
-            label6.Location = new Point(687, 255);
+            label6.Location = new Point(601, 196);
             label6.Name = "label6";
-            label6.Size = new Size(217, 32);
+            label6.Size = new Size(167, 26);
             label6.TabIndex = 68;
             label6.Text = "Sposta/Muovi in";
             label6.TextAlign = ContentAlignment.BottomCenter;
@@ -154,9 +155,9 @@
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Italic);
             label7.ForeColor = Color.Coral;
-            label7.Location = new Point(72, 358);
+            label7.Location = new Point(63, 268);
             label7.Name = "label7";
-            label7.Size = new Size(378, 32);
+            label7.Size = new Size(289, 26);
             label7.TabIndex = 71;
             label7.Text = "Setta configurazione Internet";
             label7.TextAlign = ContentAlignment.BottomCenter;
@@ -166,9 +167,9 @@
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Italic);
             label8.ForeColor = Color.Coral;
-            label8.Location = new Point(698, 345);
+            label8.Location = new Point(611, 264);
             label8.Name = "label8";
-            label8.Size = new Size(201, 32);
+            label8.Size = new Size(156, 26);
             label8.TabIndex = 73;
             label8.Text = "Admin Cartella";
             label8.TextAlign = ContentAlignment.BottomCenter;
@@ -180,9 +181,10 @@
             btnAvviaSelezionatiPersonal.FlatStyle = FlatStyle.Flat;
             btnAvviaSelezionatiPersonal.Font = new Font("Microsoft Sans Serif", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAvviaSelezionatiPersonal.ForeColor = Color.White;
-            btnAvviaSelezionatiPersonal.Location = new Point(387, 422);
+            btnAvviaSelezionatiPersonal.Location = new Point(339, 316);
+            btnAvviaSelezionatiPersonal.Margin = new Padding(3, 2, 3, 2);
             btnAvviaSelezionatiPersonal.Name = "btnAvviaSelezionatiPersonal";
-            btnAvviaSelezionatiPersonal.Size = new Size(318, 90);
+            btnAvviaSelezionatiPersonal.Size = new Size(278, 68);
             btnAvviaSelezionatiPersonal.TabIndex = 75;
             btnAvviaSelezionatiPersonal.Text = "Avvia Selezionati";
             btnAvviaSelezionatiPersonal.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -193,9 +195,11 @@
             // 
             tasbarsin.AutoSize = true;
             tasbarsin.Font = new Font("Segoe UI", 12F);
-            tasbarsin.Location = new Point(6, 15);
+            tasbarsin.ForeColor = Color.White;
+            tasbarsin.Location = new Point(5, 11);
+            tasbarsin.Margin = new Padding(3, 2, 3, 2);
             tasbarsin.Name = "tasbarsin";
-            tasbarsin.Size = new Size(167, 32);
+            tasbarsin.Size = new Size(136, 25);
             tasbarsin.TabIndex = 76;
             tasbarsin.TabStop = true;
             tasbarsin.Text = "Taskbar Sinistra";
@@ -205,9 +209,11 @@
             // 
             taskbarcen.AutoSize = true;
             taskbarcen.Font = new Font("Segoe UI", 12F);
-            taskbarcen.Location = new Point(216, 15);
+            taskbarcen.ForeColor = Color.White;
+            taskbarcen.Location = new Point(189, 11);
+            taskbarcen.Margin = new Padding(3, 2, 3, 2);
             taskbarcen.Name = "taskbarcen";
-            taskbarcen.Size = new Size(175, 32);
+            taskbarcen.Size = new Size(142, 25);
             taskbarcen.TabIndex = 77;
             taskbarcen.TabStop = true;
             taskbarcen.Text = "Taskbar Centrale";
@@ -218,9 +224,11 @@
             groupBox1.Controls.Add(tasbarsin);
             groupBox1.Controls.Add(taskbarcen);
             groupBox1.FlatStyle = FlatStyle.Flat;
-            groupBox1.Location = new Point(41, 91);
+            groupBox1.Location = new Point(36, 68);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(434, 58);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(380, 44);
             groupBox1.TabIndex = 78;
             groupBox1.TabStop = false;
             // 
@@ -229,9 +237,11 @@
             groupBox2.Controls.Add(orologion);
             groupBox2.Controls.Add(orologiom);
             groupBox2.FlatStyle = FlatStyle.Flat;
-            groupBox2.Location = new Point(41, 189);
+            groupBox2.Location = new Point(36, 142);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(444, 52);
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(388, 39);
             groupBox2.TabIndex = 79;
             groupBox2.TabStop = false;
             // 
@@ -239,9 +249,11 @@
             // 
             orologion.AutoSize = true;
             orologion.Font = new Font("Segoe UI", 12F);
-            orologion.Location = new Point(6, 15);
+            orologion.ForeColor = Color.White;
+            orologion.Location = new Point(5, 11);
+            orologion.Margin = new Padding(3, 2, 3, 2);
             orologion.Name = "orologion";
-            orologion.Size = new Size(190, 32);
+            orologion.Size = new Size(152, 25);
             orologion.TabIndex = 76;
             orologion.TabStop = true;
             orologion.Text = "Nascondi Secondi";
@@ -251,9 +263,11 @@
             // 
             orologiom.AutoSize = true;
             orologiom.Font = new Font("Segoe UI", 12F);
-            orologiom.Location = new Point(216, 14);
+            orologiom.ForeColor = Color.White;
+            orologiom.Location = new Point(189, 10);
+            orologiom.Margin = new Padding(3, 2, 3, 2);
             orologiom.Name = "orologiom";
-            orologiom.Size = new Size(170, 32);
+            orologiom.Size = new Size(136, 25);
             orologiom.TabIndex = 77;
             orologiom.TabStop = true;
             orologiom.Text = "Mostra Secondi";
@@ -264,9 +278,11 @@
             groupBox3.Controls.Add(prestazioniel);
             groupBox3.Controls.Add(prestazioniec);
             groupBox3.FlatStyle = FlatStyle.Flat;
-            groupBox3.Location = new Point(41, 277);
+            groupBox3.Location = new Point(36, 211);
+            groupBox3.Margin = new Padding(3, 2, 3, 2);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(434, 59);
+            groupBox3.Padding = new Padding(3, 2, 3, 2);
+            groupBox3.Size = new Size(380, 44);
             groupBox3.TabIndex = 80;
             groupBox3.TabStop = false;
             // 
@@ -274,9 +290,11 @@
             // 
             prestazioniel.AutoSize = true;
             prestazioniel.Font = new Font("Segoe UI", 12F);
-            prestazioniel.Location = new Point(6, 15);
+            prestazioniel.ForeColor = Color.White;
+            prestazioniel.Location = new Point(5, 11);
+            prestazioniel.Margin = new Padding(3, 2, 3, 2);
             prestazioniel.Name = "prestazioniel";
-            prestazioniel.Size = new Size(195, 32);
+            prestazioniel.Size = new Size(157, 25);
             prestazioniel.TabIndex = 76;
             prestazioniel.TabStop = true;
             prestazioniel.Text = "Prestazioni Elevate";
@@ -286,9 +304,11 @@
             // 
             prestazioniec.AutoSize = true;
             prestazioniec.Font = new Font("Segoe UI", 12F);
-            prestazioniec.Location = new Point(216, 15);
+            prestazioniec.ForeColor = Color.White;
+            prestazioniec.Location = new Point(189, 11);
+            prestazioniec.Margin = new Padding(3, 2, 3, 2);
             prestazioniec.Name = "prestazioniec";
-            prestazioniec.Size = new Size(214, 32);
+            prestazioniec.Size = new Size(172, 25);
             prestazioniec.TabIndex = 77;
             prestazioniec.TabStop = true;
             prestazioniec.Text = "Prestazioni Eccellenti";
@@ -298,9 +318,11 @@
             // 
             prestazionimi.AutoSize = true;
             prestazionimi.Font = new Font("Segoe UI", 12F);
-            prestazionimi.Location = new Point(144, 393);
+            prestazionimi.ForeColor = Color.White;
+            prestazionimi.Location = new Point(126, 295);
+            prestazionimi.Margin = new Padding(3, 2, 3, 2);
             prestazionimi.Name = "prestazionimi";
-            prestazionimi.Size = new Size(202, 32);
+            prestazionimi.Size = new Size(162, 25);
             prestazionimi.TabIndex = 81;
             prestazionimi.TabStop = true;
             prestazionimi.Text = "Prestazioni Migliori";
@@ -311,9 +333,11 @@
             groupBox4.Controls.Add(uacdis);
             groupBox4.Controls.Add(uacatti);
             groupBox4.FlatStyle = FlatStyle.Flat;
-            groupBox4.Location = new Point(566, 91);
+            groupBox4.Location = new Point(495, 68);
+            groupBox4.Margin = new Padding(3, 2, 3, 2);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(434, 58);
+            groupBox4.Padding = new Padding(3, 2, 3, 2);
+            groupBox4.Size = new Size(380, 44);
             groupBox4.TabIndex = 81;
             groupBox4.TabStop = false;
             // 
@@ -321,9 +345,11 @@
             // 
             uacdis.AutoSize = true;
             uacdis.Font = new Font("Segoe UI", 12F);
-            uacdis.Location = new Point(6, 17);
+            uacdis.ForeColor = Color.White;
+            uacdis.Location = new Point(5, 13);
+            uacdis.Margin = new Padding(3, 2, 3, 2);
             uacdis.Name = "uacdis";
-            uacdis.Size = new Size(153, 32);
+            uacdis.Size = new Size(123, 25);
             uacdis.TabIndex = 76;
             uacdis.TabStop = true;
             uacdis.Text = "Disattiva UAC";
@@ -333,9 +359,11 @@
             // 
             uacatti.AutoSize = true;
             uacatti.Font = new Font("Segoe UI", 12F);
-            uacatti.Location = new Point(216, 17);
+            uacatti.ForeColor = Color.White;
+            uacatti.Location = new Point(189, 13);
+            uacatti.Margin = new Padding(3, 2, 3, 2);
             uacatti.Name = "uacatti";
-            uacatti.Size = new Size(134, 32);
+            uacatti.Size = new Size(107, 25);
             uacatti.TabIndex = 77;
             uacatti.TabStop = true;
             uacatti.Text = "Abilita UAC";
@@ -346,9 +374,11 @@
             groupBox5.Controls.Add(destroleg);
             groupBox5.Controls.Add(destrodef);
             groupBox5.FlatStyle = FlatStyle.Flat;
-            groupBox5.Location = new Point(566, 186);
+            groupBox5.Location = new Point(495, 143);
+            groupBox5.Margin = new Padding(3, 2, 3, 2);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(434, 55);
+            groupBox5.Padding = new Padding(3, 2, 3, 2);
+            groupBox5.Size = new Size(380, 41);
             groupBox5.TabIndex = 82;
             groupBox5.TabStop = false;
             // 
@@ -356,9 +386,11 @@
             // 
             destroleg.AutoSize = true;
             destroleg.Font = new Font("Segoe UI", 12F);
-            destroleg.Location = new Point(6, 15);
+            destroleg.ForeColor = Color.White;
+            destroleg.Location = new Point(5, 11);
+            destroleg.Margin = new Padding(3, 2, 3, 2);
             destroleg.Name = "destroleg";
-            destroleg.Size = new Size(206, 32);
+            destroleg.Size = new Size(165, 25);
             destroleg.TabIndex = 76;
             destroleg.TabStop = true;
             destroleg.Text = "Tasto Destro Legacy";
@@ -368,21 +400,25 @@
             // 
             destrodef.AutoSize = true;
             destrodef.Font = new Font("Segoe UI", 12F);
-            destrodef.Location = new Point(216, 15);
+            destrodef.ForeColor = Color.White;
+            destrodef.Location = new Point(189, 11);
+            destrodef.Margin = new Padding(3, 2, 3, 2);
             destrodef.Name = "destrodef";
-            destrodef.Size = new Size(211, 32);
+            destrodef.Size = new Size(167, 25);
             destrodef.TabIndex = 77;
             destrodef.TabStop = true;
-            destrodef.Text = "Tasto Destro Defoult";
+            destrodef.Text = "Tasto Destro Default";
             destrodef.UseVisualStyleBackColor = true;
             // 
             // spostain
             // 
             spostain.AutoSize = true;
             spostain.Font = new Font("Segoe UI", 12F);
-            spostain.Location = new Point(652, 287);
+            spostain.ForeColor = Color.White;
+            spostain.Location = new Point(570, 220);
+            spostain.Margin = new Padding(3, 2, 3, 2);
             spostain.Name = "spostain";
-            spostain.Size = new Size(264, 32);
+            spostain.Size = new Size(209, 25);
             spostain.TabIndex = 83;
             spostain.TabStop = true;
             spostain.Text = "Aggiungi Sposta/Muovi in";
@@ -392,9 +428,11 @@
             // 
             admincartella.AutoSize = true;
             admincartella.Font = new Font("Segoe UI", 12F);
-            admincartella.Location = new Point(668, 377);
+            admincartella.ForeColor = Color.White;
+            admincartella.Location = new Point(584, 288);
+            admincartella.Margin = new Padding(3, 2, 3, 2);
             admincartella.Name = "admincartella";
-            admincartella.Size = new Size(248, 32);
+            admincartella.Size = new Size(198, 25);
             admincartella.TabIndex = 84;
             admincartella.TabStop = true;
             admincartella.Text = "Aggiungi Admin Cartella";
@@ -402,10 +440,10 @@
             // 
             // FormPersonalizzazione
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(1012, 524);
+            ClientSize = new Size(886, 393);
             Controls.Add(admincartella);
             Controls.Add(spostain);
             Controls.Add(groupBox5);
@@ -425,6 +463,7 @@
             Controls.Add(label4);
             Controls.Add(btnBack);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FormPersonalizzazione";
             Text = "FormPersonalizzazione";
             groupBox1.ResumeLayout(false);

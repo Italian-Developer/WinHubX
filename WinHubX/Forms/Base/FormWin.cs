@@ -110,7 +110,7 @@ namespace WinHubX
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
-                    FileName = "https://devuploads.com/6ox2vrmqtp03",
+                    FileName = "https://devuploads.com/ucpfdcbe6bl3",
                     UseShellExecute = true
                 };
                 Process.Start(psi);

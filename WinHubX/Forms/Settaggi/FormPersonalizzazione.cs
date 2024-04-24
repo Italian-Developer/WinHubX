@@ -1,16 +1,7 @@
 ﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Management.Automation.Runspaces;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using WinHubX.Forms.Base;
+
 
 namespace WinHubX.Forms.Personalizzazione
 {
@@ -83,7 +74,6 @@ namespace WinHubX.Forms.Personalizzazione
                 process.Start();
                 process.WaitForExit();
                 string output = process.StandardOutput.ReadToEnd();
-                Console.WriteLine(output);
             }
             else if (orologiom.Checked)
             {
@@ -100,7 +90,6 @@ namespace WinHubX.Forms.Personalizzazione
                 process.Start();
                 process.WaitForExit();
                 string output = process.StandardOutput.ReadToEnd();
-                Console.WriteLine(output);
             }
             else if (orologiom.Checked)
             {
@@ -117,7 +106,6 @@ namespace WinHubX.Forms.Personalizzazione
                 process.Start();
                 process.WaitForExit();
                 string output = process.StandardOutput.ReadToEnd();
-                Console.WriteLine(output);
             }
             else if (prestazioniel.Checked)
             {
@@ -134,10 +122,6 @@ namespace WinHubX.Forms.Personalizzazione
                 process.WaitForExit();
                 string output = process.StandardOutput.ReadToEnd();
                 string error = process.StandardError.ReadToEnd();
-                Console.WriteLine("Output:");
-                Console.WriteLine(output);
-                Console.WriteLine("Error:");
-                Console.WriteLine(error);
             }
             else if (prestazioniec.Checked)
             {
@@ -154,10 +138,6 @@ namespace WinHubX.Forms.Personalizzazione
                 process.WaitForExit();
                 string output = process.StandardOutput.ReadToEnd();
                 string error = process.StandardError.ReadToEnd();
-                Console.WriteLine("Output:");
-                Console.WriteLine(output);
-                Console.WriteLine("Error:");
-                Console.WriteLine(error);
             }
             else if (prestazionimi.Checked)
             {
@@ -184,61 +164,16 @@ namespace WinHubX.Forms.Personalizzazione
                     process.WaitForExit();
                     string output = process.StandardOutput.ReadToEnd();
                     string error = process.StandardError.ReadToEnd();
-                    Console.WriteLine("Output:");
-                    Console.WriteLine(output);
-                    Console.WriteLine("Error:");
-                    Console.WriteLine(error);
                 }
-
                 Console.ReadLine();
             }
             else if (uacdis.Checked)
             {
-                string command = "cmd.exe";
-                string args = "/c reg add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System /v EnableLUA /t REG_DWORD /d 0 /f";
-
-                ProcessStartInfo psi = new ProcessStartInfo(command, args)
-                {
-                    CreateNoWindow = true,
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true
-                };
-
-                Process process = Process.Start(psi);
-                process.WaitForExit();
-
-                string output = process.StandardOutput.ReadToEnd();
-                string error = process.StandardError.ReadToEnd();
-
-                Console.WriteLine("Output:");
-                Console.WriteLine(output);
-                Console.WriteLine("Error:");
-                Console.WriteLine(error);
+                Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System", "EnableLUA", 0, RegistryValueKind.DWord);
             }
             else if (uacatti.Checked)
             {
-                string command = "cmd.exe";
-                string args = "/c reg add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System /v EnableLUA /t REG_DWORD /d 1 /f";
-
-                ProcessStartInfo psi = new ProcessStartInfo(command, args)
-                {
-                    CreateNoWindow = true,
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true
-                };
-
-                Process process = Process.Start(psi);
-                process.WaitForExit();
-
-                string output = process.StandardOutput.ReadToEnd();
-                string error = process.StandardError.ReadToEnd();
-
-                Console.WriteLine("Output:");
-                Console.WriteLine(output);
-                Console.WriteLine("Error:");
-                Console.WriteLine(error);
+                Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System", "EnableLUA", 1, RegistryValueKind.DWord);
             }
             else if (destroleg2.Checked)
             {
@@ -254,7 +189,7 @@ namespace WinHubX.Forms.Personalizzazione
 
                 if (output.Contains("Windows 10"))
                 {
-                    Console.WriteLine("Funzione abilitata solo per Windows 11");
+                    MessageBox.Show("Funzione abilitata solo per Windows 11");
                 }
                 else
                 {
@@ -279,17 +214,18 @@ namespace WinHubX.Forms.Personalizzazione
 
                 if (output.Contains("Windows 10"))
                 {
-                    Console.WriteLine("Funzione abilitata solo per Windows 11");
+                    MessageBox.Show("Funzione abilitata solo per Windows 11");
                 }
                 else
                 {
-                    Console.WriteLine("Ripristino il tasto destro del mouse");
+                    MessageBox.Show("Ripristino il tasto destro del mouse");
                     ProcessStartInfo psi = new ProcessStartInfo("cmd.exe", "/c \"reg delete HKCU\\SOFTWARE\\CLASSES\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2} /f\"");
                     Process.Start(psi).WaitForExit();
                     Process.Start("taskkill", "/F /IM explorer.exe").WaitForExit();
                     Process.Start("explorer.exe");
                 }
             }
+            MessageBox.Show("Modifiche apportate con successo", "WinHubX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

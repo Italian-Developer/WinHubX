@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_LastSelectedProfileId>C:\Users\Nico\Downloads\WinHubX-development powershell corretto %281%29\WinHubX-development powershell corretto\WinHubX-development\WinHubX\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+    <_LastSelectedProfileId>C:\Users\Nico\Desktop\WinHubX-development\WinHubX\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="Dialog\InfoDialog.cs">
@@ -10,10 +10,16 @@
     <Compile Update="Dialog\OfficeDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Dialog\PacManDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Dialog\Tools\DialogCheckHW.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Dialog\Tools\DialogDaRT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialog\Tools\DialogKasperskyLive.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Dialog\Tools\DialogMsPCManager.cs">
@@ -28,9 +34,6 @@
     <Compile Update="Dialog\Tools\DialogWIMToolKit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Dialog\Tools\DialogWinCustomizer.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\Base\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -38,6 +41,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Base\FormHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Base\FormMonitoraggio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Base\FormOffice.cs">
@@ -50,6 +56,15 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Base\FormWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Bottoni\BottoniSwap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Forms\Bottoni\CircularProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Forms\ReinstallaAPP\FormReinstallaAPP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Settaggi\FormPersonalizzazione.cs">
@@ -88,5 +103,10 @@
     <Compile Update="Forms\Windows\FormWinAiO_64.cs">
       <SubType>Form</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
