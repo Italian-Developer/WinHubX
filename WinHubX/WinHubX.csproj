@@ -9,49 +9,106 @@
 	  <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
     <ApplicationManifest>app1.manifest</ApplicationManifest>
     <ApplicationIcon>Images\icoLogoWhite.ico</ApplicationIcon>
-    <AssemblyVersion>1.0.0.1</AssemblyVersion>
-    <FileVersion>1.0.0.1</FileVersion>
+    <AssemblyVersion>2.2.0.0</AssemblyVersion>
+    <FileVersion>2.2.0.0</FileVersion>
+	<ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Images\btnAIO.png" />
     <None Remove="Images\btnAIOVect.png" />
+    <None Remove="Images\computer-icons-question-mark-button-png-favpng-E45T7eWVvJxHqczEgbdu26ig4.png" />
     <None Remove="Images\extWIMToolkit.png" />
     <None Remove="Images\extWinCustomizer.png" />
+    <None Remove="Images\help.png" />
     <None Remove="Images\homeLogo.png" />
     <None Remove="Images\icoLogoWhite.ico" />
     <None Remove="Images\nicksparrow.png" />
     <None Remove="Images\png365.png" />
+    <None Remove="Images\pngAttivaOffice.png" />
+    <None Remove="Images\pngAttivaWin.png" />
+    <None Remove="Images\pngAttivaWSA.png" />
+    <None Remove="Images\pngAttivaWSL.png" />
     <None Remove="Images\pngBackArrow.png" />
+    <None Remove="Images\pngCambioEdizione.png" />
     <None Remove="Images\pngClose.png" />
     <None Remove="Images\pngCoffee.png" />
+    <None Remove="Images\pngCreaISO.png" />
     <None Remove="Images\pngDaRT.png" />
+    <None Remove="Images\pngDebloat.png" />
+    <None Remove="Images\pngDefenderWin.png" />
+    <None Remove="Images\pngDisinstallaOffice.png" />
+    <None Remove="Images\pngDomanda.png" />
     <None Remove="Images\pngHome.png" />
+    <None Remove="Images\pngKasperskyLive.png" />
     <None Remove="Images\pngLogoWHX.png" />
     <None Remove="Images\pngMinimize.png" />
+    <None Remove="Images\pngMonitoraggio.png" />
     <None Remove="Images\pngMPM.png" />
     <None Remove="Images\pngOffice.png" />
+    <None Remove="Images\pngOfficeHome.png" />
+    <None Remove="Images\pngOfficenuovo.png" />
     <None Remove="Images\pngOffline.png" />
     <None Remove="Images\pngOnline.png" />
+    <None Remove="Images\pngPersonalizzaOffice.png" />
+    <None Remove="Images\pngPersonalizzazione.png" />
+    <None Remove="Images\pngPrivacy.png" />
+    <None Remove="Images\pngRipristinaWindows.png" />
+    <None Remove="Images\pngSettaggi.png" />
     <None Remove="Images\pngTelegram.png" />
     <None Remove="Images\pngTools.png" />
+    <None Remove="Images\pngUpdateWin.png" />
+    <None Remove="Images\pngUtility.png" />
     <None Remove="Images\pngWin.png" />
     <None Remove="Images\pngWin10.png" />
     <None Remove="Images\pngWin7.png" />
     <None Remove="Images\pngWin8dot1.png" />
+    <None Remove="Images\pngWindows.png" />
+    <None Remove="Images\pngWindows11.png" />
     <None Remove="Images\pngWinLive.png" />
     <None Remove="Images\pngWinWhat.png" />
+    <None Remove="Images\pngWSA.png" />
     <None Remove="Images\pngXtndLogo_WinHubX.png" />
     <None Remove="Images\Rufus-4Lite.png" />
     <None Remove="Resources\CheckHW.bat" />
     <None Remove="Resources\DriverRST.zip" />
     <None Remove="Resources\icoWinHubX.ico" />
     <None Remove="Resources\MSPCManagerSetup.exe" />
+    <None Remove="Resources\OfficePersonalizzato\OfficeMaker.ps1" />
+    <None Remove="Resources\PowerRun.exe" />
     <None Remove="Resources\Product Sans Black.ttf" />
     <None Remove="Resources\Product Sans.ttf" />
+    <None Remove="Resources\RisorseCreaISO\ISOMaker.ps1" />
+    <None Remove="Resources\RisorseCreaISO\isotool10.bat" />
+    <None Remove="Resources\RisorseCreaISO\isotool11.bat" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\7z.dll" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\7z.exe" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\lower-ram-usage.reg" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\OperaGXSetup.exe" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\oscdimg.exe" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\PowerRun.exe" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\PowerRunEdge.exe" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\start.ps1" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\start10.ps1" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\tweaks.bat" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\tweaks10.bat" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\unattend.xml" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\unattend10.xml" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\unattendstock.xml" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\unpin_start_tiles.ps1" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\WinHubXAttivatore.bat" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\WinHubXDebloat3.0.ps1" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\WinHubXStartDebloat.bat" />
+    <None Remove="Resources\RisorseCreaISO\WinHubXOfficeScrubber.ps1" />
     <None Remove="Resources\Rufus4Lite.exe" />
     <None Remove="Resources\WIMToolkit.ps1" />
     <None Remove="Resources\WinCustomizer.ps1" />
+    <None Remove="Resources\WinHubXCambioEdizione.bat" />
+    <None Remove="Resources\WinHubXOfficeAttivatore.cmd" />
+    <None Remove="Resources\WinHubXOfficeScrubber.ps1" />
+    <None Remove="Resources\WinHubXScrubber.cmd" />
+    <None Remove="Resources\WinHubXWindowsAttivatore.bat" />
+    <None Remove="Resources\WinHubXWSL.ps1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,6 +121,9 @@
     <Content Include="Images\extWIMToolkit.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\help.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\homeLogo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -71,6 +131,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\png365.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngAttivaOffice.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pngBackArrow.png">
@@ -82,7 +145,19 @@
     <Content Include="Images\pngCoffee.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\pngDefenderWin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngDisinstallaOffice.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngDomanda.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\pngHome.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngKasperskyLive.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pngLogoWHX.png">
@@ -91,7 +166,13 @@
     <Content Include="Images\pngMinimize.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\pngMonitoraggio.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\pngMPM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngOfficeHome.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pngOffline.png">
@@ -100,10 +181,19 @@
     <Content Include="Images\pngOnline.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\pngRipristinaWindows.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\pngTelegram.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pngTools.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngUpdateWin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngUtility.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pngWin10.png">
@@ -115,16 +205,58 @@
     <Content Include="Images\pngWin8dot1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\pngWindows.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\pngWinLive.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pngWinWhat.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\pngWSA.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\pngXtndLogo_WinHubX.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Rufus-4Lite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngAttivaWin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngCreaISO.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngDebloat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngOfficenuovo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngPrivacy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngSettaggi.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngAttivaWSA.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngAttivaWSL.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngCambioEdizione.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngPersonalizzaOffice.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngPersonalizzazione.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngWindows11.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="Resources\CheckHW.bat">
@@ -136,7 +268,70 @@
     <EmbeddedResource Include="Resources\MSPCManagerSetup.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\PowerRun.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Product Sans.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\ISOMaker.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\isotool10.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\isotool11.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\7z.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\7z.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\lower-ram-usage.reg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\OperaGXSetup.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\oscdimg.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\PowerRun.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\start.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\start10.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\tweaks.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\tweaks10.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\unattend.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\unattend10.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\unattendstock.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\unpin_start_tiles.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\WinHubXAttivatore.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\WinHubXDebloat3.0.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\WinHubXStartDebloat.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Rufus4Lite.exe">
@@ -145,15 +340,6 @@
     <EmbeddedResource Include="Resources\WIMToolkit.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\WinCustomizer.ps1">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Images\extWinCustomizer.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -181,6 +367,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\bin.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\installeroffice.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\OfficeMaker.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="Resources\icoWinHubX.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -190,6 +388,32 @@
     <EmbeddedResource Include="Resources\Product Sans Black.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinHubXCambioEdizione.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinHubXOfficeAttivatore.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinHubXOfficeScrubber.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinHubXWindowsAttivatore.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinHubXWSL.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.PowerShell.Commands.Diagnostics" Version="7.4.1" />
+    <PackageReference Include="Microsoft.PowerShell.Commands.Management" Version="7.4.1" />
+    <PackageReference Include="Microsoft.PowerShell.Commands.Utility" Version="7.4.1" />
+    <PackageReference Include="Microsoft.PowerShell.ConsoleHost" Version="7.4.1" />
+    <PackageReference Include="Microsoft.PowerShell.Native" Version="7.4.0" />
+    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.4.1" />
+    <PackageReference Include="Microsoft.WSMan.Management" Version="7.4.1" />
+    <PackageReference Include="System.Management.Automation" Version="7.4.1" />
   </ItemGroup>
 
   <ItemGroup>

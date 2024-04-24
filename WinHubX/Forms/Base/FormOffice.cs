@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using System.Windows.Forms;
+using System.Reflection;
 using WinHubX.Dialog;
 
 namespace WinHubX
@@ -21,8 +21,8 @@ namespace WinHubX
 
         private void btn2019Online_MouseUp(object sender, MouseEventArgs e)
         {
-            string link32 = "https://devuploads.com/j54kwwrnvp4u";
-            string link64 = "https://devuploads.com/csiym2wcpt1a";
+            string link32 = "https://devuploads.com/dd4c73vcnsk1";
+            string link64 = "https://devuploads.com/8xy39zy1jaev";
 
             OfficeDialog officeDialog = new OfficeDialog()
             {
@@ -51,7 +51,7 @@ namespace WinHubX
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/kpt0aq3upwna",
+                        FileName = "https://devuploads.com/nqsmxo5pf47p",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
@@ -68,8 +68,8 @@ namespace WinHubX
 
         private void btn2021Online_MouseUp(object sender, MouseEventArgs e)
         {
-            string link32 = "https://devuploads.com/fpxdppf0h9de";
-            string link64 = "https://devuploads.com/wcpw4r122iyv";
+            string link32 = "https://devuploads.com/7n1zl4y08idi";
+            string link64 = "https://devuploads.com/zz26itbug7ib";
 
             OfficeDialog officeDialog = new OfficeDialog()
             {
@@ -98,7 +98,7 @@ namespace WinHubX
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/bqsp7cy0y1wg",
+                        FileName = "https://devuploads.com/xokgnvikk8w0",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
@@ -115,8 +115,8 @@ namespace WinHubX
 
         private void btn365Online_MouseUp(object sender, MouseEventArgs e)
         {
-            string link32 = "https://devuploads.com/fy2fj55lw2fn";
-            string link64 = "https://devuploads.com/1bn3rduod37y";
+            string link32 = "https://devuploads.com/lbk9qknvueqf";
+            string link64 = "https://devuploads.com/tr1vgi78kk57";
 
             OfficeDialog officeDialog = new OfficeDialog()
             {
@@ -145,7 +145,7 @@ namespace WinHubX
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/dndqpvijw15v",
+                        FileName = "https://devuploads.com/qrawhfz7hk6s",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
@@ -208,5 +208,157 @@ namespace WinHubX
 
         #endregion
 
+        #region AttivaOffice
+        private void btnAttivaOffice_Click(object sender, EventArgs e)
+        {
+            string fileName = "WinHubXOfficeAttivatore.cmd";
+            string resourceName = "WinHubX.Resources.WinHubXOfficeAttivatore.cmd"; string tempPath = Path.GetTempPath();
+            string tempFilePath = Path.Combine(tempPath, fileName);
+            try
+            {
+                using (Stream resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
+                {
+                    if (resourceStream != null)
+                    {
+                        using (FileStream fileStream = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write))
+                        {
+                            resourceStream.CopyTo(fileStream);
+                        }
+                    }
+                }
+                Process.Start(tempFilePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Errore nell'avviare l'applicazione: {ex.Message}");
+            }
+        }
+        #endregion
+
+        private void btn2021Online_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnScrubber_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+                string resourcePath = $"{assemblyName}.Resources.WinHubXOfficeScrubber.ps1";
+                byte[] exeBytes = LoadEmbeddedResource(resourcePath);
+                string ps1FilePath = Path.Combine(Path.GetTempPath(), "WinHubXOfficeScrubber.ps1");
+                File.WriteAllBytes(ps1FilePath, exeBytes);
+                StartPowerShell(ps1FilePath);
+            }
+            finally { }
+        }
+
+        private byte[] LoadEmbeddedResource(string resourcePath)
+        {
+            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcePath))
+            {
+                if (stream == null)
+                {
+                    throw new InvalidOperationException($"Could not find embedded resource: {resourcePath}");
+                }
+                byte[] buffer = new byte[stream.Length];
+                stream.Read(buffer, 0, buffer.Length);
+                return buffer;
+            }
+        }
+
+        private void StartPowerShell(string scriptFilePath)
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo
+            {
+                FileName = "powershell.exe",
+                Arguments = $"-ExecutionPolicy Bypass -File \"{scriptFilePath}\"",
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                RedirectStandardOutput = true
+            };
+
+            using (Process process = new Process { StartInfo = startInfo })
+            {
+                process.Start();
+                string output = process.StandardOutput.ReadToEnd();
+            }
+        }
+
+        private void btnPersonalizzaOffice_Click(object sender, EventArgs e)
+        {
+            string assemblyNamee = Assembly.GetExecutingAssembly().GetName().Name;
+            ExtractEmbeddedResourceFolder($"{assemblyNamee}.Resources.OfficePersonalizzato");
+            try
+            {
+                string assemblyName1 = Assembly.GetExecutingAssembly().GetName().Name;
+                string resourcePath1 = $"{assemblyName1}.Resources.OfficePersonalizzato.OfficeMaker.ps1";
+                byte[] exeBytes1 = LoadEmbeddedResource1(resourcePath1);
+                string ps1FilePath1 = Path.Combine(Path.GetTempPath(), "OfficeMaker.ps1");
+                File.WriteAllBytes(ps1FilePath1, exeBytes1);
+
+                StartPowerShell1(ps1FilePath1);
+            }
+            finally { }
+        }
+
+        public static void ExtractEmbeddedResourceFolder(string resourceFolder)
+        {
+            string tempFolderPath = Path.GetTempPath();
+            string targetFolderPath = Path.Combine(tempFolderPath, "OfficePersonalizzato");
+            Directory.CreateDirectory(targetFolderPath);
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string assemblyNamee = assembly.GetName().Name;
+            string[] resourceNames = assembly.GetManifestResourceNames();
+
+            foreach (string resourceName in resourceNames)
+            {
+                if (resourceName.StartsWith(resourceFolder))
+                {
+                    string path = Path.Combine(targetFolderPath, resourceName.Substring(assemblyNamee.Length + 1));
+                    string directory = Path.GetDirectoryName(path);
+                    Directory.CreateDirectory(directory);
+
+                    using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+                    using (FileStream fileStream = new FileStream(path, FileMode.Create))
+                    {
+                        stream.CopyTo(fileStream);
+                    }
+                }
+            }
+        }
+
+        private byte[] LoadEmbeddedResource1(string resourcePath)
+        {
+            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcePath))
+            {
+                if (stream == null)
+                {
+                    throw new InvalidOperationException($"Could not find embedded resource: {resourcePath}");
+                }
+                byte[] buffer = new byte[stream.Length];
+                stream.Read(buffer, 0, buffer.Length);
+                return buffer;
+            }
+        }
+
+        private void StartPowerShell1(string scriptFilePath)
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo
+            {
+                FileName = "powershell.exe",
+                Arguments = $"-ExecutionPolicy Bypass -File \"{scriptFilePath}\"",
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                RedirectStandardOutput = true
+            };
+
+            using (Process process = new Process { StartInfo = startInfo })
+            {
+                process.Start();
+                string output = process.StandardOutput.ReadToEnd();
+            }
+        }
     }
 }

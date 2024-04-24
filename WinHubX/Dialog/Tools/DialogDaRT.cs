@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Diagnostics;
 
 namespace WinHubX.Dialog.Tools
 {
@@ -45,7 +36,7 @@ namespace WinHubX.Dialog.Tools
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
-                    FileName = "https://devuploads.com/kbqu3op8wnr0",
+                    FileName = "https://devuploads.com/5dh0kron451m",
                     UseShellExecute = true
                 };
                 Process.Start(psi);

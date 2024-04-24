@@ -1,4 +1,7 @@
+using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.InteropServices;
+using WinHubX.Forms.Base;
 
 namespace WinHubX
 {
@@ -12,7 +15,7 @@ namespace WinHubX
         {
             base.WndProc(ref m);
             if (m.Msg == WM_NCHITTEST)
-                m.Result = (IntPtr)(HT_CAPTION);
+                m.Result = HT_CAPTION;
         }
         #endregion
 
@@ -53,6 +56,10 @@ namespace WinHubX
             bottoni.Add(btnHome);
             bottoni.Add(btnWin);
             bottoni.Add(btnOffice);
+            bottoni.Add(btnSettaggi);
+            bottoni.Add(btnDebloat);
+            bottoni.Add(btnCreaISO);
+            bottoni.Add(btnMonitoraggio);
             bottoni.Add(btnTools);
 
             swap_pnlNav(btnHome);
@@ -116,6 +123,137 @@ namespace WinHubX
         {
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMnmz_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnSettaggi_Click(object sender, EventArgs e)
+        {
+            swap_pnlNav(btnSettaggi);
+
+            lblPanelTitle.Text = "Settaggi";
+            PnlFormLoader.Controls.Clear();
+            FormSettaggi formSettaggi = new(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formSettaggi.FormBorderStyle = FormBorderStyle.None;
+            PnlFormLoader.Controls.Add(formSettaggi);
+            formSettaggi.Show();
+        }
+        private void btnSettaggi_Leave(object sender, EventArgs e)
+        {
+        }
+
+        private void btnDebloat_Click(object sender, EventArgs e)
+        {
+            swap_pnlNav(btnDebloat);
+
+            lblPanelTitle.Text = "Debloat";
+            PnlFormLoader.Controls.Clear();
+            FormDebloat formDebloat = new(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formDebloat.FormBorderStyle = FormBorderStyle.None;
+            PnlFormLoader.Controls.Add(formDebloat);
+            formDebloat.Show();
+        }
+        private void btnDebloat_Leave(object sender, EventArgs e)
+        {
+        }
+
+        private void btnCreaISO_Click(object sender, EventArgs e)
+        {
+            swap_pnlNav(btnCreaISO);
+            string assemblyNamee = Assembly.GetExecutingAssembly().GetName().Name;
+            ExtractEmbeddedResourceFolder($"{assemblyNamee}.Resources.RisorseCreaISO");
+            try
+            {
+                string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+                string resourcePath = $"{assemblyName}.Resources.RisorseCreaISO.ISOMaker.ps1";
+                byte[] exeBytes = LoadEmbeddedResource(resourcePath);
+                string ps1FilePath = Path.Combine(Path.GetTempPath(), "ISOMaker.ps1");
+                File.WriteAllBytes(ps1FilePath, exeBytes);
+
+                // Start the process
+                StartPowerShell(ps1FilePath);
+            }
+            finally { }
+        }
+
+        public static void ExtractEmbeddedResourceFolder(string resourceFolder)
+        {
+            string tempFolderPath = Path.GetTempPath();
+            string targetFolderPath = Path.Combine(tempFolderPath, "RisorseCreaISO");
+            Directory.CreateDirectory(targetFolderPath);
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string[] resourceNames = assembly.GetManifestResourceNames();
+            foreach (string resourceName in resourceNames)
+            {
+                if (resourceName.StartsWith(resourceFolder))
+                {
+                    // This will strip out the resourceFolder prefix and the "Risorse." part from the file name
+                    string relativePath = resourceName.Substring(resourceFolder.Length + 1).Replace("Risorse.", "");
+                    string path = Path.Combine(targetFolderPath, relativePath);
+                    string directory = Path.GetDirectoryName(path);
+                    Directory.CreateDirectory(directory);
+                    using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+                    using (FileStream fileStream = new FileStream(path, FileMode.Create))
+                    {
+                        stream.CopyTo(fileStream);
+                    }
+                }
+            }
+        }
+
+
+        private byte[] LoadEmbeddedResource(string resourcePath)
+        {
+            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcePath))
+            {
+                if (stream == null)
+                {
+                    throw new InvalidOperationException($"Could not find embedded resource: {resourcePath}");
+                }
+                byte[] buffer = new byte[stream.Length];
+                stream.Read(buffer, 0, buffer.Length);
+                return buffer;
+            }
+        }
+
+        private void StartPowerShell(string scriptFilePath)
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo
+            {
+                FileName = "powershell.exe",
+                Arguments = $"-ExecutionPolicy Bypass -File \"{scriptFilePath}\"",
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                RedirectStandardOutput = true
+            };
+
+            using (Process process = new Process { StartInfo = startInfo })
+            {
+                process.Start();
+                string output = process.StandardOutput.ReadToEnd();
+            }
+        }
+        private void btnCreaISO_Leave(object sender, EventArgs e)
+        {
+        }
+
+        private void btnMonitoraggio_Click(object sender, EventArgs e)
+        {
+            swap_pnlNav(btnMonitoraggio);
+            lblPanelTitle.Text = "Monitoraggio";
+            PnlFormLoader.Controls.Clear();
+            FormMonitoraggio formMonitoraggio = new(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formMonitoraggio.FormBorderStyle = FormBorderStyle.None;
+            PnlFormLoader.Controls.Add(formMonitoraggio);
+            formMonitoraggio.Show();
+        }
+
         private void btnTools_Click(object sender, EventArgs e)
         {
             swap_pnlNav(btnTools);
@@ -129,16 +267,6 @@ namespace WinHubX
         }
         private void btnTools_Leave(object sender, EventArgs e)
         {
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnMnmz_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

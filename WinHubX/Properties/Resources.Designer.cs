@@ -83,16 +83,6 @@ namespace WinHubX.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap extWinCustomizer {
-            get {
-                object obj = ResourceManager.GetObject("extWinCustomizer", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap homeLogo {
             get {
                 object obj = ResourceManager.GetObject("homeLogo", resourceCulture);

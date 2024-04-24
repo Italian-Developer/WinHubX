@@ -19,6 +19,57 @@ namespace WinHubX
             #region descrizione WinHubX 
 
             string description = "Changelog WinHubX\n\n" +
+                                    "23/04/2024 - v2.2.0.0:\n" +
+                                    "- Fix Codice (Personalizzazione Office)\n" +
+                                    "- Nuove iso Win11/10 (stock e lite)\n" +
+                                    "- Aggiunto Monitoraggio\n" +
+                                    "- Fix individuazione antivirus\n" +
+                                    "- Fix codice Debloat (Defender)\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "15/04/2024 - v2.1.0.0:\n" +
+                                    "- Fix Codice (Crea ISO, Personalizzazione)\n" +
+                                    "- Aggiunto PacMan per WSA\n" +
+                                    "- Aggiunto Rimozione Edge nativa\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "08/04/2024 - v2.0.0.0:\n" +
+                                    "- Creazione nuovi loghi\n" +
+                                    "- Rimozione chat telegram\n" +
+                                    "- Aggiunto BOT Telegram WinHubX\n" +
+                                    "\n" +
+                                    "- Aggiornamento sezione Windows\n" +
+                                    "- Nuove iso Windows 11 MOMENT5 (Stock e Lite - ARM64 e 64bit)\n" +
+                                    "- Aggiunto Windows Live\n" +
+                                    "- Aggiunto pulsante attivazione Windows\n" +
+                                    "- Aggiunto pulsante cambio Edizione Windows\n" +
+                                    "\n" +
+                                    "- Aggiunto pulsante attivazione Office\n" +
+                                    "- Aggiunto pulsante disinstallazione Office\n" +
+                                    "- Aggiunto pulsante personalizzazione Office\n" +
+                                    "\n" +
+                                    "- Creazione sezione Tools\n" +
+                                    "- Rimozione Tool WinCustomizer (download)\n" +
+                                    "- Aggiunta ISO Kaspersky Live (download)\n" +
+                                    "- Creazione sotto-sezione WIMToolKit (download)\n" +
+                                    "- Aggiornamento Rufus4Lite (portable)\n" +
+                                    "\n" +
+                                    "- Creazione sezione Settaggi\n" +
+                                    "- Creazione sotto-sezione Defender (Gestisci Windows Defender)\n" +
+                                    "- Creazione sotto-sezione Privacy (Gestisci la Privacy di Windows)\n" +
+                                    "- Creazione sotto-sezione Update (Gestisci impostazioni Windows Update)\n" +
+                                    "- Creazione sotto-sezione Utility (Settaggi Vari)\n" +
+                                    "- Creazione sotto-sezione RipristinoSO (Vari comandi per verificare Windows)\n" +
+                                    "- Creazione sotto-sezione Personalizzazione (Modifica alcuni settaggi di Windows)\n" +
+                                    "\n" +
+                                    "- Creazione sezione Debloat\n" +
+                                    "- Creazione sotto-sezione Ripristina APP (Permette di reinstallare alcune APP)\n" +
+                                    "- Creazione sezione CreaISO\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
                                     "24/02/2024 - v1.0.0.0:\n" +
                                     "- Lancio ufficiale del tool\n" +
                                     "- Creazione loghi\n" +
@@ -60,30 +111,13 @@ namespace WinHubX
             infoWHXChangelog.Show();
         }
 
-        private void tgNico_Click(object sender, EventArgs e)
+        private void tgWinHubX_Click(object sender, EventArgs e)
         {
             try
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
-                    FileName = "https://telegram.me/MrNico98",
-                    UseShellExecute = true
-                };
-                Process.Start(psi);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Errore nell'aprire l'URL: {ex.Message}");
-            }
-        }
-
-        private void tgGreg_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ProcessStartInfo psi = new ProcessStartInfo
-                {
-                    FileName = "https://telegram.me/GregSparrow96",
+                    FileName = "https://telegram.me/WinHubXbot",
                     UseShellExecute = true
                 };
                 Process.Start(psi);

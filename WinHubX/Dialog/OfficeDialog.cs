@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Windows.Forms;
 
 namespace WinHubX.Dialog
 {
@@ -48,7 +47,7 @@ namespace WinHubX.Dialog
             closeButton.Cursor = Cursors.Hand;
             closeButton.Click += (sender, e) => this.Close();
 
-            // Aggiungi i controlli alla finestra di dialogo
+
             this.Controls.Add(closeButton);
         }
 
@@ -69,9 +68,9 @@ namespace WinHubX.Dialog
             this.dlLink32 = link32;
             this.dlLink64 = link64;
 
-            // Aggiungi la infoLabel ai controlli del dialogo
+
             this.Controls.Add(infoLabel);
-            infoLabel.BringToFront(); // Assicurati che sia visibile sopra gli altri controlli
+            infoLabel.BringToFront();
         }
 
         private void btnOfficeOnline32_MouseUp(object sender, MouseEventArgs e)

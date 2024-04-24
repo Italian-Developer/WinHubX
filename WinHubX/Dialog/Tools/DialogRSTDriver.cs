@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Reflection;
 
 namespace WinHubX.Dialog.Tools
 {
@@ -57,7 +48,6 @@ namespace WinHubX.Dialog.Tools
 
                 try
                 {
-                    // Estrai il file zip dalla risorsa incorporata e salvalo nel percorso scelto dall'utente
                     using (Stream resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
                     {
                         if (resourceStream != null)
