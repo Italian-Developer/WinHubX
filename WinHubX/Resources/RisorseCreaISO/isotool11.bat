@@ -8,7 +8,7 @@ set "defenderPreference=%~4"
 set "windowsEdition=%~5"
 set "Processi=%~6"
 set "Unattend=%~7"
-set "OttimizzaSO=%~8"
+set "Architettura=%~8"
 set "DebloatApp=%~9"
 
 for %%I in ("%selectedFile%") do set "dest_path=%%~dpI"
@@ -23,19 +23,9 @@ cls
 color 02
 IF NOT EXIST "C:\ISO\WinISO" ( goto :isofolder )
 IF EXIST "C:\ISO\WinISO" ( 
-    echo "ERRORE: C\ISO\WinISO esiste gia', elimina la cartella? si,no"
-    goto :domande )
-
-:domande
-SET /P answer=":" 
-IF /I '%answer%'=='si' GOTO :eliminacartella
-IF /I '%answer%'=='no' GOTO :winfolder
-
-:eliminacartella
-echo Elimino la cartella, attendi...
 dism /unmount-image /mountdir:C:\mount\mount /discard >NUL
 rmdir "C:\ISO\WinISO" /s /q
-goto :cartellaISO
+)
 
 :isofolder
 cls 
@@ -135,7 +125,7 @@ cls
 rem ISO bypass
 :selectunattend
 if "%Unattend%"=="Stock" ( goto :stock )
-else if "%Unattend%"=="Bypass" ( goto :bypass )
+if "%Unattend%"=="Bypass" ( goto :bypass )
 
 :bypass
 rem copy unattended.xml
@@ -232,10 +222,6 @@ copy "%TEMP%\RisorseCreaISO\OperaGXSetup.exe" "C:\mount\mount\Windows"
 copy "%TEMP%\RisorseCreaISO\PowerRun.exe" "C:\mount\mount\Windows"
 )
 
-if "%OttimizzaSO%"=="Ottimizza" (
-  echo > C:\mount\mount\Windows\ottimizza.pref
-)
-
 if "%DebloatApp%"=="Debloat" (
   echo > C:\mount\mount\Windows\debloatapp.pref
 )
@@ -263,12 +249,11 @@ powerShell -Command "Write-Host 'Completato' -ForegroundColor Green; exit"
 
 rem copy 
 copy "%TEMP%\RisorseCreaISO\tweaks.bat" "C:\mount\mount\Windows"
-copy "%TEMP%\RisorseCreaISO\WinHubXDebloat3.0.ps1" "C:\mount\mount\Windows"
 copy "%TEMP%\RisorseCreaISO\lower-ram-usage.reg" "C:\mount\mount\Windows"
 copy "%TEMP%\RisorseCreaISO\start.ps1" "C:\mount\mount\Windows"
-copy "%TEMP%\RisorseCreaISO\WinHubXAttivatore.bat" "C:\mount\mount\Windows"
-copy "%TEMP%\RisorseCreaISO\WinHubXStartDebloat.bat" "C:\mount\mount\Windows"
+copy "%TEMP%\RisorseCreaISO\WinHubX.exe" "C:\mount\mount\Windows"
 copy "%TEMP%\RisorseCreaISO\PowerRun.exe" "C:\mount\mount\Windows"
+copy "%TEMP%\RisorseCreaISO\[AIMODS]-Store.exe" "C:\mount\mount\Windows"
 
 
 

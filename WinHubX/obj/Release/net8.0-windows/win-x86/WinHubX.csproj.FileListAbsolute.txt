@@ -5470,7 +5470,6 @@ C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\hostfxr.dll
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\hostpolicy.dll
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\mscordaccore.dll
-C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\mscordaccore_x86_x86_8.0.324.11423.dll
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\mscordbi.dll
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\mscorrc.dll
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\msquic.dll
@@ -5746,6 +5745,12 @@ C:\Users\Nico\Desktop\WinHubX-development\WinHubX\obj\Release\net8.0-windows\win
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\obj\Release\net8.0-windows\win-x86\ref\WinHubX.dll
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\Images\pngDomanda.png
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\Images\pngMonitoraggio.png
-C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\Resources\RisorseCreaISO\Risorse\WinHubXAttivatore.bat
-C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\Resources\RisorseCreaISO\Risorse\WinHubXStartDebloat.bat
-C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\Resources\RisorseCreaISO\Risorse\WinHubXDebloat3.0.ps1
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\mscordaccore_x86_x86_8.0.424.16909.dll
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\WinHubX.dll.manifest
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\WinHubX.application
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\obj\Release\net8.0-windows\win-x86\WinHubX.genpublishdeps.cache
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\obj\Release\net8.0-windows\win-x86\WinHubX.dll.manifest
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\obj\Release\net8.0-windows\win-x86\WinHubX.application
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\Resources\RisorseCreaISO\Risorse\WinHubX.exe
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\Resources\RisorseCreaISO\Risorse\[AIMODS]-Store.exe
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\Resources\RisorseCreaISO\Risorse\unattendx32.xml

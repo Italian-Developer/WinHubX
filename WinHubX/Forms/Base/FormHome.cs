@@ -19,6 +19,21 @@ namespace WinHubX
             #region descrizione WinHubX 
 
             string description = "Changelog WinHubX\n\n" +
+                                    "17/05/2024 - v2.2.0.2:\n" +
+                                    "- Fix Codice Personalizzazione\n" +
+                                    "- Fix Codice Crea ISO (Super ottimizzato e ora supporta le iso di win11 24h2 e fixato crash app e crea iso win10)\n" +
+                                    "- Fix Codice Personalizzazione Office (durante l'apertura se veniva cliccato qualcosa nell'app crashava)\n" +
+                                    "- Aggiornate ISO Lite Win11 e Win10\n" +
+                                    "- Aggiornato il WSA alla LTS\n" +
+                                    "- Ottimizzioni varie al codice\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "17/05/2024 - v2.2.0.1:\n" +
+                                    "- Rilascio versione autoaggiornante\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
                                     "23/04/2024 - v2.2.0.0:\n" +
                                     "- Fix Codice (Personalizzazione Office)\n" +
                                     "- Nuove iso Win11/10 (stock e lite)\n" +

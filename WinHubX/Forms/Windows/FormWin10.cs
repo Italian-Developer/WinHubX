@@ -218,6 +218,7 @@ namespace WinHubX.Forms.Windows
                         UseShellExecute = true
                     };
                     Process.Start(psi);
+                    MessageBox.Show("Usa 'Rufus4Lite' presente nella sezione Tools.", "Informazione");
                 }
                 catch (Exception ex)
                 {
@@ -231,7 +232,7 @@ namespace WinHubX.Forms.Windows
             if (e.Button == MouseButtons.Right)
             {
 
-                Clipboard.SetText("cab8b6eb81f4839d363f0734a9e1ac88089052c261ea4cf825d5031b698f37a1");
+                Clipboard.SetText("93d4e176fbf5abc05143101a1040486663dd8c5dd03441df58b4e57bb8bd630a");
 
                 notifyIcon.BalloonTipTitle = "SHA256 copiato!";
                 notifyIcon.BalloonTipText = "Il codice hash è stato copiato negli appunti.";
@@ -243,26 +244,17 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/fwo3go6kq33p",
+                        FileName = "https://devuploads.com/u75zvyflfej6",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
+                    MessageBox.Show("Usa 'Rufus4Lite' presente nella sezione Tools.", "Informazione");
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Errore nell'aprire l'URL: {ex.Message}");
                 }
             }
-        }
-
-        private void btnWin10AIO32_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnWin10AIO64_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

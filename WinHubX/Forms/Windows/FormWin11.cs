@@ -135,7 +135,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/7tq1eq4xk1tv",
+                        FileName = "https://devuploads.com/b4ffaztw2bes",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
@@ -152,7 +152,7 @@ namespace WinHubX.Forms.Windows
             if (e.Button == MouseButtons.Right)
             {
 
-                Clipboard.SetText("653ac29c986d6aa81caad249c7792a8faa4842d48223509f0af92ad7747d3146");
+                Clipboard.SetText("3d16b8814451b0e9f01a2009d37d3449f7d32ea6f7a04c45384c2d7bd1bd2944");
 
                 notifyIcon.BalloonTipTitle = "SHA256 copiato!";
                 notifyIcon.BalloonTipText = "Il codice hash è stato copiato negli appunti.";
@@ -164,10 +164,11 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/49u1n3j6giug",
+                        FileName = "https://devuploads.com/9irifuyttaf9",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
+                    MessageBox.Show("Usa 'Rufus4Lite' presente nella sezione Tools.", "Informazione");
                 }
                 catch (Exception ex)
                 {

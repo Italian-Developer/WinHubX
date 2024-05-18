@@ -76,7 +76,7 @@
             lblInfoWin11Lite.Name = "lblInfoWin11Lite";
             lblInfoWin11Lite.Size = new Size(448, 58);
             lblInfoWin11Lite.TabIndex = 60;
-            lblInfoWin11Lite.Text = "      Edizioni incluse: Pro ed Enterprise\r\nPer il dettaglio su questa versione, clicca";
+            lblInfoWin11Lite.Text = "      Edizioni incluse: Pro\r\nPer il dettaglio su questa versione, clicca";
             lblInfoWin11Lite.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnWin11Lite64
@@ -101,22 +101,22 @@
             lblWin11Lite.AutoSize = true;
             lblWin11Lite.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblWin11Lite.ForeColor = Color.White;
-            lblWin11Lite.Location = new Point(262, 215);
+            lblWin11Lite.Location = new Point(302, 215);
             lblWin11Lite.Name = "lblWin11Lite";
-            lblWin11Lite.Size = new Size(356, 39);
+            lblWin11Lite.Size = new Size(285, 39);
             lblWin11Lite.TabIndex = 57;
-            lblWin11Lite.Text = "Windows 11 Lite AiO";
+            lblWin11Lite.Text = "Windows 11 Lite";
             // 
             // lblInfoWin11AIO
             // 
             lblInfoWin11AIO.AutoSize = true;
             lblInfoWin11AIO.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblInfoWin11AIO.ForeColor = Color.Coral;
-            lblInfoWin11AIO.Location = new Point(430, 107);
+            lblInfoWin11AIO.Location = new Point(511, 107);
             lblInfoWin11AIO.Name = "lblInfoWin11AIO";
-            lblInfoWin11AIO.Size = new Size(441, 29);
+            lblInfoWin11AIO.Size = new Size(304, 29);
             lblInfoWin11AIO.TabIndex = 56;
-            lblInfoWin11AIO.Text = "Edizioni incluse: Consumer e Enterprise";
+            lblInfoWin11AIO.Text = "Edizioni incluse: Consumer";
             lblInfoWin11AIO.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnWin11AIO64

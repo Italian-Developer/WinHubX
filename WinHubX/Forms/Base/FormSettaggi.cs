@@ -93,18 +93,18 @@ namespace WinHubX.Forms.Base
             {
                 if (Environment.Is64BitOperatingSystem)
                 {
-                    downloadUrl = "https://mega.nz/file/Ti5l1I4B#5n_BpNnOCE99hL6fp5V-ly99WqV49QzapOWKTPYP2-w";
+                    downloadUrl = "https://devuploads.com/x0e2f0glln32";
                     zipFileName = "WSAwin11x64.zip";
                 }
                 else
                 {
-                    downloadUrl = "https://mega.nz/file/zywiDAgb#d0EaBjIo_KWrRVXnhJ8MbRC736lh7olWm-W-rQjvG8w";
+                    downloadUrl = "https://devuploads.com/9yvtom45rd0a";
                     zipFileName = "WSAwin11arm64.zip";
                 }
             }
             else if (systemType.Contains("Windows 10"))
             {
-                downloadUrl = "https://mega.nz/file/27RDDIqQ#a3V6HGawK6JsptuFzYZDT-M7DMCr6S67OMbEXjZmjdc";
+                downloadUrl = "https://devuploads.com/zl95runwirqj";
                 zipFileName = "WSAwin10x64.zip";
             }
 

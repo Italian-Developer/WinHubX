@@ -139,27 +139,6 @@ $windowsEditionComboBox.Add_SelectedIndexChanged({
 })
 $form.Controls.Add($windowsEditionComboBox)
 
-# Create group box for Ottimizzare SO
-$groupBoxDebloat = New-Object System.Windows.Forms.GroupBox
-$groupBoxDebloat.Location = New-Object System.Drawing.Point(240, 220) 
-$groupBoxDebloat.Size = New-Object System.Drawing.Size(220,70)   
-$groupBoxDebloat.Text = "Ottimizzare SO"
-$groupBoxDebloat.ForeColor = [System.Drawing.Color]::White
-$form.Controls.Add($groupBoxDebloat)
-
-# Create radio buttons for Windows version
-$radioButtonOttimizza = New-Object System.Windows.Forms.RadioButton
-$radioButtonOttimizza.Location = New-Object System.Drawing.Point(10,20)
-$radioButtonOttimizza.Size = New-Object System.Drawing.Size(120,20)
-$radioButtonOttimizza.Text = "Ottimizza"
-$groupBoxDebloat.Controls.Add($radioButtonOttimizza)
-
-$radioButtonNonOttimizza = New-Object System.Windows.Forms.RadioButton
-$radioButtonNonOttimizza.Location = New-Object System.Drawing.Point(10,45)
-$radioButtonNonOttimizza.Size = New-Object System.Drawing.Size(120,20)
-$radioButtonNonOttimizza.Text = "Non Ottimizzare"
-$groupBoxDebloat.Controls.Add($radioButtonNonOttimizza)
-
 # Create group box for Debloat APP
 $groupBoxDebloatapp = New-Object System.Windows.Forms.GroupBox
 $groupBoxDebloatapp.Location = New-Object System.Drawing.Point(240, 130) 
@@ -195,7 +174,7 @@ $form.Controls.Add($donateButton)
 $groupBoxWindowsVersion = New-Object System.Windows.Forms.GroupBox
 $groupBoxWindowsVersion.Location = New-Object System.Drawing.Point(10, 130)
 $groupBoxWindowsVersion.Size = New-Object System.Drawing.Size(220,70)
-$groupBoxWindowsVersion.Text = "Seleziona versione Windows"
+$groupBoxWindowsVersion.Text = "Seleziona versione ISO Windows"
 $groupBoxWindowsVersion.ForeColor = [System.Drawing.Color]::White
 $form.Controls.Add($groupBoxWindowsVersion)
 
@@ -228,7 +207,7 @@ $radioButtonWindows11.Add_CheckedChanged({
 
 function UpdateUnattendGroup {
     param(
-        [bool]$displayGroup
+        [bool]$isWindows11
     )
 
     if ($script:groupBoxUnattend) {
@@ -237,7 +216,13 @@ function UpdateUnattendGroup {
         $script:groupBoxUnattend = $null
     }
 
-    if ($displayGroup) {
+    if ($script:groupBoxArchitettura) {
+        $form.Controls.Remove($script:groupBoxArchitettura)
+        $script:groupBoxArchitettura.Dispose()
+        $script:groupBoxArchitettura = $null
+    }
+
+    if ($isWindows11) {
         $script:groupBoxUnattend = New-Object System.Windows.Forms.GroupBox
         $script:groupBoxUnattend.Location = New-Object System.Drawing.Point(245,305)
         $script:groupBoxUnattend.Size = New-Object System.Drawing.Size(215,70)
@@ -257,6 +242,26 @@ function UpdateUnattendGroup {
         $radioButtonBypass.Size = New-Object System.Drawing.Size(120,20)
         $radioButtonBypass.Text = "Bypass"
         $groupBoxUnattend.Controls.Add($radioButtonBypass)
+    } else {
+        $script:groupBoxArchitettura = New-Object System.Windows.Forms.GroupBox
+        $script:groupBoxArchitettura.Location = New-Object System.Drawing.Point(240, 220) 
+        $script:groupBoxArchitettura.Size = New-Object System.Drawing.Size(220,70)   
+        $script:groupBoxArchitettura.Text = "Architettura"
+        $script:groupBoxArchitettura.ForeColor = [System.Drawing.Color]::White
+        $form.Controls.Add($script:groupBoxArchitettura)
+
+        # Add radio buttons for architecture options
+        $radioButtonx64 = New-Object System.Windows.Forms.RadioButton
+        $radioButtonx64.Location = New-Object System.Drawing.Point(10,20)
+        $radioButtonx64.Size = New-Object System.Drawing.Size(120,20)
+        $radioButtonx64.Text = "x64"
+        $groupBoxArchitettura.Controls.Add($radioButtonx64)
+
+        $radioButtonx32 = New-Object System.Windows.Forms.RadioButton
+        $radioButtonx32.Location = New-Object System.Drawing.Point(10,45)
+        $radioButtonx32.Size = New-Object System.Drawing.Size(120,20)
+        $radioButtonx32.Text = "x32"
+        $groupBoxArchitettura.Controls.Add($radioButtonx32)
     }
 }
 
@@ -365,18 +370,13 @@ $buildButton.Add_Click({
     return
     }
 
-    if (-not ($radioButtonOttimizza.Checked -or $radioButtonNonOttimizza.Checked)) {
-    [System.Windows.Forms.MessageBox]::Show("Seleziona se Ottimizzare il SO.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
-    return
-    }
-
     $selectedFile = $textBoxISOFile.Text
     $windowsVersion = if ($radioButtonWindows10.Checked) { "Windows 10" } else { "Windows 11" }
     $edgeRemovalPreference = if ($radioButtonRemoveEdge.Checked) { "RemoveEdge" } else { "Do Not Remove Edge" }
     $defenderPreference = if ($radioButtonDisableDefender.Checked) { "DisableWindowsDefender" } else { "Do Not Disable Windows Defender" }
     $Processi = if ($radioButtonRimuoviProcessi.Checked) { "RimuoviProcessi" } else { "NonRimuovereProcessi" }
     $Unattend = if ($radioButtonStock.Checked) { "Stock" } else { "Bypass" }
-    $OttimizzaSO = if ($radioButtonOttimizza.Checked) { "Ottimizza" } else { "NonOttimizza" }
+    $Architettura = if ($radioButtonx64.Checked) { "x64" } else { "x32" }
     $DebloatApp = if ($radioButtonDebloatAPP.Checked) { "Debloat" } else { "NonDebloat" }
 
     Dismount-DiskImage -ImagePath $smonto | out-null
@@ -390,7 +390,7 @@ $arguments = @(
     """$global:windowsEdition""",
     """$Processi""",
     """$Unattend""",
-    """$OttimizzaSO""",
+    """$Architettura""",
     """$DebloatApp"""
 )
 

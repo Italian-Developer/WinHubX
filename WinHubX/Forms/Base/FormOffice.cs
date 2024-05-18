@@ -298,7 +298,9 @@ namespace WinHubX
                 string ps1FilePath1 = Path.Combine(Path.GetTempPath(), "OfficeMaker.ps1");
                 File.WriteAllBytes(ps1FilePath1, exeBytes1);
 
-                StartPowerShell1(ps1FilePath1);
+                // Avvia lo script PowerShell in un thread separato
+                Thread scriptThread = new Thread(() => StartPowerShell(ps1FilePath1));
+                scriptThread.Start();
             }
             finally { }
         }

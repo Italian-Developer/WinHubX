@@ -3,21 +3,6 @@
   <assemblyIdentity version="1.0.0.0" name="MyApplication.app"/>
   <trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">
     <security>
-      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
-        <!-- Opzioni manifesto di Controllo dell'account utente
-             Per modificare il livello di Controllo dell'account utente di Windows, sostituire il 
-             nodo requestedExecutionLevel con uno dei seguenti.
-
-        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
-        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
-        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
-
-            Se si specifica l'elemento requestedExecutionLevel, la funzionalità Virtualizzazione file system e registro di sistema verrà disabilitata. 
-            Rimuovere questo elemento se l'applicazione richiede questa virtualizzazione per
-            compatibilità con le versioni precedenti.
-        -->
-        <requestedExecutionLevel level="requireAdministrator" uiAccess="false" />
-      </requestedPrivileges>
     </security>
   </trustInfo>
 

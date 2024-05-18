@@ -9,8 +9,8 @@
 	  <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
     <ApplicationManifest>app1.manifest</ApplicationManifest>
     <ApplicationIcon>Images\icoLogoWhite.ico</ApplicationIcon>
-    <AssemblyVersion>2.2.0.0</AssemblyVersion>
-    <FileVersion>2.2.0.0</FileVersion>
+    <AssemblyVersion>2.2.0.2</AssemblyVersion>
+    <FileVersion>2.2.0.2</FileVersion>
 	<ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
   </PropertyGroup>
 
@@ -95,10 +95,10 @@
     <None Remove="Resources\RisorseCreaISO\Risorse\unattend.xml" />
     <None Remove="Resources\RisorseCreaISO\Risorse\unattend10.xml" />
     <None Remove="Resources\RisorseCreaISO\Risorse\unattendstock.xml" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\unattendx32.xml" />
     <None Remove="Resources\RisorseCreaISO\Risorse\unpin_start_tiles.ps1" />
-    <None Remove="Resources\RisorseCreaISO\Risorse\WinHubXAttivatore.bat" />
-    <None Remove="Resources\RisorseCreaISO\Risorse\WinHubXDebloat3.0.ps1" />
-    <None Remove="Resources\RisorseCreaISO\Risorse\WinHubXStartDebloat.bat" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\WinHubX.exe" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\[AIMODS]-Store.exe" />
     <None Remove="Resources\RisorseCreaISO\WinHubXOfficeScrubber.ps1" />
     <None Remove="Resources\Rufus4Lite.exe" />
     <None Remove="Resources\WIMToolkit.ps1" />
@@ -316,6 +316,9 @@
     <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\unattend.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\unattendx32.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\unattend10.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -325,13 +328,10 @@
     <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\unpin_start_tiles.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\WinHubXAttivatore.bat">
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\WinHubX.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\WinHubXDebloat3.0.ps1">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\WinHubXStartDebloat.bat">
+    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\[AIMODS]-Store.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Rufus4Lite.exe">

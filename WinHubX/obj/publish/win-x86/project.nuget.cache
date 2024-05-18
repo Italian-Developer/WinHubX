@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VK2sI9yX+hWBLaQTxG/gzrvGolq8ALbJWNPLCp/CK3cesAsMd+ZUfxbzTkmyDaq8FsOZkG2yoih/kLyKrCPbEw==",
+  "dgSpecHash": "F1+o6N96hFT1mddXYUGgHMUrYU/NZg8oaTwIfQGUhNfKDLdY7xL25T9YNVAjBfDFsLwCgGk34KkZgmFnVmkAyg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nico\\Desktop\\WinHubX-development\\WinHubX\\WinHubX.csproj",
   "expectedPackageFiles": [
@@ -19,7 +19,7 @@
     "C:\\Users\\Nico\\.nuget\\packages\\microsoft.management.infrastructure.cimcmdlets\\7.4.1\\microsoft.management.infrastructure.cimcmdlets.7.4.1.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\microsoft.management.infrastructure.runtime.unix\\3.0.0\\microsoft.management.infrastructure.runtime.unix.3.0.0.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\microsoft.management.infrastructure.runtime.win\\3.0.0\\microsoft.management.infrastructure.runtime.win.3.0.0.nupkg.sha512",
-    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.3\\microsoft.net.illink.tasks.8.0.3.nupkg.sha512",
+    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.4\\microsoft.net.illink.tasks.8.0.4.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\microsoft.powershell.commands.diagnostics\\7.4.1\\microsoft.powershell.commands.diagnostics.7.4.1.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\microsoft.powershell.commands.management\\7.4.1\\microsoft.powershell.commands.management.7.4.1.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\microsoft.powershell.commands.utility\\7.4.1\\microsoft.powershell.commands.utility.7.4.1.nupkg.sha512",
@@ -95,9 +95,9 @@
     "C:\\Users\\Nico\\.nuget\\packages\\system.threading.accesscontrol\\8.0.0\\system.threading.accesscontrol.8.0.0.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\system.web.services.description\\4.10.3\\system.web.services.description.4.10.3.nupkg.sha512",
     "C:\\Users\\Nico\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512",
-    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\8.0.3\\microsoft.netcore.app.runtime.win-x86.8.0.3.nupkg.sha512",
-    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\8.0.3\\microsoft.windowsdesktop.app.runtime.win-x86.8.0.3.nupkg.sha512",
-    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.3\\microsoft.aspnetcore.app.runtime.win-x86.8.0.3.nupkg.sha512"
+    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\8.0.4\\microsoft.netcore.app.runtime.win-x86.8.0.4.nupkg.sha512",
+    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\8.0.4\\microsoft.windowsdesktop.app.runtime.win-x86.8.0.4.nupkg.sha512",
+    "C:\\Users\\Nico\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.4\\microsoft.aspnetcore.app.runtime.win-x86.8.0.4.nupkg.sha512"
   ],
   "logs": []
 }

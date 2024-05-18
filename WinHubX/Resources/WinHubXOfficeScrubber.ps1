@@ -21072,10 +21072,8 @@ for ($i = 0; $i -lt $base64Strings.Count; $i++) {
     # Convert base64 to bytes and write to file
     $bytes = [convert]::FromBase64String($base64Strings[$i])
     [System.IO.File]::WriteAllBytes($outputFilePath, $bytes)
-
-    Write-Host "File $($relativePaths[$i]) created successfully."
 }
-
+Start-Sleep 4
 Move-Item -Path "$env:TEMP\OfficeScrub\Bin\OfficeScrubber.cmd" -Destination "$env:TEMP\OfficeScrub"
 Start-Process -FilePath "$env:TEMP\OfficeScrub\OfficeScrubber.cmd" -Verb RunAs
 

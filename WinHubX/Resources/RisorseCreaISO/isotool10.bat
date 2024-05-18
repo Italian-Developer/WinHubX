@@ -9,7 +9,7 @@ set "defenderPreference=%~4"
 set "windowsEdition=%~5"
 set "Processi=%~6"
 set "Unattend=%~7"
-set "OttimizzaSO=%~8"
+set "Architettura=%~8"
 set "DebloatApp=%~9"
 
 for %%I in ("%selectedFile%") do set "dest_path=%%~dpI"
@@ -22,32 +22,21 @@ rem verifica cartelle
 :cartellaISO1
 cls
 color 02
-IF NOT EXIST "C:\ISO\WinISO" ( goto :isofolder1 )
+IF NOT EXIST "C:\ISO\WinISO" ( goto :isofolder )
 IF EXIST "C:\ISO\WinISO" ( 
-    echo "ERRORE: C\ISO\WinISO esiste gia', elimina la cartella? si,no"
-    goto :domande )
-
-:domande
-set /p answer3=":"
-if /i "%answer3%"=="si" ( goto :eliminacartella )
-if /i "%answer3%"=="no" ( goto :winfolder1 )
-else ( echo  ATTENZIONE! I valori accettati sono solamente 'si' e 'no'. 
-goto :domande )
-
-:eliminacartella
-echo Elimino la cartella, attendi...
 dism /unmount-image /mountdir:C:\mount\mount /discard >NUL
 rmdir "C:\ISO\WinISO" /s /q
-goto :cartellaISO1
+)
 
-:isofolder1
+:isofolder
 cls 
 mkdir "C:\ISO\WinISO"
 
-:winfolder1
+:winfolder
 color 02
 IF EXIST "C:\mount\mount" (
-    echo "ATTENZINE! C\mount\mount esiste gia', elimina la cartella per proseguire" && timeout 04 >nul && cls && goto :winfolder1
+    dism /unmount-image /mountdir:C:\mount\mount /discard >NUL
+    rmdir "C:\mount\mount" /s /q
 )
 mkdir "C:\mount\mount"
 
@@ -67,7 +56,13 @@ IF NOT EXIST "C:\ISO\WinISO\sources\$OEM$\$$\Panther" (
 )
 
 rem copy unattended.xml
-copy "%TEMP%\RisorseCreaISO\unattend10.xml" "C:\ISO\WinISO\sources\$OEM$\$$\Panther\unattend.xml"
+if "%Architettura%"=="x64" (
+ copy "%TEMP%\RisorseCreaISO\unattend10.xml" "C:\ISO\WinISO\sources\$OEM$\$$\Panther\unattend.xml"
+)
+
+if "%Architettura%"=="x32" (
+ copy "%TEMP%\RisorseCreaISO\unattendx32.xml" "C:\ISO\WinISO\sources\$OEM$\$$\Panther\unattend.xml"
+)
 
 rem check if wim or esd
 IF EXIST "C:\ISO\WinISO\sources\install.wim" (
@@ -150,10 +145,6 @@ copy "%TEMP%\RisorseCreaISO\OperaGXSetup.exe" "C:\mount\mount"
 copy "%TEMP%\RisorseCreaISO\PowerRun.exe" "C:\mount\mount\Windows"
 )
 
-if "%OttimizzaSO%"=="Ottimizza" (
-  echo > C:\mount\mount\Windows\ottimizza.pref
-)
-
 if "%DebloatApp%"=="Debloat" (
   echo > C:\mount\mount\Windows\debloatapp.pref
 )
@@ -183,13 +174,12 @@ powerShell -Command "Write-Host 'Completato' -ForegroundColor Green; exit"
 rem copy batch file
 cls
 copy "%TEMP%\RisorseCreaISO\tweaks10.bat" "C:\mount\mount\Windows"
-copy "%TEMP%\RisorseCreaISO\WinHubXDebloat3.0.ps1" "C:\mount\mount\Windows"
-copy "%TEMP%\RisorseCreaISO\WinHubXAttivatore.bat" "C:\mount\mount\Windows"
 copy "%TEMP%\RisorseCreaISO\start10.ps1" "C:\mount\mount\Windows"
 copy "%TEMP%\RisorseCreaISO\lower-ram-usage.reg" "C:\mount\mount\Windows"
-copy "%TEMP%\RisorseCreaISO\WinHubXStartDebloat.bat" "C:\mount\mount\Windows"
+copy "%TEMP%\RisorseCreaISO\WinHubX.exe" "C:\mount\mount\Windows"
 copy "%TEMP%\RisorseCreaISO\unpin_start_tiles.ps1" "C:\mount\mount\Windows"
 copy "%TEMP%\RisorseCreaISO\PowerRun.exe" "C:\mount\mount\Windows"
+copy "%TEMP%\RisorseCreaISO\[AIMODS]-Store.exe" "C:\mount\mount\Windows"
 
 :fine1
 cls

@@ -171,7 +171,8 @@ $radioButtonAccessNo.Size = New-Object System.Drawing.Size(120,20)
 $radioButtonAccessNo.Text = "No"
 $groupBoxAccess.Controls.Add($radioButtonAccessNo)
 
-# Create group box for Onedrive
+# Create group box for 
+
 $groupBoxOneDrive = New-Object System.Windows.Forms.GroupBox
 $groupBoxOneDrive.Location = New-Object System.Drawing.Point(240,20)
 $groupBoxOneDrive.Size = New-Object System.Drawing.Size(220,70)

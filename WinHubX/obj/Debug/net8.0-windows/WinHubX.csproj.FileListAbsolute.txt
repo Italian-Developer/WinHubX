@@ -5088,6 +5088,6 @@ C:\Users\Nico\Desktop\WinHubX-development\WinHubX\obj\Debug\net8.0-windows\refin
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\obj\Debug\net8.0-windows\WinHubX.pdb
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\obj\Debug\net8.0-windows\WinHubX.genruntimeconfig.cache
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\obj\Debug\net8.0-windows\ref\WinHubX.dll
-C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Debug\net8.0-windows\Resources\RisorseCreaISO\Risorse\WinHubXAttivatore.bat
-C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Debug\net8.0-windows\Resources\RisorseCreaISO\Risorse\WinHubXStartDebloat.bat
-C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Debug\net8.0-windows\Resources\RisorseCreaISO\Risorse\WinHubXDebloat3.0.ps1
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Debug\net8.0-windows\Resources\RisorseCreaISO\Risorse\[AIMODS]-Store.exe
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Debug\net8.0-windows\Resources\RisorseCreaISO\Risorse\unattendx32.xml
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Debug\net8.0-windows\Resources\RisorseCreaISO\Risorse\WinHubX.exe

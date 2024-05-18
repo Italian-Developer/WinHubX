@@ -1,6 +1,8 @@
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using WinHubX.Forms.Base;
 
 namespace WinHubX
@@ -75,7 +77,32 @@ namespace WinHubX
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            if (WindowsIdentity.GetCurrent().Owner == WindowsIdentity.GetCurrent().User)   // Check for Admin privileges   
+            {
+                try
+                {
+                    this.Visible = false;
+                    ProcessStartInfo info = new ProcessStartInfo(Application.ExecutablePath); // my own .exe
+                    info.UseShellExecute = true;
+                    info.Verb = "runas";   // invoke UAC prompt
+                    Process.Start(info);
+                }
+                catch (Win32Exception ex)
+                {
+                    if (ex.NativeErrorCode == 1223) //The operation was canceled by the user.
+                    {
+                        MessageBox.Show("Why did you not selected Yes?");
+                        Application.Exit();
+                    }
+                    else
+                        throw new Exception("Something went wrong :-(");
+                }
+                Application.Exit();
+            }
+            else
+            {
+                //    MessageBox.Show("I have admin privileges :-)");
+            }
         }
 
         public void btnHome_Click(object sender, EventArgs e)
@@ -176,8 +203,9 @@ namespace WinHubX
                 string ps1FilePath = Path.Combine(Path.GetTempPath(), "ISOMaker.ps1");
                 File.WriteAllBytes(ps1FilePath, exeBytes);
 
-                // Start the process
-                StartPowerShell(ps1FilePath);
+                // Avvia lo script PowerShell in un thread separato
+                Thread scriptThread = new Thread(() => StartPowerShell(ps1FilePath));
+                scriptThread.Start();
             }
             finally { }
         }

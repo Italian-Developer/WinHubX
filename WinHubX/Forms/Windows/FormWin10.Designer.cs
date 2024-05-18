@@ -75,11 +75,11 @@ namespace WinHubX.Forms.Windows
             lblInfoWin10Lite.AutoSize = true;
             lblInfoWin10Lite.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblInfoWin10Lite.ForeColor = Color.Coral;
-            lblInfoWin10Lite.Location = new Point(182, 257);
+            lblInfoWin10Lite.Location = new Point(185, 257);
             lblInfoWin10Lite.Name = "lblInfoWin10Lite";
             lblInfoWin10Lite.Size = new Size(448, 58);
             lblInfoWin10Lite.TabIndex = 48;
-            lblInfoWin10Lite.Text = "      Edizioni incluse: Pro e LTSC\r\nPer il dettaglio su questa versione, clicca";
+            lblInfoWin10Lite.Text = "      Edizioni incluse: LTSC\r\nPer il dettaglio su questa versione, clicca";
             lblInfoWin10Lite.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnWin10Lite64
@@ -106,7 +106,7 @@ namespace WinHubX.Forms.Windows
             btnWin10Lite32.FlatStyle = FlatStyle.Flat;
             btnWin10Lite32.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin10Lite32.ForeColor = Color.White;
-            btnWin10Lite32.Location = new Point(292, 312);
+            btnWin10Lite32.Location = new Point(287, 312);
             btnWin10Lite32.Margin = new Padding(3, 2, 3, 2);
             btnWin10Lite32.Name = "btnWin10Lite32";
             btnWin10Lite32.Size = new Size(136, 53);
@@ -121,11 +121,11 @@ namespace WinHubX.Forms.Windows
             lblWin10Lite.AutoSize = true;
             lblWin10Lite.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblWin10Lite.ForeColor = Color.White;
-            lblWin10Lite.Location = new Point(262, 215);
+            lblWin10Lite.Location = new Point(281, 215);
             lblWin10Lite.Name = "lblWin10Lite";
-            lblWin10Lite.Size = new Size(356, 39);
+            lblWin10Lite.Size = new Size(285, 39);
             lblWin10Lite.TabIndex = 45;
-            lblWin10Lite.Text = "Windows 10 Lite AiO";
+            lblWin10Lite.Text = "Windows 10 Lite";
             // 
             // lblInfoWin10AIO
             // 
@@ -154,7 +154,6 @@ namespace WinHubX.Forms.Windows
             btnWin10AIO64.Text = "64bit";
             btnWin10AIO64.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnWin10AIO64.UseVisualStyleBackColor = true;
-            btnWin10AIO64.Click += btnWin10AIO64_Click;
             btnWin10AIO64.MouseUp += btnWin10AIO64_MouseUp;
             // 
             // btnWin10AIO32
@@ -172,7 +171,6 @@ namespace WinHubX.Forms.Windows
             btnWin10AIO32.Text = "32bit";
             btnWin10AIO32.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnWin10AIO32.UseVisualStyleBackColor = true;
-            btnWin10AIO32.Click += btnWin10AIO32_Click;
             btnWin10AIO32.MouseUp += btnWin10AIO32_MouseUp;
             // 
             // lblWin10AIO

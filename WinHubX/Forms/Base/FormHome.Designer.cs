@@ -87,7 +87,7 @@
             btnChangelog.Name = "btnChangelog";
             btnChangelog.Size = new Size(280, 60);
             btnChangelog.TabIndex = 94;
-            btnChangelog.Text = "v2.2.0.0 - Changelog";
+            btnChangelog.Text = "v2.2.0.2 - Changelog";
             btnChangelog.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnChangelog.UseVisualStyleBackColor = true;
             btnChangelog.Click += btnChangelog_Click;
@@ -116,7 +116,7 @@
             tgWinHubX.FlatStyle = FlatStyle.Flat;
             tgWinHubX.ForeColor = Color.FromArgb(37, 38, 39);
             tgWinHubX.Image = Properties.Resources.pngTelegram;
-            tgWinHubX.Location = new Point(812, 370);
+            tgWinHubX.Location = new Point(779, 367);
             tgWinHubX.Margin = new Padding(3, 2, 3, 2);
             tgWinHubX.Name = "tgWinHubX";
             tgWinHubX.Size = new Size(57, 43);
