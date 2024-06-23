@@ -59,7 +59,7 @@
             lblHashInfo.AutoSize = true;
             lblHashInfo.Font = new Font("Microsoft Sans Serif", 10.1999989F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblHashInfo.ForeColor = Color.Coral;
-            lblHashInfo.Location = new Point(256, 404);
+            lblHashInfo.Location = new Point(256, 420);
             lblHashInfo.Name = "lblHashInfo";
             lblHashInfo.Size = new Size(379, 17);
             lblHashInfo.TabIndex = 64;
@@ -94,7 +94,7 @@
             lblOffice2019.ForeColor = Color.White;
             lblOffice2019.Image = Properties.Resources.pngOffice;
             lblOffice2019.ImageAlign = ContentAlignment.MiddleLeft;
-            lblOffice2019.Location = new Point(32, 88);
+            lblOffice2019.Location = new Point(32, 93);
             lblOffice2019.Name = "lblOffice2019";
             lblOffice2019.Size = new Size(185, 78);
             lblOffice2019.TabIndex = 66;
@@ -110,7 +110,7 @@
             btn2019Online.ForeColor = Color.White;
             btn2019Online.Image = Properties.Resources.pngOnline;
             btn2019Online.ImageAlign = ContentAlignment.MiddleLeft;
-            btn2019Online.Location = new Point(32, 175);
+            btn2019Online.Location = new Point(32, 180);
             btn2019Online.Margin = new Padding(3, 2, 3, 2);
             btn2019Online.Name = "btn2019Online";
             btn2019Online.Size = new Size(185, 63);
@@ -128,7 +128,7 @@
             btn2019Offline.Font = new Font("Microsoft Sans Serif", 19.8000011F, FontStyle.Bold);
             btn2019Offline.ForeColor = Color.White;
             btn2019Offline.Image = Properties.Resources.pngOffline;
-            btn2019Offline.Location = new Point(32, 233);
+            btn2019Offline.Location = new Point(32, 238);
             btn2019Offline.Margin = new Padding(3, 2, 3, 2);
             btn2019Offline.Name = "btn2019Offline";
             btn2019Offline.Size = new Size(185, 63);
@@ -146,7 +146,7 @@
             btn2021Offline.Font = new Font("Microsoft Sans Serif", 19.8000011F, FontStyle.Bold);
             btn2021Offline.ForeColor = Color.White;
             btn2021Offline.Image = Properties.Resources.pngOffline;
-            btn2021Offline.Location = new Point(249, 238);
+            btn2021Offline.Location = new Point(249, 243);
             btn2021Offline.Margin = new Padding(3, 2, 3, 2);
             btn2021Offline.Name = "btn2021Offline";
             btn2021Offline.Size = new Size(185, 63);
@@ -165,7 +165,7 @@
             btn2021Online.ForeColor = Color.White;
             btn2021Online.Image = Properties.Resources.pngOnline;
             btn2021Online.ImageAlign = ContentAlignment.MiddleLeft;
-            btn2021Online.Location = new Point(249, 175);
+            btn2021Online.Location = new Point(249, 180);
             btn2021Online.Margin = new Padding(3, 2, 3, 2);
             btn2021Online.Name = "btn2021Online";
             btn2021Online.Size = new Size(185, 63);
@@ -183,7 +183,7 @@
             lblOffice2021.ForeColor = Color.White;
             lblOffice2021.Image = Properties.Resources.pngOffice;
             lblOffice2021.ImageAlign = ContentAlignment.MiddleLeft;
-            lblOffice2021.Location = new Point(249, 88);
+            lblOffice2021.Location = new Point(249, 93);
             lblOffice2021.Name = "lblOffice2021";
             lblOffice2021.Size = new Size(185, 78);
             lblOffice2021.TabIndex = 69;
@@ -199,7 +199,7 @@
             btn2024Offline.Font = new Font("Microsoft Sans Serif", 19.8000011F, FontStyle.Bold);
             btn2024Offline.ForeColor = Color.White;
             btn2024Offline.Image = Properties.Resources.pngOffline;
-            btn2024Offline.Location = new Point(684, 238);
+            btn2024Offline.Location = new Point(684, 243);
             btn2024Offline.Margin = new Padding(3, 2, 3, 2);
             btn2024Offline.Name = "btn2024Offline";
             btn2024Offline.Size = new Size(185, 58);
@@ -219,7 +219,7 @@
             btn2024Online.ForeColor = Color.White;
             btn2024Online.Image = Properties.Resources.pngOnline;
             btn2024Online.ImageAlign = ContentAlignment.MiddleLeft;
-            btn2024Online.Location = new Point(684, 180);
+            btn2024Online.Location = new Point(684, 185);
             btn2024Online.Margin = new Padding(3, 2, 3, 2);
             btn2024Online.Name = "btn2024Online";
             btn2024Online.Size = new Size(185, 59);
@@ -236,7 +236,7 @@
             lblOffice2024.ForeColor = Color.White;
             lblOffice2024.Image = (Image)resources.GetObject("lblOffice2024.Image");
             lblOffice2024.ImageAlign = ContentAlignment.MiddleLeft;
-            lblOffice2024.Location = new Point(684, 88);
+            lblOffice2024.Location = new Point(684, 93);
             lblOffice2024.Name = "lblOffice2024";
             lblOffice2024.Size = new Size(185, 78);
             lblOffice2024.TabIndex = 75;
@@ -251,7 +251,7 @@
             btn365Offline.Font = new Font("Microsoft Sans Serif", 19.8000011F, FontStyle.Bold);
             btn365Offline.ForeColor = Color.White;
             btn365Offline.Image = Properties.Resources.pngOffline;
-            btn365Offline.Location = new Point(467, 238);
+            btn365Offline.Location = new Point(467, 243);
             btn365Offline.Margin = new Padding(3, 2, 3, 2);
             btn365Offline.Name = "btn365Offline";
             btn365Offline.Size = new Size(185, 63);
@@ -270,7 +270,7 @@
             btn365Online.ForeColor = Color.White;
             btn365Online.Image = Properties.Resources.pngOnline;
             btn365Online.ImageAlign = ContentAlignment.MiddleLeft;
-            btn365Online.Location = new Point(467, 180);
+            btn365Online.Location = new Point(467, 185);
             btn365Online.Margin = new Padding(3, 2, 3, 2);
             btn365Online.Name = "btn365Online";
             btn365Online.Size = new Size(185, 58);
@@ -287,7 +287,7 @@
             lblOffice365.ForeColor = Color.White;
             lblOffice365.Image = Properties.Resources.png365;
             lblOffice365.ImageAlign = ContentAlignment.MiddleLeft;
-            lblOffice365.Location = new Point(467, 88);
+            lblOffice365.Location = new Point(467, 93);
             lblOffice365.Name = "lblOffice365";
             lblOffice365.Size = new Size(185, 78);
             lblOffice365.TabIndex = 72;
@@ -299,7 +299,7 @@
             lblInfoOffice2024.AutoSize = true;
             lblInfoOffice2024.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblInfoOffice2024.ForeColor = Color.Coral;
-            lblInfoOffice2024.Location = new Point(699, 298);
+            lblInfoOffice2024.Location = new Point(699, 303);
             lblInfoOffice2024.Name = "lblInfoOffice2024";
             lblInfoOffice2024.Size = new Size(157, 29);
             lblInfoOffice2024.TabIndex = 78;
@@ -315,7 +315,7 @@
             btnAttivaOffice.ForeColor = Color.White;
             btnAttivaOffice.Image = (Image)resources.GetObject("btnAttivaOffice.Image");
             btnAttivaOffice.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAttivaOffice.Location = new Point(481, 332);
+            btnAttivaOffice.Location = new Point(481, 348);
             btnAttivaOffice.Margin = new Padding(3, 2, 3, 2);
             btnAttivaOffice.Name = "btnAttivaOffice";
             btnAttivaOffice.Size = new Size(274, 53);
@@ -334,7 +334,7 @@
             btnScrubber.ForeColor = Color.White;
             btnScrubber.Image = (Image)resources.GetObject("btnScrubber.Image");
             btnScrubber.ImageAlign = ContentAlignment.MiddleLeft;
-            btnScrubber.Location = new Point(119, 332);
+            btnScrubber.Location = new Point(119, 348);
             btnScrubber.Margin = new Padding(3, 2, 3, 2);
             btnScrubber.Name = "btnScrubber";
             btnScrubber.Size = new Size(335, 53);
@@ -379,7 +379,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(901, 428);
+            ClientSize = new Size(901, 458);
             Controls.Add(btnPersonalizzaOffice);
             Controls.Add(pictureBox3);
             Controls.Add(btnScrubber);

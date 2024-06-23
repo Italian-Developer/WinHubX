@@ -1,3 +1,4 @@
+using Microsoft.Win32;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection;
@@ -91,7 +92,6 @@ namespace WinHubX
                 {
                     if (ex.NativeErrorCode == 1223) //The operation was canceled by the user.
                     {
-                        MessageBox.Show("Why did you not selected Yes?");
                         Application.Exit();
                     }
                     else
@@ -99,9 +99,15 @@ namespace WinHubX
                 }
                 Application.Exit();
             }
-            else
+        }
+
+        public static void RemoveRegistryKeys()
+        {
+            RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\YourAppName", true);
+            if (key != null)
             {
-                //    MessageBox.Show("I have admin privileges :-)");
+                key.DeleteSubKeyTree("SubKeyName");
+                key.Close();
             }
         }
 
@@ -141,7 +147,7 @@ namespace WinHubX
 
             lblPanelTitle.Text = "Office";
             PnlFormLoader.Controls.Clear();
-            FormOffice formOffice = new FormOffice() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormOffice formOffice = new FormOffice(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formOffice.FormBorderStyle = FormBorderStyle.None;
             PnlFormLoader.Controls.Add(formOffice);
             formOffice.Show();
@@ -202,8 +208,6 @@ namespace WinHubX
                 byte[] exeBytes = LoadEmbeddedResource(resourcePath);
                 string ps1FilePath = Path.Combine(Path.GetTempPath(), "ISOMaker.ps1");
                 File.WriteAllBytes(ps1FilePath, exeBytes);
-
-                // Avvia lo script PowerShell in un thread separato
                 Thread scriptThread = new Thread(() => StartPowerShell(ps1FilePath));
                 scriptThread.Start();
             }

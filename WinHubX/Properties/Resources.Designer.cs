@@ -63,16 +63,6 @@ namespace WinHubX.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btnAIOVect {
-            get {
-                object obj = ResourceManager.GetObject("btnAIOVect", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap extWIMToolkit {
             get {
                 object obj = ResourceManager.GetObject("extWIMToolkit", resourceCulture);

@@ -97,7 +97,7 @@
             btnReinstallaAPP.FlatStyle = FlatStyle.Flat;
             btnReinstallaAPP.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReinstallaAPP.ForeColor = Color.White;
-            btnReinstallaAPP.Location = new Point(737, 358);
+            btnReinstallaAPP.Location = new Point(737, 375);
             btnReinstallaAPP.Margin = new Padding(3, 2, 3, 2);
             btnReinstallaAPP.Name = "btnReinstallaAPP";
             btnReinstallaAPP.Size = new Size(154, 61);
@@ -141,7 +141,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(901, 428);
+            ClientSize = new Size(901, 458);
             Controls.Add(lblInfoWin12);
             Controls.Add(btnDebloatAuto);
             Controls.Add(btnReinstallaAPP);

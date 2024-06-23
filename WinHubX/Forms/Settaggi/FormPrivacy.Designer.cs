@@ -62,7 +62,6 @@
             DisabilitaPrivacy.Name = "DisabilitaPrivacy";
             DisabilitaPrivacy.Size = new Size(259, 378);
             DisabilitaPrivacy.TabIndex = 7;
-            DisabilitaPrivacy.SelectedIndexChanged += checkedListBox1_SelectedIndexChanged;
             // 
             // btnAvviaSelezionati
             // 
@@ -71,7 +70,7 @@
             btnAvviaSelezionati.FlatStyle = FlatStyle.Flat;
             btnAvviaSelezionati.Font = new Font("Microsoft Sans Serif", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAvviaSelezionati.ForeColor = Color.White;
-            btnAvviaSelezionati.Location = new Point(693, 11);
+            btnAvviaSelezionati.Location = new Point(718, 11);
             btnAvviaSelezionati.Margin = new Padding(3, 2, 3, 2);
             btnAvviaSelezionati.Name = "btnAvviaSelezionati";
             btnAvviaSelezionati.Size = new Size(181, 75);
@@ -120,7 +119,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(901, 428);
+            ClientSize = new Size(901, 458);
             Controls.Add(AbilitaPrivacy);
             Controls.Add(label1);
             Controls.Add(lblWin7Lite);

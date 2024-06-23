@@ -55,7 +55,7 @@
             testoram.AutoSize = true;
             testoram.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold | FontStyle.Italic);
             testoram.ForeColor = Color.Coral;
-            testoram.Location = new Point(207, 207);
+            testoram.Location = new Point(207, 243);
             testoram.Name = "testoram";
             testoram.Size = new Size(48, 20);
             testoram.TabIndex = 84;
@@ -67,7 +67,7 @@
             testoCPU.AutoSize = true;
             testoCPU.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold | FontStyle.Italic);
             testoCPU.ForeColor = Color.Coral;
-            testoCPU.Location = new Point(629, 207);
+            testoCPU.Location = new Point(659, 243);
             testoCPU.Name = "testoCPU";
             testoCPU.Size = new Size(45, 20);
             testoCPU.TabIndex = 85;
@@ -81,7 +81,7 @@
             btnOttRam.FlatStyle = FlatStyle.Flat;
             btnOttRam.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnOttRam.ForeColor = Color.White;
-            btnOttRam.Location = new Point(127, 269);
+            btnOttRam.Location = new Point(127, 305);
             btnOttRam.Margin = new Padding(3, 2, 3, 2);
             btnOttRam.Name = "btnOttRam";
             btnOttRam.Size = new Size(219, 37);
@@ -98,7 +98,7 @@
             btnOttCPU.FlatStyle = FlatStyle.Flat;
             btnOttCPU.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnOttCPU.ForeColor = Color.White;
-            btnOttCPU.Location = new Point(571, 269);
+            btnOttCPU.Location = new Point(571, 305);
             btnOttCPU.Margin = new Padding(3, 2, 3, 2);
             btnOttCPU.Name = "btnOttCPU";
             btnOttCPU.Size = new Size(210, 37);
@@ -110,7 +110,7 @@
             // 
             // BarRAM
             // 
-            BarRAM.Location = new Point(155, 67);
+            BarRAM.Location = new Point(155, 103);
             BarRAM.Maximum = 100;
             BarRAM.Minimum = 0;
             BarRAM.Name = "BarRAM";
@@ -121,7 +121,7 @@
             // 
             // BarCPU
             // 
-            BarCPU.Location = new Point(571, 67);
+            BarCPU.Location = new Point(601, 103);
             BarCPU.Maximum = 100;
             BarCPU.Minimum = 0;
             BarCPU.Name = "BarCPU";
@@ -150,7 +150,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(885, 389);
+            ClientSize = new Size(901, 458);
             Controls.Add(bottoniSwap);
             Controls.Add(BarCPU);
             Controls.Add(BarRAM);

@@ -9,8 +9,8 @@
 	  <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
     <ApplicationManifest>app1.manifest</ApplicationManifest>
     <ApplicationIcon>Images\icoLogoWhite.ico</ApplicationIcon>
-    <AssemblyVersion>2.2.0.2</AssemblyVersion>
-    <FileVersion>2.2.0.2</FileVersion>
+    <AssemblyVersion>2.4.0.0</AssemblyVersion>
+    <FileVersion>2.4.0.0</FileVersion>
 	<ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
   </PropertyGroup>
 
@@ -29,6 +29,7 @@
     <None Remove="Images\pngAttivaWin.png" />
     <None Remove="Images\pngAttivaWSA.png" />
     <None Remove="Images\pngAttivaWSL.png" />
+    <None Remove="Images\pngAvanti.png" />
     <None Remove="Images\pngBackArrow.png" />
     <None Remove="Images\pngCambioEdizione.png" />
     <None Remove="Images\pngClose.png" />
@@ -74,7 +75,19 @@
     <None Remove="Resources\DriverRST.zip" />
     <None Remove="Resources\icoWinHubX.ico" />
     <None Remove="Resources\MSPCManagerSetup.exe" />
-    <None Remove="Resources\OfficePersonalizzato\OfficeMaker.ps1" />
+    <None Remove="Resources\OfficePersonalizzato\Configurazione2021x32.xml" />
+    <None Remove="Resources\OfficePersonalizzato\Configurazione2021x64.xml" />
+    <None Remove="Resources\OfficePersonalizzato\Configurazione365x32.xml" />
+    <None Remove="Resources\OfficePersonalizzato\Configurazione365x64.xml" />
+    <None Remove="Resources\OfficePersonalizzato\immaginioffice\access.png" />
+    <None Remove="Resources\OfficePersonalizzato\immaginioffice\excel.png" />
+    <None Remove="Resources\OfficePersonalizzato\immaginioffice\onedrive.png" />
+    <None Remove="Resources\OfficePersonalizzato\immaginioffice\onenote.png" />
+    <None Remove="Resources\OfficePersonalizzato\immaginioffice\outlook.png" />
+    <None Remove="Resources\OfficePersonalizzato\immaginioffice\powerpoint.png" />
+    <None Remove="Resources\OfficePersonalizzato\immaginioffice\project.png" />
+    <None Remove="Resources\OfficePersonalizzato\immaginioffice\visio.png" />
+    <None Remove="Resources\OfficePersonalizzato\immaginioffice\word.png" />
     <None Remove="Resources\PowerRun.exe" />
     <None Remove="Resources\Product Sans Black.ttf" />
     <None Remove="Resources\Product Sans.ttf" />
@@ -112,12 +125,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Images\btnAIO.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\btnAIOVect.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\extWIMToolkit.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -134,6 +141,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pngAttivaOffice.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngAvanti.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pngBackArrow.png">
@@ -268,6 +278,45 @@
     <EmbeddedResource Include="Resources\MSPCManagerSetup.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\Configurazione2021x32.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\Configurazione2021x64.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\Configurazione365x32.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\Configurazione365x64.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\access.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\excel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\onedrive.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\onenote.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\outlook.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\powerpoint.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\project.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\visio.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\word.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\PowerRun.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -368,12 +417,6 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\OfficePersonalizzato\bin.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\OfficePersonalizzato\installeroffice.bat">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\OfficePersonalizzato\OfficeMaker.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

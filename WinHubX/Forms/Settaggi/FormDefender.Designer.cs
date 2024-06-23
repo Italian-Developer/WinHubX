@@ -74,7 +74,7 @@
             btnAvviaSelezionatiDef.FlatStyle = FlatStyle.Flat;
             btnAvviaSelezionatiDef.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold);
             btnAvviaSelezionatiDef.ForeColor = Color.White;
-            btnAvviaSelezionatiDef.Location = new Point(344, 371);
+            btnAvviaSelezionatiDef.Location = new Point(343, 395);
             btnAvviaSelezionatiDef.Margin = new Padding(3, 2, 3, 2);
             btnAvviaSelezionatiDef.Name = "btnAvviaSelezionatiDef";
             btnAvviaSelezionatiDef.Size = new Size(208, 56);
@@ -91,10 +91,10 @@
             btnProtezioneMinima.FlatStyle = FlatStyle.Flat;
             btnProtezioneMinima.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold);
             btnProtezioneMinima.ForeColor = Color.White;
-            btnProtezioneMinima.Location = new Point(10, 371);
+            btnProtezioneMinima.Location = new Point(9, 401);
             btnProtezioneMinima.Margin = new Padding(3, 2, 3, 2);
             btnProtezioneMinima.Name = "btnProtezioneMinima";
-            btnProtezioneMinima.Size = new Size(220, 56);
+            btnProtezioneMinima.Size = new Size(220, 50);
             btnProtezioneMinima.TabIndex = 24;
             btnProtezioneMinima.Text = "Protezione Minima";
             btnProtezioneMinima.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -108,7 +108,7 @@
             btnRipristinaDefender.FlatStyle = FlatStyle.Flat;
             btnRipristinaDefender.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold);
             btnRipristinaDefender.ForeColor = Color.White;
-            btnRipristinaDefender.Location = new Point(659, 371);
+            btnRipristinaDefender.Location = new Point(658, 395);
             btnRipristinaDefender.Margin = new Padding(3, 2, 3, 2);
             btnRipristinaDefender.Name = "btnRipristinaDefender";
             btnRipristinaDefender.Size = new Size(230, 56);
@@ -156,11 +156,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Coral;
-            label4.Location = new Point(10, 330);
+            label4.Location = new Point(16, 348);
             label4.Name = "label4";
-            label4.Size = new Size(138, 39);
+            label4.Size = new Size(187, 51);
             label4.TabIndex = 55;
             label4.Text = "Attenzione!\r\nsarai maggiormente esposto\r\nad eventuali virus";
             label4.TextAlign = ContentAlignment.BottomCenter;
@@ -170,7 +170,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(901, 428);
+            ClientSize = new Size(901, 458);
             Controls.Add(btnProtezioneMinima);
             Controls.Add(label4);
             Controls.Add(label2);

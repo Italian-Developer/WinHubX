@@ -31,52 +31,67 @@ namespace WinHubX.Forms.ReinstallaAPP
             formDebloat.Show();
         }
 
+        static void RegisterAppxPackage(string packageName)
+        {
+            // Comando PowerShell per ottenere il percorso del manifest del pacchetto AppX
+            string getManifestPathCommand = $"Get-AppxPackage -AllUsers '{packageName}' | Select -ExpandProperty InstallLocation";
+
+            string manifestPath = ExecutePowerShellCommand(getManifestPathCommand);
+
+            if (!string.IsNullOrEmpty(manifestPath))
+            {
+                // Comando PowerShell per registrare il pacchetto AppX utilizzando il percorso del manifest
+                string registerCommand = $"Add-AppxPackage -DisableDevelopmentMode -Register '{manifestPath}\\AppXManifest.xml'";
+
+                ExecutePowerShellCommand(registerCommand);
+            }
+        }
+
+        static string ExecutePowerShellCommand(string command)
+        {
+            string output = "";
+
+            using (Process powerShellProcess = new Process())
+            {
+                powerShellProcess.StartInfo.FileName = "powershell.exe";
+                powerShellProcess.StartInfo.Arguments = $"-NoProfile -ExecutionPolicy unrestricted -Command \"{command}\"";
+                powerShellProcess.StartInfo.UseShellExecute = false;
+                powerShellProcess.StartInfo.CreateNoWindow = true;
+                powerShellProcess.StartInfo.RedirectStandardOutput = true;
+                powerShellProcess.StartInfo.RedirectStandardError = true;
+
+                powerShellProcess.Start();
+
+                output = powerShellProcess.StandardOutput.ReadToEnd();
+                string error = powerShellProcess.StandardError.ReadToEnd();
+
+                if (!string.IsNullOrEmpty(error))
+                {
+                    MessageBox.Show($"Errore di PowerShell:\n{error}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                powerShellProcess.WaitForExit();
+            }
+
+            return output.Trim();
+        }
+
         private void btnAvviaSelezionatiApp_Click(object sender, EventArgs e)
         {
             if (App1.CheckedItems.Contains("Microsoft Store"))
             {
-                try
-                {
-                    string cmdCommand = "/C echo Installing the store... Please wait. && " +
-                                        "WSReset -i 1>nul 2>nul && " +
-                                        "TimeOut /T 20 /NOBREAK && " +
-                                        "WSReset -i 1>nul 2>nul && " +
-                                        "echo Store is downloading... it will be installed soon";
-                    var startInfo = new System.Diagnostics.ProcessStartInfo
-                    {
-                        FileName = "cmd.exe",
-                        Arguments = cmdCommand,
-                        UseShellExecute = false,
-                        CreateNoWindow = true,
-                        RedirectStandardOutput = true,
-                        RedirectStandardError = true
-                    };
-                    using (var process = System.Diagnostics.Process.Start(startInfo))
-                    {
-                        process.WaitForExit();
-                        var output = process.StandardOutput.ReadToEnd();
-                        var error = process.StandardError.ReadToEnd();
-
-                        if (!string.IsNullOrEmpty(error))
-                        {
-                            MessageBox.Show($"Error: {error}");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An exception occurred: {ex.Message}");
-                }
-                MessageBox.Show("Lo store si sta installando attendi", "WinHubX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                RegisterAppxPackage("Microsoft.DesktopAppInstaller");
+                RegisterAppxPackage("Microsoft.WindowsStore");
             }
-            else if (App1.CheckedItems.Contains("Microsoft Edge"))
+
+            if (App1.CheckedItems.Contains("Microsoft Edge"))
             {
                 RunPowerShellCommand1("winget install Microsoft.Edge");
 
                 MessageBox.Show("Premi un tasto per uscire...");
                 Console.ReadKey();
             }
-            else if (App1.CheckedItems.Contains("Windows Defender"))
+            if (App1.CheckedItems.Contains("Windows Defender"))
             {
                 string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
                 string resourcePath = $"{assemblyName}.Resources.PowerRun.exe";

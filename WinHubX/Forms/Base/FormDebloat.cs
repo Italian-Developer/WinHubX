@@ -48,7 +48,7 @@ namespace WinHubX.Forms.Base
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (Bloat1.CheckedItems.Contains("Foto"))
+            if (Bloat1.CheckedItems.Contains("Foto"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -66,7 +66,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Canonical"))
+            if (Bloat1.CheckedItems.Contains("Canonical"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -84,7 +84,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Xbox TCUI"))
+            if (Bloat1.CheckedItems.Contains("Xbox TCUI"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -102,7 +102,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Xbox APP"))
+            if (Bloat1.CheckedItems.Contains("Xbox APP"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -120,7 +120,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Xbox Overlay"))
+            if (Bloat1.CheckedItems.Contains("Xbox Overlay"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -138,7 +138,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Xbox Overlay"))
+            if (Bloat1.CheckedItems.Contains("Xbox Overlay"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -156,7 +156,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Xbox Speech"))
+            if (Bloat1.CheckedItems.Contains("Xbox Speech"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -174,7 +174,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Xbox Identity"))
+            if (Bloat1.CheckedItems.Contains("Xbox Identity"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -192,7 +192,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Sticky Notes"))
+            if (Bloat1.CheckedItems.Contains("Sticky Notes"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -210,7 +210,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("MS Paint"))
+            if (Bloat1.CheckedItems.Contains("MS Paint"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -228,7 +228,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Windows Camera"))
+            if (Bloat1.CheckedItems.Contains("Windows Camera"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -246,7 +246,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("HiFi Extension"))
+            if (Bloat1.CheckedItems.Contains("HiFi Extension"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -264,7 +264,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Cattura Schermo"))
+            if (Bloat1.CheckedItems.Contains("Cattura Schermo"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -282,7 +282,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Estensione VP9"))
+            if (Bloat1.CheckedItems.Contains("Estensione VP9"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -300,7 +300,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Estensione Web"))
+            if (Bloat1.CheckedItems.Contains("Estensione Web"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -318,7 +318,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Estensione WebpImage"))
+            if (Bloat1.CheckedItems.Contains("Estensione WebpImage"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -336,7 +336,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("WindSynthBerry"))
+            if (Bloat1.CheckedItems.Contains("WindSynthBerry"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -354,7 +354,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("MidiBerry"))
+            if (Bloat1.CheckedItems.Contains("MidiBerry"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -372,7 +372,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Slack"))
+            if (Bloat1.CheckedItems.Contains("Slack"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -390,7 +390,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Mixed Reality"))
+            if (Bloat1.CheckedItems.Contains("Mixed Reality"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -408,7 +408,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("PPI Projection"))
+            if (Bloat1.CheckedItems.Contains("PPI Projection"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -426,7 +426,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Bing News"))
+            if (Bloat1.CheckedItems.Contains("Bing News"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -444,7 +444,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat1.CheckedItems.Contains("Get Help"))
+            if (Bloat1.CheckedItems.Contains("Get Help"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -462,7 +462,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Per iniziare"))
+            if (Bloat3.CheckedItems.Contains("Per iniziare"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -480,7 +480,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Messaggi"))
+            if (Bloat3.CheckedItems.Contains("Messaggi"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -498,7 +498,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Microsoft 3D Viewer"))
+            if (Bloat2.CheckedItems.Contains("Microsoft 3D Viewer"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -516,7 +516,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Microsoft Office Hub"))
+            if (Bloat2.CheckedItems.Contains("Microsoft Office Hub"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -534,7 +534,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Solitario"))
+            if (Bloat2.CheckedItems.Contains("Solitario"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -552,7 +552,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Network Speed Test"))
+            if (Bloat2.CheckedItems.Contains("Network Speed Test"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -570,7 +570,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Microsoft News"))
+            if (Bloat2.CheckedItems.Contains("Microsoft News"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -588,7 +588,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Office Lens"))
+            if (Bloat2.CheckedItems.Contains("Office Lens"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -606,7 +606,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("One Note"))
+            if (Bloat2.CheckedItems.Contains("One Note"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -624,7 +624,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Office Sway"))
+            if (Bloat2.CheckedItems.Contains("Office Sway"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -642,7 +642,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("One Connect"))
+            if (Bloat2.CheckedItems.Contains("One Connect"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -660,7 +660,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Microsoft People"))
+            if (Bloat2.CheckedItems.Contains("Microsoft People"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -678,7 +678,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Paint 3D"))
+            if (Bloat2.CheckedItems.Contains("Paint 3D"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -696,7 +696,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Desktop Remoto"))
+            if (Bloat2.CheckedItems.Contains("Desktop Remoto"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -714,7 +714,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("App Skype"))
+            if (Bloat2.CheckedItems.Contains("App Skype"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -732,7 +732,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Office To Do"))
+            if (Bloat2.CheckedItems.Contains("Office To Do"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -750,7 +750,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Whiteboard"))
+            if (Bloat2.CheckedItems.Contains("Whiteboard"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -768,7 +768,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Windows Alarm"))
+            if (Bloat2.CheckedItems.Contains("Windows Alarm"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -786,7 +786,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Windows Comunicazione"))
+            if (Bloat2.CheckedItems.Contains("Windows Comunicazione"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -804,7 +804,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Feedback Hub"))
+            if (Bloat2.CheckedItems.Contains("Feedback Hub"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -822,7 +822,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Windows Maps"))
+            if (Bloat2.CheckedItems.Contains("Windows Maps"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -840,7 +840,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Registratore Suoni"))
+            if (Bloat2.CheckedItems.Contains("Registratore Suoni"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -858,7 +858,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Zune Music"))
+            if (Bloat2.CheckedItems.Contains("Zune Music"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -876,7 +876,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Zune Video"))
+            if (Bloat2.CheckedItems.Contains("Zune Video"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -894,7 +894,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat2.CheckedItems.Contains("Eclipse"))
+            if (Bloat2.CheckedItems.Contains("Eclipse"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -912,7 +912,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Pack Lingua"))
+            if (Bloat3.CheckedItems.Contains("Pack Lingua"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -930,7 +930,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Adobe Express"))
+            if (Bloat3.CheckedItems.Contains("Adobe Express"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -948,7 +948,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Duolingo"))
+            if (Bloat3.CheckedItems.Contains("Duolingo"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -966,7 +966,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("PandoraMedia"))
+            if (Bloat3.CheckedItems.Contains("PandoraMedia"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -984,7 +984,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Candy Crush"))
+            if (Bloat3.CheckedItems.Contains("Candy Crush"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -1002,7 +1002,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("BubbleWitch"))
+            if (Bloat3.CheckedItems.Contains("BubbleWitch"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -1020,7 +1020,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Wunderlist"))
+            if (Bloat3.CheckedItems.Contains("Wunderlist"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -1038,7 +1038,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Flipboard"))
+            if (Bloat3.CheckedItems.Contains("Flipboard"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -1056,7 +1056,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Twitter"))
+            if (Bloat3.CheckedItems.Contains("Twitter"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -1074,7 +1074,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Facebook"))
+            if (Bloat3.CheckedItems.Contains("Facebook"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -1092,7 +1092,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Dolby"))
+            if (Bloat3.CheckedItems.Contains("Dolby"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -1110,7 +1110,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Advertising XAML"))
+            if (Bloat3.CheckedItems.Contains("Advertising XAML"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -1128,7 +1128,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Portafoglio"))
+            if (Bloat3.CheckedItems.Contains("Portafoglio"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -1146,7 +1146,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Collegamento A Telefono"))
+            if (Bloat3.CheckedItems.Contains("Collegamento A Telefono"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -1164,26 +1164,25 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Edge"))
+            if (Bloat3.CheckedItems.Contains("Edge"))
             {
-                {
-                    // Display a warning message
-                    DialogResult result = MessageBox.Show("Questa operazione richiede un riavvio del PC, Continuare?", "Attenzione", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
-                    // Check the user's response
-                    if (result == DialogResult.OK)
-                    {
-                        // User clicked OK, continue with the operation
-                        RunPowerShellScript();
-                    }
-                    else
-                    {
-                        // User clicked Cancel, do nothing or handle accordingly
-                        // Example: Display another message, log the action, etc.
-                    }
+                // Display a warning message
+                DialogResult result = MessageBox.Show("Questa operazione richiede un riavvio del PC, Continuare?", "Attenzione", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                // Check the user's response
+                if (result == DialogResult.OK)
+                {
+                    // User clicked OK, continue with the operation
+                    RunPowerShellScript();
                 }
+
+                {
+                    MessageBox.Show("Operazione Annullata");
+                }
+
             }
-            else if (Bloat3.CheckedItems.Contains("Microsoft Store"))
+            if (Bloat3.CheckedItems.Contains("Microsoft Store"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -1201,7 +1200,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            else if (Bloat3.CheckedItems.Contains("Windows Defender"))
+            if (Bloat3.CheckedItems.Contains("Windows Defender"))
             {
                 string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
                 string resourcePath = $"{assemblyName}.Resources.PowerRun.exe";
@@ -1272,7 +1271,7 @@ namespace WinHubX.Forms.Base
             }
         }
 
-        private string GetPowerShellCommand()
+        private string? GetPowerShellCommand()
         {
             int version = Environment.OSVersion.Version.Major;
             if (version < 10)
@@ -1284,10 +1283,8 @@ namespace WinHubX.Forms.Base
             string[] commonAppsToRemove = {
         "Microsoft.VP9VideoExtensions", "Microsoft.WebMediaExtensions",
         "Microsoft.WebpImageExtension", "Microsoft.Windows.ShellExperienceHost",
-        "Microsoft.VCLibs*", "Microsoft.DesktopAppInstaller",
-        "Microsoft.StorePurchaseApp", "Microsoft.Windows.Photos",
-        "Microsoft.WindowsStore", "Microsoft.XboxIdentityProvider",
-        "Microsoft.WindowsCalculator", "Microsoft.HEIFImageExtension",
+        "Microsoft.VCLibs*",
+        "Microsoft.WindowsStore", "Microsoft.XboxIdentityProvider", "Microsoft.HEIFImageExtension",
         "Microsoft.UI.Xaml*"
     };
 

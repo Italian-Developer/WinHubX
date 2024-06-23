@@ -1,4 +1,5 @@
-﻿using WinHubX.Forms.Base;
+﻿using Microsoft.Win32;
+using WinHubX.Forms.Base;
 
 namespace WinHubX.Forms.Settaggi
 {
@@ -11,6 +12,7 @@ namespace WinHubX.Forms.Settaggi
             InitializeComponent();
             this.form1 = form1;
             this.formSettaggi = formSettaggi;
+            LoadCheckboxStates();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -28,12 +30,175 @@ namespace WinHubX.Forms.Settaggi
             formSettaggi.Show();
         }
 
+
+        private void SetCheckboxState(string itemName, bool isChecked)
+        {
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey("Software\\WinHubX"))
+            {
+                key.SetValue(itemName, isChecked ? 1 : 0, RegistryValueKind.DWord);
+            }
+        }
+
+        private bool GetCheckboxState(string itemName)
+        {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\WinHubX"))
+            {
+                if (key != null)
+                {
+                    object value = key.GetValue(itemName);
+                    if (value != null)
+                    {
+                        return (int)value == 1;
+                    }
+                }
+            }
+            return false;
+        }
+
+        private void LoadCheckboxStates()
+        {
+            int index = DisabilitaUtility.Items.IndexOf("Disabilita Background App");
+            if (index != -1)
+            {
+                DisabilitaUtility.SetItemChecked(index, GetCheckboxState("DisabilitaBackgroundApp"));
+            }
+            index = DisabilitaUtility.Items.IndexOf("Disabilita Feedback");
+            if (index != -1)
+            {
+                DisabilitaUtility.SetItemChecked(index, GetCheckboxState("DisabilitaFeedback"));
+            }
+            index = DisabilitaUtility.Items.IndexOf("Disabilita Advertising ID");
+            if (index != -1)
+            {
+                DisabilitaUtility.SetItemChecked(index, GetCheckboxState("DisabilitaAdvertisingID"));
+            }
+            index = DisabilitaUtility.Items.IndexOf("Disabilita Filtro Smart Screen");
+            if (index != -1)
+            {
+                DisabilitaUtility.SetItemChecked(index, GetCheckboxState("DisabilitaFiltroSmartScreen"));
+            }
+            index = DisabilitaUtility.Items.IndexOf("Disabilita Wifi Sense");
+            if (index != -1)
+            {
+                DisabilitaUtility.SetItemChecked(index, GetCheckboxState("DisabilitaWifiSense"));
+            }
+            index = DisabilitaUtility.Items.IndexOf("Disabilita Desktop Remoto");
+            if (index != -1)
+            {
+                DisabilitaUtility.SetItemChecked(index, GetCheckboxState("DisabilitaDesktopRemoto"));
+            }
+            index = DisabilitaUtility.Items.IndexOf("Disabilita attivazione del Numlock in avvio");
+            if (index != -1)
+            {
+                DisabilitaUtility.SetItemChecked(index, GetCheckboxState("DisabilitaattivazionedelNumlockinavvio"));
+            }
+            index = DisabilitaUtility.Items.IndexOf("Disabilita News e Interessi");
+            if (index != -1)
+            {
+                DisabilitaUtility.SetItemChecked(index, GetCheckboxState("DisabilitaNewseInteressi"));
+            }
+            index = DisabilitaUtility.Items.IndexOf("Disabilita Index File");
+            if (index != -1)
+            {
+                DisabilitaUtility.SetItemChecked(index, GetCheckboxState("DisabilitaIndexFile"));
+            }
+            index = DisabilitaUtility.Items.IndexOf("Disabilita Edge PDF");
+            if (index != -1)
+            {
+                DisabilitaUtility.SetItemChecked(index, GetCheckboxState("DisabilitaEdgePDF"));
+            }
+            index = DisabilitaUtility.Items.IndexOf("Disabilita Mappe");
+            if (index != -1)
+            {
+                DisabilitaUtility.SetItemChecked(index, GetCheckboxState("DisabilitaMappe"));
+            }
+            index = DisabilitaUtility.Items.IndexOf("Disabilita UWP apps");
+            if (index != -1)
+            {
+                DisabilitaUtility.SetItemChecked(index, GetCheckboxState("DisabilitaUWPapps"));
+            }
+            index = DisabilitaUtility.Items.IndexOf("Disabilita Esperienze Personalizzate Microsoft");
+            if (index != -1)
+            {
+                DisabilitaUtility.SetItemChecked(index, GetCheckboxState("DisabilitaEsperienzePersonalizzateMicrosoft"));
+            }
+            index = DisabilitaUtility.Items.IndexOf("Disabilita Esperienze Personalizzate Microsoft");
+            if (index != -1)
+            {
+                DisabilitaUtility.SetItemChecked(index, GetCheckboxState("DisabilitaEsperienzePersonalizzateMicrosoft"));
+            }
+            index = AbilitaUtility.Items.IndexOf("Abilita Background App");
+            if (index != -1)
+            {
+                AbilitaUtility.SetItemChecked(index, GetCheckboxState("AbilitaBackgroundApp"));
+            }
+            index = AbilitaUtility.Items.IndexOf("Abilita Feedback");
+            if (index != -1)
+            {
+                AbilitaUtility.SetItemChecked(index, GetCheckboxState("AbilitaFeedback"));
+            }
+            index = AbilitaUtility.Items.IndexOf("Abilita Advertising ID");
+            if (index != -1)
+            {
+                AbilitaUtility.SetItemChecked(index, GetCheckboxState("AbilitaAdvertisingID"));
+            }
+            index = AbilitaUtility.Items.IndexOf("Abilita Filtro Smart Screen");
+            if (index != -1)
+            {
+                AbilitaUtility.SetItemChecked(index, GetCheckboxState("AbilitaFiltroSmartScreen"));
+            }
+            index = AbilitaUtility.Items.IndexOf("Abilita Wifi Sense");
+            if (index != -1)
+            {
+                AbilitaUtility.SetItemChecked(index, GetCheckboxState("AbilitaWifiSense"));
+            }
+            index = AbilitaUtility.Items.IndexOf("Abilita Desktop Remoto");
+            if (index != -1)
+            {
+                AbilitaUtility.SetItemChecked(index, GetCheckboxState("AbilitaDesktopRemoto"));
+            }
+            index = AbilitaUtility.Items.IndexOf("Abilita attivazione del Numlock in avvio");
+            if (index != -1)
+            {
+                AbilitaUtility.SetItemChecked(index, GetCheckboxState("AbilitaattivazionedelNumlockinavvio"));
+            }
+            index = AbilitaUtility.Items.IndexOf("Abilita News e Interessi");
+            if (index != -1)
+            {
+                AbilitaUtility.SetItemChecked(index, GetCheckboxState("AbilitaNewseInteressi"));
+            }
+            index = AbilitaUtility.Items.IndexOf("Abilita Risparmio Energetico Personalizzato");
+            if (index != -1)
+            {
+                AbilitaUtility.SetItemChecked(index, GetCheckboxState("AbilitaRisparmioEnergeticoPersonalizzato"));
+            }
+            index = AbilitaUtility.Items.IndexOf("Abilita Mappe");
+            if (index != -1)
+            {
+                AbilitaUtility.SetItemChecked(index, GetCheckboxState("AbilitaMappe"));
+            }
+            index = AbilitaUtility.Items.IndexOf("Abilita UWP apps");
+            if (index != -1)
+            {
+                AbilitaUtility.SetItemChecked(index, GetCheckboxState("AbilitaUWPapps"));
+            }
+            index = AbilitaUtility.Items.IndexOf("Abilita Esperienze Personalizzate Microsoft");
+            if (index != -1)
+            {
+                AbilitaUtility.SetItemChecked(index, GetCheckboxState("AbilitaEsperienzePersonalizzateMicrosoft"));
+            }
+        }
+
         private void btnAvviaSelezionatiUti_Click(object sender, EventArgs e)
         {
             if (DisabilitaUtility.CheckedItems.Contains("Disabilita Background App"))
             {
+                SetCheckboxState("DisabilitaBackgroundApp", true);
+                string regCommand = @"reg add HKCU\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications /v GlobalUserDisabled /t REG_DWORD /d 1 /f";
+
                 try
                 {
+                    System.Diagnostics.Process.Start("cmd.exe", "/c " + regCommand).WaitForExit();
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
                     {
                         FileName = "powershell.exe",
@@ -46,7 +211,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runas"
                     };
                     using (var process = System.Diagnostics.Process.Start(startInfo))
                     {
@@ -58,11 +224,16 @@ namespace WinHubX.Forms.Settaggi
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"An error occurred: {ex.Message}");
+                    MessageBox.Show($"Si è verificato un errore: {ex.Message}");
                 }
             }
-            else if (DisabilitaUtility.CheckedItems.Contains("Disabilita Feedback"))
+            else
             {
+                SetCheckboxState("DisabilitaBackgroundApp", false);
+            }
+            if (DisabilitaUtility.CheckedItems.Contains("Disabilita Feedback"))
+            {
+                SetCheckboxState("DisabilitaFeedback", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -77,7 +248,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
                     using (var process = System.Diagnostics.Process.Start(startInfo))
                     {
@@ -92,8 +264,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (DisabilitaUtility.CheckedItems.Contains("Disabilita Advertising ID"))
+            else
             {
+                SetCheckboxState("DisabilitaFeedback", false);
+            }
+            if (DisabilitaUtility.CheckedItems.Contains("Disabilita Advertising ID"))
+            {
+                SetCheckboxState("DisabilitaAdvertisingID", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -103,7 +280,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -119,8 +297,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (DisabilitaUtility.CheckedItems.Contains("Disabilita Filtro Smart Screen"))
+            else
             {
+                SetCheckboxState("DisabilitaAdvertisingID", false);
+            }
+            if (DisabilitaUtility.CheckedItems.Contains("Disabilita Filtro Smart Screen"))
+            {
+                SetCheckboxState("DisabilitaFiltroSmartScreen", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -133,7 +316,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -149,8 +333,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (DisabilitaUtility.CheckedItems.Contains("Disabilita Wifi Sense"))
+            else
             {
+                SetCheckboxState("DisabilitaFiltroSmartScreen", false);
+            }
+            if (DisabilitaUtility.CheckedItems.Contains("Disabilita Wifi Sense"))
+            {
+                SetCheckboxState("DisabilitaWifiSense", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -165,7 +354,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -181,8 +371,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (DisabilitaUtility.CheckedItems.Contains("Disabilita Desktop Remoto"))
+            else
             {
+                SetCheckboxState("DisabilitaWifiSense", false);
+            }
+            if (DisabilitaUtility.CheckedItems.Contains("Disabilita Desktop Remoto"))
+            {
+                SetCheckboxState("DisabilitaDesktopRemoto", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -195,7 +390,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -211,8 +407,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (DisabilitaUtility.CheckedItems.Contains("Disabilita attivazione del Numlock in avvio"))
+            else
             {
+                SetCheckboxState("DisabilitaDesktopRemoto", false);
+            }
+            if (DisabilitaUtility.CheckedItems.Contains("Disabilita attivazione del Numlock in avvio"))
+            {
+                SetCheckboxState("DisabilitaattivazionedelNumlockinavvio", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -230,7 +431,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -246,35 +448,74 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (DisabilitaUtility.CheckedItems.Contains("Disabilita News e Interessi"))
+            else
             {
+                SetCheckboxState("DisabilitaattivazionedelNumlockinavvio", false);
+            }
+            if (DisabilitaUtility.CheckedItems.Contains("Disabilita News e Interessi"))
+            {
+                SetCheckboxState("DisabilitaNewseInteressi", true);
                 try
                 {
-                    var startInfo = new System.Diagnostics.ProcessStartInfo()
+                    var startInfo1 = new System.Diagnostics.ProcessStartInfo()
                     {
                         FileName = "powershell.exe",
-                        Arguments = "Set-ItemProperty -Path \"HKCU:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Feeds\" -Name \"EnableFeeds\" -Type DWord -Value 0",
+                        Arguments = "Set-ItemProperty -Path \"HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Feeds\" -Name \"EnableFeeds\" -Type DWord -Value 0",
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runas"
                     };
 
-                    using (var process = System.Diagnostics.Process.Start(startInfo))
+                    using (var process1 = System.Diagnostics.Process.Start(startInfo1))
                     {
-                        process.WaitForExit();
+                        process1.WaitForExit();
 
-                        var output = process.StandardOutput.ReadToEnd();
-                        var error = process.StandardError.ReadToEnd();
+                        var output1 = process1.StandardOutput.ReadToEnd();
+                        var error1 = process1.StandardError.ReadToEnd();
+                        if (!string.IsNullOrEmpty(error1))
+                        {
+                            MessageBox.Show($"Errore PowerShell: {error1}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
+
+                    var startInfo2 = new System.Diagnostics.ProcessStartInfo()
+                    {
+                        FileName = "reg.exe",
+                        Arguments = "add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Feeds\" /v \"ShellFeedsTaskbarViewMode\" /t REG_DWORD /d 2 /f",
+                        UseShellExecute = false,
+                        CreateNoWindow = true,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        Verb = "runas"
+                    };
+
+                    using (var process2 = System.Diagnostics.Process.Start(startInfo2))
+                    {
+                        process2.WaitForExit();
+
+                        var output2 = process2.StandardOutput.ReadToEnd();
+                        var error2 = process2.StandardError.ReadToEnd();
+                        if (!string.IsNullOrEmpty(error2))
+                        {
+                            MessageBox.Show($"Errore reg.exe: {error2}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"An error occurred: {ex.Message}");
+                    MessageBox.Show($"Si è verificato un errore: {ex.Message}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (DisabilitaUtility.CheckedItems.Contains("Disabilita Index File"))
+            else
             {
+                SetCheckboxState("DisabilitaNewseInteressi", false);
+            }
+            if (DisabilitaUtility.CheckedItems.Contains("Disabilita Index File"))
+            {
+                SetCheckboxState("DisabilitaIndexFile", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -291,7 +532,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -307,8 +549,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (DisabilitaUtility.CheckedItems.Contains("Disabilita Edge PDF"))
+            else
             {
+                SetCheckboxState("DisabilitaIndexFile", false);
+            }
+            if (DisabilitaUtility.CheckedItems.Contains("Disabilita Edge PDF"))
+            {
+                SetCheckboxState("DisabilitaEdgePDF", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -332,7 +579,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -348,8 +596,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (DisabilitaUtility.CheckedItems.Contains("Disabilita Mappe"))
+            else
             {
+                SetCheckboxState("DisabilitaEdgePDF", false);
+            }
+            if (DisabilitaUtility.CheckedItems.Contains("Disabilita Mappe"))
+            {
+                SetCheckboxState("DisabilitaMappe", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -359,7 +612,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -375,8 +629,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (DisabilitaUtility.CheckedItems.Contains("Disabilita UWP apps"))
+            else
             {
+                SetCheckboxState("DisabilitaMappe", false);
+            }
+            if (DisabilitaUtility.CheckedItems.Contains("Disabilita UWP apps"))
+            {
+                SetCheckboxState("DisabilitaUWPapps", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -417,7 +676,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -433,8 +693,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (DisabilitaUtility.CheckedItems.Contains("Disabilita Esperienze Personalizzate Microsoft"))
+            else
             {
+                SetCheckboxState("DisabilitaUWPapps", false);
+            }
+            if (DisabilitaUtility.CheckedItems.Contains("Disabilita Esperienze Personalizzate Microsoft"))
+            {
+                SetCheckboxState("DisabilitaEsperienzePersonalizzateMicrosoft", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -448,7 +713,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -464,10 +730,18 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUtility.CheckedItems.Contains("Abilita Background App"))
+            else
             {
+                SetCheckboxState("DisabilitaEsperienzePersonalizzateMicrosoft", false);
+            }
+            if (AbilitaUtility.CheckedItems.Contains("Abilita Background App"))
+            {
+                SetCheckboxState("AbilitaBackgroundApp", true);
+                string regCommand = @"reg add HKCU\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications /v GlobalUserDisabled /t REG_DWORD /d 0 /f";
+
                 try
                 {
+                    System.Diagnostics.Process.Start("cmd.exe", "/c " + regCommand).WaitForExit();
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
                     {
                         FileName = "powershell.exe",
@@ -480,7 +754,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -496,8 +771,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUtility.CheckedItems.Contains("Abilita Feedback"))
+            else
             {
+                SetCheckboxState("AbilitaBackgroundApp", false);
+            }
+            if (AbilitaUtility.CheckedItems.Contains("Abilita Feedback"))
+            {
+                SetCheckboxState("AbilitaFeedback", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -512,7 +792,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -528,8 +809,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUtility.CheckedItems.Contains("Abilita Advertising ID"))
+            else
             {
+                SetCheckboxState("AbilitaFeedback", false);
+            }
+            if (AbilitaUtility.CheckedItems.Contains("Abilita Advertising ID"))
+            {
+                SetCheckboxState("AbilitaAdvertisingID", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -539,7 +825,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -555,8 +842,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUtility.CheckedItems.Contains("Abilita Filtro Smart Screen"))
+            else
             {
+                SetCheckboxState("AbilitaAdvertisingID", false);
+            }
+            if (AbilitaUtility.CheckedItems.Contains("Abilita Filtro Smart Screen"))
+            {
+                SetCheckboxState("AbilitaFiltroSmartScreen", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -569,7 +861,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -585,8 +878,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUtility.CheckedItems.Contains("Abilita Wifi Sense"))
+            else
             {
+                SetCheckboxState("AbilitaFiltroSmartScreen", false);
+            }
+            if (AbilitaUtility.CheckedItems.Contains("Abilita Wifi Sense"))
+            {
+                SetCheckboxState("AbilitaWifiSense", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -601,7 +899,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -617,8 +916,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUtility.CheckedItems.Contains("Abilita Desktop Remoto"))
+            else
             {
+                SetCheckboxState("AbilitaWifiSense", false);
+            }
+            if (AbilitaUtility.CheckedItems.Contains("Abilita Desktop Remoto"))
+            {
+                SetCheckboxState("AbilitaDesktopRemoto", false);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -632,7 +936,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -648,8 +953,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUtility.CheckedItems.Contains("Abilita attivazione del Numlock in avvio"))
+            else
             {
+                SetCheckboxState("AbilitaDesktopRemoto", false);
+            }
+            if (AbilitaUtility.CheckedItems.Contains("Abilita attivazione del Numlock in avvio"))
+            {
+                SetCheckboxState("AbilitaattivazionedelNumlockinavvio", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -669,7 +979,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -685,35 +996,74 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUtility.CheckedItems.Contains("Abilita News e Interessi"))
+            else
             {
+                SetCheckboxState("AbilitaattivazionedelNumlockinavvio", false);
+            }
+            if (AbilitaUtility.CheckedItems.Contains("Abilita News e Interessi"))
+            {
+                SetCheckboxState("AbilitaNewseInteressi", true);
                 try
                 {
-                    var startInfo = new System.Diagnostics.ProcessStartInfo()
+                    var startInfo1 = new System.Diagnostics.ProcessStartInfo()
                     {
                         FileName = "powershell.exe",
-                        Arguments = "Set-ItemProperty -Path \"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Feeds\" -Name \"EnableFeeds\" -Type DWord -Value 1",
+                        Arguments = "Set-ItemProperty -Path \"HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Feeds\" -Name \"EnableFeeds\" -Type DWord -Value 1",
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runas"
                     };
 
-                    using (var process = System.Diagnostics.Process.Start(startInfo))
+                    using (var process1 = System.Diagnostics.Process.Start(startInfo1))
                     {
-                        process.WaitForExit();
+                        process1.WaitForExit();
 
-                        var output = process.StandardOutput.ReadToEnd();
-                        var error = process.StandardError.ReadToEnd();
+                        var output1 = process1.StandardOutput.ReadToEnd();
+                        var error1 = process1.StandardError.ReadToEnd();
+                        if (!string.IsNullOrEmpty(error1))
+                        {
+                            MessageBox.Show($"Errore PowerShell: {error1}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
+
+                    var startInfo2 = new System.Diagnostics.ProcessStartInfo()
+                    {
+                        FileName = "reg.exe",
+                        Arguments = "add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Feeds\" /v \"ShellFeedsTaskbarViewMode\" /t REG_DWORD /d 0 /f",
+                        UseShellExecute = false,
+                        CreateNoWindow = true,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        Verb = "runas"
+                    };
+
+                    using (var process2 = System.Diagnostics.Process.Start(startInfo2))
+                    {
+                        process2.WaitForExit();
+
+                        var output2 = process2.StandardOutput.ReadToEnd();
+                        var error2 = process2.StandardError.ReadToEnd();
+                        if (!string.IsNullOrEmpty(error2))
+                        {
+                            MessageBox.Show($"Errore reg.exe: {error2}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"An error occurred: {ex.Message}");
+                    MessageBox.Show($"Si è verificato un errore: {ex.Message}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (AbilitaUtility.CheckedItems.Contains("Abilita Risparmio Energetico Personalizzato"))
+            else
             {
+                SetCheckboxState("AbilitaNewseInteressi", false);
+            }
+            if (AbilitaUtility.CheckedItems.Contains("Abilita Risparmio Energetico Personalizzato"))
+            {
+                SetCheckboxState("AbilitaRisparmioEnergeticoPersonalizzato", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -723,7 +1073,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -739,8 +1090,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUtility.CheckedItems.Contains("Migliora uso SSD"))
+            else
             {
+                SetCheckboxState("AbilitaRisparmioEnergeticoPersonalizzato", false);
+            }
+            if (AbilitaUtility.CheckedItems.Contains("Migliora uso SSD"))
+            {
+                SetCheckboxState("MigliorausoSSD", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -750,7 +1106,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -766,8 +1123,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUtility.CheckedItems.Contains("Abilita Mappe"))
+            else
             {
+                SetCheckboxState("MigliorausoSSD", false);
+            }
+            if (AbilitaUtility.CheckedItems.Contains("Abilita Mappe"))
+            {
+                SetCheckboxState("AbilitaMappe", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -777,7 +1139,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -793,8 +1156,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUtility.CheckedItems.Contains("Abilita UWP apps"))
+            else
             {
+                SetCheckboxState("AbilitaMappe", false);
+            }
+            if (AbilitaUtility.CheckedItems.Contains("Abilita UWP apps"))
+            {
+                SetCheckboxState("AbilitaUWPapps", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -827,7 +1195,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -843,8 +1212,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUtility.CheckedItems.Contains("Abilita Esperienze Personalizzate Microsoft"))
+            else
             {
+                SetCheckboxState("AbilitaUWPapps", false);
+            }
+            if (AbilitaUtility.CheckedItems.Contains("Abilita Esperienze Personalizzate Microsoft"))
+            {
+                SetCheckboxState("AbilitaEsperienzePersonalizzateMicrosoft", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -854,7 +1228,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -869,6 +1244,10 @@ namespace WinHubX.Forms.Settaggi
                 {
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
+            }
+            else
+            {
+                SetCheckboxState("AbilitaEsperienzePersonalizzateMicrosoft", false);
             }
             MessageBox.Show("Modifiche apportate con successo", "WinHubX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

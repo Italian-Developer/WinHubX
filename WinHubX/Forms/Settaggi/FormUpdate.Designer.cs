@@ -73,7 +73,7 @@
             btnAvviaSelezionatiUpda.FlatStyle = FlatStyle.Flat;
             btnAvviaSelezionatiUpda.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAvviaSelezionatiUpda.ForeColor = Color.White;
-            btnAvviaSelezionatiUpda.Location = new Point(340, 387);
+            btnAvviaSelezionatiUpda.Location = new Point(339, 413);
             btnAvviaSelezionatiUpda.Margin = new Padding(3, 2, 3, 2);
             btnAvviaSelezionatiUpda.Name = "btnAvviaSelezionatiUpda";
             btnAvviaSelezionatiUpda.Size = new Size(226, 43);
@@ -125,10 +125,10 @@
             btnUpdateEssential.FlatStyle = FlatStyle.Flat;
             btnUpdateEssential.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUpdateEssential.ForeColor = Color.White;
-            btnUpdateEssential.Location = new Point(10, 387);
+            btnUpdateEssential.Location = new Point(9, 413);
             btnUpdateEssential.Margin = new Padding(3, 2, 3, 2);
             btnUpdateEssential.Name = "btnUpdateEssential";
-            btnUpdateEssential.Size = new Size(225, 32);
+            btnUpdateEssential.Size = new Size(225, 37);
             btnUpdateEssential.TabIndex = 32;
             btnUpdateEssential.Text = "Update Essenziale";
             btnUpdateEssential.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -142,7 +142,7 @@
             btnResetUpdate.FlatStyle = FlatStyle.Flat;
             btnResetUpdate.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnResetUpdate.ForeColor = Color.White;
-            btnResetUpdate.Location = new Point(652, 357);
+            btnResetUpdate.Location = new Point(651, 392);
             btnResetUpdate.Margin = new Padding(3, 2, 3, 2);
             btnResetUpdate.Name = "btnResetUpdate";
             btnResetUpdate.Size = new Size(237, 62);
@@ -157,7 +157,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(901, 428);
+            ClientSize = new Size(901, 458);
             Controls.Add(btnResetUpdate);
             Controls.Add(btnUpdateEssential);
             Controls.Add(label1);

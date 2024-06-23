@@ -3,12 +3,12 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
         break
     }
     
-#################################### download script
+####################################
 $path_to_use = Get-Location
 
 # Set location without displaying it
 Set-Location $path_to_use | Out-Null
-#################################### edit quickedit
+####################################
 # Set the registry key path
 $regKeyPath = "HKCU:\Console"
 
@@ -39,7 +39,7 @@ function Hide-Console {
 Hide-Console
 ####################################
 
-#################################### start gui
+####################################
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
@@ -132,7 +132,6 @@ $buildButton.Add_Click({
 })
 $form.Controls.Add($buildButton)
 
-# Add event handler for OK button click
 $form.Add_Shown({$form.Activate()})
 $form.ShowDialog() | Out-Null
 ####################################

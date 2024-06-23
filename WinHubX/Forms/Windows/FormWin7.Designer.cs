@@ -130,7 +130,7 @@
             lblInfoWin7Lite.AutoSize = true;
             lblInfoWin7Lite.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblInfoWin7Lite.ForeColor = Color.Coral;
-            lblInfoWin7Lite.Location = new Point(187, 276);
+            lblInfoWin7Lite.Location = new Point(187, 294);
             lblInfoWin7Lite.Name = "lblInfoWin7Lite";
             lblInfoWin7Lite.Size = new Size(448, 29);
             lblInfoWin7Lite.TabIndex = 22;
@@ -143,7 +143,7 @@
             btnWin7Lite64.FlatStyle = FlatStyle.Flat;
             btnWin7Lite64.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin7Lite64.ForeColor = Color.White;
-            btnWin7Lite64.Location = new Point(472, 307);
+            btnWin7Lite64.Location = new Point(472, 325);
             btnWin7Lite64.Margin = new Padding(3, 2, 3, 2);
             btnWin7Lite64.Name = "btnWin7Lite64";
             btnWin7Lite64.Size = new Size(136, 53);
@@ -160,7 +160,7 @@
             btnWin7Lite32.FlatStyle = FlatStyle.Flat;
             btnWin7Lite32.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin7Lite32.ForeColor = Color.White;
-            btnWin7Lite32.Location = new Point(292, 307);
+            btnWin7Lite32.Location = new Point(292, 325);
             btnWin7Lite32.Margin = new Padding(3, 2, 3, 2);
             btnWin7Lite32.Name = "btnWin7Lite32";
             btnWin7Lite32.Size = new Size(136, 53);
@@ -175,7 +175,7 @@
             lblWin7Lite.AutoSize = true;
             lblWin7Lite.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblWin7Lite.ForeColor = Color.White;
-            lblWin7Lite.Location = new Point(225, 237);
+            lblWin7Lite.Location = new Point(225, 255);
             lblWin7Lite.Name = "lblWin7Lite";
             lblWin7Lite.Size = new Size(412, 39);
             lblWin7Lite.TabIndex = 19;
@@ -187,7 +187,7 @@
             btnInfoWin7Lite.Cursor = Cursors.Hand;
             btnInfoWin7Lite.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
             btnInfoWin7Lite.ForeColor = Color.Coral;
-            btnInfoWin7Lite.Location = new Point(666, 276);
+            btnInfoWin7Lite.Location = new Point(666, 294);
             btnInfoWin7Lite.Name = "btnInfoWin7Lite";
             btnInfoWin7Lite.Size = new Size(46, 29);
             btnInfoWin7Lite.TabIndex = 25;
@@ -199,7 +199,7 @@
             lblHashInfo.AutoSize = true;
             lblHashInfo.Font = new Font("Microsoft Sans Serif", 10.1999989F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblHashInfo.ForeColor = Color.Coral;
-            lblHashInfo.Location = new Point(257, 405);
+            lblHashInfo.Location = new Point(257, 416);
             lblHashInfo.Name = "lblHashInfo";
             lblHashInfo.Size = new Size(379, 17);
             lblHashInfo.TabIndex = 26;
@@ -210,7 +210,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(901, 428);
+            ClientSize = new Size(901, 458);
             Controls.Add(lblHashInfo);
             Controls.Add(btnInfoWin7Lite);
             Controls.Add(lblInfoWin7Lite);

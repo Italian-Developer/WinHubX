@@ -48,7 +48,7 @@
             lblHashInfo.AutoSize = true;
             lblHashInfo.Font = new Font("Microsoft Sans Serif", 10.1999989F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblHashInfo.ForeColor = Color.Coral;
-            lblHashInfo.Location = new Point(257, 404);
+            lblHashInfo.Location = new Point(257, 419);
             lblHashInfo.Name = "lblHashInfo";
             lblHashInfo.Size = new Size(379, 17);
             lblHashInfo.TabIndex = 38;
@@ -60,7 +60,7 @@
             btnInfoWin8dot1Lite.Cursor = Cursors.Hand;
             btnInfoWin8dot1Lite.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
             btnInfoWin8dot1Lite.ForeColor = Color.Coral;
-            btnInfoWin8dot1Lite.Location = new Point(672, 256);
+            btnInfoWin8dot1Lite.Location = new Point(672, 273);
             btnInfoWin8dot1Lite.Name = "btnInfoWin8dot1Lite";
             btnInfoWin8dot1Lite.Size = new Size(46, 29);
             btnInfoWin8dot1Lite.TabIndex = 37;
@@ -72,7 +72,7 @@
             lblInfoWin8dot1Lite.AutoSize = true;
             lblInfoWin8dot1Lite.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblInfoWin8dot1Lite.ForeColor = Color.Coral;
-            lblInfoWin8dot1Lite.Location = new Point(187, 256);
+            lblInfoWin8dot1Lite.Location = new Point(187, 273);
             lblInfoWin8dot1Lite.Name = "lblInfoWin8dot1Lite";
             lblInfoWin8dot1Lite.Size = new Size(448, 29);
             lblInfoWin8dot1Lite.TabIndex = 36;
@@ -85,7 +85,7 @@
             btnWin8dot1Lite64.FlatStyle = FlatStyle.Flat;
             btnWin8dot1Lite64.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin8dot1Lite64.ForeColor = Color.White;
-            btnWin8dot1Lite64.Location = new Point(472, 287);
+            btnWin8dot1Lite64.Location = new Point(472, 304);
             btnWin8dot1Lite64.Margin = new Padding(3, 2, 3, 2);
             btnWin8dot1Lite64.Name = "btnWin8dot1Lite64";
             btnWin8dot1Lite64.Size = new Size(136, 53);
@@ -102,7 +102,7 @@
             btnWin8dot1Lite32.FlatStyle = FlatStyle.Flat;
             btnWin8dot1Lite32.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin8dot1Lite32.ForeColor = Color.White;
-            btnWin8dot1Lite32.Location = new Point(292, 287);
+            btnWin8dot1Lite32.Location = new Point(292, 304);
             btnWin8dot1Lite32.Margin = new Padding(3, 2, 3, 2);
             btnWin8dot1Lite32.Name = "btnWin8dot1Lite32";
             btnWin8dot1Lite32.Size = new Size(136, 53);
@@ -117,7 +117,7 @@
             lblWin8dot1Lite.AutoSize = true;
             lblWin8dot1Lite.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblWin8dot1Lite.ForeColor = Color.White;
-            lblWin8dot1Lite.Location = new Point(196, 215);
+            lblWin8dot1Lite.Location = new Point(196, 232);
             lblWin8dot1Lite.Name = "lblWin8dot1Lite";
             lblWin8dot1Lite.Size = new Size(475, 39);
             lblWin8dot1Lite.TabIndex = 33;
@@ -210,7 +210,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(901, 428);
+            ClientSize = new Size(901, 458);
             Controls.Add(lblHashInfo);
             Controls.Add(btnInfoWin8dot1Lite);
             Controls.Add(lblInfoWin8dot1Lite);

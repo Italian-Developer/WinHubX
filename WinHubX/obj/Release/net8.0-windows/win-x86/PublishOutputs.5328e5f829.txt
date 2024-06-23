@@ -1,12 +1,11 @@
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\WinHubX.pdb
-C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Images\btnAIO.png
-C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Images\btnAIOVect.png
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Images\extWIMToolkit.png
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Images\help.png
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Images\homeLogo.png
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Images\icoLogoWhite.ico
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Images\png365.png
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Images\pngAttivaOffice.png
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Images\pngAvanti.png
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Images\pngBackArrow.png
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Images\pngClose.png
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Images\pngCoffee.png
@@ -57,7 +56,6 @@ C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\isotool11.bat
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\Risorse\tweaks.bat
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\Risorse\tweaks10.bat
-C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\installeroffice.bat
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\WinHubXCambioEdizione.bat
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\WinHubXWindowsAttivatore.bat
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\DriverRST.zip
@@ -71,6 +69,23 @@ C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\Risorse\[AIMODS]-Store.exe
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\Rufus4Lite.exe
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\bin.exe
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\Configurazione2021x32.xml
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\Configurazione2021x64.xml
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\Configurazione365x32.xml
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\Configurazione365x64.xml
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\Risorse\unattend.xml
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\Risorse\unattendx32.xml
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\Risorse\unattend10.xml
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\Risorse\unattendstock.xml
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\immaginioffice\access.png
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\immaginioffice\excel.png
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\immaginioffice\onedrive.png
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\immaginioffice\onenote.png
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\immaginioffice\outlook.png
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\immaginioffice\powerpoint.png
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\immaginioffice\project.png
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\immaginioffice\visio.png
+C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\immaginioffice\word.png
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\Product Sans.ttf
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\Product Sans Black.ttf
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\ISOMaker.ps1
@@ -78,15 +93,10 @@ C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\Risorse\start10.ps1
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\Risorse\unpin_start_tiles.ps1
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\WIMToolkit.ps1
-C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\OfficePersonalizzato\OfficeMaker.ps1
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\WinHubXOfficeScrubber.ps1
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\WinHubXWSL.ps1
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\Risorse\7z.dll
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\Risorse\lower-ram-usage.reg
-C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\Risorse\unattend.xml
-C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\Risorse\unattendx32.xml
-C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\Risorse\unattend10.xml
-C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\RisorseCreaISO\Risorse\unattendstock.xml
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\icoWinHubX.ico
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\Resources\WinHubXOfficeAttivatore.cmd
 C:\Users\Nico\Desktop\WinHubX-development\WinHubX\bin\Release\net8.0-windows\win-x86\app.publish\runtimes\unix\lib\net8.0\Modules\Microsoft.PowerShell.Host\Microsoft.PowerShell.Host.psd1

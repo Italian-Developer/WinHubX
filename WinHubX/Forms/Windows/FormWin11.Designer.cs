@@ -40,6 +40,8 @@
             btnBack = new Button();
             btnWin11ARM64 = new Button();
             label1 = new Label();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -48,7 +50,7 @@
             lblHashInfo.AutoSize = true;
             lblHashInfo.Font = new Font("Microsoft Sans Serif", 10.1999989F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblHashInfo.ForeColor = Color.Coral;
-            lblHashInfo.Location = new Point(257, 404);
+            lblHashInfo.Location = new Point(257, 424);
             lblHashInfo.Name = "lblHashInfo";
             lblHashInfo.Size = new Size(379, 17);
             lblHashInfo.TabIndex = 62;
@@ -60,7 +62,7 @@
             btnInfoWin11Lite.Cursor = Cursors.Hand;
             btnInfoWin11Lite.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
             btnInfoWin11Lite.ForeColor = Color.Coral;
-            btnInfoWin11Lite.Location = new Point(685, 285);
+            btnInfoWin11Lite.Location = new Point(685, 303);
             btnInfoWin11Lite.Name = "btnInfoWin11Lite";
             btnInfoWin11Lite.Size = new Size(46, 29);
             btnInfoWin11Lite.TabIndex = 61;
@@ -72,7 +74,7 @@
             lblInfoWin11Lite.AutoSize = true;
             lblInfoWin11Lite.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblInfoWin11Lite.ForeColor = Color.Coral;
-            lblInfoWin11Lite.Location = new Point(205, 256);
+            lblInfoWin11Lite.Location = new Point(205, 274);
             lblInfoWin11Lite.Name = "lblInfoWin11Lite";
             lblInfoWin11Lite.Size = new Size(448, 58);
             lblInfoWin11Lite.TabIndex = 60;
@@ -86,12 +88,12 @@
             btnWin11Lite64.FlatStyle = FlatStyle.Flat;
             btnWin11Lite64.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin11Lite64.ForeColor = Color.White;
-            btnWin11Lite64.Location = new Point(382, 316);
+            btnWin11Lite64.Location = new Point(207, 346);
             btnWin11Lite64.Margin = new Padding(3, 2, 3, 2);
             btnWin11Lite64.Name = "btnWin11Lite64";
-            btnWin11Lite64.Size = new Size(136, 53);
+            btnWin11Lite64.Size = new Size(221, 53);
             btnWin11Lite64.TabIndex = 59;
-            btnWin11Lite64.Text = "64bit";
+            btnWin11Lite64.Text = "64bit-23H2";
             btnWin11Lite64.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnWin11Lite64.UseVisualStyleBackColor = true;
             btnWin11Lite64.MouseUp += btnWin11Lite64_MouseUp;
@@ -101,7 +103,7 @@
             lblWin11Lite.AutoSize = true;
             lblWin11Lite.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblWin11Lite.ForeColor = Color.White;
-            lblWin11Lite.Location = new Point(302, 215);
+            lblWin11Lite.Location = new Point(302, 233);
             lblWin11Lite.Name = "lblWin11Lite";
             lblWin11Lite.Size = new Size(285, 39);
             lblWin11Lite.TabIndex = 57;
@@ -126,12 +128,12 @@
             btnWin11AIO64.FlatStyle = FlatStyle.Flat;
             btnWin11AIO64.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWin11AIO64.ForeColor = Color.White;
-            btnWin11AIO64.Location = new Point(596, 138);
+            btnWin11AIO64.Location = new Point(443, 138);
             btnWin11AIO64.Margin = new Padding(3, 2, 3, 2);
             btnWin11AIO64.Name = "btnWin11AIO64";
-            btnWin11AIO64.Size = new Size(136, 53);
+            btnWin11AIO64.Size = new Size(214, 53);
             btnWin11AIO64.TabIndex = 55;
-            btnWin11AIO64.Text = "64bit";
+            btnWin11AIO64.Text = "64bit-23H2";
             btnWin11AIO64.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnWin11AIO64.UseVisualStyleBackColor = true;
             btnWin11AIO64.MouseUp += btnWin11AIO64_MouseUp;
@@ -201,12 +203,48 @@
             label1.Text = "Edizioni incluse: Pro ed Enterprise";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.Enabled = false;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(500, 346);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(221, 53);
+            button1.TabIndex = 65;
+            button1.Text = "64bit-24H2";
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Cursor = Cursors.Hand;
+            button2.Enabled = false;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(663, 138);
+            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(214, 53);
+            button2.TabIndex = 66;
+            button2.Text = "64bit-24H2";
+            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button2.UseVisualStyleBackColor = true;
+            // 
             // FormWin11
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(901, 428);
+            ClientSize = new Size(901, 458);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(btnWin11ARM64);
             Controls.Add(label1);
             Controls.Add(lblHashInfo);
@@ -242,5 +280,7 @@
         private Button btnBack;
         private Button btnWin11ARM64;
         private Label label1;
+        private Button button1;
+        private Button button2;
     }
 }

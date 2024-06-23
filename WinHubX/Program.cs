@@ -1,17 +1,23 @@
 namespace WinHubX
 {
-    internal static class Program
+    static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
+        /// Punto di ingresso principale per l'applicazione.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.ApplicationExit += new EventHandler(Application_Uninstalling); // Aggiungi il gestore per ApplicationExit
             Application.Run(new Form1());
+        }
+
+        private static void Application_Uninstalling(object sender, EventArgs e)
+        {
+            // Rimuovi le chiavi del registro qui
+            Form1.RemoveRegistryKeys();
         }
     }
 }

@@ -1,13 +1,15 @@
 ﻿using System.Diagnostics;
 using System.Reflection;
 using WinHubX.Dialog;
+using WinHubX.Forms.Personalizzazione_office;
 
 namespace WinHubX
 {
     public partial class FormOffice : Form
     {
+        private Form1 form1;
         private NotifyIcon notifyIcon;
-        public FormOffice()
+        public FormOffice(Form1 form1)
         {
             InitializeComponent();
             notifyIcon = new NotifyIcon
@@ -15,6 +17,7 @@ namespace WinHubX
                 Icon = SystemIcons.Information,
                 Visible = true
             };
+            this.form1 = form1;
         }
 
         #region Office2019
@@ -288,22 +291,14 @@ namespace WinHubX
 
         private void btnPersonalizzaOffice_Click(object sender, EventArgs e)
         {
-            string assemblyNamee = Assembly.GetExecutingAssembly().GetName().Name;
-            ExtractEmbeddedResourceFolder($"{assemblyNamee}.Resources.OfficePersonalizzato");
-            try
-            {
-                string assemblyName1 = Assembly.GetExecutingAssembly().GetName().Name;
-                string resourcePath1 = $"{assemblyName1}.Resources.OfficePersonalizzato.OfficeMaker.ps1";
-                byte[] exeBytes1 = LoadEmbeddedResource1(resourcePath1);
-                string ps1FilePath1 = Path.Combine(Path.GetTempPath(), "OfficeMaker.ps1");
-                File.WriteAllBytes(ps1FilePath1, exeBytes1);
-
-                // Avvia lo script PowerShell in un thread separato
-                Thread scriptThread = new Thread(() => StartPowerShell(ps1FilePath1));
-                scriptThread.Start();
-            }
-            finally { }
+            form1.lblPanelTitle.Text = "Personalizzazione Office";
+            form1.PnlFormLoader.Controls.Clear();
+            PersonalizzazioneOffice formPersonalizzazioneOffice = new PersonalizzazioneOffice(form1, this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formPersonalizzazioneOffice.FormBorderStyle = FormBorderStyle.None;
+            form1.PnlFormLoader.Controls.Add(formPersonalizzazioneOffice);
+            formPersonalizzazioneOffice.Show();
         }
+
 
         public static void ExtractEmbeddedResourceFolder(string resourceFolder)
         {

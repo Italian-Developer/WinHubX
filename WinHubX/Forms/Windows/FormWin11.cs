@@ -135,7 +135,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/b4ffaztw2bes",
+                        FileName = "https://devuploads.com/7tq1eq4xk1tv",
                         UseShellExecute = true
                     };
                     Process.Start(psi);

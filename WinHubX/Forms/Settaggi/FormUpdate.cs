@@ -1,4 +1,5 @@
-﻿using WinHubX.Forms.Base;
+﻿using Microsoft.Win32;
+using WinHubX.Forms.Base;
 
 namespace WinHubX.Forms.Settaggi
 {
@@ -11,6 +12,7 @@ namespace WinHubX.Forms.Settaggi
             InitializeComponent();
             this.form1 = form1;
             this.formSettaggi = formSettaggi;
+            LoadCheckboxStates();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -27,10 +29,90 @@ namespace WinHubX.Forms.Settaggi
             form1.PnlFormLoader.Controls.Add(formSettaggi);
             formSettaggi.Show();
         }
+
+        private void SetCheckboxState(string itemName, bool isChecked)
+        {
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey("Software\\WinHubX"))
+            {
+                key.SetValue(itemName, isChecked ? 1 : 0, RegistryValueKind.DWord);
+            }
+        }
+
+        private bool GetCheckboxState(string itemName)
+        {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\WinHubX"))
+            {
+                if (key != null)
+                {
+                    object value = key.GetValue(itemName);
+                    if (value != null)
+                    {
+                        return (int)value == 1;
+                    }
+                }
+            }
+            return false;
+        }
+
+        private void LoadCheckboxStates()
+        {
+            int index = DisabilitaUpdate.Items.IndexOf("Disabilita Download Automatico Windows Update");
+            if (index != -1)
+            {
+                DisabilitaUpdate.SetItemChecked(index, GetCheckboxState("DisabilitaDownloadAutomaticoWindowsUpdate"));
+            }
+            index = DisabilitaUpdate.Items.IndexOf("Disabilita Update Prodotti Microsoft");
+            if (index != -1)
+            {
+                DisabilitaUpdate.SetItemChecked(index, GetCheckboxState("DisabilitaUpdateProdottiMicrosoft"));
+            }
+            index = DisabilitaUpdate.Items.IndexOf("Disabilita Download Driver Windows Update");
+            if (index != -1)
+            {
+                DisabilitaUpdate.SetItemChecked(index, GetCheckboxState("DisabilitaDownloadDriverWindowsUpdate"));
+            }
+            index = DisabilitaUpdate.Items.IndexOf("Disabilita Riavvio Automatico Windows Update");
+            if (index != -1)
+            {
+                DisabilitaUpdate.SetItemChecked(index, GetCheckboxState("DisabilitaRiavvioAutomaticoWindowsUpdate"));
+            }
+            index = DisabilitaUpdate.Items.IndexOf("Disabilita Notifiche Update");
+            if (index != -1)
+            {
+                DisabilitaUpdate.SetItemChecked(index, GetCheckboxState("DisabilitaNotificheUpdate"));
+            }
+            index = AbilitaUpdate.Items.IndexOf("Abilita Download Automatico Windows Update");
+            if (index != -1)
+            {
+                AbilitaUpdate.SetItemChecked(index, GetCheckboxState("AbilitaDownloadAutomaticoWindowsUpdate"));
+            }
+            index = AbilitaUpdate.Items.IndexOf("Abilita Update Prodotti Microsoft");
+            if (index != -1)
+            {
+                AbilitaUpdate.SetItemChecked(index, GetCheckboxState("AbilitaUpdateProdottiMicrosoft"));
+            }
+            index = AbilitaUpdate.Items.IndexOf("Abilita Download Driver Windows Update");
+            if (index != -1)
+            {
+                AbilitaUpdate.SetItemChecked(index, GetCheckboxState("AbilitaDownloadDriverWindowsUpdate"));
+            }
+            index = AbilitaUpdate.Items.IndexOf("Abilita Riavvio Automatico Windows Update");
+            if (index != -1)
+            {
+                AbilitaUpdate.SetItemChecked(index, GetCheckboxState("AbilitaRiavvioAutomaticoWindowsUpdate"));
+            }
+            index = AbilitaUpdate.Items.IndexOf("Abilita Notifiche Update");
+            if (index != -1)
+            {
+                AbilitaUpdate.SetItemChecked(index, GetCheckboxState("AbilitaNotificheUpdate"));
+            }
+        }
+
         private void btnAvviaSelezionatiUpda_Click(object sender, EventArgs e)
         {
             if (DisabilitaUpdate.CheckedItems.Contains("Disabilita Download Automatico Windows Update"))
             {
+                SetCheckboxState("DisabilitaDownloadAutomaticoWindowsUpdate", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -40,7 +122,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -56,8 +139,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (DisabilitaUpdate.CheckedItems.Contains("Disabilita Update Prodotti Microsoft"))
+            else
             {
+                SetCheckboxState("DisabilitaDownloadAutomaticoWindowsUpdate", false);
+            }
+            if (DisabilitaUpdate.CheckedItems.Contains("Disabilita Update Prodotti Microsoft"))
+            {
+                SetCheckboxState("DisabilitaUpdateProdottiMicrosoft", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -71,7 +159,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -87,8 +176,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (DisabilitaUpdate.CheckedItems.Contains("Disabilita Download Driver Windows Update"))
+            else
             {
+                SetCheckboxState("DisabilitaUpdateProdottiMicrosoft", false);
+            }
+            if (DisabilitaUpdate.CheckedItems.Contains("Disabilita Download Driver Windows Update"))
+            {
+                SetCheckboxState("DisabilitaDownloadDriverWindowsUpdate", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -102,7 +196,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -118,8 +213,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (DisabilitaUpdate.CheckedItems.Contains("Disabilita Riavvio Automatico Windows Update"))
+            else
             {
+                SetCheckboxState("DisabilitaDownloadDriverWindowsUpdate", false);
+            }
+            if (DisabilitaUpdate.CheckedItems.Contains("Disabilita Riavvio Automatico Windows Update"))
+            {
+                SetCheckboxState("DisabilitaRiavvioAutomaticoWindowsUpdate", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -132,7 +232,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -148,8 +249,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (DisabilitaUpdate.CheckedItems.Contains("Disabilita Notifiche Update"))
+            else
             {
+                SetCheckboxState("DisabilitaRiavvioAutomaticoWindowsUpdate", false);
+            }
+            if (DisabilitaUpdate.CheckedItems.Contains("Disabilita Notifiche Update"))
+            {
+                SetCheckboxState("DisabilitaNotificheUpdate", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -159,7 +265,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -175,8 +282,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUpdate.CheckedItems.Contains("Abilita Download Automatico Windows Update"))
+            else
             {
+                SetCheckboxState("DisabilitaNotificheUpdate", false);
+            }
+            if (AbilitaUpdate.CheckedItems.Contains("Abilita Download Automatico Windows Update"))
+            {
+                SetCheckboxState("AbilitaDownloadAutomaticoWindowsUpdate", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -186,7 +298,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -202,8 +315,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUpdate.CheckedItems.Contains("Abilita Update Prodotti Microsoft"))
+            else
             {
+                SetCheckboxState("AbilitaDownloadAutomaticoWindowsUpdate", false);
+            }
+            if (AbilitaUpdate.CheckedItems.Contains("Abilita Update Prodotti Microsoft"))
+            {
+                SetCheckboxState("AbilitaUpdateProdottiMicrosoft", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -213,7 +331,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -229,8 +348,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUpdate.CheckedItems.Contains("Abilita Download Driver Windows Update"))
+            else
             {
+                SetCheckboxState("AbilitaUpdateProdottiMicrosoft", false);
+            }
+            if (AbilitaUpdate.CheckedItems.Contains("Abilita Download Driver Windows Update"))
+            {
+                SetCheckboxState("AbilitaDownloadDriverWindowsUpdate", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -244,7 +368,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -260,8 +385,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUpdate.CheckedItems.Contains("Abilita Riavvio Automatico Windows Update"))
+            else
             {
+                SetCheckboxState("AbilitaDownloadDriverWindowsUpdate", false);
+            }
+            if (AbilitaUpdate.CheckedItems.Contains("Abilita Riavvio Automatico Windows Update"))
+            {
+                SetCheckboxState("AbilitaRiavvioAutomaticoWindowsUpdate", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -271,7 +401,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -287,8 +418,13 @@ namespace WinHubX.Forms.Settaggi
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            else if (AbilitaUpdate.CheckedItems.Contains("Abilita Download Driver Windows Update"))
+            else
             {
+                SetCheckboxState("AbilitaRiavvioAutomaticoWindowsUpdate", false);
+            }
+            if (AbilitaUpdate.CheckedItems.Contains("Abilita Notifiche Update"))
+            {
+                SetCheckboxState("AbilitaNotificheUpdate", true);
                 try
                 {
                     var startInfo = new System.Diagnostics.ProcessStartInfo()
@@ -298,7 +434,8 @@ namespace WinHubX.Forms.Settaggi
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardOutput = true,
-                        RedirectStandardError = true
+                        RedirectStandardError = true,
+                        Verb = "runus"
                     };
 
                     using (var process = System.Diagnostics.Process.Start(startInfo))
@@ -313,6 +450,10 @@ namespace WinHubX.Forms.Settaggi
                 {
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
+            }
+            else
+            {
+                SetCheckboxState("AbilitaNotificheUpdate", false);
             }
             MessageBox.Show("Modifiche apportate con successo", "WinHubX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

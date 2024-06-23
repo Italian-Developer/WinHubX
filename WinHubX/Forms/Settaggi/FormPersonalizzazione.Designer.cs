@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPersonalizzazione));
             btnBack = new Button();
             label3 = new Label();
             label1 = new Label();
@@ -56,6 +57,8 @@
             destrodef = new RadioButton();
             spostain = new RadioButton();
             admincartella = new RadioButton();
+            btn_avanti = new Button();
+            label9 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -181,10 +184,10 @@
             btnAvviaSelezionatiPersonal.FlatStyle = FlatStyle.Flat;
             btnAvviaSelezionatiPersonal.Font = new Font("Microsoft Sans Serif", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAvviaSelezionatiPersonal.ForeColor = Color.White;
-            btnAvviaSelezionatiPersonal.Location = new Point(339, 316);
+            btnAvviaSelezionatiPersonal.Location = new Point(339, 411);
             btnAvviaSelezionatiPersonal.Margin = new Padding(3, 2, 3, 2);
             btnAvviaSelezionatiPersonal.Name = "btnAvviaSelezionatiPersonal";
-            btnAvviaSelezionatiPersonal.Size = new Size(278, 68);
+            btnAvviaSelezionatiPersonal.Size = new Size(278, 42);
             btnAvviaSelezionatiPersonal.TabIndex = 75;
             btnAvviaSelezionatiPersonal.Text = "Avvia Selezionati";
             btnAvviaSelezionatiPersonal.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -241,7 +244,7 @@
             groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(3, 2, 3, 2);
-            groupBox2.Size = new Size(388, 39);
+            groupBox2.Size = new Size(380, 39);
             groupBox2.TabIndex = 79;
             groupBox2.TabStop = false;
             // 
@@ -438,12 +441,41 @@
             admincartella.Text = "Aggiungi Admin Cartella";
             admincartella.UseVisualStyleBackColor = true;
             // 
+            // btn_avanti
+            // 
+            btn_avanti.Cursor = Cursors.Hand;
+            btn_avanti.FlatAppearance.BorderSize = 0;
+            btn_avanti.FlatStyle = FlatStyle.Flat;
+            btn_avanti.Image = (Image)resources.GetObject("btn_avanti.Image");
+            btn_avanti.Location = new Point(827, 411);
+            btn_avanti.Margin = new Padding(3, 2, 3, 2);
+            btn_avanti.Name = "btn_avanti";
+            btn_avanti.Size = new Size(48, 41);
+            btn_avanti.TabIndex = 85;
+            btn_avanti.UseMnemonic = false;
+            btn_avanti.UseVisualStyleBackColor = true;
+            btn_avanti.Click += btn_avanti_Click;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Italic);
+            label9.ForeColor = Color.Coral;
+            label9.Location = new Point(777, 421);
+            label9.Name = "label9";
+            label9.Size = new Size(42, 26);
+            label9.TabIndex = 86;
+            label9.Text = "1/2";
+            label9.TextAlign = ContentAlignment.BottomCenter;
+            // 
             // FormPersonalizzazione
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(886, 393);
+            ClientSize = new Size(901, 458);
+            Controls.Add(label9);
+            Controls.Add(btn_avanti);
             Controls.Add(admincartella);
             Controls.Add(spostain);
             Controls.Add(groupBox5);
@@ -515,5 +547,7 @@
         private RadioButton destrodef;
         private RadioButton spostain;
         private RadioButton admincartella;
+        private Button btn_avanti;
+        private Label label9;
     }
 }

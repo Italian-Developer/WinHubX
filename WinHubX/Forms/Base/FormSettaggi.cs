@@ -93,18 +93,18 @@ namespace WinHubX.Forms.Base
             {
                 if (Environment.Is64BitOperatingSystem)
                 {
-                    downloadUrl = "https://devuploads.com/x0e2f0glln32";
+                    downloadUrl = "https://devuploads.com/pia57z6wvvr6";
                     zipFileName = "WSAwin11x64.zip";
                 }
                 else
                 {
-                    downloadUrl = "https://devuploads.com/9yvtom45rd0a";
+                    downloadUrl = "https://devuploads.com/56zton5nvqay";
                     zipFileName = "WSAwin11arm64.zip";
                 }
             }
             else if (systemType.Contains("Windows 10"))
             {
-                downloadUrl = "https://devuploads.com/zl95runwirqj";
+                downloadUrl = "https://devuploads.com/fbziqcgp3shs";
                 zipFileName = "WSAwin10x64.zip";
             }
 

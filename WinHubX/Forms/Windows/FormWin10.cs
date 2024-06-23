@@ -232,7 +232,7 @@ namespace WinHubX.Forms.Windows
             if (e.Button == MouseButtons.Right)
             {
 
-                Clipboard.SetText("93d4e176fbf5abc05143101a1040486663dd8c5dd03441df58b4e57bb8bd630a");
+                Clipboard.SetText("3abfc7760cb44dc3c9a711fe7ee50c2ad12a9345ee9d458fafd17acc52c9a363");
 
                 notifyIcon.BalloonTipTitle = "SHA256 copiato!";
                 notifyIcon.BalloonTipText = "Il codice hash è stato copiato negli appunti.";
@@ -244,7 +244,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/u75zvyflfej6",
+                        FileName = "https://devuploads.com/15wasqeex4xs",
                         UseShellExecute = true
                     };
                     Process.Start(psi);

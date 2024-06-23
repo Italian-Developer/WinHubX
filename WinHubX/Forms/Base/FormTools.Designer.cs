@@ -83,10 +83,10 @@
             btnRufus.ForeColor = Color.White;
             btnRufus.Image = Properties.Resources.Rufus_4Lite;
             btnRufus.ImageAlign = ContentAlignment.MiddleRight;
-            btnRufus.Location = new Point(567, 165);
+            btnRufus.Location = new Point(569, 162);
             btnRufus.Margin = new Padding(3, 2, 3, 2);
             btnRufus.Name = "btnRufus";
-            btnRufus.Size = new Size(260, 117);
+            btnRufus.Size = new Size(260, 130);
             btnRufus.TabIndex = 70;
             btnRufus.TextAlign = ContentAlignment.MiddleLeft;
             btnRufus.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -120,7 +120,7 @@
             btnMPM.ForeColor = Color.White;
             btnMPM.Image = Properties.Resources.pngMPM;
             btnMPM.ImageAlign = ContentAlignment.MiddleRight;
-            btnMPM.Location = new Point(113, 296);
+            btnMPM.Location = new Point(116, 297);
             btnMPM.Margin = new Padding(3, 2, 3, 2);
             btnMPM.Name = "btnMPM";
             btnMPM.Size = new Size(326, 103);
@@ -138,7 +138,7 @@
             btnRSTDriver.Font = new Font("Microsoft Sans Serif", 22.1999989F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRSTDriver.ForeColor = Color.White;
             btnRSTDriver.ImageAlign = ContentAlignment.MiddleRight;
-            btnRSTDriver.Location = new Point(591, 296);
+            btnRSTDriver.Location = new Point(591, 317);
             btnRSTDriver.Margin = new Padding(3, 2, 3, 2);
             btnRSTDriver.Name = "btnRSTDriver";
             btnRSTDriver.Size = new Size(204, 43);
@@ -156,7 +156,7 @@
             btnCheckHW.Font = new Font("Microsoft Sans Serif", 22.1999989F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCheckHW.ForeColor = Color.White;
             btnCheckHW.ImageAlign = ContentAlignment.MiddleRight;
-            btnCheckHW.Location = new Point(591, 356);
+            btnCheckHW.Location = new Point(591, 377);
             btnCheckHW.Margin = new Padding(3, 2, 3, 2);
             btnCheckHW.Name = "btnCheckHW";
             btnCheckHW.Size = new Size(204, 43);
@@ -171,7 +171,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(901, 428);
+            ClientSize = new Size(901, 458);
             Controls.Add(btnCheckHW);
             Controls.Add(btnRSTDriver);
             Controls.Add(btnMPM);

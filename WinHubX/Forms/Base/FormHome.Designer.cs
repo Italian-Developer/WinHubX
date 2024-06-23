@@ -67,7 +67,7 @@
             // nickSparrow
             // 
             nickSparrow.Image = Properties.Resources.nicksparrow;
-            nickSparrow.Location = new Point(643, 247);
+            nickSparrow.Location = new Point(662, 278);
             nickSparrow.Margin = new Padding(3, 2, 3, 2);
             nickSparrow.Name = "nickSparrow";
             nickSparrow.Size = new Size(199, 84);
@@ -82,12 +82,12 @@
             btnChangelog.FlatStyle = FlatStyle.Flat;
             btnChangelog.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnChangelog.ForeColor = Color.Coral;
-            btnChangelog.Location = new Point(609, 193);
+            btnChangelog.Location = new Point(609, 201);
             btnChangelog.Margin = new Padding(3, 2, 3, 2);
             btnChangelog.Name = "btnChangelog";
             btnChangelog.Size = new Size(280, 60);
             btnChangelog.TabIndex = 94;
-            btnChangelog.Text = "v2.2.0.2 - Changelog";
+            btnChangelog.Text = "v2.4.0.0 - Changelog";
             btnChangelog.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnChangelog.UseVisualStyleBackColor = true;
             btnChangelog.Click += btnChangelog_Click;
@@ -100,7 +100,7 @@
             btnKofi.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnKofi.ForeColor = Color.Coral;
             btnKofi.Image = Properties.Resources.pngCoffee;
-            btnKofi.Location = new Point(-2, 278);
+            btnKofi.Location = new Point(2, 288);
             btnKofi.Margin = new Padding(3, 2, 3, 2);
             btnKofi.Name = "btnKofi";
             btnKofi.Size = new Size(280, 64);
@@ -116,7 +116,7 @@
             tgWinHubX.FlatStyle = FlatStyle.Flat;
             tgWinHubX.ForeColor = Color.FromArgb(37, 38, 39);
             tgWinHubX.Image = Properties.Resources.pngTelegram;
-            tgWinHubX.Location = new Point(779, 367);
+            tgWinHubX.Location = new Point(779, 401);
             tgWinHubX.Margin = new Padding(3, 2, 3, 2);
             tgWinHubX.Name = "tgWinHubX";
             tgWinHubX.Size = new Size(57, 43);
@@ -129,7 +129,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Coral;
-            label3.Location = new Point(4, 380);
+            label3.Location = new Point(4, 414);
             label3.Name = "label3";
             label3.Size = new Size(714, 18);
             label3.TabIndex = 97;
@@ -140,7 +140,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(901, 428);
+            ClientSize = new Size(901, 458);
             Controls.Add(tgWinHubX);
             Controls.Add(label3);
             Controls.Add(btnKofi);

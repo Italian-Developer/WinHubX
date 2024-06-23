@@ -1,9 +1,9 @@
-#################################### download script
+####################################
 $path_to_use = Get-Location
 
 # Set location without displaying it
 Set-Location $path_to_use | Out-Null
-#################################### edit quickedit
+####################################
 # Set the registry key path
 $regKeyPath = "HKCU:\Console"
 
@@ -11,12 +11,9 @@ $regKeyPath = "HKCU:\Console"
 $valueName = "QuickEdit"
 $valueData = 0
 
-# Create the registry value
 New-ItemProperty -Path $regKeyPath -Name $valueName -Value $valueData -PropertyType DWORD -Force | Out-Null
 ####################################
 ####################################
-# Hide Console
-# Define the function to hide the console
 Add-Type -Name Window -Namespace Console -MemberDefinition '
 [DllImport("Kernel32.dll")]
 public static extern IntPtr GetConsoleWindow();
@@ -30,42 +27,37 @@ function Hide-Console {
     [Console.Window]::ShowWindow($consolePtr, 0)
 }
 
-# Call the Hide-Console function
+
 Hide-Console
 ####################################
-#################################### start gui
+#################################### 
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
 $global:selectedFile = $null
 $smonto = ""
-# Create form
+$Architettura = "x64"
 $form = New-Object System.Windows.Forms.Form
 $form.Text = "Windows Custom ISO Maker"
 $form.Size = New-Object System.Drawing.Size(500,560) 
 $form.StartPosition = "CenterScreen"
 $form.FormBorderStyle = 'FixedDialog'
 
-# Set form background color to dark
 $form.BackColor = [System.Drawing.Color]::FromArgb(40, 40, 40)
-
-# Set text color to white
 $form.ForeColor = [System.Drawing.Color]::White
 
-# Create label for ISO file
+
 $labelISOFile = New-Object System.Windows.Forms.Label
 $labelISOFile.Location = New-Object System.Drawing.Point(10, 20)
 $labelISOFile.Size = New-Object System.Drawing.Size(260, 20)
 $labelISOFile.Text = "Seleziona file ISO:"
 $form.Controls.Add($labelISOFile)
 
-# Create textbox for ISO file
 $textBoxISOFile = New-Object System.Windows.Forms.TextBox
 $textBoxISOFile.Location = New-Object System.Drawing.Point(10, 40)
 $textBoxISOFile.Size = New-Object System.Drawing.Size(350, 20)
 $form.Controls.Add($textBoxISOFile)
 
-# Create browse button
 $browseButton = New-Object System.Windows.Forms.Button
 $browseButton.Location = New-Object System.Drawing.Point(370, 38)
 $browseButton.Size = New-Object System.Drawing.Size(80, 20)
@@ -82,28 +74,23 @@ $browseButton.Add_Click({
         Mount-DiskImage -ImagePath $selectedFile
         $driveLetter = (Get-DiskImage -ImagePath $selectedFile | Get-Volume).DriveLetter
 
-        # Get the install.wim or install.esd path
         $installWimPath = ""
         $imageFiles = Get-ChildItem -Path "${driveLetter}:\sources" -Filter "install.*"
         if ($imageFiles.Count -eq 1) {
             $installWimPath = $imageFiles[0].FullName
         } elseif ($imageFiles.Count -gt 1) {
-            # If there are multiple image files, prompt the user to select one
             $installWimPath = $imageFiles | Out-GridView -Title "Select Image File" -PassThru
         } else {
             Write-Host "No install.wim or install.esd file found in the ISO."
             return
         }
 
-        # Get the index information using DISM
         $dismOutput = & dism /Get-WimInfo /WimFile:$installWimPath
         $wimInfo = $dismOutput | Out-String
 
-        # Check if DISM output is empty or null
         if ([string]::IsNullOrWhiteSpace($wimInfo)) {
             Write-Host "DISM output is empty or null. Please verify the DISM command and try again."
         } else {
-            # Display the list of available editions in the Windows Edition selection box
             $windowsEditionComboBox.Items.Clear()
             $dismOutput | ForEach-Object {
                 if ($_ -match "^Indice:\s+(\d+)$") {
@@ -121,32 +108,27 @@ $browseButton.Add_Click({
 $form.Controls.Add($browseButton)
 
 
-# Create label for ISO index selection
 $labelISOIndex = New-Object System.Windows.Forms.Label
 $labelISOIndex.Location = New-Object System.Drawing.Point(10, 70)
 $labelISOIndex.Size = New-Object System.Drawing.Size(200, 20)
 $labelISOIndex.Text = "Seleziona Indice ISO:"
 $form.Controls.Add($labelISOIndex)
 
-# Create Windows Edition selection ComboBox
 $windowsEditionComboBox = New-Object System.Windows.Forms.ComboBox
 $windowsEditionComboBox.Location = New-Object System.Drawing.Point(10, 90)
 $windowsEditionComboBox.Size = New-Object System.Drawing.Size(440, 20)
 $windowsEditionComboBox.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
 $windowsEditionComboBox.Add_SelectedIndexChanged({
-    # Assegna il valore selezionato a $windowsEdition
     $global:windowsEdition = $windowsEditionComboBox.SelectedItem.ToString()
 })
 $form.Controls.Add($windowsEditionComboBox)
 
-# Create group box for Debloat APP
 $groupBoxDebloatapp = New-Object System.Windows.Forms.GroupBox
 $groupBoxDebloatapp.Location = New-Object System.Drawing.Point(240, 130) 
 $groupBoxDebloatapp.Size = New-Object System.Drawing.Size(220,70)   
 $groupBoxDebloatapp.Text = "Debloat APP"
 $form.Controls.Add($groupBoxDebloatapp)
 
-# Create radio buttons for Windows version
 $radioButtonDebloatAPP = New-Object System.Windows.Forms.RadioButton
 $radioButtonDebloatAPP.Location = New-Object System.Drawing.Point(10,20)
 $radioButtonDebloatAPP.Size = New-Object System.Drawing.Size(120,20)
@@ -160,7 +142,6 @@ $radioButtonNonDebloatAPP.Size = New-Object System.Drawing.Size(120,20)
 $radioButtonNonDebloatAPP.Text = "Stock APP"
 $groupBoxDebloatapp.Controls.Add($radioButtonNonDebloatAPP)
 
-# Create donate button
 $donateButton = New-Object System.Windows.Forms.Button
 $donateButton.Location = New-Object System.Drawing.Point(240,490) 
 $donateButton.Size = New-Object System.Drawing.Size(100,23) 
@@ -170,7 +151,6 @@ $donateButton.Add_Click({
 })
 $form.Controls.Add($donateButton)
 
-# Create group box for Windows version
 $groupBoxWindowsVersion = New-Object System.Windows.Forms.GroupBox
 $groupBoxWindowsVersion.Location = New-Object System.Drawing.Point(10, 130)
 $groupBoxWindowsVersion.Size = New-Object System.Drawing.Size(220,70)
@@ -178,7 +158,6 @@ $groupBoxWindowsVersion.Text = "Seleziona versione ISO Windows"
 $groupBoxWindowsVersion.ForeColor = [System.Drawing.Color]::White
 $form.Controls.Add($groupBoxWindowsVersion)
 
-# Create radio buttons for Windows version
 $radioButtonWindows10 = New-Object System.Windows.Forms.RadioButton
 $radioButtonWindows10.Location = New-Object System.Drawing.Point(10,20)
 $radioButtonWindows10.Size = New-Object System.Drawing.Size(120,20)
@@ -191,14 +170,12 @@ $radioButtonWindows11.Size = New-Object System.Drawing.Size(120,20)
 $radioButtonWindows11.Text = "Windows 11"
 $groupBoxWindowsVersion.Controls.Add($radioButtonWindows11)
 
-# Add CheckedChanged event listeners
 $radioButtonWindows10.Add_CheckedChanged({
     if ($radioButtonWindows10.Checked) {
         UpdateUnattendGroup $false
     }
 })
 
-# Windows 11 CheckedChanged event
 $radioButtonWindows11.Add_CheckedChanged({
     if ($radioButtonWindows11.Checked) {
         UpdateUnattendGroup $true
@@ -215,13 +192,6 @@ function UpdateUnattendGroup {
         $script:groupBoxUnattend.Dispose()
         $script:groupBoxUnattend = $null
     }
-
-    if ($script:groupBoxArchitettura) {
-        $form.Controls.Remove($script:groupBoxArchitettura)
-        $script:groupBoxArchitettura.Dispose()
-        $script:groupBoxArchitettura = $null
-    }
-
     if ($isWindows11) {
         $script:groupBoxUnattend = New-Object System.Windows.Forms.GroupBox
         $script:groupBoxUnattend.Location = New-Object System.Drawing.Point(245,305)
@@ -242,30 +212,29 @@ function UpdateUnattendGroup {
         $radioButtonBypass.Size = New-Object System.Drawing.Size(120,20)
         $radioButtonBypass.Text = "Bypass"
         $groupBoxUnattend.Controls.Add($radioButtonBypass)
-    } else {
-        $script:groupBoxArchitettura = New-Object System.Windows.Forms.GroupBox
-        $script:groupBoxArchitettura.Location = New-Object System.Drawing.Point(240, 220) 
-        $script:groupBoxArchitettura.Size = New-Object System.Drawing.Size(220,70)   
-        $script:groupBoxArchitettura.Text = "Architettura"
-        $script:groupBoxArchitettura.ForeColor = [System.Drawing.Color]::White
-        $form.Controls.Add($script:groupBoxArchitettura)
-
-        # Add radio buttons for architecture options
-        $radioButtonx64 = New-Object System.Windows.Forms.RadioButton
-        $radioButtonx64.Location = New-Object System.Drawing.Point(10,20)
-        $radioButtonx64.Size = New-Object System.Drawing.Size(120,20)
-        $radioButtonx64.Text = "x64"
-        $groupBoxArchitettura.Controls.Add($radioButtonx64)
-
-        $radioButtonx32 = New-Object System.Windows.Forms.RadioButton
-        $radioButtonx32.Location = New-Object System.Drawing.Point(10,45)
-        $radioButtonx32.Size = New-Object System.Drawing.Size(120,20)
-        $radioButtonx32.Text = "x32"
-        $groupBoxArchitettura.Controls.Add($radioButtonx32)
     }
 }
 
-# Create group box for Edge removal preference
+$groupBoxArchitettura = New-Object System.Windows.Forms.GroupBox
+$groupBoxArchitettura.Location = New-Object System.Drawing.Point(240, 220) 
+$groupBoxArchitettura.Size = New-Object System.Drawing.Size(220,70)   
+$groupBoxArchitettura.Text = "Architettura"
+$groupBoxArchitettura.ForeColor = [System.Drawing.Color]::White
+$form.Controls.Add($script:groupBoxArchitettura)
+
+        # Add radio buttons for architecture options
+$radioButtonx64 = New-Object System.Windows.Forms.RadioButton
+$radioButtonx64.Location = New-Object System.Drawing.Point(10,20)
+$radioButtonx64.Size = New-Object System.Drawing.Size(120,20)
+$radioButtonx64.Text = "x64"
+$groupBoxArchitettura.Controls.Add($radioButtonx64)
+
+$radioButtonx32 = New-Object System.Windows.Forms.RadioButton
+$radioButtonx32.Location = New-Object System.Drawing.Point(10,45)
+$radioButtonx32.Size = New-Object System.Drawing.Size(120,20)
+$radioButtonx32.Text = "x32"
+$groupBoxArchitettura.Controls.Add($radioButtonx32)
+
 $groupBoxEdgeRemoval = New-Object System.Windows.Forms.GroupBox
 $groupBoxEdgeRemoval.Location = New-Object System.Drawing.Point(10, 220)
 $groupBoxEdgeRemoval.Size = New-Object System.Drawing.Size(220,70)
@@ -273,7 +242,6 @@ $groupBoxEdgeRemoval.Text = "Seleziona preferenza Edge"
 $groupBoxEdgeRemoval.ForeColor = [System.Drawing.Color]::White
 $form.Controls.Add($groupBoxEdgeRemoval)
 
-# Create radio buttons for Edge removal preference
 $radioButtonRemoveEdge = New-Object System.Windows.Forms.RadioButton
 $radioButtonRemoveEdge.Location = New-Object System.Drawing.Point(10,20)
 $radioButtonRemoveEdge.Size = New-Object System.Drawing.Size(150,20)
@@ -286,7 +254,6 @@ $radioButtonDoNotRemoveEdge.Size = New-Object System.Drawing.Size(150,20)
 $radioButtonDoNotRemoveEdge.Text = "Non rimuovere Edge"
 $groupBoxEdgeRemoval.Controls.Add($radioButtonDoNotRemoveEdge)
 
-# Create group box for Windows Defender preference
 $groupBoxDefenderPreference = New-Object System.Windows.Forms.GroupBox
 $groupBoxDefenderPreference.Location = New-Object System.Drawing.Point(10, 305)
 $groupBoxDefenderPreference.Size = New-Object System.Drawing.Size(230,70)
@@ -294,7 +261,6 @@ $groupBoxDefenderPreference.Text = "Seleziona preferenza Defender"
 $groupBoxDefenderPreference.ForeColor = [System.Drawing.Color]::White
 $form.Controls.Add($groupBoxDefenderPreference)
 
-# Create radio buttons for Windows Defender preference
 $radioButtonDisableDefender = New-Object System.Windows.Forms.RadioButton
 $radioButtonDisableDefender.Location = New-Object System.Drawing.Point(10,20)
 $radioButtonDisableDefender.Size = New-Object System.Drawing.Size(200,20)
@@ -307,7 +273,6 @@ $radioButtonDoNotDisableDefender.Size = New-Object System.Drawing.Size(200,20)
 $radioButtonDoNotDisableDefender.Text = "Abilita Windows Defender"
 $groupBoxDefenderPreference.Controls.Add($radioButtonDoNotDisableDefender)
 
-#Rimozione Processi
 $groupBoxRimozioneProcessi= New-Object System.Windows.Forms.GroupBox
 $groupBoxRimozioneProcessi.Location = New-Object System.Drawing.Point(10, 390)
 $groupBoxRimozioneProcessi.Size = New-Object System.Drawing.Size(220,70)
@@ -328,7 +293,6 @@ $radioButtonNonRimuoviProcessi.Text = "Non rimuovere processi"
 $groupBoxRimozioneProcessi.Controls.Add($radioButtonNonRimuoviProcessi)
 
 
-# Create OK button
 $buildButton = New-Object System.Windows.Forms.Button
 $buildButton.Location = New-Object System.Drawing.Point(360,490) 
 $buildButton.Size = New-Object System.Drawing.Size(100,23) 
@@ -380,9 +344,9 @@ $buildButton.Add_Click({
     $DebloatApp = if ($radioButtonDebloatAPP.Checked) { "Debloat" } else { "NonDebloat" }
 
     Dismount-DiskImage -ImagePath $smonto | out-null
-    Write-Host "$global:windowsEdition"
+    Write-Host "$global:Architettura"
 
-$arguments = @(
+$arguments = @( 
     """$selectedFile""",
     """$windowsVersion""",
     """$edgeRemovalPreference""",
@@ -405,7 +369,6 @@ $argumentString = $arguments -join ' '
 
 })
 $form.Controls.Add($buildButton)
-# Add the closing event to the form to ensure the ISO is dismounted when the form is closed
 $form.Add_Closing({
         Dismount-DiskImage -ImagePath $smonto
 })
@@ -413,7 +376,6 @@ $form.Add_Closed({
         Dismount-DiskImage -ImagePath $smonto
 })
 
-# Add event handler for OK button click
 $form.Add_Shown({$form.Activate()})
 $form.ShowDialog() | Out-Null
 ####################################

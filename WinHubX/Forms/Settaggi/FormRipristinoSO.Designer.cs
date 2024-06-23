@@ -65,10 +65,10 @@
             btnSFC.FlatStyle = FlatStyle.Flat;
             btnSFC.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
             btnSFC.ForeColor = Color.White;
-            btnSFC.Location = new Point(73, 55);
+            btnSFC.Location = new Point(64, 55);
             btnSFC.Margin = new Padding(3, 2, 3, 2);
             btnSFC.Name = "btnSFC";
-            btnSFC.Size = new Size(287, 36);
+            btnSFC.Size = new Size(327, 36);
             btnSFC.TabIndex = 42;
             btnSFC.Text = "Ripristina System32 con SFC";
             btnSFC.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -82,7 +82,7 @@
             btnDISM.FlatStyle = FlatStyle.Flat;
             btnDISM.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
             btnDISM.ForeColor = Color.White;
-            btnDISM.Location = new Point(73, 95);
+            btnDISM.Location = new Point(59, 95);
             btnDISM.Margin = new Padding(3, 2, 3, 2);
             btnDISM.Name = "btnDISM";
             btnDISM.Size = new Size(381, 36);
@@ -99,7 +99,7 @@
             btnEliminaDeallocati.FlatStyle = FlatStyle.Flat;
             btnEliminaDeallocati.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
             btnEliminaDeallocati.ForeColor = Color.White;
-            btnEliminaDeallocati.Location = new Point(76, 132);
+            btnEliminaDeallocati.Location = new Point(73, 132);
             btnEliminaDeallocati.Margin = new Padding(3, 2, 3, 2);
             btnEliminaDeallocati.Name = "btnEliminaDeallocati";
             btnEliminaDeallocati.Size = new Size(255, 32);
@@ -116,7 +116,7 @@
             btnStatoDisco.FlatStyle = FlatStyle.Flat;
             btnStatoDisco.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
             btnStatoDisco.ForeColor = Color.White;
-            btnStatoDisco.Location = new Point(70, 168);
+            btnStatoDisco.Location = new Point(64, 168);
             btnStatoDisco.Margin = new Padding(3, 2, 3, 2);
             btnStatoDisco.Name = "btnStatoDisco";
             btnStatoDisco.Size = new Size(290, 32);
@@ -133,7 +133,7 @@
             btnBios.FlatStyle = FlatStyle.Flat;
             btnBios.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
             btnBios.ForeColor = Color.White;
-            btnBios.Location = new Point(73, 204);
+            btnBios.Location = new Point(43, 204);
             btnBios.Margin = new Padding(3, 2, 3, 2);
             btnBios.Name = "btnBios";
             btnBios.Size = new Size(206, 35);
@@ -150,7 +150,7 @@
             btnVerificaRam.FlatStyle = FlatStyle.Flat;
             btnVerificaRam.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
             btnVerificaRam.ForeColor = Color.White;
-            btnVerificaRam.Location = new Point(73, 241);
+            btnVerificaRam.Location = new Point(58, 241);
             btnVerificaRam.Margin = new Padding(3, 2, 3, 2);
             btnVerificaRam.Name = "btnVerificaRam";
             btnVerificaRam.Size = new Size(265, 35);
@@ -184,7 +184,7 @@
             btnPuliziaCronologiaDef.FlatStyle = FlatStyle.Flat;
             btnPuliziaCronologiaDef.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold);
             btnPuliziaCronologiaDef.ForeColor = Color.White;
-            btnPuliziaCronologiaDef.Location = new Point(70, 320);
+            btnPuliziaCronologiaDef.Location = new Point(68, 320);
             btnPuliziaCronologiaDef.Margin = new Padding(3, 2, 3, 2);
             btnPuliziaCronologiaDef.Name = "btnPuliziaCronologiaDef";
             btnPuliziaCronologiaDef.Size = new Size(417, 36);
@@ -267,7 +267,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(901, 428);
+            ClientSize = new Size(901, 458);
             Controls.Add(btnResetWinSxS);
             Controls.Add(btnEliminaTempor);
             Controls.Add(btnStatoBatt);

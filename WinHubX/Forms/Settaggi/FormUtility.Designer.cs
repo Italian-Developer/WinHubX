@@ -84,7 +84,7 @@
             btnAvviaSelezionatiUti.FlatStyle = FlatStyle.Flat;
             btnAvviaSelezionatiUti.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAvviaSelezionatiUti.ForeColor = Color.White;
-            btnAvviaSelezionatiUti.Location = new Point(360, 381);
+            btnAvviaSelezionatiUti.Location = new Point(358, 419);
             btnAvviaSelezionatiUti.Margin = new Padding(3, 2, 3, 2);
             btnAvviaSelezionatiUti.Name = "btnAvviaSelezionatiUti";
             btnAvviaSelezionatiUti.Size = new Size(233, 36);
@@ -121,7 +121,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(901, 428);
+            ClientSize = new Size(901, 458);
             Controls.Add(label1);
             Controls.Add(lblWin7Lite);
             Controls.Add(btnAvviaSelezionatiUti);

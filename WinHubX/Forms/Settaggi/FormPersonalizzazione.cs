@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System.Diagnostics;
 using WinHubX.Forms.Base;
+using WinHubX.Forms.Settaggi;
 
 
 namespace WinHubX.Forms.Personalizzazione
@@ -12,12 +13,19 @@ namespace WinHubX.Forms.Personalizzazione
         public FormPersonalizzazione(FormSettaggi formSettaggi, Form1 form1)
         {
             InitializeComponent();
-            this.form1 = form1;
-            this.formSettaggi = formSettaggi;
+            this.form1 = form1 ?? throw new ArgumentNullException(nameof(form1));
+            this.formSettaggi = formSettaggi ?? throw new ArgumentNullException(nameof(formSettaggi));
+            LoadCheckboxStates();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            if (form1 == null)
+            {
+                MessageBox.Show("form1 is not initialized", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             form1.lblPanelTitle.Text = "Settaggi";
             form1.PnlFormLoader.Controls.Clear();
             formSettaggi = new FormSettaggi(form1)
@@ -31,33 +39,104 @@ namespace WinHubX.Forms.Personalizzazione
             formSettaggi.Show();
         }
 
+        private void SetCheckboxState(string itemName, bool isChecked)
+        {
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey("Software\\WinHubX"))
+            {
+                key.SetValue(itemName, isChecked ? 1 : 0, RegistryValueKind.DWord);
+            }
+        }
+
+        private bool GetCheckboxState(string itemName)
+        {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\WinHubX"))
+            {
+                if (key != null)
+                {
+                    object value = key.GetValue(itemName);
+                    if (value != null)
+                    {
+                        return (int)value == 1;
+                    }
+                }
+            }
+            return false;
+        }
+
+        private void LoadCheckboxStates()
+        {
+            tasbarsin.Checked = GetCheckboxState("tasbarsin");
+            taskbarcen.Checked = GetCheckboxState("taskbarcen");
+            orologion.Checked = GetCheckboxState("orologion");
+            orologiom.Checked = GetCheckboxState("orologiom");
+            prestazioniel.Checked = GetCheckboxState("prestazioniel");
+            prestazioniec.Checked = GetCheckboxState("prestazioniec");
+            prestazionimi.Checked = GetCheckboxState("prestazionimi");
+            uacdis.Checked = GetCheckboxState("uacdis");
+            uacatti.Checked = GetCheckboxState("uacatti");
+            destroleg.Checked = GetCheckboxState("destroleg");
+            destrodef.Checked = GetCheckboxState("destrodef");
+        }
+
         private void btnAvviaSelezionatiPersonal_Click(object sender, EventArgs e)
         {
+            bool changesApplied = false;
+
+            if (form1 == null)
+            {
+                MessageBox.Show("Form1 non inizializzato", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (tasbarsin.Checked)
             {
                 SetRegistryValue(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced", "TaskbarAl", 0, RegistryValueKind.DWord);
+                SetCheckboxState("tasbarsin", true);
+                SetCheckboxState("taskbarcen", false);
+                changesApplied = true;
             }
-            else if (taskbarcen.Checked)
+
+            if (taskbarcen.Checked)
             {
                 SetRegistryValue(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced", "TaskbarAl", 1, RegistryValueKind.DWord);
+                SetCheckboxState("taskbarcen", true);
+                SetCheckboxState("tasbarsin", false);
+                changesApplied = true;
             }
-            else if (orologion.Checked)
+
+            if (orologion.Checked)
             {
-                ExecutePowerShellCommand("Set-ItemProperty -Path HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced -Name ShowSecondsInSystemClock -Value 0 -Force");
+                SetRegistryValue(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced", "ShowSecondsInSystemClock", 0, RegistryValueKind.DWord);
+                SetCheckboxState("orologion", true);
+                SetCheckboxState("orologiom", false);
+                changesApplied = true;
             }
-            else if (orologiom.Checked)
+
+            if (orologiom.Checked)
             {
-                ExecutePowerShellCommand("Set-ItemProperty -Path HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced -Name ShowSecondsInSystemClock -Value 1 -Force");
+                SetRegistryValue(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced", "ShowSecondsInSystemClock", 1, RegistryValueKind.DWord);
+                SetCheckboxState("orologiom", true);
+                SetCheckboxState("orologion", false);
+                changesApplied = true;
             }
-            else if (prestazioniel.Checked)
+
+            if (prestazioniel.Checked)
             {
                 ExecuteCommand("POWERCFG", "/SETACTIVE SCHEME_MIN");
+                SetCheckboxState("prestazioniel", true);
+                SetCheckboxState("prestazioniec", false);
+                changesApplied = true;
             }
-            else if (prestazioniec.Checked)
+
+            if (prestazioniec.Checked)
             {
                 ExecuteCommand("POWERCFG", "-duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61");
+                SetCheckboxState("prestazioniec", true);
+                SetCheckboxState("prestazioniel", false);
+                changesApplied = true;
             }
-            else if (prestazionimi.Checked)
+
+            if (prestazionimi.Checked)
             {
                 string[] commands = {
             "reg add HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\LanmanServer\\Parameters /v IRPStackSize /t REG_DWORD /d 50 /f",
@@ -73,16 +152,27 @@ namespace WinHubX.Forms.Personalizzazione
                 {
                     ExecuteCommand("cmd.exe", "/c " + command);
                 }
+                SetCheckboxState("prestazionimi", true);
+                changesApplied = true;
             }
-            else if (uacdis.Checked)
+
+            if (uacdis.Checked)
             {
-                Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System", "EnableLUA", 0, RegistryValueKind.DWord);
+                SetRegistryValue(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System", "EnableLUA", 0, RegistryValueKind.DWord);
+                SetCheckboxState("uacdis", true);
+                SetCheckboxState("uacatti", false);
+                changesApplied = true;
             }
-            else if (uacatti.Checked)
+
+            if (uacatti.Checked)
             {
-                Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System", "EnableLUA", 1, RegistryValueKind.DWord);
+                SetRegistryValue(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System", "EnableLUA", 1, RegistryValueKind.DWord);
+                SetCheckboxState("uacatti", true);
+                SetCheckboxState("uacdis", false);
+                changesApplied = true;
             }
-            else if (destroleg.Checked)
+
+            if (destroleg.Checked)
             {
                 if (IsWindows10())
                 {
@@ -90,11 +180,15 @@ namespace WinHubX.Forms.Personalizzazione
                 }
                 else
                 {
-                    ExecuteCommand("cmd.exe", "/c reg add HKCU\\Software\\Classes\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\\InprocServer32 /ve /d /f /t REG_SZ /f");
+                    ExecuteCommand("cmd.exe", "/c reg add HKCU\\Software\\Classes\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\\InprocServer32 /ve /t REG_SZ /d \"\" /f");
                     RestartExplorer();
+                    SetCheckboxState("destroleg", true);
+                    SetCheckboxState("destrodef", false);
+                    changesApplied = true;
                 }
             }
-            else if (destrodef.Checked)
+
+            if (destrodef.Checked)
             {
                 if (IsWindows10())
                 {
@@ -104,10 +198,16 @@ namespace WinHubX.Forms.Personalizzazione
                 {
                     ExecuteCommand("cmd.exe", "/c reg delete HKCU\\SOFTWARE\\CLASSES\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2} /f");
                     RestartExplorer();
+                    SetCheckboxState("destrodef", true);
+                    SetCheckboxState("destroleg", false);
+                    changesApplied = true;
                 }
             }
 
-            MessageBox.Show("Modifiche apportate con successo", "WinHubX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (changesApplied)
+            {
+                MessageBox.Show("Modifiche apportate con successo", "WinHubX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void SetRegistryValue(string path, string name, object value, RegistryValueKind kind)
@@ -118,39 +218,29 @@ namespace WinHubX.Forms.Personalizzazione
             }
         }
 
-        private void ExecutePowerShellCommand(string command)
-        {
-            ProcessStartInfo startInfo = new ProcessStartInfo()
-            {
-                FileName = "powershell.exe",
-                Arguments = command,
-                Verb = "runas",
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-            using (Process process = Process.Start(startInfo))
-            {
-                process.WaitForExit();
-                string output = process.StandardOutput.ReadToEnd();
-            }
-        }
-
         private void ExecuteCommand(string fileName, string arguments)
         {
-            ProcessStartInfo psi = new ProcessStartInfo(fileName, arguments)
+            try
             {
-                Verb = "runas",
-                CreateNoWindow = true,
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-                RedirectStandardError = true
-            };
-            using (Process process = Process.Start(psi))
+                ProcessStartInfo psi = new ProcessStartInfo(fileName, arguments)
+                {
+                    Verb = "runas",
+                    CreateNoWindow = true,
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true
+                };
+                using (Process process = Process.Start(psi))
+                {
+                    string output = process.StandardOutput.ReadToEnd();
+                    string error = process.StandardError.ReadToEnd();
+                    process.WaitForExit();
+                }
+            }
+            catch (Exception ex)
             {
-                process.WaitForExit();
-                string output = process.StandardOutput.ReadToEnd();
-                string error = process.StandardError.ReadToEnd();
+                MessageBox.Show("Exception: " + ex.Message);
+                throw;
             }
         }
 
@@ -175,6 +265,16 @@ namespace WinHubX.Forms.Personalizzazione
         {
             ExecuteCommand("taskkill", "/F /IM explorer.exe");
             Process.Start("explorer.exe");
+        }
+
+        private void btn_avanti_Click(object sender, EventArgs e)
+        {
+            form1.lblPanelTitle.Text = "Personalizzazione";
+            form1.PnlFormLoader.Controls.Clear();
+            FormPersonalizzazione2 formPersonalizzazione2 = new FormPersonalizzazione2(this, form1) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formPersonalizzazione2.FormBorderStyle = FormBorderStyle.None;
+            form1.PnlFormLoader.Controls.Add(formPersonalizzazione2);
+            formPersonalizzazione2.Show();
         }
     }
 }

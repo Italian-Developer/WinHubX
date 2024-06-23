@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_LastSelectedProfileId>C:\Users\Nico\Desktop\WinHubX-development\WinHubX\Properties\PublishProfiles\ClickOnceProfile.pubxml</_LastSelectedProfileId>
+    <_LastSelectedProfileId>C:\Users\Nico\Desktop\WinHubX-development\WinHubX\Properties\PublishProfiles\ClickOnceProfile1.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="Dialog\InfoDialog.cs">
@@ -64,6 +64,9 @@
     <Compile Update="Forms\Bottoni\CircularProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Forms\Personalizzazione office\PersonalizzazioneOffice.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\ReinstallaAPP\FormReinstallaAPP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +74,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Settaggi\FormDefender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Settaggi\FormPersonalizzazione2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Settaggi\FormPrivacy.cs">
@@ -95,12 +101,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Windows\FormWin8Dot1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\Windows\FormWinAiO_32.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\Windows\FormWinAiO_64.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

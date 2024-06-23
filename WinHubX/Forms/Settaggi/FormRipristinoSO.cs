@@ -36,6 +36,7 @@ namespace WinHubX.Forms.Settaggi
             ProcessStartInfo psi = new ProcessStartInfo(fileName, arguments);
             psi.UseShellExecute = false;
             psi.CreateNoWindow = false;
+            psi.Verb = "runus";
             psi.RedirectStandardOutput = false;
             psi.RedirectStandardError = false;
             using (Process process = new Process())
@@ -60,6 +61,7 @@ namespace WinHubX.Forms.Settaggi
             {
                 UseShellExecute = false,
                 CreateNoWindow = false,
+                Verb = "runus",
                 RedirectStandardOutput = false,
                 RedirectStandardError = false
             };
@@ -76,6 +78,7 @@ namespace WinHubX.Forms.Settaggi
                 ProcessStartInfo psi = new ProcessStartInfo(fileName, arguments);
                 psi.UseShellExecute = false;
                 psi.CreateNoWindow = false;
+                psi.Verb = "runus";
                 psi.RedirectStandardOutput = false;
                 psi.RedirectStandardError = false;
                 using (Process process = new Process())
@@ -93,6 +96,7 @@ namespace WinHubX.Forms.Settaggi
             ProcessStartInfo psi = new ProcessStartInfo(fileName, arguments);
             psi.UseShellExecute = false;
             psi.CreateNoWindow = false;
+            psi.Verb = "runus";
             psi.RedirectStandardOutput = false;
             psi.RedirectStandardError = false;
             using (Process process = new Process())
@@ -109,6 +113,7 @@ namespace WinHubX.Forms.Settaggi
             ProcessStartInfo psi = new ProcessStartInfo(fileName, arguments);
             psi.UseShellExecute = false;
             psi.CreateNoWindow = false;
+            psi.Verb = "runus";
             psi.RedirectStandardOutput = false;
             psi.RedirectStandardError = false;
             using (Process process = new Process())
@@ -120,14 +125,32 @@ namespace WinHubX.Forms.Settaggi
 
         private void btnVerificaRam_Click(object sender, EventArgs e)
         {
-            string fileName = @"C:\Windows\System32\mdsched.exe";
-            ProcessStartInfo psi = new ProcessStartInfo(fileName);
-            psi.UseShellExecute = false;
-            psi.CreateNoWindow = false;
-            using (Process process = new Process())
+            try
             {
-                process.StartInfo = psi;
-                process.Start();
+                string fileName = @"C:\Windows\System32\mdsched.exe";
+
+                if (!System.IO.File.Exists(fileName))
+                {
+                    MessageBox.Show("Il file mdsched.exe non esiste nel percorso specificato.");
+                    return;
+                }
+
+                ProcessStartInfo psi = new ProcessStartInfo(fileName)
+                {
+                    UseShellExecute = true,
+                    CreateNoWindow = true,
+                    Verb = "runas"
+                };
+
+                using (Process process = new Process())
+                {
+                    process.StartInfo = psi;
+                    process.Start();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Errore: " + ex.Message);
             }
         }
 
@@ -159,6 +182,7 @@ namespace WinHubX.Forms.Settaggi
                     Arguments = $"-Command \"{command} {arguments}\"",
                     UseShellExecute = false,
                     CreateNoWindow = false,
+                    Verb = "runus",
                     RedirectStandardOutput = true,
                     RedirectStandardError = true
                 };
@@ -189,6 +213,7 @@ namespace WinHubX.Forms.Settaggi
                 Arguments = arguments,
                 UseShellExecute = false,
                 CreateNoWindow = true,
+                Verb = "runus",
                 RedirectStandardOutput = true,
                 RedirectStandardError = true
             };
@@ -243,6 +268,7 @@ namespace WinHubX.Forms.Settaggi
                     Arguments = $"/online /export-driver /destination:{driverDirectory}",
                     UseShellExecute = false,
                     RedirectStandardOutput = false,
+                    Verb = "runus",
                     CreateNoWindow = false
                 });
                 string outputPath = Path.Combine(driverDirectory, "driver.txt");
@@ -277,6 +303,7 @@ namespace WinHubX.Forms.Settaggi
             psi.CreateNoWindow = true;
             psi.RedirectStandardInput = true;
             psi.RedirectStandardOutput = true;
+            psi.Verb = "runus";
             psi.RedirectStandardError = true;
 
             using (Process process = new Process())
@@ -346,7 +373,8 @@ namespace WinHubX.Forms.Settaggi
                     FileName = "DISM.exe",
                     Arguments = "/Online /Cleanup-Image /StartComponentCleanup",
                     UseShellExecute = false,
-                    CreateNoWindow = false
+                    CreateNoWindow = false,
+                    Verb = "runus"
                 };
 
                 using (Process process = new Process())
