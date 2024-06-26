@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using WinHubX.Dialog;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace WinHubX
 {
@@ -8,10 +10,33 @@ namespace WinHubX
         public FormHome()
         {
             InitializeComponent();
+
+            try
+            {
+                string LanguageToUse;
+
+                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
+                LanguageToUse = jsonData["SelectedLanguage"].ToString();
+
+                JObject jsd = JObject.Parse(File.ReadAllText(LanguageToUse + ".json"));
+                lblInfoWinAIO64.Text = jsd["WelcomeText"].ToString();
+                btnKofi.Text = jsd["Kofi"].ToString();
+                label3.Text = jsd["AskingHelp"].ToString();
+            } catch (Exception ex)
+            {
+                MessageBox.Show("There was a problem loading the translation file :(" + " " + ex);
+            }
+            
+
+
         }
+
+
+
 
         private void btnChangelog_Click(object sender, EventArgs e)
         {
+
             infoWHXChangelog(sender, e);
         }
         public static void infoWHXChangelog(object sender, EventArgs e)
@@ -19,11 +44,65 @@ namespace WinHubX
             #region descrizione WinHubX 
 
             string description = "Changelog WinHubX\n\n" +
+                                    "22/06/2024 - v2.4.0.0:\n" +
+                                    "- Modifica codice settaggi personalizzazione\n" +
+                                    "- Aggiunto un 2 menù personalizzazione\n" +
+                                    "- Aggiunto modifiche win11-10 preset\n" +
+                                    "- Riscrittura codice debloat app\n" +
+                                    "- Riscrittura codice ripristina app\n" +
+                                    "- Fix Crea ISO win 10 (non settava corettamente l'unattend se x32 o x64)\n" +
+                                    "- Adattamento codice crea iso di win11 24h2\n" +
+                                    "- Adeguamento codice crea iso con le utlime versione di win10\n" +
+                                    "- Adeguamento codice tweaks win10-11\n" +
+                                    "- Aggiunto nuova personalizzazione office\n" +
+                                    "- Aggiornato WSA per win11x64, win11arm64 e win10x64\n" +
+                                    "- Miglioramento codice e stabiltà\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "11/06/2024 - v2.3.0.2:\n" +
+                                    "- Patch settaggi personalizzazione\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "04/06/2024 - v2.3.0.1:\n" +
+                                    "- Fix settaggi personalizzazione\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "27/05/2024 - v2.3.0.0:\n" +
+                                    "- Settaggi vengono salvati\n" +
+                                    "- Preparazione Windows 11 per 24H2\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "21/05/2024 - v2.2.1.3:\n" +
+                                    "- Fix unattend Crea ISO\n" +
+                                    "- Fix unattend su iso 10Lite\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "17/05/2024 - v2.2.0.2:\n" +
+                                    "- Fix Codice Personalizzazione\n" +
+                                    "- Fix Codice Crea ISO (Super ottimizzato e ora supporta le iso di win11 24h2 e fixato crash app e crea iso win10)\n" +
+                                    "- Fix Codice Personalizzazione Office (durante l'apertura se veniva cliccato qualcosa nell'app crashava)\n" +
+                                    "- Aggiornate ISO Lite Win11 e Win10\n" +
+                                    "- Aggiornato il WSA alla LTS\n" +
+                                    "- Ottimizzioni varie al codice\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "17/05/2024 - v2.2.0.1:\n" +
+                                    "- Rilascio versione autoaggiornante\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
                                     "23/04/2024 - v2.2.0.0:\n" +
                                     "- Fix Codice (Personalizzazione Office)\n" +
                                     "- Nuove iso Win11/10 (stock e lite)\n" +
                                     "- Aggiunto Monitoraggio\n" +
                                     "- Fix individuazione antivirus\n" +
+                                    "- Fix codice Debloat (Defender)\n" +
                                     "\n" +
                                     "\n" +
                                     "\n" +
@@ -142,6 +221,18 @@ namespace WinHubX
             {
                 MessageBox.Show($"Errore nell'aprire l'URL: {ex.Message}");
             }
+        }
+
+        private void lblInfoWinAIO64_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public string Language = "";
+
+        private void FormHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

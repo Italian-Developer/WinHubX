@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace WinHubX.Forms.Base
@@ -15,6 +17,27 @@ namespace WinHubX.Forms.Base
             this.form1 = form1;
             StopMonitoringRam();
             StartMonitoringCPU();
+
+          
+
+            try
+            {
+
+                string LanguageToUse;
+
+                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
+                LanguageToUse = jsonData["SelectedLanguage"].ToString();
+
+                JObject jsd = JObject.Parse(File.ReadAllText(LanguageToUse + ".json"));
+                lblInfoWin12.Text = jsd["ActivateMonitoringQ"].ToString();
+                btnOttRam.Text = jsd["OptimizeRam"].ToString();
+                btnOttCPU.Text = jsd["OptimizeCpu"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was a problem loading the translation file :(" + " " + ex);
+            }
+
         }
 
         private void StartMonitoringRam()
@@ -236,9 +259,10 @@ namespace WinHubX.Forms.Base
                 StopMonitoringRam();
             }
         }
+
+        private void BarCPU_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-
-
-
-

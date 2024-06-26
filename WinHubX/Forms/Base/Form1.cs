@@ -1,7 +1,12 @@
+using Microsoft.Win32;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using WinHubX.Forms.Base;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace WinHubX
 {
@@ -49,6 +54,9 @@ namespace WinHubX
         }
         #endregion
 
+        [DllImport("kernel32")]
+        static extern bool AllocConsole();
+
         public Form1()
         {
             InitializeComponent();
@@ -71,11 +79,105 @@ namespace WinHubX
             PnlFormLoader.Controls.Add(formHome);
             formHome.Show();
 
+
+            AllocConsole();
+            Console.Write("console loaded\n");
+
+
+            CycleJsonFiles();
+            
+
         }
+
+
+        bool FullyLoadedall = false;
+
+        public async void CycleJsonFiles()
+        {
+            string executablePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string directoryPath = Path.GetDirectoryName(executablePath);
+
+
+            foreach (string filePath in Directory.EnumerateFiles(directoryPath, "*.json"))
+            {
+
+
+                if (filePath.Contains("runtime") || filePath.Contains("deps") || filePath.Contains("data"))
+                {
+
+                }
+                else
+                {
+                    if (filePath.Contains("it") || filePath.Contains("en") || filePath.Contains("es") || filePath.Contains("ja") || filePath.Contains("fr") || filePath.Contains("de"))
+                    {
+                        string fileName = Path.GetFileNameWithoutExtension(filePath);
+
+                        ComboBoxLingue.Items.Add(fileName);
+
+                    }
+
+                }
+            }
+            // Finished json files loading
+
+
+            JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
+            
+            ComboBoxLingue.Text = jsonData["SelectedLanguage"].ToString();
+            Console.Write("Loaded Language: " + jsonData["SelectedLanguage"].ToString());
+
+            Thread.Sleep(1500);
+            FullyLoadedall = true;
+            
+        }
+
+        private async void WriteToJson(string contenuto, string pathtofile,string jsondataname)
+        {
+            JObject jsonData = new JObject();
+            jsonData[jsondataname] = contenuto;
+
+            using (StreamWriter file = File.CreateText(pathtofile))
+            using (JsonTextWriter writer = new JsonTextWriter(file))
+            {
+                await jsonData.WriteToAsync(writer);
+            }
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (WindowsIdentity.GetCurrent().Owner == WindowsIdentity.GetCurrent().User)   // Check for Admin privileges   
+            {
+                try
+                {
+                    this.Visible = false;
+                    ProcessStartInfo info = new ProcessStartInfo(Application.ExecutablePath); // my own .exe
+                    info.UseShellExecute = true;
+                    info.Verb = "runas";   // invoke UAC prompt
+                    Process.Start(info);
+                }
+                catch (Win32Exception ex)
+                {
+                    if (ex.NativeErrorCode == 1223) //The operation was canceled by the user.
+                    {
+                        Application.Exit();
+                    }
+                    else
+                        throw new Exception("Something went wrong :-(");
+                }
+                Application.Exit();
+            }
+            
+        }
 
+        public static void RemoveRegistryKeys()
+        {
+            RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\YourAppName", true);
+            if (key != null)
+            {
+                key.DeleteSubKeyTree("SubKeyName");
+                key.Close();
+            }
         }
 
         public void btnHome_Click(object sender, EventArgs e)
@@ -114,7 +216,7 @@ namespace WinHubX
 
             lblPanelTitle.Text = "Office";
             PnlFormLoader.Controls.Clear();
-            FormOffice formOffice = new FormOffice() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FormOffice formOffice = new FormOffice(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formOffice.FormBorderStyle = FormBorderStyle.None;
             PnlFormLoader.Controls.Add(formOffice);
             formOffice.Show();
@@ -137,7 +239,25 @@ namespace WinHubX
         {
             swap_pnlNav(btnSettaggi);
 
-            lblPanelTitle.Text = "Settaggi";
+            try
+            {
+                string LanguageToUse;
+
+                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
+                LanguageToUse = jsonData["SelectedLanguage"].ToString();
+
+                JObject jsd = JObject.Parse(File.ReadAllText(LanguageToUse + ".json"));
+                lblPanelTitle.Text = jsd["Settings"].ToString();
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was a problem loading the translation file :(" + " " + ex);
+            }
+
+            
+
+            
             PnlFormLoader.Controls.Clear();
             FormSettaggi formSettaggi = new(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formSettaggi.FormBorderStyle = FormBorderStyle.None;
@@ -170,14 +290,27 @@ namespace WinHubX
             ExtractEmbeddedResourceFolder($"{assemblyNamee}.Resources.RisorseCreaISO");
             try
             {
-                string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
-                string resourcePath = $"{assemblyName}.Resources.RisorseCreaISO.ISOMaker.ps1";
-                byte[] exeBytes = LoadEmbeddedResource(resourcePath);
-                string ps1FilePath = Path.Combine(Path.GetTempPath(), "ISOMaker.ps1");
-                File.WriteAllBytes(ps1FilePath, exeBytes);
+                string LanguageToUse;
+                string NameBylangFinale;
+                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
+                LanguageToUse = jsonData["SelectedLanguage"].ToString();
+                
+                if (LanguageToUse.Contains("it"))
+                {
+                    NameBylangFinale = "ISOMaker.ps1";
+                }
+                else
+                {
+                    NameBylangFinale = "ISOMaker_eng.ps1";
+                }
 
-                // Start the process
-                StartPowerShell(ps1FilePath);
+                string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+                string resourcePath = $"{assemblyName}.Resources.RisorseCreaISO." + NameBylangFinale;
+                byte[] exeBytes = LoadEmbeddedResource(resourcePath);
+                string ps1FilePath = Path.Combine(Path.GetTempPath(), NameBylangFinale);
+                File.WriteAllBytes(ps1FilePath, exeBytes);
+                Thread scriptThread = new Thread(() => StartPowerShell(ps1FilePath));
+                scriptThread.Start();
             }
             finally { }
         }
@@ -246,7 +379,24 @@ namespace WinHubX
         private void btnMonitoraggio_Click(object sender, EventArgs e)
         {
             swap_pnlNav(btnMonitoraggio);
-            lblPanelTitle.Text = "Monitoraggio";
+
+            try
+            {
+                string LanguageToUse;
+
+                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
+                LanguageToUse = jsonData["SelectedLanguage"].ToString();
+
+                JObject jsd = JObject.Parse(File.ReadAllText(LanguageToUse + ".json"));
+                lblPanelTitle.Text = jsd["Monitoring"].ToString();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was a problem loading the translation file :(" + " " + ex);
+            }
+
+            
             PnlFormLoader.Controls.Clear();
             FormMonitoraggio formMonitoraggio = new(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formMonitoraggio.FormBorderStyle = FormBorderStyle.None;
@@ -267,6 +417,67 @@ namespace WinHubX
         }
         private void btnTools_Leave(object sender, EventArgs e)
         {
+        }
+
+
+
+
+        private void ComboBoxLingue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string SelectedLanguage = ComboBoxLingue.SelectedItem.ToString();
+            ChangeLanguage(SelectedLanguage);
+            WriteToJson(SelectedLanguage, "data.json", "SelectedLanguage");
+            
+            if (FullyLoadedall)
+            {
+                DialogResult d = MessageBox.Show("All the text will be translated at WinHubx restart, click 'yes' to restart now", "Information", MessageBoxButtons.YesNo);
+                if (d == DialogResult.Yes)
+                {
+                    Application.Restart();
+                }
+            }
+        }
+
+
+
+        public void ChangeLanguage(string filepath)
+        {
+            string filePath = filepath + ".json";
+            if (File.Exists(filePath))
+            {
+                JObject jsonData = JObject.Parse(File.ReadAllText(filePath));
+
+                string Language;
+                string Settings;
+                string CreateIso;
+                string Monitoring;
+                string HomeParagraph;
+
+                try
+                {
+                    Language = jsonData["Language"].ToString();
+                    Settings = jsonData["Settings"].ToString();
+                    CreateIso = jsonData["CreateIso"].ToString();
+                    Monitoring = jsonData["Monitoring"].ToString();
+                    HomeParagraph = jsonData["WelcomeText"].ToString();
+
+
+                    btnSettaggi.Text = Settings;
+                    btnCreaISO.Text = CreateIso;
+                    btnMonitoraggio.Text = Monitoring;
+
+                    
+
+
+
+
+                } catch(Exception ex)
+                {
+
+                }    
+                
+
+            }
         }
     }
 }

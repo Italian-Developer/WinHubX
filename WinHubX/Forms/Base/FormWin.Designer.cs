@@ -165,10 +165,10 @@
             btnAttivaWin.Cursor = Cursors.Hand;
             btnAttivaWin.FlatAppearance.BorderSize = 0;
             btnAttivaWin.FlatStyle = FlatStyle.Flat;
-            btnAttivaWin.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAttivaWin.Font = new Font("Microsoft Sans Serif", 24.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAttivaWin.ForeColor = Color.White;
             btnAttivaWin.Image = (Image)resources.GetObject("btnAttivaWin.Image");
-            btnAttivaWin.Location = new Point(516, 352);
+            btnAttivaWin.Location = new Point(516, 364);
             btnAttivaWin.Margin = new Padding(3, 2, 3, 2);
             btnAttivaWin.Name = "btnAttivaWin";
             btnAttivaWin.Size = new Size(366, 66);
@@ -183,10 +183,10 @@
             btnCambioEdizione.Cursor = Cursors.Hand;
             btnCambioEdizione.FlatAppearance.BorderSize = 0;
             btnCambioEdizione.FlatStyle = FlatStyle.Flat;
-            btnCambioEdizione.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCambioEdizione.Font = new Font("Microsoft Sans Serif", 24.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCambioEdizione.ForeColor = Color.White;
             btnCambioEdizione.Image = (Image)resources.GetObject("btnCambioEdizione.Image");
-            btnCambioEdizione.Location = new Point(95, 352);
+            btnCambioEdizione.Location = new Point(95, 364);
             btnCambioEdizione.Margin = new Padding(3, 2, 3, 2);
             btnCambioEdizione.Name = "btnCambioEdizione";
             btnCambioEdizione.Size = new Size(389, 66);
@@ -201,7 +201,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(901, 428);
+            ClientSize = new Size(901, 458);
             Controls.Add(btnCambioEdizione);
             Controls.Add(btnAttivaWin);
             Controls.Add(lblInfoWin12);

@@ -92,7 +92,7 @@
             btnDefender.ForeColor = Color.White;
             btnDefender.Image = (Image)resources.GetObject("btnDefender.Image");
             btnDefender.ImageAlign = ContentAlignment.MiddleRight;
-            btnDefender.Location = new Point(58, 127);
+            btnDefender.Location = new Point(59, 132);
             btnDefender.Margin = new Padding(3, 2, 3, 2);
             btnDefender.Name = "btnDefender";
             btnDefender.Size = new Size(304, 63);
@@ -110,7 +110,7 @@
             btnUpdate.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUpdate.ForeColor = Color.White;
             btnUpdate.Image = (Image)resources.GetObject("btnUpdate.Image");
-            btnUpdate.Location = new Point(531, 127);
+            btnUpdate.Location = new Point(539, 132);
             btnUpdate.Margin = new Padding(3, 2, 3, 2);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(242, 63);
@@ -125,11 +125,11 @@
             lblInfoPrivacy.AutoSize = true;
             lblInfoPrivacy.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblInfoPrivacy.ForeColor = Color.Coral;
-            lblInfoPrivacy.Location = new Point(13, 69);
+            lblInfoPrivacy.Location = new Point(18, 69);
             lblInfoPrivacy.Name = "lblInfoPrivacy";
             lblInfoPrivacy.Size = new Size(355, 48);
             lblInfoPrivacy.TabIndex = 49;
-            lblInfoPrivacy.Text = "Impostazioni Privacy\r\nModifica la tua privacy come meglio credi";
+            lblInfoPrivacy.Text = "Impostazioni Privacy\r\nModifica la tua privacy come meglio credi\r\n";
             lblInfoPrivacy.TextAlign = ContentAlignment.BottomCenter;
             // 
             // label1
@@ -149,7 +149,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Coral;
-            label2.Location = new Point(20, 184);
+            label2.Location = new Point(21, 189);
             label2.Name = "label2";
             label2.Size = new Size(354, 48);
             label2.TabIndex = 51;
@@ -161,7 +161,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Coral;
-            label3.Location = new Point(498, 185);
+            label3.Location = new Point(499, 190);
             label3.Name = "label3";
             label3.Size = new Size(328, 48);
             label3.TabIndex = 52;
@@ -177,7 +177,7 @@
             btnPersonalizzazione.ForeColor = Color.White;
             btnPersonalizzazione.Image = (Image)resources.GetObject("btnPersonalizzazione.Image");
             btnPersonalizzazione.ImageAlign = ContentAlignment.MiddleRight;
-            btnPersonalizzazione.Location = new Point(448, 240);
+            btnPersonalizzazione.Location = new Point(448, 250);
             btnPersonalizzazione.Margin = new Padding(3, 2, 3, 2);
             btnPersonalizzazione.Name = "btnPersonalizzazione";
             btnPersonalizzazione.Size = new Size(424, 61);
@@ -192,7 +192,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Coral;
-            label4.Location = new Point(448, 300);
+            label4.Location = new Point(448, 310);
             label4.Name = "label4";
             label4.Size = new Size(396, 24);
             label4.TabIndex = 54;
@@ -204,7 +204,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Coral;
-            label5.Location = new Point(83, 304);
+            label5.Location = new Point(83, 314);
             label5.Name = "label5";
             label5.Size = new Size(258, 24);
             label5.TabIndex = 56;
@@ -220,7 +220,7 @@
             btnRipristinaSO.ForeColor = Color.White;
             btnRipristinaSO.Image = (Image)resources.GetObject("btnRipristinaSO.Image");
             btnRipristinaSO.ImageAlign = ContentAlignment.MiddleRight;
-            btnRipristinaSO.Location = new Point(13, 243);
+            btnRipristinaSO.Location = new Point(13, 253);
             btnRipristinaSO.Margin = new Padding(3, 2, 3, 2);
             btnRipristinaSO.Name = "btnRipristinaSO";
             btnRipristinaSO.Size = new Size(424, 58);
@@ -235,7 +235,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Coral;
-            label6.Location = new Point(83, 396);
+            label6.Location = new Point(83, 409);
             label6.Name = "label6";
             label6.Size = new Size(258, 24);
             label6.TabIndex = 58;
@@ -251,7 +251,7 @@
             btnAttivaWSA.ForeColor = Color.White;
             btnAttivaWSA.Image = (Image)resources.GetObject("btnAttivaWSA.Image");
             btnAttivaWSA.ImageAlign = ContentAlignment.MiddleRight;
-            btnAttivaWSA.Location = new Point(-8, 342);
+            btnAttivaWSA.Location = new Point(-8, 355);
             btnAttivaWSA.Margin = new Padding(3, 2, 3, 2);
             btnAttivaWSA.Name = "btnAttivaWSA";
             btnAttivaWSA.Size = new Size(424, 52);
@@ -270,7 +270,7 @@
             btnAttivaWSL.ForeColor = Color.White;
             btnAttivaWSL.Image = (Image)resources.GetObject("btnAttivaWSL.Image");
             btnAttivaWSL.ImageAlign = ContentAlignment.MiddleRight;
-            btnAttivaWSL.Location = new Point(462, 342);
+            btnAttivaWSL.Location = new Point(462, 355);
             btnAttivaWSL.Margin = new Padding(3, 2, 3, 2);
             btnAttivaWSL.Name = "btnAttivaWSL";
             btnAttivaWSL.Size = new Size(424, 52);
@@ -285,7 +285,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Coral;
-            label7.Location = new Point(564, 395);
+            label7.Location = new Point(564, 408);
             label7.Name = "label7";
             label7.Size = new Size(237, 24);
             label7.TabIndex = 60;
@@ -297,7 +297,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            ClientSize = new Size(901, 428);
+            ClientSize = new Size(901, 458);
             Controls.Add(btnUpdate);
             Controls.Add(btnAttivaWSL);
             Controls.Add(label7);
