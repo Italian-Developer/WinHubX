@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Reflection;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace WinHubX.Dialog.Tools
 {
@@ -33,8 +35,31 @@ namespace WinHubX.Dialog.Tools
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
-            string fileName = "CheckHW.bat";
-            string resourceName = "WinHubX.Resources.CheckHW.bat";
+            string NameByLang="";
+
+            try
+            {
+                string LanguageToUse;
+
+                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
+                LanguageToUse = jsonData["SelectedLanguage"].ToString();
+                
+                if (LanguageToUse.Contains("it"))
+                {
+                    NameByLang = "CheckHW.bat";
+                }else
+                {
+                    NameByLang = "CheckHW_eng.bat";
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error loading language " + ex);
+            }
+
+
+            string fileName = NameByLang;
+            string resourceName = "WinHubX.Resources." + NameByLang;
             string tempPath = Path.GetTempPath();
             string tempFilePath = Path.Combine(tempPath, fileName);
 
