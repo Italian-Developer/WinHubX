@@ -54,8 +54,7 @@ namespace WinHubX
         }
         #endregion
 
-        [DllImport("kernel32")]
-        static extern bool AllocConsole();
+
 
         public Form1()
         {
@@ -80,8 +79,7 @@ namespace WinHubX
             formHome.Show();
 
 
-            AllocConsole();
-            Console.Write("console loaded\n");
+
 
 
             CycleJsonFiles();
