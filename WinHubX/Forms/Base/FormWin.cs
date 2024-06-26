@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 using System.Reflection;
 using WinHubX.Forms.Windows;
 
@@ -12,6 +13,24 @@ namespace WinHubX
         {
             InitializeComponent();
             this.form1 = form1;
+
+            try
+            {
+                string LanguageToUse;
+
+                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
+                LanguageToUse = jsonData["SelectedLanguage"].ToString();
+
+                JObject jsd = JObject.Parse(File.ReadAllText(LanguageToUse + ".json"));
+                btnAttivaWin.Text = jsd["ActivateWindows"].ToString();
+                btnCambioEdizione.Text = jsd["ChangeEdition"].ToString();
+            } catch (Exception ex)
+            {
+                MessageBox.Show("There was a problem loading the translation file :(" + " " + ex);
+            }
+            
+
+
         }
 
         private void btnWin7_Click(object sender, EventArgs e)

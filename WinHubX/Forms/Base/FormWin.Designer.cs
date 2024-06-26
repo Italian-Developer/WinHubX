@@ -165,7 +165,7 @@
             btnAttivaWin.Cursor = Cursors.Hand;
             btnAttivaWin.FlatAppearance.BorderSize = 0;
             btnAttivaWin.FlatStyle = FlatStyle.Flat;
-            btnAttivaWin.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAttivaWin.Font = new Font("Microsoft Sans Serif", 24.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAttivaWin.ForeColor = Color.White;
             btnAttivaWin.Image = (Image)resources.GetObject("btnAttivaWin.Image");
             btnAttivaWin.Location = new Point(516, 364);
@@ -183,7 +183,7 @@
             btnCambioEdizione.Cursor = Cursors.Hand;
             btnCambioEdizione.FlatAppearance.BorderSize = 0;
             btnCambioEdizione.FlatStyle = FlatStyle.Flat;
-            btnCambioEdizione.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCambioEdizione.Font = new Font("Microsoft Sans Serif", 24.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCambioEdizione.ForeColor = Color.White;
             btnCambioEdizione.Image = (Image)resources.GetObject("btnCambioEdizione.Image");
             btnCambioEdizione.Location = new Point(95, 364);

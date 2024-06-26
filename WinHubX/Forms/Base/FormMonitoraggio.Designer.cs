@@ -129,6 +129,7 @@
             BarCPU.TabIndex = 89;
             BarCPU.Text = "BarRam";
             BarCPU.Value = 0;
+            BarCPU.Click += BarCPU_Click;
             // 
             // bottoniSwap
             // 

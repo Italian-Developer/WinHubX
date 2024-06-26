@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using WinHubX.Dialog;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace WinHubX
 {
@@ -8,10 +10,33 @@ namespace WinHubX
         public FormHome()
         {
             InitializeComponent();
+
+            try
+            {
+                string LanguageToUse;
+
+                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
+                LanguageToUse = jsonData["SelectedLanguage"].ToString();
+
+                JObject jsd = JObject.Parse(File.ReadAllText(LanguageToUse + ".json"));
+                lblInfoWinAIO64.Text = jsd["WelcomeText"].ToString();
+                btnKofi.Text = jsd["Kofi"].ToString();
+                label3.Text = jsd["AskingHelp"].ToString();
+            } catch (Exception ex)
+            {
+                MessageBox.Show("There was a problem loading the translation file :(" + " " + ex);
+            }
+            
+
+
         }
+
+
+
 
         private void btnChangelog_Click(object sender, EventArgs e)
         {
+
             infoWHXChangelog(sender, e);
         }
         public static void infoWHXChangelog(object sender, EventArgs e)
@@ -196,6 +221,18 @@ namespace WinHubX
             {
                 MessageBox.Show($"Errore nell'aprire l'URL: {ex.Message}");
             }
+        }
+
+        private void lblInfoWinAIO64_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public string Language = "";
+
+        private void FormHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

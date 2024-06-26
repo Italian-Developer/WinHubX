@@ -125,11 +125,11 @@
             lblInfoPrivacy.AutoSize = true;
             lblInfoPrivacy.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblInfoPrivacy.ForeColor = Color.Coral;
-            lblInfoPrivacy.Location = new Point(13, 69);
+            lblInfoPrivacy.Location = new Point(18, 69);
             lblInfoPrivacy.Name = "lblInfoPrivacy";
             lblInfoPrivacy.Size = new Size(355, 48);
             lblInfoPrivacy.TabIndex = 49;
-            lblInfoPrivacy.Text = "Impostazioni Privacy\r\nModifica la tua privacy come meglio credi";
+            lblInfoPrivacy.Text = "Impostazioni Privacy\r\nModifica la tua privacy come meglio credi\r\n";
             lblInfoPrivacy.TextAlign = ContentAlignment.BottomCenter;
             // 
             // label1

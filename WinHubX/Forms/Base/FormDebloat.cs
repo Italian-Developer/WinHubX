@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 using System.Reflection;
 using System.Text;
 using WinHubX.Forms.ReinstallaAPP;
@@ -12,11 +13,31 @@ namespace WinHubX.Forms.Base
         {
             InitializeComponent();
             this.form1 = form1;
+
+            try
+            {
+
+                string LanguageToUse;
+
+                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
+                LanguageToUse = jsonData["SelectedLanguage"].ToString();
+
+                JObject jsd = JObject.Parse(File.ReadAllText(LanguageToUse + ".json"));
+                btnAvviaSelezionatiDebloat.Text = jsd["DebloatStartSelectedBtn"].ToString();
+                btnDebloatAuto.Text = jsd["DebloatAutoBtn"].ToString();
+                lblInfoWin12.Text = jsd["AutoDebloatSec"].ToString();
+                btnReinstallaAPP.Text = jsd["ReinstallApp"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was a problem loading the translation file :(" + " " + ex);
+            }
+
         }
 
         private void btnAvviaSelezionatiDebloat_Click(object sender, EventArgs e)
         {
-            if (Bloat1.CheckedItems.Contains("Calcolatrice"))
+            if (Bloat1.CheckedItems.Contains("Calculator"))
             {
                 try
                 {
@@ -48,7 +69,7 @@ namespace WinHubX.Forms.Base
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            if (Bloat1.CheckedItems.Contains("Foto"))
+            if (Bloat1.CheckedItems.Contains("Photo"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -264,7 +285,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat1.CheckedItems.Contains("Cattura Schermo"))
+            if (Bloat1.CheckedItems.Contains("Screen Capture"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -282,7 +303,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat1.CheckedItems.Contains("Estensione VP9"))
+            if (Bloat1.CheckedItems.Contains("VP9 Extension"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -300,7 +321,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat1.CheckedItems.Contains("Estensione Web"))
+            if (Bloat1.CheckedItems.Contains("Web Extension"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -318,7 +339,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat1.CheckedItems.Contains("Estensione WebpImage"))
+            if (Bloat1.CheckedItems.Contains("WebpImage Extension"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -462,7 +483,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat3.CheckedItems.Contains("Per iniziare"))
+            if (Bloat3.CheckedItems.Contains("To Start"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -480,7 +501,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat3.CheckedItems.Contains("Messaggi"))
+            if (Bloat3.CheckedItems.Contains("Messages"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -696,7 +717,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat2.CheckedItems.Contains("Desktop Remoto"))
+            if (Bloat2.CheckedItems.Contains("Remote Desktop"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -786,7 +807,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat2.CheckedItems.Contains("Windows Comunicazione"))
+            if (Bloat2.CheckedItems.Contains("Comunication"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -840,7 +861,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat2.CheckedItems.Contains("Registratore Suoni"))
+            if (Bloat2.CheckedItems.Contains("Audio Recorder"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -912,14 +933,14 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat3.CheckedItems.Contains("Pack Lingua"))
+            if (Bloat3.CheckedItems.Contains("Language Pack"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
                     FileName = "powershell.exe",
                     Verb = "runas",
                     UseShellExecute = false,
-                    Arguments = $"Get-AppxPackage -allusers Microsoft.LanguageExperiencePackit-IT | Remove-AppxPackage"
+                    Arguments = $"Get-AppxPackage -allusers Microsoft.LanguageExperiencePackit-IT | Remove-AppxPackage" 
                 };
 
                 Process process = new Process
@@ -1128,7 +1149,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat3.CheckedItems.Contains("Portafoglio"))
+            if (Bloat3.CheckedItems.Contains("Portfolio"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -1146,7 +1167,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat3.CheckedItems.Contains("Collegamento A Telefono"))
+            if (Bloat3.CheckedItems.Contains("Phone"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -1379,6 +1400,9 @@ namespace WinHubX.Forms.Base
             }
         }
 
+        private void Bloat1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using System.Diagnostics;
 using System.IO.Compression;
 using System.Management;
 using System.Reflection;
@@ -16,6 +18,37 @@ namespace WinHubX.Forms.Base
         {
             InitializeComponent();
             this.form1 = form1;
+
+
+            try
+            {
+                Console.Write("sezione settaggi");
+                string LanguageToUse;
+
+                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
+                LanguageToUse = jsonData["SelectedLanguage"].ToString();
+
+                JObject jsd = JObject.Parse(File.ReadAllText(LanguageToUse + ".json"));
+                lblInfoPrivacy.Text = jsd["PrivacySec"].ToString();
+                label1.Text = jsd["UtilitySec"].ToString();
+                label2.Text = jsd["DefenderSec"].ToString();
+                label3.Text = jsd["UpdateSec"].ToString();
+                label5.Text = jsd["RepairOSSec"].ToString();
+                label4.Text = jsd["CustomizationSec"].ToString();
+                label6.Text = jsd["AndroidSubSec"].ToString();
+                label7.Text = jsd["LinuxSubSec"].ToString();
+
+                btnRipristinaSO.Text = jsd["RestoreOSButton"].ToString();
+                btnPersonalizzazione.Text = jsd["CustomizationButton"].ToString();
+                btnAttivaWSA.Text = jsd["EnableWSA"].ToString();
+                btnAttivaWSL.Text = jsd["EnableWSL"].ToString();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was a problem loading the translation file :(" + " " + ex);
+            }
+
         }
 
         private void btnPrivacy_Click(object sender, EventArgs e)
@@ -157,15 +190,33 @@ namespace WinHubX.Forms.Base
 
         private void btnAttivaWSL_Click(object sender, EventArgs e)
         {
+
             try
             {
-                string assemblyName1 = Assembly.GetExecutingAssembly().GetName().Name;
-                string resourcePath1 = $"{assemblyName1}.Resources.WinHubXWSL.ps1";
-                byte[] exeBytes1 = LoadEmbeddedResource1(resourcePath1);
-                string ps1FilePath1 = Path.Combine(Path.GetTempPath(), "WinHubXWSL.ps1");
-                File.WriteAllBytes(ps1FilePath1, exeBytes1);
+                string LanguageToUse;
 
-                StartPowerShell1(ps1FilePath1);
+                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
+                LanguageToUse = jsonData["SelectedLanguage"].ToString();
+                if (LanguageToUse.Contains("it"))
+                {
+                    string assemblyName1 = Assembly.GetExecutingAssembly().GetName().Name;
+                    string resourcePath1 = $"{assemblyName1}.Resources.WinHubXWSL.ps1";
+                    byte[] exeBytes1 = LoadEmbeddedResource1(resourcePath1);
+                    string ps1FilePath1 = Path.Combine(Path.GetTempPath(), "WinHubXWSL.ps1");
+                    File.WriteAllBytes(ps1FilePath1, exeBytes1);
+
+                    StartPowerShell1(ps1FilePath1);
+                }else
+                {
+                    string assemblyName1 = Assembly.GetExecutingAssembly().GetName().Name;
+                    string resourcePath1 = $"{assemblyName1}.Resources.WinHubXWSL_eng.ps1";
+                    byte[] exeBytes1 = LoadEmbeddedResource1(resourcePath1);
+                    string ps1FilePath1 = Path.Combine(Path.GetTempPath(), "WinHubXWSL_eng.ps1");
+                    File.WriteAllBytes(ps1FilePath1, exeBytes1);
+
+                    StartPowerShell1(ps1FilePath1);
+                }
+                
             }
             finally { }
         }

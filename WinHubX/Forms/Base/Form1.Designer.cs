@@ -46,6 +46,7 @@
             btnMnmz = new Button();
             pictureBox2 = new PictureBox();
             lblPanelTitle = new Label();
+            ComboBoxLingue = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -201,11 +202,19 @@
             lblPanelTitle.ForeColor = Color.White;
             lblPanelTitle.Name = "lblPanelTitle";
             // 
+            // ComboBoxLingue
+            // 
+            ComboBoxLingue.FormattingEnabled = true;
+            resources.ApplyResources(ComboBoxLingue, "ComboBoxLingue");
+            ComboBoxLingue.Name = "ComboBoxLingue";
+            ComboBoxLingue.SelectedIndexChanged += ComboBoxLingue_SelectedIndexChanged;
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
+            Controls.Add(ComboBoxLingue);
             Controls.Add(lblPanelTitle);
             Controls.Add(pictureBox2);
             Controls.Add(btnMnmz);
@@ -243,5 +252,6 @@
         private Button btnCreaISO;
         private Button btnTools;
         private Button btnMonitoraggio;
+        private ComboBox ComboBoxLingue;
     }
 }

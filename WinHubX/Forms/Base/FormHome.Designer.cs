@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHome));
             imgHomeLogo = new PictureBox();
-            lblInfoWinAIO64 = new Label();
             nickSparrow = new PictureBox();
             btnChangelog = new Button();
             btnKofi = new Button();
             tgWinHubX = new Button();
             label3 = new Label();
+            lblInfoWinAIO64 = new Label();
             ((System.ComponentModel.ISupportInitialize)imgHomeLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nickSparrow).BeginInit();
             SuspendLayout();
@@ -50,19 +50,6 @@
             imgHomeLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             imgHomeLogo.TabIndex = 0;
             imgHomeLogo.TabStop = false;
-            // 
-            // lblInfoWinAIO64
-            // 
-            lblInfoWinAIO64.AutoSize = true;
-            lblInfoWinAIO64.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblInfoWinAIO64.ForeColor = Color.White;
-            lblInfoWinAIO64.Location = new Point(8, 19);
-            lblInfoWinAIO64.MaximumSize = new Size(595, 0);
-            lblInfoWinAIO64.Name = "lblInfoWinAIO64";
-            lblInfoWinAIO64.Size = new Size(595, 234);
-            lblInfoWinAIO64.TabIndex = 92;
-            lblInfoWinAIO64.Text = resources.GetString("lblInfoWinAIO64.Text");
-            lblInfoWinAIO64.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // nickSparrow
             // 
@@ -135,6 +122,20 @@
             label3.TabIndex = 97;
             label3.Text = "Per assistenza (problemi WinHubX, come installare ISO, suggerimenti per WinHubX) contattaci su telegram";
             // 
+            // lblInfoWinAIO64
+            // 
+            lblInfoWinAIO64.AutoSize = true;
+            lblInfoWinAIO64.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblInfoWinAIO64.ForeColor = Color.White;
+            lblInfoWinAIO64.Location = new Point(8, 19);
+            lblInfoWinAIO64.MaximumSize = new Size(595, 0);
+            lblInfoWinAIO64.Name = "lblInfoWinAIO64";
+            lblInfoWinAIO64.Size = new Size(595, 104);
+            lblInfoWinAIO64.TabIndex = 92;
+            lblInfoWinAIO64.Text = resources.GetString("lblInfoWinAIO64.Text");
+            lblInfoWinAIO64.TextAlign = ContentAlignment.MiddleLeft;
+            lblInfoWinAIO64.Click += lblInfoWinAIO64_Click;
+            // 
             // FormHome
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -152,6 +153,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "FormHome";
             Text = "FormHome";
+            Load += FormHome_Load;
             ((System.ComponentModel.ISupportInitialize)imgHomeLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)nickSparrow).EndInit();
             ResumeLayout(false);
@@ -161,11 +163,11 @@
         #endregion
 
         private PictureBox imgHomeLogo;
-        private Label lblInfoWinAIO64;
         private PictureBox nickSparrow;
         private Button btnChangelog;
         private Button btnKofi;
         private Button tgWinHubX;
         private Label label3;
+        private Label lblInfoWinAIO64;
     }
 }

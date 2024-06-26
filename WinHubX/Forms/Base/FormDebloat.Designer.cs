@@ -43,11 +43,12 @@
             Bloat1.BorderStyle = BorderStyle.None;
             Bloat1.ForeColor = Color.White;
             Bloat1.FormattingEnabled = true;
-            Bloat1.Items.AddRange(new object[] { "Calcolatrice", "Foto", "Canonical", "Xbox TCUI", "Xbox APP", "Xbox Overlay", "Xbox Speech", "Xbox Identity", "Sticky Notes", "MS Paint", "Windows Camera", "HiFi Extension", "Cattura Schermo", "Estensione VP9", "Estensione Web", "Estensione WebpImage", "WindSynthBerry", "MidiBerry", "Slack", "Mixed Reality", "PPI Projection", "Bing News", "Get Help" });
+            Bloat1.Items.AddRange(new object[] { "Calculator", "Photo", "Canonical", "Xbox TCUI", "Xbox APP", "Xbox Overlay", "Xbox Speech", "Xbox Identity", "Sticky Notes", "MS Paint", "Windows Camera", "HiFi Extension", "Screen Capture", "VP9 Extension", "Web Extension", "WebpImage Extension", "WindSynthBerry", "MidiBerry", "Slack", "Mixed Reality", "PPI Projection", "Bing News", "Get Help" });
             Bloat1.Location = new Point(28, 5);
             Bloat1.Name = "Bloat1";
             Bloat1.Size = new Size(163, 414);
             Bloat1.TabIndex = 10;
+            Bloat1.SelectedIndexChanged += Bloat1_SelectedIndexChanged;
             // 
             // Bloat2
             // 
@@ -55,7 +56,7 @@
             Bloat2.BorderStyle = BorderStyle.None;
             Bloat2.ForeColor = Color.White;
             Bloat2.FormattingEnabled = true;
-            Bloat2.Items.AddRange(new object[] { "Microsoft 3D Viewer", "Microsoft Office Hub", "Solitario", "Network Speed Test", "Microsoft News", "Office Lens", "One Note", "Office Sway", "One Connect", "Microsoft People", "Paint 3D", "Desktop Remoto", "App Skype", "Office To Do", "Whiteboard", "Windows Alarm", "Comunicazione", "Feedback Hub", "Windows Maps", "Registratore Suoni", "Zune Music", "Zune Video", "Eclipse" });
+            Bloat2.Items.AddRange(new object[] { "Microsoft 3D Viewer", "Microsoft Office Hub", "Solitario", "Network Speed Test", "Microsoft News", "Office Lens", "One Note", "Office Sway", "One Connect", "Microsoft People", "Paint 3D", "Remote Desktop", "App Skype", "Office To Do", "Whiteboard", "Windows Alarm", "Comunication", "Feedback Hub", "Windows Maps", "Audio Recorder", "Zune Music", "Zune Video", "Eclipse" });
             Bloat2.Location = new Point(265, 5);
             Bloat2.Name = "Bloat2";
             Bloat2.Size = new Size(170, 414);
@@ -67,7 +68,7 @@
             Bloat3.BorderStyle = BorderStyle.None;
             Bloat3.ForeColor = Color.White;
             Bloat3.FormattingEnabled = true;
-            Bloat3.Items.AddRange(new object[] { "Duolingo", "PandoraMedia", "Candy Crush", "BubbleWitch", "Wunderlist", "Flipboard", "Twitter", "Facebook", "Dolby", "Advertising XAML", "Portafoglio", "Desktop Installer", "Collegamento A Telefono", "Per iniziare", "Messaggi", "Pack Lingua", "Adobe Express", "Edge", "Microsoft Store", "Windows Defender" });
+            Bloat3.Items.AddRange(new object[] { "Duolingo", "PandoraMedia", "Candy Crush", "BubbleWitch", "Wunderlist", "Flipboard", "Twitter", "Facebook", "Dolby", "Advertising XAML", "Portfolio", "Desktop Installer", "Phone", "To start", "Messages", "Language Pack", "Adobe Express", "Edge", "Microsoft Store", "Windows Defender" });
             Bloat3.Location = new Point(488, 5);
             Bloat3.Name = "Bloat3";
             Bloat3.Size = new Size(174, 396);
