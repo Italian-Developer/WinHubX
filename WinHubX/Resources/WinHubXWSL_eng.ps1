@@ -45,7 +45,7 @@ Add-Type -AssemblyName System.Drawing
 
 # Create form
 $form = New-Object System.Windows.Forms.Form
-$form.Text = "Attivazione WSL"
+$form.Text = "WSL activation"
 $form.Size = New-Object System.Drawing.Size(350,200) 
 $form.StartPosition = "CenterScreen"
 $form.FormBorderStyle = 'FixedDialog'
@@ -60,7 +60,7 @@ $form.ForeColor = [System.Drawing.Color]::White
 $groupBoxDistro = New-Object System.Windows.Forms.GroupBox
 $groupBoxDistro.Location = New-Object System.Drawing.Point(10,20)
 $groupBoxDistro.Size = New-Object System.Drawing.Size(290,100)
-$groupBoxDistro.Text = "Seleziona quale distro Linux usare"
+$groupBoxDistro.Text = "Select Linux distro"
 $groupBoxDistro.ForeColor = [System.Drawing.Color]::White
 $form.Controls.Add($groupBoxDistro)
 
@@ -102,7 +102,7 @@ $buildButton.Text = "Attiva WSL!"
 $buildButton.Add_Click({
 
     if (-not ($radioButtonUbuntu.Checked -or $radioButtonDebian.Checked -or $radioButtonKaliLinux.Checked -or $radioButtonOpensuse.Checked -or $radioButtonOracle.Checked)) {
-    [System.Windows.Forms.MessageBox]::Show("Seleziona la Distro desiderata.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
+    [System.Windows.Forms.MessageBox]::Show("Select the wanted Distro.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
      return
     }
 
@@ -128,7 +128,7 @@ $buildButton.Add_Click({
         "Oracle" { Start-Process powershell -ArgumentList "wsl --install -d oraclelinux_9_1" -Verb RunAs -Wait }
     }
 
-    [System.Windows.Forms.MessageBox]::Show("Installazione completata. Per favore, riavvia il computer.", "Installazione WSL", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+    [System.Windows.Forms.MessageBox]::Show("Completed installation, please restart your pc.", "WSL Installation", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
 })
 $form.Controls.Add($buildButton)
 

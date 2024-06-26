@@ -50,7 +50,7 @@ $form.ForeColor = [System.Drawing.Color]::White
 $labelISOFile = New-Object System.Windows.Forms.Label
 $labelISOFile.Location = New-Object System.Drawing.Point(10, 20)
 $labelISOFile.Size = New-Object System.Drawing.Size(260, 20)
-$labelISOFile.Text = "Seleziona file ISO:"
+$labelISOFile.Text = "Select ISO:"
 $form.Controls.Add($labelISOFile)
 
 $textBoxISOFile = New-Object System.Windows.Forms.TextBox
@@ -65,7 +65,7 @@ $browseButton.Text = "Browse"
 $browseButton.Add_Click({
     $openFileDialog = New-Object System.Windows.Forms.OpenFileDialog
     $openFileDialog.Filter = "ISO Files (*.iso)|*.iso|All files (*.*)|*.*"
-    $openFileDialog.Title = "Seleziona file ISO"
+    $openFileDialog.Title = "Select ISO"
     $openFileDialog.Multiselect = $false
     $result = $openFileDialog.ShowDialog()
     if ($result -eq 'OK') {
@@ -111,7 +111,7 @@ $form.Controls.Add($browseButton)
 $labelISOIndex = New-Object System.Windows.Forms.Label
 $labelISOIndex.Location = New-Object System.Drawing.Point(10, 70)
 $labelISOIndex.Size = New-Object System.Drawing.Size(200, 20)
-$labelISOIndex.Text = "Seleziona Indice ISO:"
+$labelISOIndex.Text = "Select ISO Index:"
 $form.Controls.Add($labelISOIndex)
 
 $windowsEditionComboBox = New-Object System.Windows.Forms.ComboBox
@@ -145,7 +145,7 @@ $groupBoxDebloatapp.Controls.Add($radioButtonNonDebloatAPP)
 $donateButton = New-Object System.Windows.Forms.Button
 $donateButton.Location = New-Object System.Drawing.Point(240,490) 
 $donateButton.Size = New-Object System.Drawing.Size(100,23) 
-$donateButton.Text = "Donazione"
+$donateButton.Text = "Donation"
 $donateButton.Add_Click({
     Start-Process "https://ko-fi.com/winhubx"
 })
@@ -154,7 +154,7 @@ $form.Controls.Add($donateButton)
 $groupBoxWindowsVersion = New-Object System.Windows.Forms.GroupBox
 $groupBoxWindowsVersion.Location = New-Object System.Drawing.Point(10, 130)
 $groupBoxWindowsVersion.Size = New-Object System.Drawing.Size(220,70)
-$groupBoxWindowsVersion.Text = "Seleziona versione ISO Windows"
+$groupBoxWindowsVersion.Text = "Select Windows ISO version"
 $groupBoxWindowsVersion.ForeColor = [System.Drawing.Color]::White
 $form.Controls.Add($groupBoxWindowsVersion)
 
@@ -196,7 +196,7 @@ function UpdateUnattendGroup {
         $script:groupBoxUnattend = New-Object System.Windows.Forms.GroupBox
         $script:groupBoxUnattend.Location = New-Object System.Drawing.Point(245,305)
         $script:groupBoxUnattend.Size = New-Object System.Drawing.Size(215,70)
-        $script:groupBoxUnattend.Text = "Seleziona Bypass Windows 11"
+        $script:groupBoxUnattend.Text = "Select WIndows 11 bypass"
         $script:groupBoxUnattend.ForeColor = [System.Drawing.Color]::White
         $form.Controls.Add($script:groupBoxUnattend)
 
@@ -218,7 +218,7 @@ function UpdateUnattendGroup {
 $groupBoxArchitettura = New-Object System.Windows.Forms.GroupBox
 $groupBoxArchitettura.Location = New-Object System.Drawing.Point(240, 220) 
 $groupBoxArchitettura.Size = New-Object System.Drawing.Size(220,70)   
-$groupBoxArchitettura.Text = "Architettura"
+$groupBoxArchitettura.Text = "Architecture"
 $groupBoxArchitettura.ForeColor = [System.Drawing.Color]::White
 $form.Controls.Add($script:groupBoxArchitettura)
 
@@ -238,99 +238,99 @@ $groupBoxArchitettura.Controls.Add($radioButtonx32)
 $groupBoxEdgeRemoval = New-Object System.Windows.Forms.GroupBox
 $groupBoxEdgeRemoval.Location = New-Object System.Drawing.Point(10, 220)
 $groupBoxEdgeRemoval.Size = New-Object System.Drawing.Size(220,70)
-$groupBoxEdgeRemoval.Text = "Seleziona preferenza Edge"
+$groupBoxEdgeRemoval.Text = "Select Edge preferences"
 $groupBoxEdgeRemoval.ForeColor = [System.Drawing.Color]::White
 $form.Controls.Add($groupBoxEdgeRemoval)
 
 $radioButtonRemoveEdge = New-Object System.Windows.Forms.RadioButton
 $radioButtonRemoveEdge.Location = New-Object System.Drawing.Point(10,20)
 $radioButtonRemoveEdge.Size = New-Object System.Drawing.Size(150,20)
-$radioButtonRemoveEdge.Text = "Rimuovi Edge"
+$radioButtonRemoveEdge.Text = "Remove Edge"
 $groupBoxEdgeRemoval.Controls.Add($radioButtonRemoveEdge)
 
 $radioButtonDoNotRemoveEdge = New-Object System.Windows.Forms.RadioButton
 $radioButtonDoNotRemoveEdge.Location = New-Object System.Drawing.Point(10,45)
 $radioButtonDoNotRemoveEdge.Size = New-Object System.Drawing.Size(150,20)
-$radioButtonDoNotRemoveEdge.Text = "Non rimuovere Edge"
+$radioButtonDoNotRemoveEdge.Text = "Don't remove Edge"
 $groupBoxEdgeRemoval.Controls.Add($radioButtonDoNotRemoveEdge)
 
 $groupBoxDefenderPreference = New-Object System.Windows.Forms.GroupBox
 $groupBoxDefenderPreference.Location = New-Object System.Drawing.Point(10, 305)
 $groupBoxDefenderPreference.Size = New-Object System.Drawing.Size(230,70)
-$groupBoxDefenderPreference.Text = "Seleziona preferenza Defender"
+$groupBoxDefenderPreference.Text = "Select Defender preferences"
 $groupBoxDefenderPreference.ForeColor = [System.Drawing.Color]::White
 $form.Controls.Add($groupBoxDefenderPreference)
 
 $radioButtonDisableDefender = New-Object System.Windows.Forms.RadioButton
 $radioButtonDisableDefender.Location = New-Object System.Drawing.Point(10,20)
 $radioButtonDisableDefender.Size = New-Object System.Drawing.Size(200,20)
-$radioButtonDisableDefender.Text = "Disabilita Windows Defender"
+$radioButtonDisableDefender.Text = "Disable Windows Defender"
 $groupBoxDefenderPreference.Controls.Add($radioButtonDisableDefender)
 
 $radioButtonDoNotDisableDefender = New-Object System.Windows.Forms.RadioButton
 $radioButtonDoNotDisableDefender.Location = New-Object System.Drawing.Point(10,45)
 $radioButtonDoNotDisableDefender.Size = New-Object System.Drawing.Size(200,20)
-$radioButtonDoNotDisableDefender.Text = "Abilita Windows Defender"
+$radioButtonDoNotDisableDefender.Text = "Enable Windows Defender"
 $groupBoxDefenderPreference.Controls.Add($radioButtonDoNotDisableDefender)
 
 $groupBoxRimozioneProcessi= New-Object System.Windows.Forms.GroupBox
 $groupBoxRimozioneProcessi.Location = New-Object System.Drawing.Point(10, 390)
 $groupBoxRimozioneProcessi.Size = New-Object System.Drawing.Size(220,70)
-$groupBoxRimozioneProcessi.Text = "Elimina processi"
+$groupBoxRimozioneProcessi.Text = "Delete processes"
 $groupBoxRimozioneProcessi.ForeColor = [System.Drawing.Color]::White
 $form.Controls.Add($groupBoxRimozioneProcessi)
 
 $radioButtonRimuoviProcessi = New-Object System.Windows.Forms.RadioButton
 $radioButtonRimuoviProcessi.Location = New-Object System.Drawing.Point(10,20)
 $radioButtonRimuoviProcessi.Size = New-Object System.Drawing.Size(150,20)
-$radioButtonRimuoviProcessi.Text = "Rimuovi Processi"
+$radioButtonRimuoviProcessi.Text = "Remove Processes"
 $groupBoxRimozioneProcessi.Controls.Add($radioButtonRimuoviProcessi)
 
 $radioButtonNonRimuoviProcessi = New-Object System.Windows.Forms.RadioButton
 $radioButtonNonRimuoviProcessi.Location = New-Object System.Drawing.Point(10,45)
 $radioButtonNonRimuoviProcessi.Size = New-Object System.Drawing.Size(160,20)
-$radioButtonNonRimuoviProcessi.Text = "Non rimuovere processi"
+$radioButtonNonRimuoviProcessi.Text = "Don't remove processes"
 $groupBoxRimozioneProcessi.Controls.Add($radioButtonNonRimuoviProcessi)
 
 
 $buildButton = New-Object System.Windows.Forms.Button
 $buildButton.Location = New-Object System.Drawing.Point(360,490) 
 $buildButton.Size = New-Object System.Drawing.Size(100,23) 
-$buildButton.Text = "Crea!"
+$buildButton.Text = "Create!"
 $buildButton.Add_Click({
     if ($textBoxISOFile.Text -eq "") {
-        [System.Windows.Forms.MessageBox]::Show("Seleziona una ISO.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
+        [System.Windows.Forms.MessageBox]::Show("Select an ISO.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
         return
     }
 
     if (-not ($radioButtonWindows10.Checked -or $radioButtonWindows11.Checked)) {
         [System.Windows.Forms.MessageBox]
-        ::Show("Seleziona versione Windows.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
+        ::Show("Select Windows services.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
         return
     }
 
     if (-not ($radioButtonRemoveEdge.Checked -or $radioButtonDoNotRemoveEdge.Checked)) {
-        [System.Windows.Forms.MessageBox]::Show("Seleziona preferenza Microsoft Edge.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
+        [System.Windows.Forms.MessageBox]::Show("Select Microsoft Edge preferences.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
         return
     }
 
     if (-not ($radioButtonDisableDefender.Checked -or $radioButtonDoNotDisableDefender.Checked)) {
-        [System.Windows.Forms.MessageBox]::Show("Seleziona preferenza Windows Defender.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
+        [System.Windows.Forms.MessageBox]::Show("Select Windows Defender preferences.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
         return
     }
 
     if ($windowsEditionComboBox.SelectedIndex -eq -1) {
-        [System.Windows.Forms.MessageBox]::Show("Seleziona un indice ISO.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
+        [System.Windows.Forms.MessageBox]::Show("Select an ISO index.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
     return
     }
 
     if (-not ($radioButtonRimuoviProcessi.Checked -or $radioButtonNonRimuoviProcessi.Checked)) {
-       [System.Windows.Forms.MessageBox]::Show("Seleziona se rimuovere i processi.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
+       [System.Windows.Forms.MessageBox]::Show("Select to remove processes.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
        return
     }
      
     if (-not ($radioButtonDebloatAPP.Checked -or $radioButtonNonDebloatAPP.Checked)) {
-    [System.Windows.Forms.MessageBox]::Show("Seleziona se rimuovere le APP bloatware.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
+    [System.Windows.Forms.MessageBox]::Show("Select to remove bloatware APPs.", "Error", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
     return
     }
 
@@ -361,10 +361,10 @@ $arguments = @(
 $argumentString = $arguments -join ' '
 
     if ($windowsVersion -eq "Windows 10") {
-        Start-Process -FilePath "$env:TEMP\RisorseCreaISO\isotool10.bat" -ArgumentList "$argumentString" 
+        Start-Process -FilePath "$env:TEMP\RisorseCreaISO\isotool10_eng.bat" -ArgumentList "$argumentString" 
     }
     else {
-        Start-Process -FilePath "$env:TEMP\RisorseCreaISO\isotool11.bat" -ArgumentList "$argumentString"
+        Start-Process -FilePath "$env:TEMP\RisorseCreaISO\isotool11_eng.bat" -ArgumentList "$argumentString"
     }
 
 })

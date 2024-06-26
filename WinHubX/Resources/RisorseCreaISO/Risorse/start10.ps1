@@ -3,7 +3,6 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 ########################################################
 
-# Disable quick edit mode
 Add-Type -MemberDefinition @"
 [DllImport("kernel32.dll", SetLastError=true)]
 public static extern bool SetConsoleMode(IntPtr hConsoleHandle, int mode);
@@ -38,7 +37,7 @@ while ($true) {
         break  # Exit the loop
     }
     
-    Start-Sleep -Seconds 3  # Wait for 1 second before checking again
+    Start-Sleep -Seconds 3  
 }
 
 ########################################################

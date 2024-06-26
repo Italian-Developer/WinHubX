@@ -20,7 +20,7 @@ for /f "tokens=2" %%A in ("%windowsEdition%") do set "index=%%A"
 :cartellaISO1
 call :initProgressBar 
 for /l %%f in (0, 1, 100) do (
-    call :drawProgressBar %%f "Preparazione in corso"
+    call :drawProgressBar %%f "Preparation in progress"
         if not exist "C:\ISO\WinISO" (
             goto :isofolder
         ) else (
@@ -41,7 +41,7 @@ for /l %%f in (0, 1, 100) do (
 
 :iso1
 for /l %%f in (0, 1, 100) do (
-call :drawProgressBar %%f "Preparo la iso"
+call :drawProgressBar %%f "Preparing iso"
 %TEMP%\RisorseCreaISO\7z.exe x -y -o"C:\ISO\WinISO" "%selectedFile%" > nul
 )
 
@@ -67,7 +67,7 @@ IF EXIST "C:\ISO\WinISO\sources\install.esd" (
 
 :esd1
 for /l %%f in (0, 1, 100) do (
-call :drawProgressBar %%f "Converto l'install.esd"
+call :drawProgressBar %%f "Converting the install.esd"
 dism /export-image /SourceImageFile:C:\ISO\WinISO\sources\install.esd /SourceIndex:%index% /DestinationImageFile:C:\ISO\WinISO\sources\install.wim /Compress:max /CheckIntegrity /Quiet >nul 2>&1
 )
 goto :copy_esd1
@@ -75,7 +75,7 @@ goto :copy_esd1
 :wim1
 
 for /l %%f in (0 1 100) do (
-  call :drawProgressBar %%f "Estraggo l'indice"
+  call :drawProgressBar %%f "Index extraction"
 dism /Export-Image /SourceImageFile:"C:\ISO\WinISO\sources\install.wim" /SourceIndex:%index% /DestinationImageFile:"C:\ISO\WinISO\sources\install_pro.wim" /compress:max /Quiet >nul 2>&1
 )
 
@@ -93,7 +93,7 @@ goto :mountwim1
 
 :mountwim1
 for /l %%f in (0 1 100) do (
-  call :drawProgressBar %%f "Monto la iso"
+  call :drawProgressBar %%f "Mounting iso"
 dism /mount-image /imagefile:"C:\ISO\WinISO\sources\install.wim" /index:1 /mountdir:"C:\mount\mount" /Quiet >nul 2>&1
 )
 goto :menuprincipalee1
@@ -101,14 +101,14 @@ goto :menuprincipalee1
 rem menuprincipale
 :menuprincipalee1
 for /l %%f in (0 1 100) do (
-  call :drawProgressBar %%f "Abilito l'account locale"
+  call :drawProgressBar %%f "Enabling local account"
 reg load HKLM\TK_SOFTWARE "C:\mount\mount\Windows\System32\config\SOFTWARE"  >nul 2>&1
 Reg add "HKLM\TK_SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE" /v "BypassNRO" /t REG_DWORD /d "1" /f >nul 2>&1
 reg unload HKLM\TK_SOFTWARE >nul 2>&1
 )
 
 for /l %%f in (0 1 100) do (
-  call :drawProgressBar %%f "Inizio modifiche"
+  call :drawProgressBar %%f "Started changes"
 if "%edgeRemovalPreference%"=="RemoveEdge" (
 echo > C:\mount\mount\Windows\noedge.pref
 copy "%TEMP%\RisorseCreaISO\OperaGXSetup.exe" "C:\mount\mount" >nul 2>&1
@@ -151,13 +151,13 @@ copy "%TEMP%\RisorseCreaISO\[AIMODS]-Store.exe" "C:\mount\mount\Windows" >nul 2>
 :fine1
 
 for /l %%f in (0 1 100) do (
-  call :drawProgressBar %%f "Salvataggio ISO"
+  call :drawProgressBar %%f "ISO saving"
 dism /unmount-image /mountdir:"C:\mount\mount" /commit /Quiet >nul 2>&1
 )
 
 :wimre
 for /l %%f in (0 1 100) do (
-  call :drawProgressBar %%f "Ricreo la iso"
+  call :drawProgressBar %%f "ISO recreation"
 %TEMP%\RisorseCreaISO\oscdimg -m -o -u2 -bootdata:2#p0,e,bC:\ISO\WinISO\boot\etfsboot.com#pEF,e,bC:\ISO\WinISO\efi\microsoft\boot\efisys.bin C:\ISO\WinISO C:\ISO\WindowsISO_edited.iso >nul 2>&1
 copy "C:\ISO\WindowsISO_edited.iso" "C:\" >nul 2>&1
 rmdir "C:\ISO" /s /q >nul 2>&1
@@ -165,7 +165,7 @@ rmdir "C:\mount" /s /q >nul 2>&1
 )
 call :finalizeProgressBar 1
 
-powerShell -Command "Write-Host 'Processo completato troverai la tua ISO in C: chimata WindowsISO_edited!' -ForegroundColor Green; exit"
+powerShell -Command "Write-Host 'Process completed, you will find the ISO in C: chimata WindowsISO_edited!' -ForegroundColor Green; exit"
 timeout 7
 endlocal
 exit
