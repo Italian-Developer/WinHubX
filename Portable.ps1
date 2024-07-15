@@ -1,10 +1,35 @@
-# URL dell'applicazione da scaricare
-$URL = "https://github.com/MrNico98/WinHubX/releases/download/WinHubX-v.2.4.0.2/WinHubX.portable.exe"
+Add-Type @"
+using System;
+using System.Runtime.InteropServices;
+public static class NativeMethods {
+    [DllImport("user32.dll")]
+    public static extern IntPtr SetWindowsHookEx(int idHook, LowLevelKeyboardProc lpfn, IntPtr hMod, uint dwThreadId);
+    [DllImport("user32.dll")]
+    public static extern bool UnhookWindowsHookEx(IntPtr hhk);
+    [DllImport("user32.dll")]
+    public static extern IntPtr CallNextHookEx(IntPtr hhk, int nCode, IntPtr wParam, IntPtr lParam);
+    public delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
+    public const int WH_KEYBOARD_LL = 13;
+    public const int VK_F4 = 0x73;
+    public const int WM_KEYDOWN = 0x0100;
+}
+"@
 
-# Nome del file scaricato
-$FILE = "WinHubX.portable.exe"
+$proc = [NativeMethods+LowLevelKeyboardProc] {
+    param($nCode, $wParam, $lParam)
+    if ($nCode -ge 0 -and $wParam -eq [NativeMethods]::WM_KEYDOWN) {
+        $vkCode = [System.Runtime.InteropServices.Marshal]::ReadInt32($lParam)
+        if ($vkCode -eq [NativeMethods]::VK_F4) {
+            return [IntPtr]::Zero
+        }
+    }
+    return [NativeMethods]::CallNextHookEx($null, $nCode, $wParam, $lParam)
+}
+$hook = [NativeMethods]::SetWindowsHookEx([NativeMethods]::WH_KEYBOARD_LL, $proc, (Get-Module -Name PowerShell).Module.BaseAddress, 0)
 
 # Scarica il file
+$URL = "https://github.com/MrNico98/WinHubX/releases/download/WinHubX-v.2.4.0.2/WinHubX.portable.exe"
+$FILE = "WinHubX.portable.exe"
 Invoke-WebRequest -Uri $URL -OutFile $FILE
 
 # Controlla se il download è riuscito
@@ -24,5 +49,8 @@ if (Test-Path $FILE) {
     Remove-Item -Path $FILE
     Write-Output "Operazione completata."
 }
+
+# Rimuovi l'hook quando il lavoro è terminato
+[NativeMethods]::UnhookWindowsHookEx($hook)
 
 Pause
