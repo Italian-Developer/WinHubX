@@ -12,7 +12,7 @@ if (Test-Path $FILE) {
     Start-Process -FilePath $FILE
     
     while (Get-Process | Where-Object { $_.Name -eq "WinHubX.portable" }) {
-        # Se il processo è ancora in esecuzione, attendi 2 secondi e riprova
+        # Se il processo è ancora in esecuzione, attendi 5 secondi e riprova
         Start-Sleep -Seconds 2
     }
 
