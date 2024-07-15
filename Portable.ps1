@@ -1,5 +1,6 @@
 Add-Type @"
 using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 public static class NativeMethods {
     [DllImport("user32.dll")]
@@ -9,6 +10,8 @@ public static class NativeMethods {
     [DllImport("user32.dll")]
     public static extern IntPtr CallNextHookEx(IntPtr hhk, int nCode, IntPtr wParam, IntPtr lParam);
     public delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
+    [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
+    public static extern IntPtr GetModuleHandle(string lpModuleName);
     public const int WH_KEYBOARD_LL = 13;
     public const int VK_F4 = 0x73;
     public const int WM_KEYDOWN = 0x0100;
@@ -25,7 +28,12 @@ $proc = [NativeMethods+LowLevelKeyboardProc] {
     }
     return [NativeMethods]::CallNextHookEx($null, $nCode, $wParam, $lParam)
 }
-$hook = [NativeMethods]::SetWindowsHookEx([NativeMethods]::WH_KEYBOARD_LL, $proc, (Get-Module -Name PowerShell).Module.BaseAddress, 0)
+
+# Ottieni l'handle del modulo corrente
+$hMod = [NativeMethods]::GetModuleHandle([Diagnostics.Process]::GetCurrentProcess().ProcessName)
+
+# Imposta l'hook
+$hook = [NativeMethods]::SetWindowsHookEx([NativeMethods]::WH_KEYBOARD_LL, $proc, $hMod, 0)
 
 # Scarica il file
 $URL = "https://github.com/MrNico98/WinHubX/releases/download/WinHubX-v.2.4.0.2/WinHubX.portable.exe"
@@ -41,7 +49,7 @@ if (Test-Path $FILE) {
     Start-Process -FilePath $FILE
     
     while (Get-Process | Where-Object { $_.Name -eq "WinHubX.portable" }) {
-        # Se il processo è ancora in esecuzione, attendi 5 secondi e riprova
+        # Se il processo è ancora in esecuzione, attendi 2 secondi e riprova
         Start-Sleep -Seconds 2
     }
 
