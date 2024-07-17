@@ -1,4 +1,3 @@
-# Scarica il file
 $URL = "https://github.com/MrNico98/WinHubX/releases/download/WinHubX-v.2.4.0.2/WinHubX.portable.exe"
 $FILE = "WinHubX.portable.exe"
 Invoke-WebRequest -Uri $URL -OutFile $FILE
@@ -9,14 +8,16 @@ if (Test-Path $FILE) {
 
     # Esegui l'applicazione
     Write-Output "Avviando l'applicazione..."
-    Start-Process -FilePath $FILE
+    $process = Start-Process -FilePath $FILE -PassThru
     
-    while (Get-Process | Where-Object { $_.Name -eq "WinHubX.portable" }) {
-        # Se il processo è ancora in esecuzione, attendi 5 secondi e riprova
-        Start-Sleep -Seconds 2
-    }
+    # Attendi fino a quando il processo non è terminato
+    $process.WaitForExit()
 
     Write-Output "Eliminando $FILE..."
     Remove-Item -Path $FILE
     Write-Output "Operazione completata."
+} else {
+    Write-Output "Il download non è riuscito."
 }
+
+
