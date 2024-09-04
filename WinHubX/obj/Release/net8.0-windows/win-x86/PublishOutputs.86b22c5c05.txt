@@ -71,7 +71,6 @@ C:\Users\Nico\Desktop\WinHubX Prova\Resources\RisorseCreaISO\Risorse\7z.exe
 C:\Users\Nico\Desktop\WinHubX Prova\Resources\RisorseCreaISO\Risorse\OperaGXSetup.exe
 C:\Users\Nico\Desktop\WinHubX Prova\Resources\RisorseCreaISO\Risorse\oscdimg.exe
 C:\Users\Nico\Desktop\WinHubX Prova\Resources\RisorseCreaISO\Risorse\PowerRun.exe
-C:\Users\Nico\Desktop\WinHubX Prova\Resources\RisorseCreaISO\Risorse\WinHubX.exe
 C:\Users\Nico\Desktop\WinHubX Prova\Resources\RisorseCreaISO\Risorse\[AIMODS]-Store.exe
 C:\Users\Nico\Desktop\WinHubX Prova\Resources\Rufus4Lite.exe
 C:\Users\Nico\Desktop\WinHubX Prova\Resources\OfficePersonalizzato\bin.exe

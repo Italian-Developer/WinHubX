@@ -1,0 +1,23 @@
+<Configuration ID="48cf5adf-f5bc-4650-b4d5-797ecafd04a9">
+	<Add OfficeClientEdition="64" Channel="PerpetualVL2021">
+		<Product ID="ProPlus2021Volume" PIDKEY="FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH">
+			<Language ID="it-it" />
+			<ExcludeApp ID="Access" />
+			<ExcludeApp ID="Excel" />
+			<ExcludeApp ID="Lync" />
+			<ExcludeApp ID="OneDrive" />
+			<ExcludeApp ID="OneNote" />
+			<ExcludeApp ID="Outlook" />
+			<ExcludeApp ID="PowerPoint" />
+			<ExcludeApp ID="Publisher" />
+			<ExcludeApp ID="Word" />
+		</Product>
+	</Add>
+	<Property Name="SharedComputerLicensing" Value="0" />
+	<Property Name="FORCEAPPSHUTDOWN" Value="FALSE" />
+	<Property Name="DeviceBasedLicensing" Value="0" />
+	<Property Name="SCLCacheOverride" Value="0" />
+	<Property Name="AUTOACTIVATE" Value="1" />
+	<Updates Enabled="TRUE" />
+	<RemoveMSI />
+</Configuration>

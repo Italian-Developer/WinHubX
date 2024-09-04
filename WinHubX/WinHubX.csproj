@@ -116,7 +116,6 @@
     <None Remove="Resources\RisorseCreaISO\Risorse\unattendstock.xml" />
     <None Remove="Resources\RisorseCreaISO\Risorse\unattendx32.xml" />
     <None Remove="Resources\RisorseCreaISO\Risorse\unpin_start_tiles.ps1" />
-    <None Remove="Resources\RisorseCreaISO\Risorse\WinHubX.exe" />
     <None Remove="Resources\RisorseCreaISO\Risorse\[AIMODS]-Store.exe" />
     <None Remove="Resources\RisorseCreaISO\WinHubXOfficeScrubber.ps1" />
     <None Remove="Resources\Rufus4Lite.exe" />
@@ -399,9 +398,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\unpin_start_tiles.ps1">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\WinHubX.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\[AIMODS]-Store.exe">
