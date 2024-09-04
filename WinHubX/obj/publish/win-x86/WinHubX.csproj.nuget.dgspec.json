@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nico\\Desktop\\WinHubX-development\\WinHubX\\WinHubX.csproj": {}
+    "C:\\Users\\Nico\\Desktop\\1.WinHubX-development\\WinHubX\\WinHubX.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nico\\Desktop\\WinHubX-development\\WinHubX\\WinHubX.csproj": {
+    "C:\\Users\\Nico\\Desktop\\1.WinHubX-development\\WinHubX\\WinHubX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nico\\Desktop\\WinHubX-development\\WinHubX\\WinHubX.csproj",
+        "projectUniqueName": "C:\\Users\\Nico\\Desktop\\1.WinHubX-development\\WinHubX\\WinHubX.csproj",
         "projectName": "WinHubX",
-        "projectPath": "C:\\Users\\Nico\\Desktop\\WinHubX-development\\WinHubX\\WinHubX.csproj",
+        "projectPath": "C:\\Users\\Nico\\Desktop\\1.WinHubX-development\\WinHubX\\WinHubX.csproj",
         "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nico\\Desktop\\WinHubX-development\\WinHubX\\obj\\publish\\win-x86\\",
+        "outputPath": "C:\\Users\\Nico\\Desktop\\1.WinHubX-development\\WinHubX\\obj\\publish\\win-x86\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -56,33 +56,9 @@
               "version": "[8.0.4, )",
               "autoReferenced": true
             },
-            "Microsoft.PowerShell.Commands.Diagnostics": {
-              "target": "Package",
-              "version": "[7.4.1, )"
-            },
-            "Microsoft.PowerShell.Commands.Management": {
-              "target": "Package",
-              "version": "[7.4.1, )"
-            },
-            "Microsoft.PowerShell.Commands.Utility": {
-              "target": "Package",
-              "version": "[7.4.1, )"
-            },
-            "Microsoft.PowerShell.ConsoleHost": {
-              "target": "Package",
-              "version": "[7.4.1, )"
-            },
             "Microsoft.PowerShell.Native": {
               "target": "Package",
               "version": "[7.4.0, )"
-            },
-            "Microsoft.PowerShell.SDK": {
-              "target": "Package",
-              "version": "[7.4.1, )"
-            },
-            "Microsoft.WSMan.Management": {
-              "target": "Package",
-              "version": "[7.4.1, )"
             },
             "System.Management.Automation": {
               "target": "Package",

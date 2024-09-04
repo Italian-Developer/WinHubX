@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Reflection;
 using System.Text;
 using WinHubX.Forms.ReinstallaAPP;
@@ -13,31 +12,11 @@ namespace WinHubX.Forms.Base
         {
             InitializeComponent();
             this.form1 = form1;
-
-            try
-            {
-
-                string LanguageToUse;
-
-                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
-                LanguageToUse = jsonData["SelectedLanguage"].ToString();
-
-                JObject jsd = JObject.Parse(File.ReadAllText(LanguageToUse + ".json"));
-                btnAvviaSelezionatiDebloat.Text = jsd["DebloatStartSelectedBtn"].ToString();
-                btnDebloatAuto.Text = jsd["DebloatAutoBtn"].ToString();
-                lblInfoWin12.Text = jsd["AutoDebloatSec"].ToString();
-                btnReinstallaAPP.Text = jsd["ReinstallApp"].ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("There was a problem loading the translation file :(" + " " + ex);
-            }
-
         }
 
         private void btnAvviaSelezionatiDebloat_Click(object sender, EventArgs e)
         {
-            if (Bloat1.CheckedItems.Contains("Calculator"))
+            if (Bloat1.CheckedItems.Contains("Calcolatrice"))
             {
                 try
                 {
@@ -69,7 +48,7 @@ namespace WinHubX.Forms.Base
                     MessageBox.Show($"An error occurred: {ex.Message}");
                 }
             }
-            if (Bloat1.CheckedItems.Contains("Photo"))
+            if (Bloat1.CheckedItems.Contains("Foto"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -285,7 +264,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat1.CheckedItems.Contains("Screen Capture"))
+            if (Bloat1.CheckedItems.Contains("Cattura Schermo"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -303,7 +282,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat1.CheckedItems.Contains("VP9 Extension"))
+            if (Bloat1.CheckedItems.Contains("Estensione VP9"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -321,7 +300,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat1.CheckedItems.Contains("Web Extension"))
+            if (Bloat1.CheckedItems.Contains("Estensione Web"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -339,7 +318,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat1.CheckedItems.Contains("WebpImage Extension"))
+            if (Bloat1.CheckedItems.Contains("Estensione WebpImage"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -483,7 +462,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat3.CheckedItems.Contains("To Start"))
+            if (Bloat3.CheckedItems.Contains("Per iniziare"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -501,7 +480,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat3.CheckedItems.Contains("Messages"))
+            if (Bloat3.CheckedItems.Contains("Messaggi"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -717,7 +696,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat2.CheckedItems.Contains("Remote Desktop"))
+            if (Bloat2.CheckedItems.Contains("Desktop Remoto"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -807,7 +786,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat2.CheckedItems.Contains("Comunication"))
+            if (Bloat2.CheckedItems.Contains("Windows Comunicazione"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -861,7 +840,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat2.CheckedItems.Contains("Audio Recorder"))
+            if (Bloat2.CheckedItems.Contains("Registratore Suoni"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -933,14 +912,14 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat3.CheckedItems.Contains("Language Pack"))
+            if (Bloat3.CheckedItems.Contains("Pack Lingua"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
                     FileName = "powershell.exe",
                     Verb = "runas",
                     UseShellExecute = false,
-                    Arguments = $"Get-AppxPackage -allusers Microsoft.LanguageExperiencePackit-IT | Remove-AppxPackage" 
+                    Arguments = $"Get-AppxPackage -allusers Microsoft.LanguageExperiencePackit-IT | Remove-AppxPackage"
                 };
 
                 Process process = new Process
@@ -1149,7 +1128,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat3.CheckedItems.Contains("Portfolio"))
+            if (Bloat3.CheckedItems.Contains("Portafoglio"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -1167,7 +1146,7 @@ namespace WinHubX.Forms.Base
 
                 process.Start();
             }
-            if (Bloat3.CheckedItems.Contains("Phone"))
+            if (Bloat3.CheckedItems.Contains("Collegamento A Telefono"))
             {
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -1223,25 +1202,35 @@ namespace WinHubX.Forms.Base
             }
             if (Bloat3.CheckedItems.Contains("Windows Defender"))
             {
-                string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
-                string resourcePath = $"{assemblyName}.Resources.PowerRun.exe";
+                // Display a warning message
+                DialogResult result = MessageBox.Show("Questa operazione richiede un riavvio del PC, Continuare?", "Attenzione", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
-                try
+                // Check the user's response
+                if (result == DialogResult.OK)
                 {
-                    byte[] exeBytes = LoadEmbeddedResource(resourcePath);
-                    string tempExePath = Path.Combine(Path.GetTempPath(), "PowerRun.exe");
-                    File.WriteAllBytes(tempExePath, exeBytes);
-                    RunCommand(tempExePath, @"cmd.exe /c ""reg add ""HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender"" /v ""DisableAntiSpyware"" /t REG_DWORD /d 1 /f""");
-                    RunCommand(tempExePath, @"cmd.exe /c ""reg add ""HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection"" /v ""DisableBehaviorMonitoring"" /t REG_DWORD /d 1 /f""");
-                    RunCommand(tempExePath, @"cmd.exe /c ""reg add ""HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection"" /v ""DisableIOAVProtection"" /t REG_DWORD /d 1 /f""");
-                    RunCommand(tempExePath, @"cmd.exe /c ""reg add ""HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection"" /v ""DisableOnAccessProtection"" /t REG_DWORD /d 1 /f""");
-                    RunCommand(tempExePath, @"cmd.exe /c ""reg add ""HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection"" /v ""DisableRealtimeMonitoring"" /t REG_DWORD /d 1 /f""");
-                    RunCommand(tempExePath, @"cmd.exe /c ""reg add ""HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SecurityHealthService"" /v ""Start"" /t REG_DWORD /d 4 /f""");
-                    RunCommand(tempExePath, @"cmd.exe /c ""reg add ""HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinDefend"" /v ""Start"" /t REG_DWORD /d 4 /f""");
+                    string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+                    string resourcePath = $"{assemblyName}.Resources.PowerRun.exe";
+
+                    try
+                    {
+                        byte[] exeBytes = LoadEmbeddedResource(resourcePath);
+                        string tempExePath = Path.Combine(Path.GetTempPath(), "PowerRun.exe");
+                        File.WriteAllBytes(tempExePath, exeBytes);
+                        RunCommand(tempExePath, @"cmd.exe /c ""reg add ""HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender"" /v ""DisableAntiSpyware"" /t REG_DWORD /d 1 /f""");
+                        RunCommand(tempExePath, @"cmd.exe /c ""reg add ""HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection"" /v ""DisableBehaviorMonitoring"" /t REG_DWORD /d 1 /f""");
+                        RunCommand(tempExePath, @"cmd.exe /c ""reg add ""HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection"" /v ""DisableIOAVProtection"" /t REG_DWORD /d 1 /f""");
+                        RunCommand(tempExePath, @"cmd.exe /c ""reg add ""HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection"" /v ""DisableOnAccessProtection"" /t REG_DWORD /d 1 /f""");
+                        RunCommand(tempExePath, @"cmd.exe /c ""reg add ""HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection"" /v ""DisableRealtimeMonitoring"" /t REG_DWORD /d 1 /f""");
+                        RunCommand(tempExePath, @"cmd.exe /c ""reg add ""HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SecurityHealthService"" /v ""Start"" /t REG_DWORD /d 4 /f""");
+                        RunCommand(tempExePath, @"cmd.exe /c ""reg add ""HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinDefend"" /v ""Start"" /t REG_DWORD /d 4 /f""");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Si è verificato un errore durante il processo di debloating: {ex.Message}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                catch (Exception ex)
                 {
-                    MessageBox.Show($"Si è verificato un errore durante il processo di debloating: {ex.Message}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Operazione Annullata");
                 }
             }
 
@@ -1400,9 +1389,6 @@ namespace WinHubX.Forms.Base
             }
         }
 
-        private void Bloat1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }

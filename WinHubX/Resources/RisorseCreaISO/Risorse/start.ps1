@@ -117,34 +117,105 @@ foreach ($task in $tasks) {
    Disable-ScheduledTask -TaskName $task
 }
 
-
 $services = @(
-    "diagnosticshub.standardcollector.service" # Microsoft (R) Diagnostics Hub Standard Collector Service
-    "DiagTrack"                                # Diagnostics Tracking Service
-    "dmwappushservice"                         # WAP Push Message Routing Service (see known issues)
-    "lfsvc"                                    # Geolocation Service
-    "MapsBroker"                               # Downloaded Maps Manager
-    "NetTcpPortSharing"                        # Net.Tcp Port Sharing Service
-    "RemoteAccess"                             # Routing and Remote Access
-    "RemoteRegistry"                           # Remote Registry
-    "SharedAccess"                             # Internet Connection Sharing (ICS)
-    "TrkWks"                                   # Distributed Link Tracking Client
-    "WbioSrvc"                                 # Windows Biometric Service (required for Fingerprint reader / facial detection)
-    #"WlanSvc"                                 # WLAN AutoConfig (Disabling this can cause issues with wifi connectivity)
-    "WMPNetworkSvc"                            # Windows Media Player Network Sharing Service
-    #"wscsvc"                                  # Windows Security Center Service
-    #"WSearch"                                 # Windows Search
-    "XblAuthManager"                           # Xbox Live Auth Manager
-    "XblGameSave"                              # Xbox Live Game Save Service
-    "XboxNetApiSvc"                            # Xbox Live Networking Service
-    "ndu"                                      # Windows Network Data Usage Monitor
-    # Services which cannot be disabled
-    #"WdNisSvc"
+"diagnosticshub.standardcollector.service", 
+    "DiagTrack",                                    
+    "dmwappushservice",                             
+    "lfsvc",                                        
+    "MapsBroker",                                   
+    "NetTcpPortSharing",                            
+    "RemoteAccess",                                 
+    "RemoteRegistry",                               
+    "SharedAccess",                                 
+    "TrkWks",                                       
+    "WbioSrvc",                                     
+    "WMPNetworkSvc",                                
+    "XblAuthManager",                               
+    "XblGameSave",                                  
+    "XboxNetApiSvc",                                
+    "XboxGipSvc",                                   
+    "WerSvc",                                       
+    "Fax",                                          
+    "fhsvc",                                        
+    "gupdate",                                      
+    "gupdatem",                                     
+    "stisvc",                                       
+    "AJRouter",                                     
+    "MSDTC",                                        
+    "WpcMonSvc",                                    
+    "PcaSvc",                                       
+    "WPDBusEnum",                                   
+    "LicenseManager",                               
+    "seclogon",                                     
+    "SysMain",                                      
+    "lmhosts",                                      
+    "wisvc",                                        
+    "FontCache",                                    
+    "RetailDemo",                                   
+    "ALG",                                          
+    "SCPolicySvc",                                  
+    "MessagingService_34048",                       
+    "EntAppSvc",                                    
+    "Browser",                                      
+    "BthAvctpSvc",                                  
+    "BDESVC",                                       
+    "iphlpsvc",                                     
+    "edgeupdatem",                                  
+    "SEMgrSvc",                                     
+    "PerfHost",                                     
+    "BcastDVRUserService_48486de",                  
+    "CaptureService_48486de",                       
+    "cbdhsvc_48486de",                              
+    "SNMPTrap",                                     
+    "SECOMNService",                                
+    "AMD External Events Utility",                  
+    "cbdhsvc_34048",                                
+    "autotimesvc",                                  
+    "TokenBroker",                                  
+    "RmSvc",                                        
+    "SensorDataService",                            
+    "tzautoupdate",                                 
+    "SynTPEnhService",                              
+    "RasMan",                                       
+    "BcastDVRUserService_34048",                    
+    "PenService_34048",                             
+    "tapisrv",                                      
+    "HPAppHelperCap",                               
+    "HPDiagsCap",                                   
+    "HPNetworkCap",                                 
+    "HPSysInfoCap",                                 
+    "HpTouchpointAnalyticsService",                 
+    "HvHost",                                       
+    "vmickvpexchange",                              
+    "vmicguestinterface",                           
+    "vmicshutdown",                                 
+    "vmicheartbeat",                                
+    "vmicvmsession",                                
+    "vmicrdv",                                      
+    "vmictimesync",                                 
+    "SupportAssistAgent",                           
+    "DellUpService",                                
+    "DataVault",                                    
+    "DellCustomerConnect",                          
+    "Dell.Foundation.Agent",                        
+    "nosGetPlusHelper",                             
+    "ndu",
+    "AxInstSV",
+    "PimIndexMaintenanceSvc",
+    "CDPUserSvc",
+    "lltdsvc",
+    "AppVClient",
+    "CscService",
+    "QWAVE",
+    "SensrSvc"
+    Out-File -FilePath  ".\log.txt" -Append
 )
 
 foreach ($service in $services) {
-    Write-Output "Trying to disable $service"
-    Get-Service -Name $service | Set-Service -StartupType Disabled
+    Get-Service -Name $service | Stop-Service -Force | Out-File -FilePath  ".\log.txt" -Append
+    Get-Service -Name $service | Set-Service -StartupType Disabled | Out-File -FilePath  ".\log.txt" -Append
+    Write-Output "Trying to disable $service" | Out-File -FilePath  ".\log.txt" -Append
+    Write-Output "Trying to Stop $service" | Out-File -FilePath  ".\log.txt" -Append
 }
 
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\New-FolderForced.psm1
@@ -661,8 +732,6 @@ $ErrorActionPreference           = "SilentlyContinue"
     $Services = @(
         "MixedRealityOpenXRSvc" # Mixed Reality
         "WMPNetworkSvc" # Windows Media Player Sharing
-        #"LicenseManager" # License Manager for Microsoft Store
-        #"wisvc" # Insider Program
         "WerSvc" # write-host Reporting
         "WalletService" # Wallet Service
         "SysMain" # SuperFetch - Safe to disable if you have a SSD
@@ -962,16 +1031,16 @@ if (Test-Path $integratedServicesPath) {
     # Uninstall with winget
     winget uninstall "Microsoft Edge" --accept-source-agreements --silent | out-null
 
-    Write-Host "Done, file edited."
-    Write-Host "If Edge is still present, that means you have not installed the KB that enables that feature."
-    Write-Host "Please install the latest updates from Windows Update and retry."
+    Write-Host "Fine, file modificato."
+    Write-Host "Se Edge è ancora presente, significa che non hai installato il KB che abilita quella funzionalità."
+    Write-Host "Installa gli aggiornamenti più recenti da Windows Update e riprova."
     
     Start-Sleep 05
 
 }
 else {
     # File does not exist
-    Write-Host "The file $integratedServicesPath does not exist. Install the latest updates from windows update and retry!"
+    Write-Host "The file $integratedServicesPath does not exist. Installa gli aggiornamenti più recenti da Windows Update e riprova."
     Start-Sleep 05
     exit
 }

@@ -40,6 +40,16 @@
             radioButton_x32 = new RadioButton();
             radioButton_x64 = new RadioButton();
             panel3 = new Panel();
+            pictureBox10 = new PictureBox();
+            pictureBox9 = new PictureBox();
+            pictureBox8 = new PictureBox();
+            pictureBox7 = new PictureBox();
+            pictureBox6 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
             label5 = new Label();
             checkBox_project = new CheckBox();
             checkBox_visio = new CheckBox();
@@ -55,27 +65,19 @@
             progressBar_office = new ProgressBar();
             label2 = new Label();
             btnBack = new Button();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            pictureBox7 = new PictureBox();
-            pictureBox8 = new PictureBox();
-            pictureBox9 = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -93,6 +95,7 @@
             // radioButton_office2024
             // 
             radioButton_office2024.AutoSize = true;
+            radioButton_office2024.Cursor = Cursors.No;
             radioButton_office2024.Enabled = false;
             radioButton_office2024.Font = new Font("Segoe UI", 12F);
             radioButton_office2024.ForeColor = Color.White;
@@ -209,6 +212,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(pictureBox10);
             panel3.Controls.Add(pictureBox9);
             panel3.Controls.Add(pictureBox8);
             panel3.Controls.Add(pictureBox7);
@@ -234,6 +238,106 @@
             panel3.Size = new Size(460, 338);
             panel3.TabIndex = 2;
             // 
+            // pictureBox10
+            // 
+            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
+            pictureBox10.Location = new Point(356, 280);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(76, 40);
+            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox10.TabIndex = 92;
+            pictureBox10.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Location = new Point(128, 96);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(76, 40);
+            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox9.TabIndex = 91;
+            pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.Location = new Point(128, 157);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(76, 40);
+            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox8.TabIndex = 90;
+            pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(128, 217);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(76, 40);
+            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox7.TabIndex = 89;
+            pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(128, 38);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(76, 40);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 88;
+            pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(128, 280);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(76, 40);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 87;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(356, 217);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(76, 40);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 86;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(356, 157);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(76, 40);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 85;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(356, 38);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(76, 40);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 84;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(356, 96);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(76, 40);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 83;
+            pictureBox1.TabStop = false;
+            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -251,7 +355,7 @@
             checkBox_project.AutoSize = true;
             checkBox_project.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkBox_project.ForeColor = Color.White;
-            checkBox_project.Location = new Point(280, 219);
+            checkBox_project.Location = new Point(258, 232);
             checkBox_project.Name = "checkBox_project";
             checkBox_project.Size = new Size(77, 25);
             checkBox_project.TabIndex = 9;
@@ -263,7 +367,7 @@
             checkBox_visio.AutoSize = true;
             checkBox_visio.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkBox_visio.ForeColor = Color.White;
-            checkBox_visio.Location = new Point(280, 159);
+            checkBox_visio.Location = new Point(258, 172);
             checkBox_visio.Name = "checkBox_visio";
             checkBox_visio.Size = new Size(63, 25);
             checkBox_visio.TabIndex = 8;
@@ -275,7 +379,7 @@
             checkBox_publisher.AutoSize = true;
             checkBox_publisher.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkBox_publisher.ForeColor = Color.White;
-            checkBox_publisher.Location = new Point(280, 282);
+            checkBox_publisher.Location = new Point(258, 295);
             checkBox_publisher.Name = "checkBox_publisher";
             checkBox_publisher.Size = new Size(94, 25);
             checkBox_publisher.TabIndex = 7;
@@ -287,7 +391,7 @@
             checkBox_access.AutoSize = true;
             checkBox_access.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkBox_access.ForeColor = Color.White;
-            checkBox_access.Location = new Point(23, 282);
+            checkBox_access.Location = new Point(23, 295);
             checkBox_access.Name = "checkBox_access";
             checkBox_access.Size = new Size(75, 25);
             checkBox_access.TabIndex = 6;
@@ -299,7 +403,7 @@
             checkBox_onenote.AutoSize = true;
             checkBox_onenote.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkBox_onenote.ForeColor = Color.White;
-            checkBox_onenote.Location = new Point(280, 98);
+            checkBox_onenote.Location = new Point(258, 111);
             checkBox_onenote.Name = "checkBox_onenote";
             checkBox_onenote.Size = new Size(92, 25);
             checkBox_onenote.TabIndex = 5;
@@ -311,7 +415,7 @@
             checkBox_onedrive.AutoSize = true;
             checkBox_onedrive.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkBox_onedrive.ForeColor = Color.White;
-            checkBox_onedrive.Location = new Point(277, 40);
+            checkBox_onedrive.Location = new Point(255, 53);
             checkBox_onedrive.Name = "checkBox_onedrive";
             checkBox_onedrive.Size = new Size(95, 25);
             checkBox_onedrive.TabIndex = 4;
@@ -323,7 +427,7 @@
             checkBox_outlook.AutoSize = true;
             checkBox_outlook.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkBox_outlook.ForeColor = Color.White;
-            checkBox_outlook.Location = new Point(23, 219);
+            checkBox_outlook.Location = new Point(23, 232);
             checkBox_outlook.Name = "checkBox_outlook";
             checkBox_outlook.Size = new Size(85, 25);
             checkBox_outlook.TabIndex = 3;
@@ -335,7 +439,7 @@
             checkBox_powerpoint.AutoSize = true;
             checkBox_powerpoint.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkBox_powerpoint.ForeColor = Color.White;
-            checkBox_powerpoint.Location = new Point(23, 159);
+            checkBox_powerpoint.Location = new Point(23, 172);
             checkBox_powerpoint.Name = "checkBox_powerpoint";
             checkBox_powerpoint.Size = new Size(107, 25);
             checkBox_powerpoint.TabIndex = 2;
@@ -347,7 +451,7 @@
             checkBox_excel.AutoSize = true;
             checkBox_excel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkBox_excel.ForeColor = Color.White;
-            checkBox_excel.Location = new Point(23, 98);
+            checkBox_excel.Location = new Point(23, 111);
             checkBox_excel.Name = "checkBox_excel";
             checkBox_excel.Size = new Size(63, 25);
             checkBox_excel.TabIndex = 1;
@@ -359,7 +463,7 @@
             checkBox_word.AutoSize = true;
             checkBox_word.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkBox_word.ForeColor = Color.White;
-            checkBox_word.Location = new Point(23, 40);
+            checkBox_word.Location = new Point(23, 53);
             checkBox_word.Name = "checkBox_word";
             checkBox_word.Size = new Size(67, 25);
             checkBox_word.TabIndex = 0;
@@ -411,96 +515,6 @@
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(367, 83);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(76, 40);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 83;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(367, 25);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(76, 40);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 84;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(367, 144);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(76, 40);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 85;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(367, 204);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(76, 40);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 86;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(128, 264);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(76, 40);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 87;
-            pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(128, 25);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(76, 40);
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.TabIndex = 88;
-            pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(128, 204);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(76, 40);
-            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox7.TabIndex = 89;
-            pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(128, 144);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(76, 40);
-            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox8.TabIndex = 90;
-            pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(128, 83);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(76, 40);
-            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox9.TabIndex = 91;
-            pictureBox9.TabStop = false;
-            // 
             // PersonalizzazioneOffice
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -523,15 +537,16 @@
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -573,5 +588,6 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox10;
     }
 }

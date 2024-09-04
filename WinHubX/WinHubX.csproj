@@ -7,10 +7,10 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
 	  <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
-    <ApplicationManifest>app1.manifest</ApplicationManifest>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Images\icoLogoWhite.ico</ApplicationIcon>
-    <AssemblyVersion>2.4.0.0</AssemblyVersion>
-    <FileVersion>2.4.0.0</FileVersion>
+    <AssemblyVersion>2.4.0.2</AssemblyVersion>
+    <FileVersion>2.4.0.2</FileVersion>
 	<ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
   </PropertyGroup>
 
@@ -25,12 +25,14 @@
     <None Remove="Images\icoLogoWhite.ico" />
     <None Remove="Images\nicksparrow.png" />
     <None Remove="Images\png365.png" />
+    <None Remove="Images\pngArchitettura.png" />
     <None Remove="Images\pngAttivaOffice.png" />
     <None Remove="Images\pngAttivaWin.png" />
     <None Remove="Images\pngAttivaWSA.png" />
     <None Remove="Images\pngAttivaWSL.png" />
     <None Remove="Images\pngAvanti.png" />
     <None Remove="Images\pngBackArrow.png" />
+    <None Remove="Images\pngbypass.png" />
     <None Remove="Images\pngCambioEdizione.png" />
     <None Remove="Images\pngClose.png" />
     <None Remove="Images\pngCoffee.png" />
@@ -40,6 +42,7 @@
     <None Remove="Images\pngDefenderWin.png" />
     <None Remove="Images\pngDisinstallaOffice.png" />
     <None Remove="Images\pngDomanda.png" />
+    <None Remove="Images\pngEdge.png" />
     <None Remove="Images\pngHome.png" />
     <None Remove="Images\pngKasperskyLive.png" />
     <None Remove="Images\pngLogoWHX.png" />
@@ -54,6 +57,7 @@
     <None Remove="Images\pngPersonalizzaOffice.png" />
     <None Remove="Images\pngPersonalizzazione.png" />
     <None Remove="Images\pngPrivacy.png" />
+    <None Remove="Images\pngprocessi.png" />
     <None Remove="Images\pngRipristinaWindows.png" />
     <None Remove="Images\pngSettaggi.png" />
     <None Remove="Images\pngTelegram.png" />
@@ -66,11 +70,13 @@
     <None Remove="Images\pngWin8dot1.png" />
     <None Remove="Images\pngWindows.png" />
     <None Remove="Images\pngWindows11.png" />
+    <None Remove="Images\pngWinhubxsystemmonitor.png" />
     <None Remove="Images\pngWinLive.png" />
     <None Remove="Images\pngWinWhat.png" />
     <None Remove="Images\pngWSA.png" />
     <None Remove="Images\pngXtndLogo_WinHubX.png" />
     <None Remove="Images\Rufus-4Lite.png" />
+    <None Remove="Images\update.png" />
     <None Remove="Resources\CheckHW.bat" />
     <None Remove="Resources\DriverRST.zip" />
     <None Remove="Resources\icoWinHubX.ico" />
@@ -86,12 +92,12 @@
     <None Remove="Resources\OfficePersonalizzato\immaginioffice\outlook.png" />
     <None Remove="Resources\OfficePersonalizzato\immaginioffice\powerpoint.png" />
     <None Remove="Resources\OfficePersonalizzato\immaginioffice\project.png" />
+    <None Remove="Resources\OfficePersonalizzato\immaginioffice\publisher.png" />
     <None Remove="Resources\OfficePersonalizzato\immaginioffice\visio.png" />
     <None Remove="Resources\OfficePersonalizzato\immaginioffice\word.png" />
     <None Remove="Resources\PowerRun.exe" />
     <None Remove="Resources\Product Sans Black.ttf" />
     <None Remove="Resources\Product Sans.ttf" />
-    <None Remove="Resources\RisorseCreaISO\ISOMaker.ps1" />
     <None Remove="Resources\RisorseCreaISO\isotool10.bat" />
     <None Remove="Resources\RisorseCreaISO\isotool11.bat" />
     <None Remove="Resources\RisorseCreaISO\Risorse\7z.dll" />
@@ -140,6 +146,9 @@
     <Content Include="Images\png365.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\pngArchitettura.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\pngAttivaOffice.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -147,6 +156,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pngBackArrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngbypass.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pngClose.png">
@@ -162,6 +174,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pngDomanda.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngEdge.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pngHome.png">
@@ -189,6 +204,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pngOnline.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngprocessi.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\pngRipristinaWindows.png">
@@ -269,6 +287,12 @@
     <Content Include="Images\pngWindows11.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\update.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pngWinhubxsystemmonitor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Resources\CheckHW.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -311,6 +335,9 @@
     <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\project.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\publisher.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\visio.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -321,9 +348,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Product Sans.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\RisorseCreaISO\ISOMaker.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\RisorseCreaISO\isotool10.bat">
@@ -449,13 +473,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.PowerShell.Commands.Diagnostics" Version="7.4.1" />
-    <PackageReference Include="Microsoft.PowerShell.Commands.Management" Version="7.4.1" />
-    <PackageReference Include="Microsoft.PowerShell.Commands.Utility" Version="7.4.1" />
-    <PackageReference Include="Microsoft.PowerShell.ConsoleHost" Version="7.4.1" />
     <PackageReference Include="Microsoft.PowerShell.Native" Version="7.4.0" />
-    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.4.1" />
-    <PackageReference Include="Microsoft.WSMan.Management" Version="7.4.1" />
     <PackageReference Include="System.Management.Automation" Version="7.4.1" />
   </ItemGroup>
 

@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            btnupdate = new Button();
             btnTools = new Button();
-            btnMonitoraggio = new Button();
             btnCreaISO = new Button();
             btnDebloat = new Button();
             btnSettaggi = new Button();
@@ -46,7 +46,6 @@
             btnMnmz = new Button();
             pictureBox2 = new PictureBox();
             lblPanelTitle = new Label();
-            ComboBoxLingue = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -56,8 +55,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(64, 60, 59);
+            panel1.Controls.Add(btnupdate);
             panel1.Controls.Add(btnTools);
-            panel1.Controls.Add(btnMonitoraggio);
             panel1.Controls.Add(btnCreaISO);
             panel1.Controls.Add(btnDebloat);
             panel1.Controls.Add(btnSettaggi);
@@ -68,6 +67,15 @@
             resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
             // 
+            // btnupdate
+            // 
+            resources.ApplyResources(btnupdate, "btnupdate");
+            btnupdate.FlatAppearance.BorderSize = 0;
+            btnupdate.ForeColor = SystemColors.Window;
+            btnupdate.Name = "btnupdate";
+            btnupdate.UseVisualStyleBackColor = true;
+            btnupdate.Click += btnupdate_Click;
+            // 
             // btnTools
             // 
             resources.ApplyResources(btnTools, "btnTools");
@@ -76,15 +84,6 @@
             btnTools.Name = "btnTools";
             btnTools.UseVisualStyleBackColor = true;
             btnTools.Click += btnTools_Click;
-            // 
-            // btnMonitoraggio
-            // 
-            resources.ApplyResources(btnMonitoraggio, "btnMonitoraggio");
-            btnMonitoraggio.FlatAppearance.BorderSize = 0;
-            btnMonitoraggio.ForeColor = SystemColors.Window;
-            btnMonitoraggio.Name = "btnMonitoraggio";
-            btnMonitoraggio.UseVisualStyleBackColor = true;
-            btnMonitoraggio.Click += btnMonitoraggio_Click;
             // 
             // btnCreaISO
             // 
@@ -131,7 +130,6 @@
             btnWin.Name = "btnWin";
             btnWin.UseVisualStyleBackColor = true;
             btnWin.Click += btnWin_Click;
-            btnWin.Leave += btnWin_Leave;
             // 
             // btnHome
             // 
@@ -141,7 +139,6 @@
             btnHome.Name = "btnHome";
             btnHome.UseVisualStyleBackColor = true;
             btnHome.Click += btnHome_Click;
-            btnHome.Leave += btnHome_Leave;
             // 
             // panel2
             // 
@@ -202,19 +199,11 @@
             lblPanelTitle.ForeColor = Color.White;
             lblPanelTitle.Name = "lblPanelTitle";
             // 
-            // ComboBoxLingue
-            // 
-            ComboBoxLingue.FormattingEnabled = true;
-            resources.ApplyResources(ComboBoxLingue, "ComboBoxLingue");
-            ComboBoxLingue.Name = "ComboBoxLingue";
-            ComboBoxLingue.SelectedIndexChanged += ComboBoxLingue_SelectedIndexChanged;
-            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
-            Controls.Add(ComboBoxLingue);
             Controls.Add(lblPanelTitle);
             Controls.Add(pictureBox2);
             Controls.Add(btnMnmz);
@@ -224,7 +213,6 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
-            Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -251,7 +239,6 @@
         private Button btnDebloat;
         private Button btnCreaISO;
         private Button btnTools;
-        private Button btnMonitoraggio;
-        private ComboBox ComboBoxLingue;
+        private Button btnupdate;
     }
 }

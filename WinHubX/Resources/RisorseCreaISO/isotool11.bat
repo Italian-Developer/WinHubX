@@ -4,20 +4,23 @@ set "selectedFile=%~1"
 set "windowsVersion=%~2"
 set "edgeRemovalPreference=%~3"
 set "defenderPreference=%~4"
-set "windowsEdition=%~5"
+set "ComboSelected=%~5"
 set "Processi=%~6"
 set "Unattend=%~7"
 set "Architettura=%~8"
 set "DebloatApp=%~9"
 
 for %%I in ("%selectedFile%") do set "dest_path=%%~dpI"
+for /f "tokens=2" %%A in ("%ComboSelected%") do set "index=%%A"
 
-for /f "tokens=2" %%A in ("%windowsEdition%") do set "index=%%A"
+set "index=%ComboSelected%"
+
+dism /cleanup-wim /Quiet >nul 2>&1 
 
 :cartellaISO
 call :initProgressBar 
-for /l %%f in (0, 1, 100) do (
-    call :drawProgressBar %%f "Preparazione in corso"
+call :drawProgressBar 0
+call :drawProgressBar 1 "Preparazione in corso"
         if not exist "C:\ISO\WinISO" (
             goto :isofolder
         ) else (
@@ -27,21 +30,18 @@ for /l %%f in (0, 1, 100) do (
 
         :isofolder
         mkdir "C:\ISO\WinISO" >nul
-
+call :drawProgressBar 4
         :winfolder
         if exist "C:\mount\mount" (
             dism /unmount-image /mountdir:C:\mount\mount /discard /Quiet >nul 2>&1 
             rmdir "C:\mount\mount" /s /q >nul
         )
-        mkdir "C:\mount\mount" >nul
-)
+        mkdir "C:\mount\mount" >nul 2>&1
+        mkdir "C:\mount\boot" >nul 2>&1
 
 
-
-for /l %%f in (0, 1, 100) do (
-call :drawProgressBar %%f "Preparo la iso"
+call :drawProgressBar 10 "Preparo la ISO, attendi..."
   %TEMP%\RisorseCreaISO\7z.exe x -y -o"C:\ISO\WinISO" "%selectedFile%" >nul
-)
 
 
 
@@ -60,20 +60,16 @@ IF EXIST "C:\ISO\WinISO\sources\install.esd" (
 )
 
 :esd
-for /l %%f in (0, 1, 100) do (
-    call :drawProgressBar %%f "Converto l'install.esd"
+call :drawProgressBar 20 "Converto l'install.esd"
     dism /export-image /SourceImageFile:C:\ISO\WinISO\sources\install.esd /SourceIndex:%index% /DestinationImageFile:C:\ISO\WinISO\sources\install.wim /Compress:max /CheckIntegrity /Quiet >nul 2>&1 
-
-)
 
 goto :copy_esd
 
 :wim
 
-for /l %%f in (0 1 100) do (
-  call :drawProgressBar %%f "Estraggo l'indice"
+call :drawProgressBar 25 "Estraggo l'indice"
  dism /Export-Image /SourceImageFile:"C:\ISO\WinISO\sources\install.wim" /SourceIndex:%index% /DestinationImageFile:"C:\ISO\WinISO\sources\install_pro.wim" /compress:max /Quiet >nul 2>&1 
-)
+
 
 :copy_wim
 
@@ -90,18 +86,16 @@ del "C:\ISO\WinISO\sources\install.esd" >nul 2>&1
 goto :mountwim
 
 :mountwim
-for /l %%f in (0 1 100) do (
-  call :drawProgressBar %%f "Monto la iso"
+call :drawProgressBar 35 "Monto la iso"
   dism /mount-image /imagefile:"C:\ISO\WinISO\sources\install.wim" /index:1 /mountdir:"C:\mount\mount" /Quiet >nul 2>&1 
-)
+
 
 :selectunattend
 if "%Unattend%"=="Stock" ( goto :stock )
 if "%Unattend%"=="Bypass" ( goto :bypass )
 
 :bypass
-for /l %%f in (0 1 100) do (
-  call :drawProgressBar %%f "Inizio bypass"
+call :drawProgressBar 40 "Inizio bypass"
 
 copy "%TEMP%\RisorseCreaISO\unattend.xml" "C:\ISO\WinISO\sources\$OEM$\$$\Panther\unattend.xml" >nul 2>&1
 reg load HKLM\TK_COMPONENTS "C:\mount\mount\Windows\System32\config\COMPONENTS" >nul 2>&1
@@ -161,8 +155,6 @@ reg unload HKLM\TK_NTUSER >nul 2>&1
 reg unload HKLM\TK_SCHEMA >nul 2>&1
 reg unload HKLM\TK_SOFTWARE >nul 2>&1
 reg unload HKLM\TK_SYSTEM >nul 2>&1
-
-mkdir "C:\mount\boot" >NUL
 dism /mount-image /imagefile:"C:\ISO\WinISO\sources\boot.wim" /index:2 /mountdir:"C:\mount\boot" /Quiet >nul 2>&1
 	Reg load "HKLM\TK_BOOT_SYSTEM" "C:\mount\boot\Windows\System32\Config\SYSTEM" >nul 2>&1
 	Reg add "HKLM\TK_BOOT_SYSTEM\Setup\LabConfig" /v "BypassCPUCheck" /t REG_DWORD /d "1" /f >nul 2>&1
@@ -173,7 +165,6 @@ dism /mount-image /imagefile:"C:\ISO\WinISO\sources\boot.wim" /index:2 /mountdir
 	Reg unload "HKLM\TK_BOOT_SYSTEM" >nul 2>&1
   move "C:\ISO\WinISO\sources\appraiserres.dll" "C:\ISO\WinISO\sources\appraiserres.dll.bak" >nul 2>&1
   dism /unmount-image /mountdir:"C:\mount\boot" /commit /Quiet >nul 2>&1
-)
 goto :menuprincipale
 
 :stock
@@ -183,8 +174,7 @@ goto :menuprincipale
 
 :menuprincipale
 :edge
-for /l %%f in (0 1 100) do (
-  call :drawProgressBar %%f "Inizio modifiche"
+call :drawProgressBar 50 "Inizio modifiche"
 
 if "%edgeRemovalPreference%"=="RemoveEdge" (
 echo > C:\mount\mount\Windows\noedge.pref
@@ -201,6 +191,7 @@ if "%defenderPreference%"=="DisableWindowsDefender" (
 echo > C:\mount\mount\Windows\nodefender.pref
 copy "%TEMP%\RisorseCreaISO\PowerRun.exe" "C:\mount\mount\Windows"
 )
+call :drawProgressBar 55 "Inizio modifiche"
 
 if "%Processi%"=="RimuoviProcessi" (
 powershell -Command "Get-WindowsPackage -Path 'C:\mount\mount' | Where-Object {$_.PackageName -like 'Microsoft-Windows-InternetExplorer-Optional-Package*'} | ForEach-Object {dism /image:C:\mount\mount /Remove-Package /PackageName:$($_.PackageName) /NoRestart | Out-Null}"
@@ -212,8 +203,9 @@ powershell -Command "Get-WindowsPackage -Path 'C:\mount\mount' | Where-Object {$
 powershell -Command "Get-WindowsPackage -Path 'C:\mount\mount' | Where-Object {$_.PackageName -like 'Microsoft-Windows-MediaPlayer-Package*'} | ForEach-Object {dism /image:C:\mount\mount /Remove-Package /PackageName:$($_.PackageName) /NoRestart | Out-Null}"
 powershell -Command "Get-WindowsPackage -Path 'C:\mount\mount' | Where-Object {$_.PackageName -like 'Microsoft-Windows-TabletPCMath-Package*'} | ForEach-Object {dism /image:C:\mount\mount /Remove-Package /PackageName:$($_.PackageName) /NoRestart | Out-Null}"
 powershell -Command "Get-WindowsPackage -Path 'C:\mount\mount' | Where-Object {$_.PackageName -like 'Microsoft-Windows-Wallpaper-Content-Extended-FoD*'} | ForEach-Object {dism /image:C:\mount\mount /Remove-Package /PackageName:$($_.PackageName) /NoRestart | Out-Null}"
-
 )
+
+call :drawProgressBar 65 "Inizio modifiche"
 
 copy "%TEMP%\RisorseCreaISO\tweaks.bat" "C:\mount\mount\Windows" >nul 2>&1
 copy "%TEMP%\RisorseCreaISO\lower-ram-usage.reg" "C:\mount\mount\Windows" >nul 2>&1
@@ -221,29 +213,27 @@ copy "%TEMP%\RisorseCreaISO\start.ps1" "C:\mount\mount\Windows" >nul 2>&1
 copy "%TEMP%\RisorseCreaISO\WinHubX.exe" "C:\mount\mount\Windows" >nul 2>&1
 copy "%TEMP%\RisorseCreaISO\PowerRun.exe" "C:\mount\mount\Windows" >nul 2>&1
 copy "%TEMP%\RisorseCreaISO\[AIMODS]-Store.exe" "C:\mount\mount\Windows" >nul 2>&1
-)
+
 
 :fine
-for /l %%f in (0 1 100) do (
-  call :drawProgressBar %%f "Salvataggio ISO"
+call :drawProgressBar 75 "Salvataggio ISO"
 dism /unmount-image /mountdir:"C:\mount\mount" /commit /Quiet >nul 2>&1
-)
+
 
 
 
 :wimre
-for /l %%f in (0 1 100) do (
-  call :drawProgressBar %%f "Ricreo la iso"
+call :drawProgressBar 90 "Ricreo la iso"
   %TEMP%\RisorseCreaISO\oscdimg -m -o -u2 -bootdata:2#p0,e,bC:\ISO\WinISO\boot\etfsboot.com#pEF,e,bC:\ISO\WinISO\efi\microsoft\boot\efisys.bin C:\ISO\WinISO C:\ISO\WindowsISO_edited.iso >nul 2>&1
   copy "C:\ISO\WindowsISO_edited.iso" "C:\" >nul 2>&1
 rmdir "C:\ISO" /s /q >nul 2>&1
 rmdir "C:\mount" /s /q >nul 2>&1
-)
 
-call :finalizeProgressBar 1
+call :drawProgressBar 100 "Fatto"
 
 powerShell -Command "Write-Host 'Processo completato troverai la tua ISO in C: chimata WindowsISO_edited!' -ForegroundColor Green; exit"
 timeout 7
+call :finalizeProgressBar 1
 endlocal
 exit
 ::##################################################################################################################################################

@@ -1,12 +1,11 @@
 using Microsoft.Win32;
+using Newtonsoft.Json;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 using WinHubX.Forms.Base;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace WinHubX
 {
@@ -54,8 +53,6 @@ namespace WinHubX
         }
         #endregion
 
-
-
         public Form1()
         {
             InitializeComponent();
@@ -66,8 +63,8 @@ namespace WinHubX
             bottoni.Add(btnSettaggi);
             bottoni.Add(btnDebloat);
             bottoni.Add(btnCreaISO);
-            bottoni.Add(btnMonitoraggio);
             bottoni.Add(btnTools);
+            bottoni.Add(btnupdate);
 
             swap_pnlNav(btnHome);
 
@@ -78,94 +75,6 @@ namespace WinHubX
             PnlFormLoader.Controls.Add(formHome);
             formHome.Show();
 
-
-
-
-
-            CycleJsonFiles();
-            
-
-        }
-
-
-        bool FullyLoadedall = false;
-
-        public async void CycleJsonFiles()
-        {
-            string executablePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            string directoryPath = Path.GetDirectoryName(executablePath);
-
-
-            foreach (string filePath in Directory.EnumerateFiles(directoryPath, "*.json"))
-            {
-
-
-                if (filePath.Contains("runtime") || filePath.Contains("deps") || filePath.Contains("data"))
-                {
-
-                }
-                else
-                {
-                    if (filePath.Contains("it") || filePath.Contains("en") || filePath.Contains("es") || filePath.Contains("ja") || filePath.Contains("fr") || filePath.Contains("de"))
-                    {
-                        string fileName = Path.GetFileNameWithoutExtension(filePath);
-
-                        ComboBoxLingue.Items.Add(fileName);
-
-                    }
-
-                }
-            }
-            // Finished json files loading
-
-
-            JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
-            
-            ComboBoxLingue.Text = jsonData["SelectedLanguage"].ToString();
-            Console.Write("Loaded Language: " + jsonData["SelectedLanguage"].ToString());
-
-            Thread.Sleep(1500);
-            FullyLoadedall = true;
-            
-        }
-
-        private async void WriteToJson(string contenuto, string pathtofile,string jsondataname)
-        {
-            JObject jsonData = new JObject();
-            jsonData[jsondataname] = contenuto;
-
-            using (StreamWriter file = File.CreateText(pathtofile))
-            using (JsonTextWriter writer = new JsonTextWriter(file))
-            {
-                await jsonData.WriteToAsync(writer);
-            }
-        }
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            if (WindowsIdentity.GetCurrent().Owner == WindowsIdentity.GetCurrent().User)   // Check for Admin privileges   
-            {
-                try
-                {
-                    this.Visible = false;
-                    ProcessStartInfo info = new ProcessStartInfo(Application.ExecutablePath); // my own .exe
-                    info.UseShellExecute = true;
-                    info.Verb = "runas";   // invoke UAC prompt
-                    Process.Start(info);
-                }
-                catch (Win32Exception ex)
-                {
-                    if (ex.NativeErrorCode == 1223) //The operation was canceled by the user.
-                    {
-                        Application.Exit();
-                    }
-                    else
-                        throw new Exception("Something went wrong :-(");
-                }
-                Application.Exit();
-            }
-            
         }
 
         public static void RemoveRegistryKeys()
@@ -189,9 +98,7 @@ namespace WinHubX
             PnlFormLoader.Controls.Add(formHome);
             formHome.Show();
         }
-        private void btnHome_Leave(object sender, EventArgs e)
-        {
-        }
+
 
         private void btnWin_Click(object sender, EventArgs e)
         {
@@ -203,9 +110,6 @@ namespace WinHubX
             formWin.FormBorderStyle = FormBorderStyle.None;
             PnlFormLoader.Controls.Add(formWin);
             formWin.Show();
-        }
-        private void btnWin_Leave(object sender, EventArgs e)
-        {
         }
 
         private void btnOffice_Click(object sender, EventArgs e)
@@ -237,33 +141,12 @@ namespace WinHubX
         {
             swap_pnlNav(btnSettaggi);
 
-            try
-            {
-                string LanguageToUse;
-
-                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
-                LanguageToUse = jsonData["SelectedLanguage"].ToString();
-
-                JObject jsd = JObject.Parse(File.ReadAllText(LanguageToUse + ".json"));
-                lblPanelTitle.Text = jsd["Settings"].ToString();
-               
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("There was a problem loading the translation file :(" + " " + ex);
-            }
-
-            
-
-            
+            lblPanelTitle.Text = "Settaggi";
             PnlFormLoader.Controls.Clear();
             FormSettaggi formSettaggi = new(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formSettaggi.FormBorderStyle = FormBorderStyle.None;
             PnlFormLoader.Controls.Add(formSettaggi);
             formSettaggi.Show();
-        }
-        private void btnSettaggi_Leave(object sender, EventArgs e)
-        {
         }
 
         private void btnDebloat_Click(object sender, EventArgs e)
@@ -277,40 +160,18 @@ namespace WinHubX
             PnlFormLoader.Controls.Add(formDebloat);
             formDebloat.Show();
         }
-        private void btnDebloat_Leave(object sender, EventArgs e)
-        {
-        }
 
         private void btnCreaISO_Click(object sender, EventArgs e)
         {
             swap_pnlNav(btnCreaISO);
             string assemblyNamee = Assembly.GetExecutingAssembly().GetName().Name;
             ExtractEmbeddedResourceFolder($"{assemblyNamee}.Resources.RisorseCreaISO");
-            try
-            {
-                string LanguageToUse;
-                string NameBylangFinale;
-                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
-                LanguageToUse = jsonData["SelectedLanguage"].ToString();
-                
-                if (LanguageToUse.Contains("it"))
-                {
-                    NameBylangFinale = "ISOMaker.ps1";
-                }
-                else
-                {
-                    NameBylangFinale = "ISOMaker_eng.ps1";
-                }
-
-                string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
-                string resourcePath = $"{assemblyName}.Resources.RisorseCreaISO." + NameBylangFinale;
-                byte[] exeBytes = LoadEmbeddedResource(resourcePath);
-                string ps1FilePath = Path.Combine(Path.GetTempPath(), NameBylangFinale);
-                File.WriteAllBytes(ps1FilePath, exeBytes);
-                Thread scriptThread = new Thread(() => StartPowerShell(ps1FilePath));
-                scriptThread.Start();
-            }
-            finally { }
+            lblPanelTitle.Text = "Crea ISO";
+            PnlFormLoader.Controls.Clear();
+            FormCreaISO formcreaiso = new(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formcreaiso.FormBorderStyle = FormBorderStyle.None;
+            PnlFormLoader.Controls.Add(formcreaiso);
+            formcreaiso.Show();
         }
 
         public static void ExtractEmbeddedResourceFolder(string resourceFolder)
@@ -324,7 +185,6 @@ namespace WinHubX
             {
                 if (resourceName.StartsWith(resourceFolder))
                 {
-                    // This will strip out the resourceFolder prefix and the "Risorse." part from the file name
                     string relativePath = resourceName.Substring(resourceFolder.Length + 1).Replace("Risorse.", "");
                     string path = Path.Combine(targetFolderPath, relativePath);
                     string directory = Path.GetDirectoryName(path);
@@ -338,70 +198,6 @@ namespace WinHubX
             }
         }
 
-
-        private byte[] LoadEmbeddedResource(string resourcePath)
-        {
-            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcePath))
-            {
-                if (stream == null)
-                {
-                    throw new InvalidOperationException($"Could not find embedded resource: {resourcePath}");
-                }
-                byte[] buffer = new byte[stream.Length];
-                stream.Read(buffer, 0, buffer.Length);
-                return buffer;
-            }
-        }
-
-        private void StartPowerShell(string scriptFilePath)
-        {
-            ProcessStartInfo startInfo = new ProcessStartInfo
-            {
-                FileName = "powershell.exe",
-                Arguments = $"-ExecutionPolicy Bypass -File \"{scriptFilePath}\"",
-                UseShellExecute = false,
-                CreateNoWindow = true,
-                RedirectStandardOutput = true
-            };
-
-            using (Process process = new Process { StartInfo = startInfo })
-            {
-                process.Start();
-                string output = process.StandardOutput.ReadToEnd();
-            }
-        }
-        private void btnCreaISO_Leave(object sender, EventArgs e)
-        {
-        }
-
-        private void btnMonitoraggio_Click(object sender, EventArgs e)
-        {
-            swap_pnlNav(btnMonitoraggio);
-
-            try
-            {
-                string LanguageToUse;
-
-                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
-                LanguageToUse = jsonData["SelectedLanguage"].ToString();
-
-                JObject jsd = JObject.Parse(File.ReadAllText(LanguageToUse + ".json"));
-                lblPanelTitle.Text = jsd["Monitoring"].ToString();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("There was a problem loading the translation file :(" + " " + ex);
-            }
-
-            
-            PnlFormLoader.Controls.Clear();
-            FormMonitoraggio formMonitoraggio = new(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            formMonitoraggio.FormBorderStyle = FormBorderStyle.None;
-            PnlFormLoader.Controls.Add(formMonitoraggio);
-            formMonitoraggio.Show();
-        }
-
         private void btnTools_Click(object sender, EventArgs e)
         {
             swap_pnlNav(btnTools);
@@ -413,68 +209,146 @@ namespace WinHubX
             PnlFormLoader.Controls.Add(formTools);
             formTools.Show();
         }
-        private void btnTools_Leave(object sender, EventArgs e)
+
+
+        private async void btnupdate_Click(object sender, EventArgs e)
         {
-        }
+            swap_pnlNav(btnupdate);
 
+            string updateInfoUrl = "https://aimodsitalia.store/WinHubX/update.json";
+            string currentVersion = "2.4.0.3"; // Inserisci qui il numero di versione corrente dell'applicazione
 
-
-
-        private void ComboBoxLingue_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string SelectedLanguage = ComboBoxLingue.SelectedItem.ToString();
-            ChangeLanguage(SelectedLanguage);
-            WriteToJson(SelectedLanguage, "data.json", "SelectedLanguage");
-            
-            if (FullyLoadedall)
+            try
             {
-                DialogResult d = MessageBox.Show("All the text will be translated at WinHubx restart, click 'yes' to restart now", "Information", MessageBoxButtons.YesNo);
-                if (d == DialogResult.Yes)
+                using (var client = new HttpClient())
                 {
-                    Application.Restart();
+                    var response = await client.GetStringAsync(updateInfoUrl);
+                    dynamic updateInfo = JsonConvert.DeserializeObject(response);
+
+                    string latestVersion = updateInfo.version;
+
+                    if (latestVersion != currentVersion)
+                    {
+                        DialogResult result = MessageBox.Show($"Nuova versione ({latestVersion}) disponibile. Note di rilascio: {updateInfo.releaseNotes}. Vuoi aggiornare?", "Aggiornamento Disponibile", MessageBoxButtons.YesNo);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            string updateUrl = updateInfo.updateUrl;
+                            await DownloadAndUpdate(updateUrl, latestVersion);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Stai usando l'ultima versione disponibile", "Non ci sono aggiornamenti");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error checking for updates: {ex.Message}", "Error");
+            }
+        }
+        private async Task DownloadAndUpdate(string updateUrl, string version)
+        {
+            string updateFileName = $"WinHubX_SystemMonitorApp{version}.exe";
+            string updateFilePath = Path.Combine(Path.GetTempPath(), updateFileName);
+
+            // Mostra il form di progresso
+            using (var progressForm = new ProgressForm())
+            {
+                progressForm.Show();
+                progressForm.SetMarquee();
+
+                try
+                {
+                    using (var client = new HttpClient())
+                    {
+                        // Scarica il file di aggiornamento
+                        progressForm.SetStatus("Scaricamento file di aggiornamento...", 0);
+                        await DownloadFileWithProgress(client, updateUrl, updateFilePath, progressForm);
+                    }
+
+                    // Esegui l'aggiornamento in un nuovo thread
+                    Thread updateThread = new Thread(() => ExecuteUpdate(updateFilePath));
+                    updateThread.Start();
+
+                    // Chiudi la finestra principale dell'applicazione, lasciando il thread di aggiornamento in esecuzione
+                    Application.Exit();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Errore durante l'aggiornamento: {ex.Message}", "Errore");
+                }
+                finally
+                {
+                    progressForm.CompleteOperation();
                 }
             }
         }
 
-
-
-        public void ChangeLanguage(string filepath)
+        private void ExecuteUpdate(string updateFilePath)
         {
-            string filePath = filepath + ".json";
-            if (File.Exists(filePath))
+            try
             {
-                JObject jsonData = JObject.Parse(File.ReadAllText(filePath));
+                // Attendere un breve intervallo per garantire che l'applicazione principale sia chiusa
+                Thread.Sleep(2000);
 
-                string Language;
-                string Settings;
-                string CreateIso;
-                string Monitoring;
-                string HomeParagraph;
+                // Ottieni il percorso dell'eseguibile corrente
+                string currentExecutablePath = Application.ExecutablePath;
+                string oldExecutablePath = Path.ChangeExtension(currentExecutablePath, ".old");
 
-                try
+                // Rinominare l'eseguibile corrente a .old
+                if (File.Exists(currentExecutablePath))
                 {
-                    Language = jsonData["Language"].ToString();
-                    Settings = jsonData["Settings"].ToString();
-                    CreateIso = jsonData["CreateIso"].ToString();
-                    Monitoring = jsonData["Monitoring"].ToString();
-                    HomeParagraph = jsonData["WelcomeText"].ToString();
+                    File.Move(currentExecutablePath, oldExecutablePath);
+                }
 
+                // Sostituisci l'eseguibile con la nuova versione
+                File.Move(updateFilePath, currentExecutablePath);
 
-                    btnSettaggi.Text = Settings;
-                    btnCreaISO.Text = CreateIso;
-                    btnMonitoraggio.Text = Monitoring;
-
-                    
-
-
-
-
-                } catch(Exception ex)
+                // Avvia il nuovo eseguibile
+                var processStartInfo = new ProcessStartInfo
                 {
+                    FileName = currentExecutablePath,
+                    Arguments = "/silent",
+                    UseShellExecute = true,
+                    Verb = "runas" // Richiede privilegi di amministratore, se necessario
+                };
 
-                }    
-                
+                Process.Start(processStartInfo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Errore durante l'aggiornamento: {ex.Message}", "Errore");
+            }
+            finally
+            {
+                // Chiudi l'applicazione attuale
+                Environment.Exit(0);
+            }
+        }
 
+        private async Task DownloadFileWithProgress(HttpClient client, string url, string filePath, ProgressForm progressForm)
+        {
+            using (var response = await client.GetAsync(url, HttpCompletionOption.ResponseHeadersRead))
+            {
+                response.EnsureSuccessStatusCode();
+                var totalBytes = response.Content.Headers.ContentLength.GetValueOrDefault();
+                var buffer = new byte[8192];
+                var bytesRead = 0L;
+                using (var contentStream = await response.Content.ReadAsStreamAsync())
+                using (var fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None, buffer.Length, true))
+                {
+                    int read;
+                    while ((read = await contentStream.ReadAsync(buffer, 0, buffer.Length)) > 0)
+                    {
+                        await fileStream.WriteAsync(buffer, 0, read);
+                        bytesRead += read;
+                        // Aggiorna la barra di avanzamento
+                        var percentComplete = (int)((bytesRead * 100) / totalBytes);
+                        progressForm.Invoke(new Action(() => progressForm.SetStatus("Download in corso...", percentComplete)));
+                    }
+                }
             }
         }
     }

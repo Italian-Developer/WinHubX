@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Reflection;
 using WinHubX.Dialog;
 using WinHubX.Forms.Personalizzazione_office;
@@ -20,29 +18,7 @@ namespace WinHubX
                 Visible = true
             };
             this.form1 = form1;
-            
-            try
-            {
-                
-                string LanguageToUse;
-
-                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
-                LanguageToUse = jsonData["SelectedLanguage"].ToString();
-
-                JObject jsd = JObject.Parse(File.ReadAllText(LanguageToUse + ".json"));
-                btnPersonalizzaOffice.Text = jsd["CustomizeOffice"].ToString();
-                btnScrubber.Text = jsd["UninstallOffice"].ToString();
-                btnAttivaOffice.Text = jsd["ActivateOffice"].ToString();
-                lblHashInfo.Text = jsd["OfficeShaLeftButton"].ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("There was a problem loading the translation file :(" + " " + ex);
-            }
-
         }
-
-
 
         #region Office2019
 

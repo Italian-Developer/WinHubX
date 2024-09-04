@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics;
+using System.Net;
 using WinHubX.Dialog;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace WinHubX
 {
@@ -10,33 +9,10 @@ namespace WinHubX
         public FormHome()
         {
             InitializeComponent();
-
-            try
-            {
-                string LanguageToUse;
-
-                JObject jsonData = JObject.Parse(File.ReadAllText("data.json"));
-                LanguageToUse = jsonData["SelectedLanguage"].ToString();
-
-                JObject jsd = JObject.Parse(File.ReadAllText(LanguageToUse + ".json"));
-                lblInfoWinAIO64.Text = jsd["WelcomeText"].ToString();
-                btnKofi.Text = jsd["Kofi"].ToString();
-                label3.Text = jsd["AskingHelp"].ToString();
-            } catch (Exception ex)
-            {
-                MessageBox.Show("There was a problem loading the translation file :(" + " " + ex);
-            }
-            
-
-
         }
-
-
-
 
         private void btnChangelog_Click(object sender, EventArgs e)
         {
-
             infoWHXChangelog(sender, e);
         }
         public static void infoWHXChangelog(object sender, EventArgs e)
@@ -44,6 +20,26 @@ namespace WinHubX
             #region descrizione WinHubX 
 
             string description = "Changelog WinHubX\n\n" +
+                                    "06/09/2024 - v2.4.0.3:\n" +
+                                    "- Eliminato personalizzazioni\n" +
+                                    "- Eliminato monitoraggio\n" +
+                                    "- Aggiunto WinHubX-SystemTray\n" +
+                                    "- Aggiunto update\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "10/07/2024 - v2.4.0.2:\n" +
+                                    "- Aggiunta icona publisher per office personalizzato\n" +
+                                    "- Nuova schermata CreaISO\n" +
+                                    "- Fix personalizzazione privacy\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "24/06/2024 - v2.4.0.1:\n" +
+                                    "- Minor Fix\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
                                     "22/06/2024 - v2.4.0.0:\n" +
                                     "- Modifica codice settaggi personalizzazione\n" +
                                     "- Aggiunto un 2 menù personalizzazione\n" +
@@ -223,16 +219,36 @@ namespace WinHubX
             }
         }
 
-        private void lblInfoWinAIO64_Click(object sender, EventArgs e)
+        private void btn_winhubxmonitor_Click(object sender, EventArgs e)
         {
+            // Definisci l'URL del file da scaricare
+            string fileUrl = "https://github.com/MrNico98/WinHubX-Resources/releases/download/WinHubX_SystemMonitorApp/WinHubX_SystemMonitorApp.exe";
 
-        }
+            // Configura il dialogo per il salvataggio del file
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.FileName = "WinHubX_SystemMonitorApp.exe";
+            saveFileDialog.Filter = "Executable Files|*.exe";
+            saveFileDialog.Title = "Scegli dove salvare il file";
 
-        public string Language = "";
+            // Mostra il dialogo e controlla se l'utente ha selezionato un percorso valido
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
 
-        private void FormHome_Load(object sender, EventArgs e)
-        {
-
+                // Usa WebClient per scaricare il file dal link specificato
+                using (WebClient webClient = new WebClient())
+                {
+                    try
+                    {
+                        webClient.DownloadFile(fileUrl, filePath);
+                        MessageBox.Show("Download completato!", "Successo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Errore durante il download: {ex.Message}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }

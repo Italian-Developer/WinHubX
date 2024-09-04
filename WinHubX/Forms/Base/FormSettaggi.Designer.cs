@@ -37,8 +37,6 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            btnPersonalizzazione = new Button();
-            label4 = new Label();
             label5 = new Label();
             btnRipristinaSO = new Button();
             label6 = new Label();
@@ -125,11 +123,11 @@
             lblInfoPrivacy.AutoSize = true;
             lblInfoPrivacy.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblInfoPrivacy.ForeColor = Color.Coral;
-            lblInfoPrivacy.Location = new Point(18, 69);
+            lblInfoPrivacy.Location = new Point(13, 69);
             lblInfoPrivacy.Name = "lblInfoPrivacy";
             lblInfoPrivacy.Size = new Size(355, 48);
             lblInfoPrivacy.TabIndex = 49;
-            lblInfoPrivacy.Text = "Impostazioni Privacy\r\nModifica la tua privacy come meglio credi\r\n";
+            lblInfoPrivacy.Text = "Impostazioni Privacy\r\nModifica la tua privacy come meglio credi";
             lblInfoPrivacy.TextAlign = ContentAlignment.BottomCenter;
             // 
             // label1
@@ -168,37 +166,6 @@
             label3.Text = "Impostazioni Update\r\nAbilita/Disabilita gli update di Windows";
             label3.TextAlign = ContentAlignment.BottomCenter;
             // 
-            // btnPersonalizzazione
-            // 
-            btnPersonalizzazione.Cursor = Cursors.Hand;
-            btnPersonalizzazione.FlatAppearance.BorderSize = 0;
-            btnPersonalizzazione.FlatStyle = FlatStyle.Flat;
-            btnPersonalizzazione.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPersonalizzazione.ForeColor = Color.White;
-            btnPersonalizzazione.Image = (Image)resources.GetObject("btnPersonalizzazione.Image");
-            btnPersonalizzazione.ImageAlign = ContentAlignment.MiddleRight;
-            btnPersonalizzazione.Location = new Point(448, 250);
-            btnPersonalizzazione.Margin = new Padding(3, 2, 3, 2);
-            btnPersonalizzazione.Name = "btnPersonalizzazione";
-            btnPersonalizzazione.Size = new Size(424, 61);
-            btnPersonalizzazione.TabIndex = 53;
-            btnPersonalizzazione.Text = "Personalizzazione";
-            btnPersonalizzazione.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnPersonalizzazione.UseVisualStyleBackColor = true;
-            btnPersonalizzazione.Click += btnPersonalizzazione_Click;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Coral;
-            label4.Location = new Point(448, 310);
-            label4.Name = "label4";
-            label4.Size = new Size(396, 24);
-            label4.TabIndex = 54;
-            label4.Text = "Personalizza il tuo Windows in base al tuo stile";
-            label4.TextAlign = ContentAlignment.BottomCenter;
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -235,7 +202,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Coral;
-            label6.Location = new Point(83, 409);
+            label6.Location = new Point(544, 313);
             label6.Name = "label6";
             label6.Size = new Size(258, 24);
             label6.TabIndex = 58;
@@ -251,7 +218,7 @@
             btnAttivaWSA.ForeColor = Color.White;
             btnAttivaWSA.Image = (Image)resources.GetObject("btnAttivaWSA.Image");
             btnAttivaWSA.ImageAlign = ContentAlignment.MiddleRight;
-            btnAttivaWSA.Location = new Point(-8, 355);
+            btnAttivaWSA.Location = new Point(453, 259);
             btnAttivaWSA.Margin = new Padding(3, 2, 3, 2);
             btnAttivaWSA.Name = "btnAttivaWSA";
             btnAttivaWSA.Size = new Size(424, 52);
@@ -270,7 +237,7 @@
             btnAttivaWSL.ForeColor = Color.White;
             btnAttivaWSL.Image = (Image)resources.GetObject("btnAttivaWSL.Image");
             btnAttivaWSL.ImageAlign = ContentAlignment.MiddleRight;
-            btnAttivaWSL.Location = new Point(462, 355);
+            btnAttivaWSL.Location = new Point(235, 367);
             btnAttivaWSL.Margin = new Padding(3, 2, 3, 2);
             btnAttivaWSL.Name = "btnAttivaWSL";
             btnAttivaWSL.Size = new Size(424, 52);
@@ -285,7 +252,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Coral;
-            label7.Location = new Point(564, 408);
+            label7.Location = new Point(337, 420);
             label7.Name = "label7";
             label7.Size = new Size(237, 24);
             label7.TabIndex = 60;
@@ -305,8 +272,6 @@
             Controls.Add(btnAttivaWSA);
             Controls.Add(label5);
             Controls.Add(btnRipristinaSO);
-            Controls.Add(label4);
-            Controls.Add(btnPersonalizzazione);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -317,7 +282,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormSettaggi";
             Text = "FormSettaggi";
-            Load += FormSettaggi_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -332,8 +296,6 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private Button btnPersonalizzazione;
-        private Label label4;
         private Label label5;
         private Button btnRipristinaSO;
         private Label label6;

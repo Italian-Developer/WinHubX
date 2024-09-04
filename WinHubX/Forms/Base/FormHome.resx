@@ -118,6 +118,67 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblInfoWinAIO64.Text" xml:space="preserve">
-    <value>WinHubX nasce dalla collaborazione di due appassionati del settore, volendo condividere le proprie conoscenze in modo semplice e alla portata di tutti, offrendo varie soluzioni a portata di pochi click.</value>
+    <value>WinHubX_SystemMonitorApp è l'app perfetta per personalizzare e gestire le risorse del tuo computer
+a portata di click! Non si deve installare, funziona nella systemtray (in basso a destra)! Provala!
+</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_winhubxmonitor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
   </data>
 </root>

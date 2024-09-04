@@ -13,6 +13,12 @@ namespace WinHubX.Forms.Settaggi
             this.form1 = form1;
             this.formSettaggi = formSettaggi;
             LoadCheckboxStates();
+            loadmsginziale();
+        }
+
+        private void loadmsginziale()
+        {
+            MessageBox.Show("Per disinstallare Windows Defender recati nella sezione Debloat APP", "WinHubX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
