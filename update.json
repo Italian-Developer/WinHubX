@@ -1,5 +1,5 @@
 { 
-    "version": "2.4.0.7", 
-    "releaseNotes": "Aggiornamento logica update, Aggiornamento iso lite, correzione creazione codice iso, visualizzazione creazione iso modificata", 
+    "version": "2.4.0.8", 
+    "releaseNotes": "Aggiornamento logica update, Aggiornate iso lite, Aggiornate iso stock, correzione creazione codice iso, visualizzazione creazione iso modificata", 
     "updateUrl": "https://github.com/MrNico98/WinHubX/releases/download/WinHubX/WinHubX.exe" 
 }
