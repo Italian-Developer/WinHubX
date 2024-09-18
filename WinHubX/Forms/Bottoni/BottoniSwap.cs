@@ -1,12 +1,9 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Windows.Forms;
 
 namespace WinHubX.Forms.Bottoni
 {
-    [DefaultProperty("Checked")]
     public class BottoniSwap : CheckBox
     {
         // Fields for colors and style
@@ -16,109 +13,138 @@ namespace WinHubX.Forms.Bottoni
         private Color offToggleColor = Color.Gainsboro;
         private bool solidStyle = true;
 
-        // Fields for size properties
-        private int toggleSize = 20; // Default size of the toggle
-        private int borderSize = 2; // Default size of the border when the solid style is false
+        // New fields for size properties
+        private int toggleSize = 20; // Default size of the toggle.
+        private int borderSize = 2; // Default size of the border when the solid style is false.
 
         // Constructor
         public BottoniSwap()
         {
             // Set a minimum size to accommodate the toggle and border
-            this.MinimumSize = new Size(45, toggleSize + borderSize * 2);
+            MinimumSize = new Size(45, toggleSize + borderSize * 2);
         }
 
         // Properties for colors and style
         [Category("Appearance")]
         [DefaultValue(typeof(Color), "MediumSlateBlue")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Color OnBackColor
         {
             get => onBackColor;
             set
             {
-                onBackColor = value;
-                this.Invalidate();
+                if (onBackColor != value)
+                {
+                    onBackColor = value;
+                    Invalidate();
+                }
             }
         }
 
         [Category("Appearance")]
         [DefaultValue(typeof(Color), "WhiteSmoke")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Color OnToggleColor
         {
             get => onToggleColor;
             set
             {
-                onToggleColor = value;
-                this.Invalidate();
+                if (onToggleColor != value)
+                {
+                    onToggleColor = value;
+                    Invalidate();
+                }
             }
         }
 
         [Category("Appearance")]
         [DefaultValue(typeof(Color), "Gray")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Color OffBackColor
         {
             get => offBackColor;
             set
             {
-                offBackColor = value;
-                this.Invalidate();
+                if (offBackColor != value)
+                {
+                    offBackColor = value;
+                    Invalidate();
+                }
             }
         }
 
         [Category("Appearance")]
         [DefaultValue(typeof(Color), "Gainsboro")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Color OffToggleColor
         {
             get => offToggleColor;
             set
             {
-                offToggleColor = value;
-                this.Invalidate();
+                if (offToggleColor != value)
+                {
+                    offToggleColor = value;
+                    Invalidate();
+                }
             }
         }
 
         [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public override string Text
         {
-            get => base.Text;
+            get => base.Text ?? string.Empty; // Ensure no null value is returned
             set { }
         }
 
         [Category("Appearance")]
         [DefaultValue(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool SolidStyle
         {
             get => solidStyle;
             set
             {
-                solidStyle = value;
-                this.Invalidate();
+                if (solidStyle != value)
+                {
+                    solidStyle = value;
+                    Invalidate();
+                }
             }
         }
 
-        // Properties for size
+        // New properties for size
         [Category("Appearance")]
         [DefaultValue(20)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public int ToggleSize
         {
             get => toggleSize;
             set
             {
-                toggleSize = value;
-                this.MinimumSize = new Size(45, toggleSize + borderSize * 2);
-                this.Invalidate();
+                if (toggleSize != value)
+                {
+                    toggleSize = value;
+                    MinimumSize = new Size(45, toggleSize + borderSize * 2);
+                    Invalidate();
+                }
             }
         }
 
         [Category("Appearance")]
         [DefaultValue(2)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public int BorderSize
         {
             get => borderSize;
             set
             {
-                borderSize = value;
-                this.MinimumSize = new Size(45, toggleSize + borderSize * 2);
-                this.Invalidate();
+                if (borderSize != value)
+                {
+                    borderSize = value;
+                    MinimumSize = new Size(45, toggleSize + borderSize * 2);
+                    Invalidate();
+                }
             }
         }
 
@@ -127,11 +153,11 @@ namespace WinHubX.Forms.Bottoni
         // Get the path for drawing the control
         private GraphicsPath GetFigurePath()
         {
-            int arcSize = this.Height - 1;
-            Rectangle leftArc = new Rectangle(0, 0, arcSize, arcSize);
-            Rectangle rightArc = new Rectangle(this.Width - arcSize - 2, 0, arcSize, arcSize);
+            int arcSize = Height - 1;
+            var leftArc = new Rectangle(0, 0, arcSize, arcSize);
+            var rightArc = new Rectangle(Width - arcSize - 2, 0, arcSize, arcSize);
 
-            GraphicsPath path = new GraphicsPath();
+            var path = new GraphicsPath();
             path.StartFigure();
             path.AddArc(leftArc, 90, 180);
             path.AddArc(rightArc, 270, 180);
@@ -141,26 +167,24 @@ namespace WinHubX.Forms.Bottoni
         }
 
         // Draw the control
-        protected override void OnPaint(PaintEventArgs pevent)
+        protected override void OnPaint(PaintEventArgs e)
         {
-            pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            pevent.Graphics.Clear(this.Parent.BackColor);
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            e.Graphics.Clear(Parent?.BackColor ?? Color.Transparent); // Handle potential null Parent
 
-            // Adjust the toggle position based on the property
-            int togglePosition = this.Checked ? this.Width - this.Height + 1 : 2;
+            // Adjusting the toggle size based on the property
+            int togglePosition = Checked ? Width - Height + 1 : 2;
 
             // Draw the control surface
-            using (GraphicsPath path = GetFigurePath())
-            {
-                if (solidStyle)
-                    pevent.Graphics.FillPath(new SolidBrush(this.Checked ? onBackColor : offBackColor), path);
-                else
-                    pevent.Graphics.DrawPath(new Pen(this.Checked ? onBackColor : offBackColor, borderSize), path);
-            }
+            using var path = GetFigurePath();
+            if (solidStyle)
+                e.Graphics.FillPath(new SolidBrush(Checked ? onBackColor : offBackColor), path);
+            else
+                e.Graphics.DrawPath(new Pen(Checked ? onBackColor : offBackColor, borderSize), path);
 
             // Draw the toggle
-            pevent.Graphics.FillEllipse(new SolidBrush(this.Checked ? onToggleColor : offToggleColor),
-                new Rectangle(togglePosition, (this.Height - toggleSize) / 2, toggleSize, toggleSize));
+            e.Graphics.FillEllipse(new SolidBrush(Checked ? onToggleColor : offToggleColor),
+                new Rectangle(togglePosition, (Height - toggleSize) / 2, toggleSize, toggleSize));
         }
     }
 }

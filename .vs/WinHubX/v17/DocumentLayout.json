@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D10BE9B5-EB77-4F88-99BE-64BC17961D27}|WinHubX\\WinHubX.csproj|c:\\users\\maule\\desktop\\github\\lightyagami28\\winhubx\\winhubx\\forms\\bottoni\\circularprogressbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D10BE9B5-EB77-4F88-99BE-64BC17961D27}|WinHubX\\WinHubX.csproj|solutionrelative:winhubx\\forms\\bottoni\\circularprogressbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D10BE9B5-EB77-4F88-99BE-64BC17961D27}|WinHubX\\WinHubX.csproj|c:\\users\\maule\\desktop\\github\\lightyagami28\\winhubx\\winhubx\\forms\\bottoni\\bottoniswap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D10BE9B5-EB77-4F88-99BE-64BC17961D27}|WinHubX\\WinHubX.csproj|solutionrelative:winhubx\\forms\\bottoni\\bottoniswap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CircularProgressBar.cs",
-              "DocumentMoniker": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\Forms\\Bottoni\\CircularProgressBar.cs",
-              "RelativeDocumentMoniker": "WinHubX\\Forms\\Bottoni\\CircularProgressBar.cs",
-              "ToolTip": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\Forms\\Bottoni\\CircularProgressBar.cs",
-              "RelativeToolTip": "WinHubX\\Forms\\Bottoni\\CircularProgressBar.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAAwF8AAAANAAAAAAAAAA==",
+              "Title": "BottoniSwap.cs",
+              "DocumentMoniker": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\Forms\\Bottoni\\BottoniSwap.cs",
+              "RelativeDocumentMoniker": "WinHubX\\Forms\\Bottoni\\BottoniSwap.cs",
+              "ToolTip": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\Forms\\Bottoni\\BottoniSwap.cs",
+              "RelativeToolTip": "WinHubX\\Forms\\Bottoni\\BottoniSwap.cs",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAIwMAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T10:01:15.918Z",
+              "WhenOpened": "2024-09-18T10:07:35.939Z",
               "EditorCaption": ""
             }
           ]
