@@ -1,151 +1,128 @@
 ﻿using System.Diagnostics;
-using System.Drawing;
-using System.Windows.Forms;
 
 namespace WinHubX.Dialog
 {
     public partial class OfficeDialog : Form
     {
-        private readonly NotifyIcon notifyIcon;
-        private string? dlLink32;
-        private string? dlLink64;
-
-        public OfficeDialog()
-        {
-            InitializeComponent();
-            notifyIcon = NotifyIconFactory.CreateInformationIcon();
-            InitializeCloseButton();
-        }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            DrawBorder(e.Graphics);
-        }
 
-        private void InitializeCloseButton()
-        {
-            var closeButton = ButtonFactory.CreateCloseButton();
-            closeButton.Click += (sender, e) => Close();
-            Controls.Add(closeButton);
-        }
-
-        private void DrawBorder(Graphics graphics)
-        {
             int borderWidth = 2;
+
             Color borderColor = Color.Coral;
-            using (var pen = new Pen(borderColor, borderWidth))
+
+            using (Pen pen = new Pen(borderColor, borderWidth))
             {
-                var borderRectangle = new Rectangle(0, 0, ClientSize.Width - 1, ClientSize.Height - 1);
-                graphics.DrawRectangle(pen, borderRectangle);
+                Rectangle borderRectangle = new Rectangle(0, 0, this.ClientSize.Width - 1, this.ClientSize.Height - 1);
+
+                e.Graphics.DrawRectangle(pen, borderRectangle);
             }
         }
 
-        public void OpenDialog(Label lblOffice, string link32, string link64)
-        {
-            var infoLabel = LabelFactory.CreateInfoLabel(lblOffice);
-            dlLink32 = link32;
-            dlLink64 = link64;
-            Controls.Add(infoLabel);
-            infoLabel.BringToFront();
-        }
 
-        private void BtnOfficeOnline32_MouseUp(object sender, MouseEventArgs e)
+        private string dlLink32;
+        private string dlLink64;
+        private NotifyIcon notifyIcon;
+        public OfficeDialog()
         {
-            HandleMouseUp(e, dlLink32);
-        }
-
-        private void BtnOfficeOnline64_MouseUp(object sender, MouseEventArgs e)
-        {
-            HandleMouseUp(e, dlLink64);
-        }
-
-        private void HandleMouseUp(MouseEventArgs e, string? link)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                ShowNotifyIconBalloonTip("Nessun codice hash da copiare!", "Il codice hash è disponibile solo per le versioni offline.");
-            }
-            else if (e.Button == MouseButtons.Left)
-            {
-                TryOpenUrl(link);
-            }
-        }
-
-        private void ShowNotifyIconBalloonTip(string title, string text)
-        {
-            notifyIcon.BalloonTipTitle = title;
-            notifyIcon.BalloonTipText = text;
-            notifyIcon.ShowBalloonTip(1000);
-        }
-
-        private void TryOpenUrl(string? url)
-        {
-            if (url == null) return;
-
-            try
-            {
-                var psi = new ProcessStartInfo
-                {
-                    FileName = url,
-                    UseShellExecute = true
-                };
-                Process.Start(psi);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Errore nell'aprire l'URL: {ex.Message}");
-            }
-        }
-    }
-
-    internal static class NotifyIconFactory
-    {
-        public static NotifyIcon CreateInformationIcon()
-        {
-            return new NotifyIcon
+            InitializeComponent();
+            notifyIcon = new NotifyIcon
             {
                 Icon = SystemIcons.Information,
                 Visible = true
             };
-        }
-    }
 
-    internal static class ButtonFactory
-    {
-        public static Button CreateCloseButton()
-        {
-            return new Button
-            {
-                Text = "Chiudi",
-                Dock = DockStyle.Bottom,
-                Height = 40,
-                FlatStyle = FlatStyle.Flat,
-                FlatAppearance = { BorderSize = 0 },
-                BackColor = Color.Coral,
-                ForeColor = Color.Black,
-                Font = new Font("Product Sans", 15f),
-                Cursor = Cursors.Hand
-            };
-        }
-    }
+            // Crea il pulsante per chiudere la finestra di dialogo
+            Button closeButton = new Button();
+            closeButton.Text = "Chiudi";
+            closeButton.Dock = DockStyle.Bottom;
+            closeButton.Height = 40; // Imposta l'altezza desiderata
+            closeButton.FlatStyle = FlatStyle.Flat; // Rendi il pulsante flat
+            closeButton.FlatAppearance.BorderSize = 0;
+            closeButton.BackColor = Color.Coral;
+            closeButton.ForeColor = Color.Black;
+            closeButton.Font = new Font("Product Sans", 15f);
+            closeButton.Cursor = Cursors.Hand;
+            closeButton.Click += (sender, e) => this.Close();
 
-    internal static class LabelFactory
-    {
-        public static Label CreateInfoLabel(Label lblOffice)
+
+            this.Controls.Add(closeButton);
+        }
+
+
+        public void openDialog(Label lblOffice, string link32, string link64)
         {
-            return new Label
+            Label infoLabel = new Label();
+            infoLabel.Image = lblOffice.Image;
+            infoLabel.Text = lblOffice.Text;
+            infoLabel.Font = lblOffice.Font;
+            infoLabel.Size = new Size(211, 110); // Imposta una dimensione predefinita o calcolala
+            infoLabel.Location = new Point(50, 70); // Imposta una posizione nel dialogo
+            infoLabel.ForeColor = lblOffice.ForeColor;
+            infoLabel.BackColor = lblOffice.BackColor;
+            infoLabel.TextAlign = ContentAlignment.MiddleRight;
+            infoLabel.ImageAlign = ContentAlignment.MiddleLeft;
+
+            this.dlLink32 = link32;
+            this.dlLink64 = link64;
+
+
+            this.Controls.Add(infoLabel);
+            infoLabel.BringToFront();
+        }
+
+        private void btnOfficeOnline32_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
             {
-                Image = lblOffice.Image,
-                Text = lblOffice.Text,
-                Font = lblOffice.Font,
-                Size = new Size(211, 110),
-                Location = new Point(50, 70),
-                ForeColor = lblOffice.ForeColor,
-                BackColor = lblOffice.BackColor,
-                TextAlign = ContentAlignment.MiddleRight,
-                ImageAlign = ContentAlignment.MiddleLeft
-            };
+                notifyIcon.BalloonTipTitle = "Nessun codice hash da copiare!";
+                notifyIcon.BalloonTipText = "Il codice hash è disponibile solo per le versioni offline.";
+                notifyIcon.ShowBalloonTip(1000);
+            }
+            else if (e.Button == MouseButtons.Left)
+            {
+                try
+                {
+                    ProcessStartInfo psi = new ProcessStartInfo
+                    {
+                        FileName = dlLink32,
+                        UseShellExecute = true
+                    };
+                    Process.Start(psi);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Errore nell'aprire l'URL: {ex.Message}");
+                }
+            }
+        }
+
+        private void btnOfficeOnline64_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                notifyIcon.BalloonTipTitle = "Nessun codice hash da copiare!";
+                notifyIcon.BalloonTipText = "Il codice hash è disponibile solo per le versioni offline.";
+                notifyIcon.ShowBalloonTip(1000);
+            }
+            else if (e.Button == MouseButtons.Left)
+            {
+                try
+                {
+                    ProcessStartInfo psi = new ProcessStartInfo
+                    {
+                        FileName = dlLink64,
+                        UseShellExecute = true
+                    };
+                    Process.Start(psi);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Errore nell'aprire l'URL: {ex.Message}");
+                }
+            }
         }
     }
 }
