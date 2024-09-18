@@ -2,20 +2,25 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+This section outlines the versions of WinHubX that are currently supported with security updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| 2.0.x   | :white_check_mark: |
+| < 2.0   | :x:                |
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+To report a security vulnerability, please follow these guidelines:
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+1. **Proof of Concept**: Provide a detailed proof of concept (PoC) to help us understand and replicate the issue. This should include steps to reproduce the vulnerability, as well as any relevant code or data.
+
+2. **Submission**: Send your report, including the PoC, to [Alessandro824@proton.me](mailto:Alessandro824@proton.me).
+
+3. **Response Time**: You can expect an initial response within 48 hours acknowledging receipt of your report. We will provide updates as we investigate and address the issue.
+
+4. **Disclosure Policy**: We will keep your report confidential and work to resolve the issue as quickly as possible. If the vulnerability is accepted, we will provide a timeline for when a fix will be available and update you on the progress.
+
+5. **Acceptance and Decline**: If the vulnerability is accepted, we will notify you when a fix is released. If it is declined, we will provide an explanation and any relevant feedback.
+
+Thank you for helping us improve the security of WinHubX!
