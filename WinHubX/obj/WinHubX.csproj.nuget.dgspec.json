@@ -1,28 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nico\\Desktop\\1.WinHubX-development\\WinHubX\\WinHubX.csproj": {}
+    "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\WinHubX.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nico\\Desktop\\1.WinHubX-development\\WinHubX\\WinHubX.csproj": {
+    "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\WinHubX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nico\\Desktop\\1.WinHubX-development\\WinHubX\\WinHubX.csproj",
+        "projectUniqueName": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\WinHubX.csproj",
         "projectName": "WinHubX",
-        "projectPath": "C:\\Users\\Nico\\Desktop\\1.WinHubX-development\\WinHubX\\WinHubX.csproj",
-        "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nico\\Desktop\\1.WinHubX-development\\WinHubX\\obj\\",
+        "projectPath": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\WinHubX.csproj",
+        "packagesPath": "C:\\Users\\maule\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nico\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maule\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0-windows"
+          "net9.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -30,8 +30,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0-windows7.0": {
-            "targetAlias": "net8.0-windows",
+          "net9.0-windows7.0": {
+            "targetAlias": "net9.0-windows",
             "projectReferences": {}
           }
         },
@@ -43,12 +43,13 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net8.0-windows7.0": {
-          "targetAlias": "net8.0-windows",
+        "net9.0-windows7.0": {
+          "targetAlias": "net9.0-windows",
           "dependencies": {
             "Microsoft.PowerShell.Native": {
               "target": "Package",
@@ -56,7 +57,7 @@
             },
             "System.Management.Automation": {
               "target": "Package",
-              "version": "[7.4.1, )"
+              "version": "[7.5.0-preview.4, )"
             }
           },
           "imports": [
@@ -78,7 +79,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

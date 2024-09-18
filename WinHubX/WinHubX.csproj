@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
+	  <TargetFramework>net9.0-windows</TargetFramework>
+	 <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
 	  <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
@@ -470,7 +470,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.PowerShell.Native" Version="7.4.0" />
-    <PackageReference Include="System.Management.Automation" Version="7.4.1" />
+    <PackageReference Include="System.Management.Automation" Version="7.4.5" />
   </ItemGroup>
 
   <ItemGroup>
