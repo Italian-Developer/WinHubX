@@ -1,12 +1,36 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D10BE9B5-EB77-4F88-99BE-64BC17961D27}|WinHubX\\WinHubX.csproj|c:\\users\\maule\\desktop\\github\\lightyagami28\\winhubx\\winhubx\\dialog\\tools\\dialogcheckhw.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D10BE9B5-EB77-4F88-99BE-64BC17961D27}|WinHubX\\WinHubX.csproj|solutionrelative:winhubx\\dialog\\tools\\dialogcheckhw.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
+        {
+          "DockedHeight": 317,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DialogCheckHW.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\Dialog\\Tools\\DialogCheckHW.Designer.cs",
+              "RelativeDocumentMoniker": "WinHubX\\Dialog\\Tools\\DialogCheckHW.Designer.cs",
+              "ToolTip": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\Dialog\\Tools\\DialogCheckHW.Designer.cs*",
+              "RelativeToolTip": "WinHubX\\Dialog\\Tools\\DialogCheckHW.Designer.cs*",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAAwGYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T10:33:41.019Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
         {
           "DockedHeight": 83,
           "SelectedChildIndex": -1,
