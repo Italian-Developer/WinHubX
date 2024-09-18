@@ -1,8 +1,12 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace WinHubX.Forms.Bottoni
 {
+    [DefaultProperty("Checked")]
     public class BottoniSwap : CheckBox
     {
         // Fields for colors and style
@@ -12,9 +16,9 @@ namespace WinHubX.Forms.Bottoni
         private Color offToggleColor = Color.Gainsboro;
         private bool solidStyle = true;
 
-        // New fields for size properties
-        private int toggleSize = 20; // Default size of the toggle.
-        private int borderSize = 2; // Default size of the border when the solid style is false.
+        // Fields for size properties
+        private int toggleSize = 20; // Default size of the toggle
+        private int borderSize = 2; // Default size of the border when the solid style is false
 
         // Constructor
         public BottoniSwap()
@@ -24,32 +28,52 @@ namespace WinHubX.Forms.Bottoni
         }
 
         // Properties for colors and style
-        [Category("RJ Code Advance")]
+        [Category("Appearance")]
+        [DefaultValue(typeof(Color), "MediumSlateBlue")]
         public Color OnBackColor
         {
             get => onBackColor;
-            set { onBackColor = value; this.Invalidate(); }
+            set
+            {
+                onBackColor = value;
+                this.Invalidate();
+            }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Appearance")]
+        [DefaultValue(typeof(Color), "WhiteSmoke")]
         public Color OnToggleColor
         {
             get => onToggleColor;
-            set { onToggleColor = value; this.Invalidate(); }
+            set
+            {
+                onToggleColor = value;
+                this.Invalidate();
+            }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Appearance")]
+        [DefaultValue(typeof(Color), "Gray")]
         public Color OffBackColor
         {
             get => offBackColor;
-            set { offBackColor = value; this.Invalidate(); }
+            set
+            {
+                offBackColor = value;
+                this.Invalidate();
+            }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Appearance")]
+        [DefaultValue(typeof(Color), "Gainsboro")]
         public Color OffToggleColor
         {
             get => offToggleColor;
-            set { offToggleColor = value; this.Invalidate(); }
+            set
+            {
+                offToggleColor = value;
+                this.Invalidate();
+            }
         }
 
         [Browsable(false)]
@@ -59,16 +83,20 @@ namespace WinHubX.Forms.Bottoni
             set { }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Appearance")]
         [DefaultValue(true)]
         public bool SolidStyle
         {
             get => solidStyle;
-            set { solidStyle = value; this.Invalidate(); }
+            set
+            {
+                solidStyle = value;
+                this.Invalidate();
+            }
         }
 
-        // New properties for size
-        [Category("RJ Code Advance")]
+        // Properties for size
+        [Category("Appearance")]
         [DefaultValue(20)]
         public int ToggleSize
         {
@@ -81,7 +109,7 @@ namespace WinHubX.Forms.Bottoni
             }
         }
 
-        [Category("RJ Code Advance")]
+        [Category("Appearance")]
         [DefaultValue(2)]
         public int BorderSize
         {
@@ -118,7 +146,7 @@ namespace WinHubX.Forms.Bottoni
             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             pevent.Graphics.Clear(this.Parent.BackColor);
 
-            // Adjusting the toggle size based on the property
+            // Adjust the toggle position based on the property
             int togglePosition = this.Checked ? this.Width - this.Height + 1 : 2;
 
             // Draw the control surface
