@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D10BE9B5-EB77-4F88-99BE-64BC17961D27}|WinHubX\\WinHubX.csproj|c:\\users\\maule\\desktop\\github\\lightyagami28\\winhubx\\winhubx\\winhubx.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{D10BE9B5-EB77-4F88-99BE-64BC17961D27}|WinHubX\\WinHubX.csproj|solutionrelative:winhubx\\winhubx.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{D10BE9B5-EB77-4F88-99BE-64BC17961D27}|WinHubX\\WinHubX.csproj|c:\\users\\maule\\desktop\\github\\lightyagami28\\winhubx\\winhubx\\dialog\\tools\\dialogcheckhw.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D10BE9B5-EB77-4F88-99BE-64BC17961D27}|WinHubX\\WinHubX.csproj|solutionrelative:winhubx\\dialog\\tools\\dialogcheckhw.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "WinHubX",
-              "DocumentMoniker": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\WinHubX.csproj",
-              "RelativeDocumentMoniker": "WinHubX\\WinHubX.csproj",
-              "ToolTip": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\WinHubX.csproj",
-              "RelativeToolTip": "WinHubX\\WinHubX.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-18T07:17:26.491Z",
+              "Title": "DialogCheckHW.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\Dialog\\Tools\\DialogCheckHW.Designer.cs",
+              "RelativeDocumentMoniker": "WinHubX\\Dialog\\Tools\\DialogCheckHW.Designer.cs",
+              "ToolTip": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\Dialog\\Tools\\DialogCheckHW.Designer.cs",
+              "RelativeToolTip": "WinHubX\\Dialog\\Tools\\DialogCheckHW.Designer.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAmwHMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T09:51:52.144Z",
               "EditorCaption": ""
             }
           ]

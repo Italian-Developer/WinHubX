@@ -38,7 +38,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold);
+            label1.Font = new Font("Product Sans Black", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
             label1.Location = new Point(174, 70);
             label1.Name = "label1";
@@ -109,6 +109,7 @@
         #endregion
 
         private Label label1;
+        private Button btnDownload;
         private Button btnDownload;
         private Button btnClose;
         private Label lblInfoTool;
