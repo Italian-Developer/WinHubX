@@ -1,16 +1,23 @@
-﻿namespace WinHubX.Dialog.Tools
-{
-    partial class DialogDaRT
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+﻿using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+namespace WinHubX.Dialog.Tools
+{
+    partial class DialogDaRT : Form
+    {
+        private IContainer components = null;
+        private Button btnDownload;
+        private Button btnClose;
+        private Label lblInfoTool;
+        private PictureBox imgTool;
+
+        public DialogDaRT()
+        {
+            InitializeComponent();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,99 +27,109 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogDaRT));
-            btnDownload = new Button();
-            btnClose = new Button();
-            lblInfoTool = new Label();
-            imgTool = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)imgTool).BeginInit();
-            SuspendLayout();
-            // 
-            // btnDownload
-            // 
-            btnDownload.Cursor = Cursors.Hand;
-            btnDownload.FlatAppearance.BorderSize = 0;
-            btnDownload.FlatStyle = FlatStyle.Flat;
-            btnDownload.Font = new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDownload.ForeColor = Color.White;
-            btnDownload.Location = new Point(166, 313);
-            btnDownload.Margin = new Padding(3, 2, 3, 2);
-            btnDownload.Name = "btnDownload";
-            btnDownload.Size = new Size(368, 52);
-            btnDownload.TabIndex = 80;
-            btnDownload.Text = "Download ~700MB";
-            btnDownload.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnDownload.UseVisualStyleBackColor = true;
-            btnDownload.Click += btnDownload_Click;
-            // 
-            // btnClose
-            // 
-            btnClose.Cursor = Cursors.Hand;
-            btnClose.FlatAppearance.BorderSize = 0;
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Image = Properties.Resources.pngClose;
-            btnClose.Location = new Point(641, 9);
-            btnClose.Margin = new Padding(3, 2, 3, 2);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(48, 41);
-            btnClose.TabIndex = 79;
-            btnClose.UseMnemonic = false;
-            btnClose.UseVisualStyleBackColor = true;
-            btnClose.Click += btnClose_Click;
-            // 
-            // lblInfoTool
-            // 
-            lblInfoTool.Font = new Font("Microsoft Sans Serif", 15F);
-            lblInfoTool.ForeColor = Color.Coral;
-            lblInfoTool.Location = new Point(53, 125);
-            lblInfoTool.Name = "lblInfoTool";
-            lblInfoTool.Size = new Size(595, 186);
-            lblInfoTool.TabIndex = 78;
-            lblInfoTool.Text = resources.GetString("lblInfoTool.Text");
-            lblInfoTool.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // imgTool
-            // 
-            imgTool.Image = Properties.Resources.pngDaRT;
-            imgTool.Location = new Point(148, 11);
-            imgTool.Margin = new Padding(3, 2, 3, 2);
-            imgTool.Name = "imgTool";
-            imgTool.Size = new Size(401, 112);
-            imgTool.TabIndex = 77;
-            imgTool.TabStop = false;
-            // 
-            // DialogDaRT
-            // 
+            var resources = new ComponentResourceManager(typeof(DialogDaRT));
+
+            // Initialize components
+            btnDownload = CreateButton(
+                "Download ~700MB",
+                new Font("Microsoft Sans Serif", 25.8F, FontStyle.Bold),
+                new Point(166, 313),
+                new Size(368, 52),
+                // Use a placeholder for the image
+                null,
+                btnDownload_Click
+            );
+
+            btnClose = CreateButton(
+                null,
+                null,
+                new Point(641, 9),
+                new Size(48, 41),
+                // Use a placeholder for the image
+                null,
+                btnClose_Click,
+                false
+            );
+
+            lblInfoTool = CreateLabel(
+                resources.GetString("lblInfoTool.Text"),
+                new Font("Microsoft Sans Serif", 15F),
+                new Point(53, 125),
+                new Size(595, 186),
+                Color.Coral
+            );
+
+            imgTool = CreatePictureBox(
+                // Use a placeholder for the image
+                null,
+                new Point(148, 11),
+                new Size(401, 112)
+            );
+
+            // DialogDaRT Form properties
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(37, 38, 39);
             ClientSize = new Size(700, 375);
-            Controls.Add(btnDownload);
-            Controls.Add(btnClose);
-            Controls.Add(lblInfoTool);
-            Controls.Add(imgTool);
+            Controls.AddRange(new Control[] { btnDownload, btnClose, lblInfoTool, imgTool });
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "DialogDaRT";
             Text = "DialogDaRT";
-            ((System.ComponentModel.ISupportInitialize)imgTool).EndInit();
             ResumeLayout(false);
         }
 
-        #endregion
+        private Button CreateButton(string text, Font font, Point location, Size size, Image image, EventHandler clickEvent, bool textVisible = true)
+        {
+            var button = new Button
+            {
+                Cursor = Cursors.Hand,
+                FlatAppearance = { BorderSize = 0 },
+                FlatStyle = FlatStyle.Flat,
+                Font = font,
+                ForeColor = Color.White,
+                Location = location,
+                Name = $"{text?.Replace(" ", "") ?? "Unnamed"}Button",
+                Size = size,
+                Text = text,
+                TextImageRelation = TextImageRelation.ImageBeforeText,
+                UseVisualStyleBackColor = true,
+                Image = image,
+                Visible = textVisible
+            };
 
-        private Button btnDownload;
-        private Button btnClose;
-        private Label lblInfoTool;
-        private PictureBox imgTool;
+            button.Click += clickEvent;
+            return button;
+        }
+
+        private Label CreateLabel(string text, Font font, Point location, Size size, Color? foreColor = null)
+        {
+            return new Label
+            {
+                AutoSize = true,
+                Font = font,
+                ForeColor = foreColor ?? Color.White,
+                Location = location,
+                Name = $"{text.Replace(" ", "")}Label",
+                Size = size,
+                Text = text,
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+        }
+
+        private PictureBox CreatePictureBox(Image image, Point location, Size size)
+        {
+            return new PictureBox
+            {
+                Image = image,
+                Location = location,
+                Name = "imgTool",
+                Size = size,
+                TabStop = false
+            };
+        }
     }
 }
