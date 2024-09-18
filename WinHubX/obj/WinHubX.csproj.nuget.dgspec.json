@@ -55,9 +55,13 @@
               "target": "Package",
               "version": "[7.4.0, )"
             },
+            "System.Formats.Asn1": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "System.Management.Automation": {
               "target": "Package",
-              "version": "[7.5.0-preview.4, )"
+              "version": "[7.4.5, )"
             }
           },
           "imports": [

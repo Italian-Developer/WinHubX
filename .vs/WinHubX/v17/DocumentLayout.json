@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D10BE9B5-EB77-4F88-99BE-64BC17961D27}|WinHubX\\WinHubX.csproj|c:\\users\\maule\\desktop\\github\\lightyagami28\\winhubx\\winhubx\\winhubx.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D10BE9B5-EB77-4F88-99BE-64BC17961D27}|WinHubX\\WinHubX.csproj|solutionrelative:winhubx\\winhubx.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,11 +14,20 @@
       "DocumentGroups": [
         {
           "DockedHeight": 317,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WinHubX",
+              "DocumentMoniker": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\WinHubX.csproj",
+              "RelativeDocumentMoniker": "WinHubX\\WinHubX.csproj",
+              "ToolTip": "C:\\Users\\maule\\Desktop\\Github\\LightYagami28\\WinHubX\\WinHubX\\WinHubX.csproj",
+              "RelativeToolTip": "WinHubX\\WinHubX.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-18T07:17:26.491Z",
+              "EditorCaption": ""
             }
           ]
         },

@@ -470,6 +470,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.PowerShell.Native" Version="7.4.0" />
+    <PackageReference Include="System.Formats.Asn1" Version="8.0.1" />
     <PackageReference Include="System.Management.Automation" Version="7.4.5" />
   </ItemGroup>
 
