@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net9.0-windows7.0": {
-      "Microsoft.ApplicationInsights/2.21.0": {
+      "Microsoft.ApplicationInsights/2.22.0": {
         "type": "package",
         "dependencies": {
           "System.Diagnostics.DiagnosticSource": "5.0.0"
@@ -79,18 +79,18 @@
           }
         }
       },
-      "Microsoft.PowerShell.CoreCLR.Eventing/7.4.5": {
+      "Microsoft.PowerShell.CoreCLR.Eventing/7.5.0-preview.4": {
         "type": "package",
         "dependencies": {
-          "System.Diagnostics.EventLog": "8.0.0"
+          "System.Diagnostics.EventLog": "9.0.0-preview.6.24327.7"
         },
         "compile": {
-          "ref/net8.0/Microsoft.PowerShell.CoreCLR.Eventing.dll": {
+          "ref/net9.0/Microsoft.PowerShell.CoreCLR.Eventing.dll": {
             "related": ".xml"
           }
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net8.0/Microsoft.PowerShell.CoreCLR.Eventing.dll": {
+          "runtimes/win/lib/net9.0/Microsoft.PowerShell.CoreCLR.Eventing.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -153,20 +153,12 @@
           }
         }
       },
-      "Microsoft.Security.Extensions/1.2.0": {
+      "Microsoft.Security.Extensions/1.3.0": {
         "type": "package",
         "compile": {
           "ref/netstandard2.0/getfilesiginforedistwrapper.dll": {}
         },
         "runtimeTargets": {
-          "runtimes/win-arm/lib/net5.0/getfilesiginforedistwrapper.dll": {
-            "assetType": "runtime",
-            "rid": "win-arm"
-          },
-          "runtimes/win-arm/native/getfilesiginforedist.dll": {
-            "assetType": "native",
-            "rid": "win-arm"
-          },
           "runtimes/win-arm64/lib/net5.0/getfilesiginforedistwrapper.dll": {
             "assetType": "runtime",
             "rid": "win-arm64"
@@ -193,23 +185,23 @@
           }
         }
       },
-      "Microsoft.Win32.Registry.AccessControl/8.0.0": {
+      "Microsoft.Win32.Registry.AccessControl/9.0.0-preview.6.24327.7": {
         "type": "package",
         "compile": {
-          "lib/net8.0/Microsoft.Win32.Registry.AccessControl.dll": {
+          "lib/net9.0/Microsoft.Win32.Registry.AccessControl.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/Microsoft.Win32.Registry.AccessControl.dll": {
+          "lib/net9.0/Microsoft.Win32.Registry.AccessControl.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net8.0/Microsoft.Win32.Registry.AccessControl.dll": {
+          "runtimes/win/lib/net9.0/Microsoft.Win32.Registry.AccessControl.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -228,178 +220,177 @@
           }
         }
       },
-      "System.CodeDom/8.0.0": {
+      "System.CodeDom/9.0.0-preview.6.24327.7": {
         "type": "package",
         "compile": {
-          "lib/net8.0/System.CodeDom.dll": {
+          "lib/net9.0/System.CodeDom.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.CodeDom.dll": {
+          "lib/net9.0/System.CodeDom.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
-      "System.Configuration.ConfigurationManager/8.0.0": {
+      "System.Configuration.ConfigurationManager/9.0.0-preview.6.24327.7": {
         "type": "package",
         "dependencies": {
-          "System.Diagnostics.EventLog": "8.0.0",
-          "System.Security.Cryptography.ProtectedData": "8.0.0"
+          "System.Diagnostics.EventLog": "9.0.0-preview.6.24327.7",
+          "System.Security.Cryptography.ProtectedData": "9.0.0-preview.6.24327.7"
         },
         "compile": {
-          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
+          "lib/net9.0/System.Configuration.ConfigurationManager.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
+          "lib/net9.0/System.Configuration.ConfigurationManager.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
-      "System.Diagnostics.DiagnosticSource/8.0.1": {
+      "System.Diagnostics.DiagnosticSource/9.0.0-preview.6.24327.7": {
         "type": "package",
         "compile": {
-          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
+          "lib/net9.0/System.Diagnostics.DiagnosticSource.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Diagnostics.DiagnosticSource.dll": {
+          "lib/net9.0/System.Diagnostics.DiagnosticSource.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
-      "System.Diagnostics.EventLog/8.0.0": {
+      "System.Diagnostics.EventLog/9.0.0-preview.6.24327.7": {
         "type": "package",
         "compile": {
-          "lib/net8.0/System.Diagnostics.EventLog.dll": {
+          "lib/net9.0/System.Diagnostics.EventLog.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Diagnostics.EventLog.dll": {
+          "lib/net9.0/System.Diagnostics.EventLog.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll": {
+          "runtimes/win/lib/net9.0/System.Diagnostics.EventLog.Messages.dll": {
             "assetType": "runtime",
             "rid": "win"
           },
-          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll": {
+          "runtimes/win/lib/net9.0/System.Diagnostics.EventLog.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
         }
       },
-      "System.DirectoryServices/8.0.0": {
+      "System.DirectoryServices/9.0.0-preview.6.24327.7": {
         "type": "package",
         "compile": {
-          "lib/net8.0/System.DirectoryServices.dll": {
+          "lib/net9.0/System.DirectoryServices.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.DirectoryServices.dll": {
+          "lib/net9.0/System.DirectoryServices.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net8.0/System.DirectoryServices.dll": {
+          "runtimes/win/lib/net9.0/System.DirectoryServices.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
         }
       },
-      "System.Formats.Asn1/8.0.1": {
+      "System.Formats.Asn1/9.0.0-preview.6.24327.7": {
         "type": "package",
         "compile": {
-          "lib/net8.0/System.Formats.Asn1.dll": {
+          "lib/net9.0/System.Formats.Asn1.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Formats.Asn1.dll": {
+          "lib/net9.0/System.Formats.Asn1.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
-      "System.Management/8.0.0": {
+      "System.Management/9.0.0-preview.6.24327.7": {
         "type": "package",
         "dependencies": {
-          "System.CodeDom": "8.0.0"
+          "System.CodeDom": "9.0.0-preview.6.24327.7"
         },
         "compile": {
-          "lib/net8.0/System.Management.dll": {
+          "lib/net9.0/System.Management.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Management.dll": {
+          "lib/net9.0/System.Management.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net8.0/System.Management.dll": {
+          "runtimes/win/lib/net9.0/System.Management.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
         }
       },
-      "System.Management.Automation/7.4.5": {
+      "System.Management.Automation/7.5.0-preview.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.ApplicationInsights": "2.21.0",
+          "Microsoft.ApplicationInsights": "2.22.0",
           "Microsoft.Management.Infrastructure": "3.0.0",
-          "Microsoft.PowerShell.CoreCLR.Eventing": "7.4.5",
+          "Microsoft.PowerShell.CoreCLR.Eventing": "7.5.0-preview.4",
           "Microsoft.PowerShell.Native": "7.4.0",
-          "Microsoft.Security.Extensions": "1.2.0",
-          "Microsoft.Win32.Registry.AccessControl": "8.0.0",
+          "Microsoft.Security.Extensions": "1.3.0",
+          "Microsoft.Win32.Registry.AccessControl": "9.0.0-preview.6.24327.7",
           "Newtonsoft.Json": "13.0.3",
-          "System.Configuration.ConfigurationManager": "8.0.0",
-          "System.Diagnostics.DiagnosticSource": "8.0.1",
-          "System.DirectoryServices": "8.0.0",
-          "System.Formats.Asn1": "8.0.1",
-          "System.Management": "8.0.0",
+          "System.Configuration.ConfigurationManager": "9.0.0-preview.6.24327.7",
+          "System.Diagnostics.DiagnosticSource": "9.0.0-preview.6.24327.7",
+          "System.DirectoryServices": "9.0.0-preview.6.24327.7",
+          "System.Management": "9.0.0-preview.6.24327.7",
           "System.Security.AccessControl": "6.0.1",
-          "System.Security.Cryptography.Pkcs": "8.0.0",
-          "System.Security.Permissions": "8.0.0",
-          "System.Text.Encoding.CodePages": "8.0.0"
+          "System.Security.Cryptography.Pkcs": "9.0.0-preview.6.24327.7",
+          "System.Security.Permissions": "9.0.0-preview.6.24327.7",
+          "System.Text.Encoding.CodePages": "9.0.0-preview.6.24327.7"
         },
         "compile": {
-          "ref/net8.0/System.Management.Automation.dll": {
+          "ref/net9.0/System.Management.Automation.dll": {
             "related": ".xml"
           }
         },
         "runtimeTargets": {
-          "runtimes/unix/lib/net8.0/System.Management.Automation.dll": {
+          "runtimes/unix/lib/net9.0/System.Management.Automation.dll": {
             "assetType": "runtime",
             "rid": "unix"
           },
-          "runtimes/win/lib/net8.0/System.Management.Automation.dll": {
+          "runtimes/win/lib/net9.0/System.Management.Automation.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -427,102 +418,102 @@
           }
         }
       },
-      "System.Security.Cryptography.Pkcs/8.0.0": {
+      "System.Security.Cryptography.Pkcs/9.0.0-preview.6.24327.7": {
         "type": "package",
         "dependencies": {
-          "System.Formats.Asn1": "8.0.0"
+          "System.Formats.Asn1": "9.0.0-preview.6.24327.7"
         },
         "compile": {
-          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+          "lib/net9.0/System.Security.Cryptography.Pkcs.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+          "lib/net9.0/System.Security.Cryptography.Pkcs.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+          "runtimes/win/lib/net9.0/System.Security.Cryptography.Pkcs.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
         }
       },
-      "System.Security.Cryptography.ProtectedData/8.0.0": {
+      "System.Security.Cryptography.ProtectedData/9.0.0-preview.6.24327.7": {
         "type": "package",
         "compile": {
-          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
+          "lib/net9.0/System.Security.Cryptography.ProtectedData.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
+          "lib/net9.0/System.Security.Cryptography.ProtectedData.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
-      "System.Security.Permissions/8.0.0": {
+      "System.Security.Permissions/9.0.0-preview.6.24327.7": {
         "type": "package",
         "dependencies": {
-          "System.Windows.Extensions": "8.0.0"
+          "System.Windows.Extensions": "9.0.0-preview.6.24327.7"
         },
         "compile": {
-          "lib/net8.0/System.Security.Permissions.dll": {
+          "lib/net9.0/System.Security.Permissions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Security.Permissions.dll": {
+          "lib/net9.0/System.Security.Permissions.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         }
       },
-      "System.Text.Encoding.CodePages/8.0.0": {
+      "System.Text.Encoding.CodePages/9.0.0-preview.6.24327.7": {
         "type": "package",
         "compile": {
-          "lib/net8.0/System.Text.Encoding.CodePages.dll": {
+          "lib/net9.0/System.Text.Encoding.CodePages.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Text.Encoding.CodePages.dll": {
+          "lib/net9.0/System.Text.Encoding.CodePages.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/net8.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net8.0/System.Text.Encoding.CodePages.dll": {
+          "runtimes/win/lib/net9.0/System.Text.Encoding.CodePages.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
         }
       },
-      "System.Windows.Extensions/8.0.0": {
+      "System.Windows.Extensions/9.0.0-preview.6.24327.7": {
         "type": "package",
         "compile": {
-          "lib/net8.0/System.Windows.Extensions.dll": {
+          "lib/net9.0/System.Windows.Extensions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Windows.Extensions.dll": {
+          "lib/net9.0/System.Windows.Extensions.dll": {
             "related": ".xml"
           }
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net8.0/System.Windows.Extensions.dll": {
+          "runtimes/win/lib/net9.0/System.Windows.Extensions.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -531,10 +522,10 @@
     }
   },
   "libraries": {
-    "Microsoft.ApplicationInsights/2.21.0": {
-      "sha512": "btZEDWAFNo9CoYliMCriSMTX3ruRGZTtYw4mo2XyyfLlowFicYVM2Xszi5evDG95QRYV7MbbH3D2RqVwfZlJHw==",
+    "Microsoft.ApplicationInsights/2.22.0": {
+      "sha512": "3AOM9bZtku7RQwHyMEY3tQMrHIgjcfRDa6YQpd/QG2LDGvMydSlL9Di+8LLMt7J2RDdfJ7/2jdYv6yHcMJAnNw==",
       "type": "package",
-      "path": "microsoft.applicationinsights/2.21.0",
+      "path": "microsoft.applicationinsights/2.22.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -548,7 +539,7 @@
         "lib/netstandard2.0/Microsoft.ApplicationInsights.dll",
         "lib/netstandard2.0/Microsoft.ApplicationInsights.pdb",
         "lib/netstandard2.0/Microsoft.ApplicationInsights.xml",
-        "microsoft.applicationinsights.2.21.0.nupkg.sha512",
+        "microsoft.applicationinsights.2.22.0.nupkg.sha512",
         "microsoft.applicationinsights.nuspec"
       ]
     },
@@ -618,19 +609,19 @@
         "runtimes/win-x86/native/microsoft.management.infrastructure.native.unmanaged.dll"
       ]
     },
-    "Microsoft.PowerShell.CoreCLR.Eventing/7.4.5": {
-      "sha512": "yygq1fnGM1cYINM9XfsWUo4K2AAWuKFM/IkTGNlhAMIvxdmPgawgzb9Ygm4u1KNrjdFiJEXsqKqQsMxE9yOwhw==",
+    "Microsoft.PowerShell.CoreCLR.Eventing/7.5.0-preview.4": {
+      "sha512": "cgqh4fL5yd4Tlj61AL0S96x8jqQQSixWwozi/dia7gnlNniTvucU3YDHCAUKV+IB9sTb+e3VnSQbdVaGiAuWSQ==",
       "type": "package",
-      "path": "microsoft.powershell.coreclr.eventing/7.4.5",
+      "path": "microsoft.powershell.coreclr.eventing/7.5.0-preview.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Powershell_black_64.png",
-        "microsoft.powershell.coreclr.eventing.7.4.5.nupkg.sha512",
+        "microsoft.powershell.coreclr.eventing.7.5.0-preview.4.nupkg.sha512",
         "microsoft.powershell.coreclr.eventing.nuspec",
-        "ref/net8.0/Microsoft.PowerShell.CoreCLR.Eventing.dll",
-        "ref/net8.0/Microsoft.PowerShell.CoreCLR.Eventing.xml",
-        "runtimes/win/lib/net8.0/Microsoft.PowerShell.CoreCLR.Eventing.dll"
+        "ref/net9.0/Microsoft.PowerShell.CoreCLR.Eventing.dll",
+        "ref/net9.0/Microsoft.PowerShell.CoreCLR.Eventing.xml",
+        "runtimes/win/lib/net9.0/Microsoft.PowerShell.CoreCLR.Eventing.dll"
       ]
     },
     "Microsoft.PowerShell.Native/7.4.0": {
@@ -662,18 +653,16 @@
         "runtimes/win-x86/native/pwrshplugin.dll"
       ]
     },
-    "Microsoft.Security.Extensions/1.2.0": {
-      "sha512": "GjHZBE5PHKrxPRyGujWQKwbKNjPQYds6HcAWKeV49X3KPgBfF2B1vV5uJey5UluyGQlvAO/DezL7WzEx9HlPQA==",
+    "Microsoft.Security.Extensions/1.3.0": {
+      "sha512": "xK8WFEo5WMUE8DI8W+GjhRwpVcPrxc4DyTjfxh39+yOyhAtC5TBHDlFEJks5toNZHsUeUuiWELIX25oTWOKPBw==",
       "type": "package",
-      "path": "microsoft.security.extensions/1.2.0",
+      "path": "microsoft.security.extensions/1.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "microsoft.security.extensions.1.2.0.nupkg.sha512",
+        "microsoft.security.extensions.1.3.0.nupkg.sha512",
         "microsoft.security.extensions.nuspec",
         "ref/netstandard2.0/getfilesiginforedistwrapper.dll",
-        "runtimes/win-arm/lib/net5.0/getfilesiginforedistwrapper.dll",
-        "runtimes/win-arm/native/getfilesiginforedist.dll",
         "runtimes/win-arm64/lib/net5.0/getfilesiginforedistwrapper.dll",
         "runtimes/win-arm64/native/getfilesiginforedist.dll",
         "runtimes/win-x64/lib/net5.0/getfilesiginforedistwrapper.dll",
@@ -682,38 +671,35 @@
         "runtimes/win-x86/native/getfilesiginforedist.dll"
       ]
     },
-    "Microsoft.Win32.Registry.AccessControl/8.0.0": {
-      "sha512": "u8PB9/v02C8mBXzl0vJ7bOyC020zOP+T1mRct+KA46DqZkB40XtsNn9pGD0QowTRsT6R4jPCghn+yAODn2UMMw==",
+    "Microsoft.Win32.Registry.AccessControl/9.0.0-preview.6.24327.7": {
+      "sha512": "0NFdKoDYDbvhbU7HaiRmndhWbh6lj6t2P56/Fe62k6zI0qxplk40M35yeONnZfb3xctLKd7648L/yJ9c42aO0Q==",
       "type": "package",
-      "path": "microsoft.win32.registry.accesscontrol/8.0.0",
+      "path": "microsoft.win32.registry.accesscontrol/9.0.0-preview.6.24327.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/Microsoft.Win32.Registry.AccessControl.targets",
         "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Win32.Registry.AccessControl.targets",
         "lib/net462/Microsoft.Win32.Registry.AccessControl.dll",
         "lib/net462/Microsoft.Win32.Registry.AccessControl.xml",
-        "lib/net6.0/Microsoft.Win32.Registry.AccessControl.dll",
-        "lib/net6.0/Microsoft.Win32.Registry.AccessControl.xml",
-        "lib/net7.0/Microsoft.Win32.Registry.AccessControl.dll",
-        "lib/net7.0/Microsoft.Win32.Registry.AccessControl.xml",
         "lib/net8.0/Microsoft.Win32.Registry.AccessControl.dll",
         "lib/net8.0/Microsoft.Win32.Registry.AccessControl.xml",
+        "lib/net9.0/Microsoft.Win32.Registry.AccessControl.dll",
+        "lib/net9.0/Microsoft.Win32.Registry.AccessControl.xml",
         "lib/netstandard2.0/Microsoft.Win32.Registry.AccessControl.dll",
         "lib/netstandard2.0/Microsoft.Win32.Registry.AccessControl.xml",
-        "microsoft.win32.registry.accesscontrol.8.0.0.nupkg.sha512",
+        "microsoft.win32.registry.accesscontrol.9.0.0-preview.6.24327.7.nupkg.sha512",
         "microsoft.win32.registry.accesscontrol.nuspec",
-        "runtimes/win/lib/net6.0/Microsoft.Win32.Registry.AccessControl.dll",
-        "runtimes/win/lib/net6.0/Microsoft.Win32.Registry.AccessControl.xml",
-        "runtimes/win/lib/net7.0/Microsoft.Win32.Registry.AccessControl.dll",
-        "runtimes/win/lib/net7.0/Microsoft.Win32.Registry.AccessControl.xml",
         "runtimes/win/lib/net8.0/Microsoft.Win32.Registry.AccessControl.dll",
         "runtimes/win/lib/net8.0/Microsoft.Win32.Registry.AccessControl.xml",
+        "runtimes/win/lib/net9.0/Microsoft.Win32.Registry.AccessControl.dll",
+        "runtimes/win/lib/net9.0/Microsoft.Win32.Registry.AccessControl.xml",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -747,39 +733,38 @@
         "packageIcon.png"
       ]
     },
-    "System.CodeDom/8.0.0": {
-      "sha512": "WTlRjL6KWIMr/pAaq3rYqh0TJlzpouaQ/W1eelssHgtlwHAH25jXTkUphTYx9HaIIf7XA6qs/0+YhtLEQRkJ+Q==",
+    "System.CodeDom/9.0.0-preview.6.24327.7": {
+      "sha512": "Unz+jYpXwjT5+t1Y5UTDz0W3OiqjNv51Xmh8IWL7GQIWcjGs7bKdMswATLme3aXPq/r5Afw719nyCAjSpVoZWg==",
       "type": "package",
-      "path": "system.codedom/8.0.0",
+      "path": "system.codedom/9.0.0-preview.6.24327.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.CodeDom.targets",
         "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.CodeDom.targets",
         "lib/net462/System.CodeDom.dll",
         "lib/net462/System.CodeDom.xml",
-        "lib/net6.0/System.CodeDom.dll",
-        "lib/net6.0/System.CodeDom.xml",
-        "lib/net7.0/System.CodeDom.dll",
-        "lib/net7.0/System.CodeDom.xml",
         "lib/net8.0/System.CodeDom.dll",
         "lib/net8.0/System.CodeDom.xml",
+        "lib/net9.0/System.CodeDom.dll",
+        "lib/net9.0/System.CodeDom.xml",
         "lib/netstandard2.0/System.CodeDom.dll",
         "lib/netstandard2.0/System.CodeDom.xml",
-        "system.codedom.8.0.0.nupkg.sha512",
+        "system.codedom.9.0.0-preview.6.24327.7.nupkg.sha512",
         "system.codedom.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Configuration.ConfigurationManager/8.0.0": {
-      "sha512": "JlYi9XVvIREURRUlGMr1F6vOFLk7YSY4p1vHo4kX3tQ0AGrjqlRWHDi66ImHhy6qwXBG3BJ6Y1QlYQ+Qz6Xgww==",
+    "System.Configuration.ConfigurationManager/9.0.0-preview.6.24327.7": {
+      "sha512": "3e80tro3a+uC96ZcBjWmpGAsHT4PtHyy6FR9ySq0d7BiLMSDEo41qMOFDCGfxMe6RgXWmbLZnov0nVpKumSrOw==",
       "type": "package",
-      "path": "system.configuration.configurationmanager/8.0.0",
+      "path": "system.configuration.configurationmanager/9.0.0-preview.6.24327.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -789,56 +774,53 @@
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.Configuration.ConfigurationManager.targets",
         "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.Configuration.ConfigurationManager.targets",
         "lib/net462/System.Configuration.ConfigurationManager.dll",
         "lib/net462/System.Configuration.ConfigurationManager.xml",
-        "lib/net6.0/System.Configuration.ConfigurationManager.dll",
-        "lib/net6.0/System.Configuration.ConfigurationManager.xml",
-        "lib/net7.0/System.Configuration.ConfigurationManager.dll",
-        "lib/net7.0/System.Configuration.ConfigurationManager.xml",
         "lib/net8.0/System.Configuration.ConfigurationManager.dll",
         "lib/net8.0/System.Configuration.ConfigurationManager.xml",
+        "lib/net9.0/System.Configuration.ConfigurationManager.dll",
+        "lib/net9.0/System.Configuration.ConfigurationManager.xml",
         "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll",
         "lib/netstandard2.0/System.Configuration.ConfigurationManager.xml",
-        "system.configuration.configurationmanager.8.0.0.nupkg.sha512",
+        "system.configuration.configurationmanager.9.0.0-preview.6.24327.7.nupkg.sha512",
         "system.configuration.configurationmanager.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Diagnostics.DiagnosticSource/8.0.1": {
-      "sha512": "vaoWjvkG1aenR2XdjaVivlCV9fADfgyhW5bZtXT23qaEea0lWiUljdQuze4E31vKM7ZWJaSUsbYIKE3rnzfZUg==",
+    "System.Diagnostics.DiagnosticSource/9.0.0-preview.6.24327.7": {
+      "sha512": "8bmVBOdQYQiiysmG+BDk2IsiLMJZVAAYbErnG6dMHBe+E2wywwCZ/4kOq6eZhg65lQ+rVz4eQJXhcZdwHRKBAw==",
       "type": "package",
-      "path": "system.diagnostics.diagnosticsource/8.0.1",
+      "path": "system.diagnostics.diagnosticsource/9.0.0-preview.6.24327.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.Diagnostics.DiagnosticSource.targets",
         "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.Diagnostics.DiagnosticSource.targets",
         "lib/net462/System.Diagnostics.DiagnosticSource.dll",
         "lib/net462/System.Diagnostics.DiagnosticSource.xml",
-        "lib/net6.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net6.0/System.Diagnostics.DiagnosticSource.xml",
-        "lib/net7.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net7.0/System.Diagnostics.DiagnosticSource.xml",
         "lib/net8.0/System.Diagnostics.DiagnosticSource.dll",
         "lib/net8.0/System.Diagnostics.DiagnosticSource.xml",
+        "lib/net9.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net9.0/System.Diagnostics.DiagnosticSource.xml",
         "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
         "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.8.0.1.nupkg.sha512",
+        "system.diagnostics.diagnosticsource.9.0.0-preview.6.24327.7.nupkg.sha512",
         "system.diagnostics.diagnosticsource.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Diagnostics.EventLog/8.0.0": {
-      "sha512": "fdYxcRjQqTTacKId/2IECojlDSFvp7LP5N78+0z/xH7v/Tuw5ZAxu23Y6PTCRinqyu2ePx+Gn1098NC6jM6d+A==",
+    "System.Diagnostics.EventLog/9.0.0-preview.6.24327.7": {
+      "sha512": "mDHj/CP/htiMjPftiY5DtgHF6kxFfrdnVxDO6C5MFU8aUVQl60SqtzGeMMnm9EmUItEdWC2YQM7i0c98N40zJQ==",
       "type": "package",
-      "path": "system.diagnostics.eventlog/8.0.0",
+      "path": "system.diagnostics.eventlog/9.0.0-preview.6.24327.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -848,36 +830,31 @@
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.Diagnostics.EventLog.targets",
         "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.Diagnostics.EventLog.targets",
         "lib/net462/System.Diagnostics.EventLog.dll",
         "lib/net462/System.Diagnostics.EventLog.xml",
-        "lib/net6.0/System.Diagnostics.EventLog.dll",
-        "lib/net6.0/System.Diagnostics.EventLog.xml",
-        "lib/net7.0/System.Diagnostics.EventLog.dll",
-        "lib/net7.0/System.Diagnostics.EventLog.xml",
         "lib/net8.0/System.Diagnostics.EventLog.dll",
         "lib/net8.0/System.Diagnostics.EventLog.xml",
+        "lib/net9.0/System.Diagnostics.EventLog.dll",
+        "lib/net9.0/System.Diagnostics.EventLog.xml",
         "lib/netstandard2.0/System.Diagnostics.EventLog.dll",
         "lib/netstandard2.0/System.Diagnostics.EventLog.xml",
-        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll",
-        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll",
-        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.xml",
-        "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.Messages.dll",
-        "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.dll",
-        "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.xml",
         "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll",
         "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll",
         "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.xml",
-        "system.diagnostics.eventlog.8.0.0.nupkg.sha512",
+        "runtimes/win/lib/net9.0/System.Diagnostics.EventLog.Messages.dll",
+        "runtimes/win/lib/net9.0/System.Diagnostics.EventLog.dll",
+        "runtimes/win/lib/net9.0/System.Diagnostics.EventLog.xml",
+        "system.diagnostics.eventlog.9.0.0-preview.6.24327.7.nupkg.sha512",
         "system.diagnostics.eventlog.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.DirectoryServices/8.0.0": {
-      "sha512": "7nit//efUTy1OsAKco2f02PMrwsR2S234N0dVVp84udC77YcvpOQDz5znAWMtgMWBzY1aRJvUW61jo/7vQRfXg==",
+    "System.DirectoryServices/9.0.0-preview.6.24327.7": {
+      "sha512": "lEs73cmV4fpxr51/0HAzlbl1GUxCWzVrnvoXJJTsJk64BcXxZPqqlIpVZdYaeu1suu/biOHEd2IpTGd4YawEqg==",
       "type": "package",
-      "path": "system.directoryservices/8.0.0",
+      "path": "system.directoryservices/9.0.0-preview.6.24327.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -885,32 +862,28 @@
         "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net6.0/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.DirectoryServices.targets",
         "lib/net462/_._",
-        "lib/net6.0/System.DirectoryServices.dll",
-        "lib/net6.0/System.DirectoryServices.xml",
-        "lib/net7.0/System.DirectoryServices.dll",
-        "lib/net7.0/System.DirectoryServices.xml",
         "lib/net8.0/System.DirectoryServices.dll",
         "lib/net8.0/System.DirectoryServices.xml",
+        "lib/net9.0/System.DirectoryServices.dll",
+        "lib/net9.0/System.DirectoryServices.xml",
         "lib/netstandard2.0/System.DirectoryServices.dll",
         "lib/netstandard2.0/System.DirectoryServices.xml",
-        "runtimes/win/lib/net6.0/System.DirectoryServices.dll",
-        "runtimes/win/lib/net6.0/System.DirectoryServices.xml",
-        "runtimes/win/lib/net7.0/System.DirectoryServices.dll",
-        "runtimes/win/lib/net7.0/System.DirectoryServices.xml",
         "runtimes/win/lib/net8.0/System.DirectoryServices.dll",
         "runtimes/win/lib/net8.0/System.DirectoryServices.xml",
-        "system.directoryservices.8.0.0.nupkg.sha512",
+        "runtimes/win/lib/net9.0/System.DirectoryServices.dll",
+        "runtimes/win/lib/net9.0/System.DirectoryServices.xml",
+        "system.directoryservices.9.0.0-preview.6.24327.7.nupkg.sha512",
         "system.directoryservices.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Formats.Asn1/8.0.1": {
-      "sha512": "XqKba7Mm/koKSjKMfW82olQdmfbI5yqeoLV/tidRp7fbh5rmHAQ5raDI/7SU0swTzv+jgqtUGkzmFxuUg0it1A==",
+    "System.Formats.Asn1/9.0.0-preview.6.24327.7": {
+      "sha512": "CrHu6KOkOGybw32sCjIpvF7ooobY3DOBI6ySrNgZWt8nD6YWSLv3SYMUdzwJgLHGXajAugVAEIIFeEQ8bb7kNw==",
       "type": "package",
-      "path": "system.formats.asn1/8.0.1",
+      "path": "system.formats.asn1/9.0.0-preview.6.24327.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -919,27 +892,25 @@
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.Formats.Asn1.targets",
         "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.Formats.Asn1.targets",
         "lib/net462/System.Formats.Asn1.dll",
         "lib/net462/System.Formats.Asn1.xml",
-        "lib/net6.0/System.Formats.Asn1.dll",
-        "lib/net6.0/System.Formats.Asn1.xml",
-        "lib/net7.0/System.Formats.Asn1.dll",
-        "lib/net7.0/System.Formats.Asn1.xml",
         "lib/net8.0/System.Formats.Asn1.dll",
         "lib/net8.0/System.Formats.Asn1.xml",
+        "lib/net9.0/System.Formats.Asn1.dll",
+        "lib/net9.0/System.Formats.Asn1.xml",
         "lib/netstandard2.0/System.Formats.Asn1.dll",
         "lib/netstandard2.0/System.Formats.Asn1.xml",
-        "system.formats.asn1.8.0.1.nupkg.sha512",
+        "system.formats.asn1.9.0.0-preview.6.24327.7.nupkg.sha512",
         "system.formats.asn1.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Management/8.0.0": {
-      "sha512": "jrK22i5LRzxZCfGb+tGmke2VH7oE0DvcDlJ1HAKYU8cPmD8XnpUT0bYn2Gy98GEhGjtfbR/sxKTVb+dE770pfA==",
+    "System.Management/9.0.0-preview.6.24327.7": {
+      "sha512": "8q16eov1BStMpWkEG5czfp5sMthqvkRfqTfls9VnYptdVdRlBmDwZ2/6kwn/hcUrCExQLFh26aXOKQkXbqxR3A==",
       "type": "package",
-      "path": "system.management/8.0.0",
+      "path": "system.management/9.0.0-preview.6.24327.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -947,41 +918,37 @@
         "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net6.0/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.Management.targets",
         "lib/net462/_._",
-        "lib/net6.0/System.Management.dll",
-        "lib/net6.0/System.Management.xml",
-        "lib/net7.0/System.Management.dll",
-        "lib/net7.0/System.Management.xml",
         "lib/net8.0/System.Management.dll",
         "lib/net8.0/System.Management.xml",
+        "lib/net9.0/System.Management.dll",
+        "lib/net9.0/System.Management.xml",
         "lib/netstandard2.0/System.Management.dll",
         "lib/netstandard2.0/System.Management.xml",
-        "runtimes/win/lib/net6.0/System.Management.dll",
-        "runtimes/win/lib/net6.0/System.Management.xml",
-        "runtimes/win/lib/net7.0/System.Management.dll",
-        "runtimes/win/lib/net7.0/System.Management.xml",
         "runtimes/win/lib/net8.0/System.Management.dll",
         "runtimes/win/lib/net8.0/System.Management.xml",
-        "system.management.8.0.0.nupkg.sha512",
+        "runtimes/win/lib/net9.0/System.Management.dll",
+        "runtimes/win/lib/net9.0/System.Management.xml",
+        "system.management.9.0.0-preview.6.24327.7.nupkg.sha512",
         "system.management.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Management.Automation/7.4.5": {
-      "sha512": "M8diPEl3ycy5juoSwCQkJVyiG6pHjv9IPD/bvqcnrQfAsbYzqDLVQLzfurHVrQHKvqAWB4k3xwtHMyYjG8xR9Q==",
+    "System.Management.Automation/7.5.0-preview.4": {
+      "sha512": "imKGnY7IxqxiGvTk3jeynuQPJraN2LZ0lHAurYUY+/t+GOPjWXyfiH6P9LAX2ZJ5fbSZHfoj0zJfxROSxRaMEQ==",
       "type": "package",
-      "path": "system.management.automation/7.4.5",
+      "path": "system.management.automation/7.5.0-preview.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Powershell_black_64.png",
-        "ref/net8.0/System.Management.Automation.dll",
-        "ref/net8.0/System.Management.Automation.xml",
-        "runtimes/unix/lib/net8.0/System.Management.Automation.dll",
-        "runtimes/win/lib/net8.0/System.Management.Automation.dll",
-        "system.management.automation.7.4.5.nupkg.sha512",
+        "ref/net9.0/System.Management.Automation.dll",
+        "ref/net9.0/System.Management.Automation.xml",
+        "runtimes/unix/lib/net9.0/System.Management.Automation.dll",
+        "runtimes/win/lib/net9.0/System.Management.Automation.dll",
+        "system.management.automation.7.5.0-preview.4.nupkg.sha512",
         "system.management.automation.nuspec"
       ]
     },
@@ -1014,47 +981,44 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Security.Cryptography.Pkcs/8.0.0": {
-      "sha512": "ULmp3xoOwNYjOYp4JZ2NK/6NdTgiN1GQXzVVN1njQ7LOZ0d0B9vyMnhyqbIi9Qw4JXj1JgCsitkTShboHRx7Eg==",
+    "System.Security.Cryptography.Pkcs/9.0.0-preview.6.24327.7": {
+      "sha512": "EZjmL2/stWeIu9lHDuGx2aDTbQba4HMz3/IG2nIyKn+ATNHN47cw+JCxOlzkUP8EwW9prYjMDKqsb3lmGrrvuA==",
       "type": "package",
-      "path": "system.security.cryptography.pkcs/8.0.0",
+      "path": "system.security.cryptography.pkcs/9.0.0-preview.6.24327.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.Security.Cryptography.Pkcs.targets",
         "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Pkcs.targets",
         "lib/net462/System.Security.Cryptography.Pkcs.dll",
         "lib/net462/System.Security.Cryptography.Pkcs.xml",
-        "lib/net6.0/System.Security.Cryptography.Pkcs.dll",
-        "lib/net6.0/System.Security.Cryptography.Pkcs.xml",
-        "lib/net7.0/System.Security.Cryptography.Pkcs.dll",
-        "lib/net7.0/System.Security.Cryptography.Pkcs.xml",
         "lib/net8.0/System.Security.Cryptography.Pkcs.dll",
         "lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/net9.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net9.0/System.Security.Cryptography.Pkcs.xml",
         "lib/netstandard2.0/System.Security.Cryptography.Pkcs.dll",
         "lib/netstandard2.0/System.Security.Cryptography.Pkcs.xml",
         "lib/netstandard2.1/System.Security.Cryptography.Pkcs.dll",
         "lib/netstandard2.1/System.Security.Cryptography.Pkcs.xml",
-        "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll",
-        "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.xml",
-        "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.dll",
-        "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.xml",
         "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll",
         "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.xml",
-        "system.security.cryptography.pkcs.8.0.0.nupkg.sha512",
+        "runtimes/win/lib/net9.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net9.0/System.Security.Cryptography.Pkcs.xml",
+        "system.security.cryptography.pkcs.9.0.0-preview.6.24327.7.nupkg.sha512",
         "system.security.cryptography.pkcs.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Security.Cryptography.ProtectedData/8.0.0": {
-      "sha512": "+TUFINV2q2ifyXauQXRwy4CiBhqvDEDZeVJU7qfxya4aRYOKzVBpN+4acx25VcPB9ywUN6C0n8drWl110PhZEg==",
+    "System.Security.Cryptography.ProtectedData/9.0.0-preview.6.24327.7": {
+      "sha512": "Ulp+gxVgBy0F2dIOuL0G/EnguymLAtSsXeo5BnhH5eo8rP2fdscvRFne6KZjCMxRg6ei913P8OS8w8aqO9KMcg==",
       "type": "package",
-      "path": "system.security.cryptography.protecteddata/8.0.0",
+      "path": "system.security.cryptography.protecteddata/9.0.0-preview.6.24327.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1064,62 +1028,59 @@
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.Security.Cryptography.ProtectedData.targets",
         "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.Security.Cryptography.ProtectedData.targets",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
         "lib/net462/System.Security.Cryptography.ProtectedData.dll",
         "lib/net462/System.Security.Cryptography.ProtectedData.xml",
-        "lib/net6.0/System.Security.Cryptography.ProtectedData.dll",
-        "lib/net6.0/System.Security.Cryptography.ProtectedData.xml",
-        "lib/net7.0/System.Security.Cryptography.ProtectedData.dll",
-        "lib/net7.0/System.Security.Cryptography.ProtectedData.xml",
         "lib/net8.0/System.Security.Cryptography.ProtectedData.dll",
         "lib/net8.0/System.Security.Cryptography.ProtectedData.xml",
+        "lib/net9.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net9.0/System.Security.Cryptography.ProtectedData.xml",
         "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
         "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.xml",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "system.security.cryptography.protecteddata.8.0.0.nupkg.sha512",
+        "system.security.cryptography.protecteddata.9.0.0-preview.6.24327.7.nupkg.sha512",
         "system.security.cryptography.protecteddata.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Security.Permissions/8.0.0": {
-      "sha512": "v/BBylw7XevuAsHXoX9dDUUfmBIcUf7Lkz8K3ZXIKz3YRKpw8YftpSir4n4e/jDTKFoaK37AsC3xnk+GNFI1Ow==",
+    "System.Security.Permissions/9.0.0-preview.6.24327.7": {
+      "sha512": "oQdCmE+CY3mOMbR7qXs0i5odeMaANdDEXKfSpauFWjWIiQpvxKgxtAfFZCFc2AfQheDp89OglOB+VPB2fuxWaA==",
       "type": "package",
-      "path": "system.security.permissions/8.0.0",
+      "path": "system.security.permissions/9.0.0-preview.6.24327.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.Security.Permissions.targets",
         "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.Security.Permissions.targets",
         "lib/net462/System.Security.Permissions.dll",
         "lib/net462/System.Security.Permissions.xml",
-        "lib/net6.0/System.Security.Permissions.dll",
-        "lib/net6.0/System.Security.Permissions.xml",
-        "lib/net7.0/System.Security.Permissions.dll",
-        "lib/net7.0/System.Security.Permissions.xml",
         "lib/net8.0/System.Security.Permissions.dll",
         "lib/net8.0/System.Security.Permissions.xml",
+        "lib/net9.0/System.Security.Permissions.dll",
+        "lib/net9.0/System.Security.Permissions.xml",
         "lib/netstandard2.0/System.Security.Permissions.dll",
         "lib/netstandard2.0/System.Security.Permissions.xml",
-        "system.security.permissions.8.0.0.nupkg.sha512",
+        "system.security.permissions.9.0.0-preview.6.24327.7.nupkg.sha512",
         "system.security.permissions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Text.Encoding.CodePages/8.0.0": {
-      "sha512": "OZIsVplFGaVY90G2SbpgU7EnCoOO5pw1t4ic21dBF3/1omrJFpAGoNAVpPyMVOC90/hvgkGG3VFqR13YgZMQfg==",
+    "System.Text.Encoding.CodePages/9.0.0-preview.6.24327.7": {
+      "sha512": "D6rb97VEl4cest4RhJ4Vh6IorWLonrcLNNAI8KBh6WUNStbPuO8yvVTHGOzhg84goALW7qNeD5W+DYy963ZRZQ==",
       "type": "package",
-      "path": "system.text.encoding.codepages/8.0.0",
+      "path": "system.text.encoding.codepages/9.0.0-preview.6.24327.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1129,58 +1090,51 @@
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/System.Text.Encoding.CodePages.targets",
         "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
+        "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/System.Text.Encoding.CodePages.targets",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
         "lib/net462/System.Text.Encoding.CodePages.dll",
         "lib/net462/System.Text.Encoding.CodePages.xml",
-        "lib/net6.0/System.Text.Encoding.CodePages.dll",
-        "lib/net6.0/System.Text.Encoding.CodePages.xml",
-        "lib/net7.0/System.Text.Encoding.CodePages.dll",
-        "lib/net7.0/System.Text.Encoding.CodePages.xml",
         "lib/net8.0/System.Text.Encoding.CodePages.dll",
         "lib/net8.0/System.Text.Encoding.CodePages.xml",
+        "lib/net9.0/System.Text.Encoding.CodePages.dll",
+        "lib/net9.0/System.Text.Encoding.CodePages.xml",
         "lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
         "lib/netstandard2.0/System.Text.Encoding.CodePages.xml",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.dll",
-        "runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.xml",
-        "runtimes/win/lib/net7.0/System.Text.Encoding.CodePages.dll",
-        "runtimes/win/lib/net7.0/System.Text.Encoding.CodePages.xml",
         "runtimes/win/lib/net8.0/System.Text.Encoding.CodePages.dll",
         "runtimes/win/lib/net8.0/System.Text.Encoding.CodePages.xml",
-        "system.text.encoding.codepages.8.0.0.nupkg.sha512",
+        "runtimes/win/lib/net9.0/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/net9.0/System.Text.Encoding.CodePages.xml",
+        "system.text.encoding.codepages.9.0.0-preview.6.24327.7.nupkg.sha512",
         "system.text.encoding.codepages.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Windows.Extensions/8.0.0": {
-      "sha512": "Obg3a90MkOw9mYKxrardLpY2u0axDMrSmy4JCdq2cYbelM2cUwmUir5Bomvd1yxmPL9h5LVHU1tuKBZpUjfASg==",
+    "System.Windows.Extensions/9.0.0-preview.6.24327.7": {
+      "sha512": "GgnKHHwK/sHQdZ6LyUrHyRGTg7NulvJ7FQEvoQ0bEYieTHUEUZEKtqYDqK9ijBAojigGHCaleyuic9HgdTiyIw==",
       "type": "package",
-      "path": "system.windows.extensions/8.0.0",
+      "path": "system.windows.extensions/9.0.0-preview.6.24327.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "lib/net6.0/System.Windows.Extensions.dll",
-        "lib/net6.0/System.Windows.Extensions.xml",
-        "lib/net7.0/System.Windows.Extensions.dll",
-        "lib/net7.0/System.Windows.Extensions.xml",
         "lib/net8.0/System.Windows.Extensions.dll",
         "lib/net8.0/System.Windows.Extensions.xml",
-        "runtimes/win/lib/net6.0/System.Windows.Extensions.dll",
-        "runtimes/win/lib/net6.0/System.Windows.Extensions.xml",
-        "runtimes/win/lib/net7.0/System.Windows.Extensions.dll",
-        "runtimes/win/lib/net7.0/System.Windows.Extensions.xml",
+        "lib/net9.0/System.Windows.Extensions.dll",
+        "lib/net9.0/System.Windows.Extensions.xml",
         "runtimes/win/lib/net8.0/System.Windows.Extensions.dll",
         "runtimes/win/lib/net8.0/System.Windows.Extensions.xml",
-        "system.windows.extensions.8.0.0.nupkg.sha512",
+        "runtimes/win/lib/net9.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net9.0/System.Windows.Extensions.xml",
+        "system.windows.extensions.9.0.0-preview.6.24327.7.nupkg.sha512",
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -1189,8 +1143,7 @@
   "projectFileDependencyGroups": {
     "net9.0-windows7.0": [
       "Microsoft.PowerShell.Native >= 7.4.0",
-      "System.Formats.Asn1 >= 8.0.1",
-      "System.Management.Automation >= 7.4.5"
+      "System.Management.Automation >= 7.5.0-preview.4"
     ]
   },
   "packageFolders": {
@@ -1248,13 +1201,9 @@
             "target": "Package",
             "version": "[7.4.0, )"
           },
-          "System.Formats.Asn1": {
-            "target": "Package",
-            "version": "[8.0.1, )"
-          },
           "System.Management.Automation": {
             "target": "Package",
-            "version": "[7.4.5, )"
+            "version": "[7.5.0-preview.4, )"
           }
         },
         "imports": [
