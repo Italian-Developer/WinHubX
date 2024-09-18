@@ -110,7 +110,6 @@
 
         private Label label1;
         private Button btnDownload;
-        private Button btnDownload;
         private Button btnClose;
         private Label lblInfoTool;
     }
