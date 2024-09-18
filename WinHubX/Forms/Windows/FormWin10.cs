@@ -173,7 +173,7 @@ namespace WinHubX.Forms.Windows
             if (e.Button == MouseButtons.Right)
             {
 
-                Clipboard.SetText("aa762fe9425ef8aa87629bb83a42f413cf93af18a78e9de50832d2e94c0fc46f");
+                Clipboard.SetText("2220ecf55ff6ee8b7c90d78ea536c7b7e4943f08593a6e1e68fc41b9b02e6f9f");
 
                 notifyIcon.BalloonTipTitle = "SHA256 copiato!";
                 notifyIcon.BalloonTipText = "Il codice hash è stato copiato negli appunti.";
@@ -185,7 +185,7 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/1nu72xmuzr6z",
+                        FileName = "https://devuploads.com/1we8p6x7pw5m",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
@@ -219,6 +219,7 @@ namespace WinHubX.Forms.Windows
                     };
                     Process.Start(psi);
                     MessageBox.Show("Usa 'Rufus4Lite' presente nella sezione Tools.", "Informazione");
+                    MessageBox.Show("Se possibile esporta i driver del pc cosi da non incorrere a problemi futuri. Per farlo puoi usare l'app DataLock presente in AIMODS-Store", "Informazione");
                 }
                 catch (Exception ex)
                 {
@@ -232,7 +233,7 @@ namespace WinHubX.Forms.Windows
             if (e.Button == MouseButtons.Right)
             {
 
-                Clipboard.SetText("3abfc7760cb44dc3c9a711fe7ee50c2ad12a9345ee9d458fafd17acc52c9a363");
+                Clipboard.SetText("f94e62cf032907c485c9be331828cc400720a9f944e9d70bf8479316c73c7aff");
 
                 notifyIcon.BalloonTipTitle = "SHA256 copiato!";
                 notifyIcon.BalloonTipText = "Il codice hash è stato copiato negli appunti.";
@@ -244,11 +245,12 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/15wasqeex4xs",
+                        FileName = "https://devuploads.com/2frntgd8r5qr",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
                     MessageBox.Show("Usa 'Rufus4Lite' presente nella sezione Tools.", "Informazione");
+                    MessageBox.Show("Se possibile esporta i driver del pc cosi da non incorrere a problemi futuri. Per farlo puoi usare l'app DataLock presente in AIMODS-Store", "Informazione");
                 }
                 catch (Exception ex)
                 {

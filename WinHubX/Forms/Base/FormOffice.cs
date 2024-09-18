@@ -251,10 +251,25 @@ namespace WinHubX
                 string resourcePath = $"{assemblyName}.Resources.WinHubXOfficeScrubber.ps1";
                 byte[] exeBytes = LoadEmbeddedResource(resourcePath);
                 string ps1FilePath = Path.Combine(Path.GetTempPath(), "WinHubXOfficeScrubber.ps1");
+
+                // Scrivi il file PowerShell nella cartella temporanea
                 File.WriteAllBytes(ps1FilePath, exeBytes);
-                StartPowerShell(ps1FilePath);
+
+                // Controlla se il file è stato scritto correttamente
+                if (File.Exists(ps1FilePath))
+                {
+                    StartPowerShell(ps1FilePath);
+                }
+                else
+                {
+                    MessageBox.Show($"Il file {ps1FilePath} non è stato estratto correttamente.", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            finally { }
+            catch (Exception ex)
+            {
+                // Gestione delle eccezioni
+                MessageBox.Show($"Si è verificato un errore: {ex.Message}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private byte[] LoadEmbeddedResource(string resourcePath)

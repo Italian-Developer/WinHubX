@@ -17,7 +17,9 @@ namespace WinHubX.Forms.Personalizzazione_office
             radiobutton_office2021.Checked = false;
             radiobutton_office365.Checked = false;
             this.ActiveControl = progressBar_office;
+            ExtractFolderToTemp();
         }
+
 
         private void btn_avviainstallazione_Click(object sender, EventArgs e)
         {
@@ -25,8 +27,7 @@ namespace WinHubX.Forms.Personalizzazione_office
             {
                 if (radioButton_x64.Checked)
                 {
-                    string xmlFilePath = @"C:\Configurazione2021x64.xml";
-                    ExtractAndSaveResource("Configurazione2021x64.xml", xmlFilePath);
+                    string xmlFilePath = Path.Combine(GetTempFolderPath(), "Configurazione2021x64.xml");
 
                     if (checkBox_visio.Checked)
                     {
@@ -224,6 +225,36 @@ namespace WinHubX.Forms.Personalizzazione_office
                 }
             }
         }
+
+        private void ExtractFolderToTemp()
+        {
+            try
+            {
+                string tempFolder = GetTempFolderPath();
+
+                if (!Directory.Exists(tempFolder))
+                {
+                    Directory.CreateDirectory(tempFolder);
+                }
+
+                // Estrai i file necessari
+                ExtractAndSaveResource("Configurazione2021x64.xml", Path.Combine(tempFolder, "Configurazione2021x64.xml"));
+                ExtractAndSaveResource("Configurazione2021x32.xml", Path.Combine(tempFolder, "Configurazione2021x32.xml"));
+                ExtractAndSaveResource("Configurazione365x64.xml", Path.Combine(tempFolder, "Configurazione365x64.xml"));
+                ExtractAndSaveResource("Configurazione365x32.xml", Path.Combine(tempFolder, "Configurazione365x32.xml"));
+                ExtractAndSaveResource("bin.exe", Path.Combine(tempFolder, "bin.exe"));
+ }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Errore durante l'estrazione della cartella: {ex.Message}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private string GetTempFolderPath()
+        {
+            return Path.Combine(Path.GetTempPath(), "OfficePersonalizzato");
+        }
+
 
         private void AddElementToXml(string xmlFilePath, string xmlToAdd)
         {
@@ -451,31 +482,40 @@ namespace WinHubX.Forms.Personalizzazione_office
             try
             {
                 progressBar_office.Value = 0;
-                // Determine the path to the executable relative to the application directory
-                string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                string binExePath = Path.Combine(appDirectory, "Resources", "OfficePersonalizzato", "bin.exe");
+
+                // Path to the folder where the executable was extracted
+                string tempPath = Path.Combine(Path.GetTempPath(), "OfficePersonalizzato");
+                string binExePath = Path.Combine(tempPath, "bin.exe");
+
                 progressBar_office.Value = 15;
+
                 // Check if the executable exists
                 if (!File.Exists(binExePath))
                     throw new FileNotFoundException("Executable not found.", binExePath);
+
                 progressBar_office.Value = 30;
+
                 // Prepare the process start information
                 string arguments = $"/configure \"{xmlFilePath}\"";
                 ProcessStartInfo startInfo = new ProcessStartInfo
                 {
                     FileName = binExePath,
                     Arguments = arguments,
-                    WorkingDirectory = Path.GetDirectoryName(binExePath), // Set the working directory
+                    WorkingDirectory = tempPath, // Set the working directory to the temp folder
                     UseShellExecute = false,
                     CreateNoWindow = true
                 };
 
                 // Start the process
                 Process.Start(startInfo);
+
                 progressBar_office.Value = 50;
                 progressBar_office.Value = 75;
                 MessageBox.Show("Avviata l'installazione personalizzata.", "Operazione completata", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Optionally delete the XML file after installation
                 File.Delete(xmlFilePath);
+
                 progressBar_office.Value = 100;
             }
             catch (Exception ex)

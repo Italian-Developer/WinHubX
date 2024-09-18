@@ -20,9 +20,41 @@ namespace WinHubX
             #region descrizione WinHubX 
 
             string description = "Changelog WinHubX\n\n" +
-                                    "06/09/2024 - v2.4.0.3:\n" +
+                                    "17/09/2024 - v2.4.0.8:\n" +
+                                    "- Correzzione crazione ISO windows10 e 11\n" +
+                                    "- Modifica visualizzazione creazione iso\n" +
+                                    "- Aggiornamento iso Lite 10x64 e 11\n" +
+                                    "- Modificata logica update app\n" +
+                                    "- Aggiunte informazioni driver sui bottoni\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "07/09/2024 - v2.4.0.7:\n" +
+                                    "- Aggiornato PC Manager\n" +
+                                    "- Fix ScrubberOffice\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "07/09/2024 - v2.4.0.6:\n" +
+                                    "- Fix isotool11\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "07/09/2024 - v2.4.0.5:\n" +
+                                    "- Fix Personalizzazione office\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "05/09/2024 - v2.4.0.4:\n" +
+                                    "- Fix Vari\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "04/09/2024 - v2.4.0.3:\n" +
                                     "- Eliminato personalizzazioni\n" +
                                     "- Eliminato monitoraggio\n" +
+                                    "- Aggiornato WSA\n" +
+                                    "- Aggiornato codici creazione iso\n" +
                                     "- Aggiunto WinHubX-SystemTray\n" +
                                     "- Aggiunto update\n" +
                                     "\n" +
