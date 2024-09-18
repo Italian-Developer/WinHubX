@@ -1,63 +1,64 @@
-WinHubX nasce dalla collaborazione di due appassionati del settore, volendo condividere le proprie conoscenze in modo semplice e alla portata di tutti, offrendo varie soluzioni a portata di pochi click.
-Con questo tool avrai la possibilità di scaricare ISO di Windows (STOCK e LITE), installare Office, e molto altro ancora nella sezione Tools!
-È un progetto in continua evoluzione, quindi seguite gli aggiornamenti per non perdervi le novità!
+# WinHubX - Changelog
 
-Changelog
+WinHubX nasce dalla collaborazione di due appassionati del settore, con l'obiettivo di condividere le proprie conoscenze in modo semplice e accessibile a tutti. Con questo tool è possibile scaricare ISO di Windows (STOCK e LITE), installare Office e accedere a molte altre funzionalità nella sezione Tools. Il progetto è in continua evoluzione, quindi seguire gli aggiornamenti è essenziale per non perdere le ultime novità!
 
-23/02/2024 - v1.0.0.0:
-- Lancio ufficiale del tool
-- Creazione loghi
-- Creazione sezione Home
+---
 
-- Creazione sezione Windows
-- Creazione sotto-sezione Windows 7 (Stock e Lite - 32bit e 64bit)
-- Creazione sotto-sezione Windows 8.1 (Stock e Lite - 32bit e 64bit)
-- Creazione sotto-sezione Windows 10 (Stock e Lite - ARM64, 32bit e 64bit)
-- Creazione sotto-sezione Windows 11 (Stock e Lite - ARM64 e 64bit)
+## [v1.0.0.0] - 23/02/2024
 
-- Creazione sezione Office (2019, 2021, 365, 2024)
-- Creazione sotto-sezione Office 2019 Online (32bit e 64bit)
-- Creazione sotto-sezione Office 2021 Online (32bit e 64bit)
-- Creazione sotto-sezione Office 365 Online (32bit e 64bit)
+### Novità:
+- Lancio ufficiale del tool.
+- Creazione dei loghi.
+- Creazione della sezione Home.
 
-- Creazione sezione Tools
-- Creazione sotto-sezione WinCustomizer (download)
-- Creazione sotto-sezione WIMToolKit (download)
-- Creazione sotto-sezione DaRT (download)
-- Creazione sotto-sezione Rufus4Lite (portable)
-- Creazione sotto-sezione Microsoft PC Manager (setup)
-- Creazione sotto-sezione RST Driver (zip)
-- Creazione sotto-sezione CheckHW (bat automatizzato)
+### Windows:
+- Creazione della sezione Windows con sotto-sezioni:
+  - **Windows 7**: Versioni Stock e Lite (32bit e 64bit).
+  - **Windows 8.1**: Versioni Stock e Lite (32bit e 64bit).
+  - **Windows 10**: Versioni Stock e Lite (ARM64, 32bit e 64bit).
+  - **Windows 11**: Versioni Stock e Lite (ARM64 e 64bit).
 
-- Implementazione funzionalità "Copia codice hash SHA256"
-- Implementazione funzionalità "Visualizza Changelog"
-- Implementazione funzionalità "Contatta i Developers"
-- Implementazione funzionalità "Sostieni i Developers"
+### Office:
+- Creazione della sezione Office (2019, 2021, 365, 2024) con sotto-sezioni:
+  - **Office 2019**: Versioni Online (32bit e 64bit).
+  - **Office 2021**: Versioni Online (32bit e 64bit).
+  - **Office 365**: Versioni Online (32bit e 64bit).
 
+### Tools:
+- Creazione della sezione Tools con sotto-sezioni:
+  - **WinCustomizer**: download.
+  - **WIMToolKit**: download.
+  - **DaRT**: download.
+  - **Rufus4Lite**: versione portable.
+  - **Microsoft PC Manager**: setup.
+  - **RST Driver**: file zip.
+  - **CheckHW**: script batch automatizzato.
 
+### Funzionalità:
+- Implementata la funzionalità "Copia codice hash SHA256".
+- Implementata la funzionalità "Visualizza Changelog".
+- Implementata la funzionalità "Contatta i Developers".
+- Implementata la funzionalità "Sostieni i Developers".
 
-Cose da fare Nico:
+---
 
-link Kofi
+## Cose da fare:
 
-link win7 stock
-link win7 lite
-link win8.1 stock
-link win8.1 lite
-link win10 stock (+arm?)
-link win10 lite
-log win10 lite
-link win11 stock (+arm?)
-link win11 lite
+- [ ] Aggiungere il link a Ko-fi per le donazioni.
+- [ ] Aggiungere i link per:
+  - Windows 7 Stock e Lite.
+  - Windows 8.1 Stock e Lite.
+  - Windows 10 Stock (incluso ARM).
+  - Windows 10 Lite.
+  - Windows 11 Stock (incluso ARM).
+  - Windows 11 Lite.
+  - Office 2019 Online e Offline (includere hash).
+  - Office 2021 Online e Offline (includere hash).
+  - Office 365 Online e Offline (includere hash).
+  - DaRT.
 
-link office2019 online
-link office2019 offline
-hash office2019 offline
-link office2021 online
-link office2021 offline
-hash office2021 offline
-link office365 online
-link office365 offline
-hash office365 offline
+---
 
-link dart
+## Contatti
+
+- Per contattare gli sviluppatori, usa [questo link](https://t.me/mrnico98) o scrivi a [Alessandro824@proton.me](mailto:Alessandro824@proton.me).
