@@ -2,43 +2,45 @@
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
 
-# Define the Orbs
+# Define the Orbs for integrations
 orbs:
   codecov: codecov/codecov@4.0.1
 
 # Define the jobs
 jobs:
+  # Simple job to print a greeting
   say-hello:
     docker:
       - image: cimg/base:current
     steps:
       - checkout
       - run:
-          name: "Say hello"
+          name: "Say Hello"
           command: "echo Hello, World!"
 
+  # Job to run tests and upload results to Codecov
   upload-to-codecov:
     docker:
       - image: cimg/base:current
     steps:
       - checkout
       - run:
-          name: "Run tests"
+          name: "Run Tests"
           command: "echo Running tests..."
       - run:
-          name: "Generate junit report"
+          name: "Generate JUnit Report"
           command: "echo Generating junit.xml report..."
       - run:
-          name: Upload test results to Codecov
+          name: "Upload Test Results to Codecov"
           command: |
             curl -Os https://uploader.codecov.io/latest/linux/codecov
             chmod +x codecov
             ./codecov -t ${{ secrets.CODECOV_TOKEN }} -f ./junit.xml
 
-# Define the workflows
+# Define the workflows to orchestrate jobs
 workflows:
   version: 2
-  say-hello-workflow:
+  test-and-upload-workflow:
     jobs:
       - say-hello
       - upload-to-codecov
