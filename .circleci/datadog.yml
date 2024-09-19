@@ -1,0 +1,22 @@
+version: 2.1
+
+jobs:
+  datadog-monitoring:
+    docker:
+      - image: circleci/python:3.8
+    steps:
+      - checkout
+      - run:
+          name: "Installa DataDog Agent"
+          command: |
+            DD_AGENT_MAJOR_VERSION=7 DD_API_KEY=${{ secrets.DATADOG_API_KEY }} DD_SITE="datadoghq.com" bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script.sh)"
+      - run:
+          name: "Avvia il DataDog Agent"
+          command: |
+            datadog-agent start
+
+workflows:
+  version: 2
+  monitor-datadog:
+    jobs:
+      - datadog-monitoring
