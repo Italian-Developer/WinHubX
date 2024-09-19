@@ -3,7 +3,7 @@
 
 ## Descrizione
 
-WinHubX è un potente toolbox open-source per Windows, progettato come debloater e ottimizzatore. È stato recentemente ricodificato in .NET 9.0 grazie al contributo di [LightYagami](https://www.yourprofilelink.com). Il progetto è stato buildato tramite Visual Studio e analizzato tramite Snyk per garantire la massima sicurezza e qualità del codice.
+WinHubX è un potente toolbox open-source per Windows, progettato come debloater e ottimizzatore. È stato recentemente ricodificato in .NET 9.0 grazie al contributo di [LightYagami](https://t,me/LightYagami28). Il progetto è stato buildato tramite Visual Studio e analizzato tramite Snyk per garantire la massima sicurezza e qualità del codice.
 
 ## Parla di noi
 
