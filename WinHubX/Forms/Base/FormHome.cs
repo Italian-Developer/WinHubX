@@ -20,8 +20,13 @@ namespace WinHubX
             #region descrizione WinHubX 
 
             string description = "Changelog WinHubX\n\n" +
+                                    "17/09/2024 - v2.4.0.9:\n" +
+                                    "- Fix link lite\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
                                     "17/09/2024 - v2.4.0.8:\n" +
-                                    "- Correzzione crazione ISO windows10 e 11\n" +
+                                    "- Correzione crazione ISO windows10 e 11\n" +
                                     "- Modifica visualizzazione creazione iso\n" +
                                     "- Aggiornamento iso Lite 10x64 e 11\n" +
                                     "- Modificata logica update app\n" +

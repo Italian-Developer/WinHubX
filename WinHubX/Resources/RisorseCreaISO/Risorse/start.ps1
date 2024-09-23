@@ -28,13 +28,13 @@ while (-not $success) {
 ########################################################
 
 # check for process
-Write-Host -fore Green 'Il processo di ottimizzazione iniziera a breve non chiudermi, attendi...'
+Write-Host -fore Green 'Il processo di ottimizzazione iniziera a breve, il mouse e la tastiera sono disabilitate durante il processo'
 
 while ($true) {
     $process = Get-Process -Name SecurityHealthSystray -ErrorAction SilentlyContinue
 
     if ($process) {
-        Write-Host "SecurityHealthSystray sta funzionando."
+        Write-Host "SecurityHealthSystray is running."
         break  # Exit the loop
     }
     
@@ -117,104 +117,29 @@ foreach ($task in $tasks) {
    Disable-ScheduledTask -TaskName $task
 }
 
+
 $services = @(
-"diagnosticshub.standardcollector.service", 
-    "DiagTrack",                                    
-    "dmwappushservice",                             
-    "lfsvc",                                        
-    "MapsBroker",                                   
-    "NetTcpPortSharing",                            
-    "RemoteAccess",                                 
-    "RemoteRegistry",                               
-    "SharedAccess",                                 
-    "TrkWks",                                       
-    "WbioSrvc",                                     
-    "WMPNetworkSvc",                                
-    "XblAuthManager",                               
-    "XblGameSave",                                  
-    "XboxNetApiSvc",                                
-    "XboxGipSvc",                                   
-    "WerSvc",                                       
-    "Fax",                                          
-    "fhsvc",                                        
-    "gupdate",                                      
-    "gupdatem",                                     
-    "stisvc",                                       
-    "AJRouter",                                     
-    "MSDTC",                                        
-    "WpcMonSvc",                                    
-    "PcaSvc",                                       
-    "WPDBusEnum",                                   
-    "LicenseManager",                               
-    "seclogon",                                     
-    "SysMain",                                      
-    "lmhosts",                                      
-    "wisvc",                                        
-    "FontCache",                                    
-    "RetailDemo",                                   
-    "ALG",                                          
-    "SCPolicySvc",                                  
-    "MessagingService_34048",                       
-    "EntAppSvc",                                    
-    "Browser",                                      
-    "BthAvctpSvc",                                  
-    "BDESVC",                                       
-    "iphlpsvc",                                     
-    "edgeupdatem",                                  
-    "SEMgrSvc",                                     
-    "PerfHost",                                     
-    "BcastDVRUserService_48486de",                  
-    "CaptureService_48486de",                       
-    "cbdhsvc_48486de",                              
-    "SNMPTrap",                                     
-    "SECOMNService",                                
-    "AMD External Events Utility",                  
-    "cbdhsvc_34048",                                
-    "autotimesvc",                                  
-    "TokenBroker",                                  
-    "RmSvc",                                        
-    "SensorDataService",                            
-    "tzautoupdate",                                 
-    "SynTPEnhService",                              
-    "RasMan",                                       
-    "BcastDVRUserService_34048",                    
-    "PenService_34048",                             
-    "tapisrv",                                      
-    "HPAppHelperCap",                               
-    "HPDiagsCap",                                   
-    "HPNetworkCap",                                 
-    "HPSysInfoCap",                                 
-    "HpTouchpointAnalyticsService",                 
-    "HvHost",                                       
-    "vmickvpexchange",                              
-    "vmicguestinterface",                           
-    "vmicshutdown",                                 
-    "vmicheartbeat",                                
-    "vmicvmsession",                                
-    "vmicrdv",                                      
-    "vmictimesync",                                 
-    "SupportAssistAgent",                           
-    "DellUpService",                                
-    "DataVault",                                    
-    "DellCustomerConnect",                          
-    "Dell.Foundation.Agent",                        
-    "nosGetPlusHelper",                             
-    "AxInstSV",
-    "PimIndexMaintenanceSvc",
-    "CDPUserSvc",
-    "lltdsvc",
-    "AppVClient",
-    "CscService",
-    "QWAVE",
-    "SensrSvc"
-    Out-File -FilePath  ".\log.txt" -Append
+    "diagnosticshub.standardcollector.service" # Microsoft (R) Diagnostics Hub Standard Collector Service
+    "DiagTrack"                                # Diagnostics Tracking Service
+    "dmwappushservice"                         # WAP Push Message Routing Service (see known issues)
+    "lfsvc"                                    # Geolocation Service
+    "MapsBroker"                               # Downloaded Maps Manager
+    "NetTcpPortSharing"                        # Net.Tcp Port Sharing Service
+    "RemoteAccess"                             # Routing and Remote Access
+    "RemoteRegistry"                           # Remote Registry
+    "SharedAccess"                             # Internet Connection Sharing (ICS)
+    "TrkWks"                                   # Distributed Link Tracking Client
+    "WbioSrvc"                                 # Windows Biometric Service (required for Fingerprint reader / facial detection)
+    "WMPNetworkSvc"                            # Windows Media Player Network Sharing Service
+    "XblAuthManager"                           # Xbox Live Auth Manager
+    "XblGameSave"                              # Xbox Live Game Save Service
+    "XboxNetApiSvc"                            # Xbox Live Networking Service
+    "ndu"                                      # Windows Network Data Usage Monitor
 )
 
 foreach ($service in $services) {
-    Get-Service -Name $service | Stop-Service -Force | Out-File -FilePath  ".\log.txt" -Append
-    Get-Service -Name $service | Set-Service -StartupType Disabled | Out-File -FilePath  ".\log.txt" -Append
-    Write-Output "Trying to disable $service" | Out-File -FilePath  ".\log.txt" -Append
-    Write-Output "Trying to Stop $service" | Out-File -FilePath  ".\log.txt" -Append
+    Write-Output "Trying to disable $service"
+    Get-Service -Name $service | Set-Service -StartupType Disabled
 }
 
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\New-FolderForced.psm1
@@ -376,10 +301,6 @@ Write-Output "Removing user folders under This PC"
 Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
 Remove-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
 
-#echo "Disabling tile push notification"
-#New-FolderForced -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications"
-#sp "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" "NoTileApplicationNotification" 1
-
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\New-FolderForced.psm1
 
 Write-Output "Disable automatic download and installation of Windows updates"
@@ -392,9 +313,6 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Wi
 Write-Output "Disable seeding of updates to other computers via Group Policies"
 New-FolderForced -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization" "DODownloadMode" 0
-
-#echo "Disabling automatic driver update"
-#sp "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching" "SearchOrderConfig" 0
 
 $objSID = New-Object System.Security.Principal.SecurityIdentifier "S-1-1-0"
 $EveryOne = $objSID.Translate( [System.Security.Principal.NTAccount]).Value
@@ -520,6 +438,7 @@ cmd.exe /c reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory
 # disable (Edge) Prelaunch
 cmd.exe /c reg add "HKLM\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main" /v AllowPrelaunch /t REG_DWORD /d "0" /f
 
+# SSD life improvement
 fsutil behavior set DisableLastAccess 1
 fsutil behavior set EncryptPagingFile 0
 
@@ -712,6 +631,8 @@ $ErrorActionPreference           = "SilentlyContinue"
     $Services = @(
         "MixedRealityOpenXRSvc" # Mixed Reality
         "WMPNetworkSvc" # Windows Media Player Sharing
+        #"LicenseManager" # License Manager for Microsoft Store
+        #"wisvc" # Insider Program
         "WerSvc" # write-host Reporting
         "WalletService" # Wallet Service
         "SysMain" # SuperFetch - Safe to disable if you have a SSD
@@ -857,7 +778,6 @@ $ErrorActionPreference           = "SilentlyContinue"
     }
     Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications" -Name "GlobalUserDisabled" -Type DWord -Value 1
     write-host("Disabled Background application access")
-    
 if (Test-Path "C:\Windows\debloatapp.pref") {
     write-host("Disabling OneDrive...")
     If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive")) {
@@ -886,7 +806,6 @@ if (Test-Path "C:\Windows\debloatapp.pref") {
         )
     }
     write-host("Disabled OneDrive")
-
 
     write-host("Removing bloatware, wait...")
     $BloatwareList = @(
@@ -1007,16 +926,16 @@ if (Test-Path $integratedServicesPath) {
     # Uninstall with winget
     winget uninstall "Microsoft Edge" --accept-source-agreements --silent | out-null
 
-    Write-Host "Fine, file modificato."
-    Write-Host "Se Edge è ancora presente, significa che non hai installato il KB che abilita quella funzionalità."
-    Write-Host "Installa gli aggiornamenti più recenti da Windows Update e riprova."
+    Write-Host "Done, file edited."
+    Write-Host "If Edge is still present, that means you have not installed the KB that enables that feature."
+    Write-Host "Please install the latest updates from Windows Update and retry."
     
     Start-Sleep 05
 
 }
 else {
     # File does not exist
-    Write-Host "The file $integratedServicesPath does not exist. Installa gli aggiornamenti più recenti da Windows Update e riprova."
+    Write-Host "The file $integratedServicesPath does not exist. Install the latest updates from windows update and retry!"
     Start-Sleep 05
     exit
 }

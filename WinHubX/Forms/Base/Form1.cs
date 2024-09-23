@@ -86,7 +86,7 @@ namespace WinHubX
         private async Task CheckForUpdatesAsync()
         {
             string updateInfoUrl = "https://raw.githubusercontent.com/MrNico98/WinHubX/main/update.json";
-            string currentVersion = "2.4.0.8"; // Inserisci qui il numero di versione corrente dell'applicazione
+            string currentVersion = "2.4.0.9"; // Inserisci qui il numero di versione corrente dell'applicazione
 
             try
             {
@@ -109,7 +109,7 @@ namespace WinHubX
                     }
                     else
                     {
-                        MessageBox.Show("Stai usando l'ultima versione disponibile", "Non ci sono aggiornamenti");
+
                     }
                 }
             }
@@ -258,7 +258,7 @@ namespace WinHubX
             swap_pnlNav(btnupdate);
 
             string updateInfoUrl = "https://raw.githubusercontent.com/MrNico98/WinHubX/main/update.json";
-            string currentVersion = "2.4.0.8"; // Inserisci qui il numero di versione corrente dell'applicazione
+            string currentVersion = "2.4.0.9"; // Inserisci qui il numero di versione corrente dell'applicazione
 
             try
             {
