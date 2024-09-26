@@ -74,7 +74,49 @@ namespace WinHubX
             formHome.FormBorderStyle = FormBorderStyle.None;
             PnlFormLoader.Controls.Add(formHome);
             formHome.Show();
+            CheckForUpdatesOnStartup();
+        }
 
+        private async void CheckForUpdatesOnStartup()
+        {
+            // Chiama il nuovo metodo per verificare gli aggiornamenti
+            await CheckForUpdatesAsync();
+        }
+
+        private async Task CheckForUpdatesAsync()
+        {
+            string updateInfoUrl = "https://raw.githubusercontent.com/MrNico98/WinHubX/main/update.json";
+            string currentVersion = "2.4.0.9"; // Inserisci qui il numero di versione corrente dell'applicazione
+
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    var response = await client.GetStringAsync(updateInfoUrl);
+                    dynamic updateInfo = JsonConvert.DeserializeObject(response);
+
+                    string latestVersion = updateInfo.version;
+
+                    if (latestVersion != currentVersion)
+                    {
+                        DialogResult result = MessageBox.Show($"Nuova versione ({latestVersion}) disponibile. Note di rilascio: {updateInfo.releaseNotes}. Vuoi aggiornare?", "Aggiornamento Disponibile", MessageBoxButtons.YesNo);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            string updateUrl = updateInfo.updateUrl;
+                            await DownloadAndUpdate(updateUrl, latestVersion);
+                        }
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Errore durante il controllo degli aggiornamenti: {ex.Message}", "Errore");
+            }
         }
 
         public static void RemoveRegistryKeys()
@@ -215,8 +257,8 @@ namespace WinHubX
         {
             swap_pnlNav(btnupdate);
 
-            string updateInfoUrl = "https://aimodsitalia.store/WinHubX/update.json";
-            string currentVersion = "2.4.0.3"; // Inserisci qui il numero di versione corrente dell'applicazione
+            string updateInfoUrl = "https://raw.githubusercontent.com/MrNico98/WinHubX/main/update.json";
+            string currentVersion = "2.4.0.9"; // Inserisci qui il numero di versione corrente dell'applicazione
 
             try
             {
@@ -250,10 +292,9 @@ namespace WinHubX
         }
         private async Task DownloadAndUpdate(string updateUrl, string version)
         {
-            string updateFileName = $"WinHubX_SystemMonitorApp{version}.exe";
+            string updateFileName = $"WinHubX{version}.exe";
             string updateFilePath = Path.Combine(Path.GetTempPath(), updateFileName);
 
-            // Mostra il form di progresso
             using (var progressForm = new ProgressForm())
             {
                 progressForm.Show();
@@ -264,15 +305,30 @@ namespace WinHubX
                     using (var client = new HttpClient())
                     {
                         // Scarica il file di aggiornamento
-                        progressForm.SetStatus("Scaricamento file di aggiornamento...", 0);
+                        progressForm.SetStatus("Download file di aggiornamento...", 0);
                         await DownloadFileWithProgress(client, updateUrl, updateFilePath, progressForm);
                     }
-
-                    // Esegui l'aggiornamento in un nuovo thread
-                    Thread updateThread = new Thread(() => ExecuteUpdate(updateFilePath));
-                    updateThread.Start();
-
-                    // Chiudi la finestra principale dell'applicazione, lasciando il thread di aggiornamento in esecuzione
+                    string currentExecutablePath = Application.ExecutablePath;
+                    string oldExecutablePath = Path.ChangeExtension(currentExecutablePath, ".old");
+                    if (File.Exists(oldExecutablePath))
+                    {
+                        File.Delete(oldExecutablePath);
+                    }
+                    File.Move(currentExecutablePath, oldExecutablePath);
+                    File.Move(updateFilePath, currentExecutablePath);
+                    Process.Start(currentExecutablePath);
+                    Task.Run(async () =>
+                    {
+                        await Task.Delay(5000);
+                        if (File.Exists(oldExecutablePath))
+                        {
+                            File.Delete(oldExecutablePath);
+                        }
+                        if (File.Exists(updateFilePath))
+                        {
+                            File.Delete(updateFilePath);
+                        }
+                    });
                     Application.Exit();
                 }
                 catch (Exception ex)
@@ -283,48 +339,6 @@ namespace WinHubX
                 {
                     progressForm.CompleteOperation();
                 }
-            }
-        }
-
-        private void ExecuteUpdate(string updateFilePath)
-        {
-            try
-            {
-                // Attendere un breve intervallo per garantire che l'applicazione principale sia chiusa
-                Thread.Sleep(2000);
-
-                // Ottieni il percorso dell'eseguibile corrente
-                string currentExecutablePath = Application.ExecutablePath;
-                string oldExecutablePath = Path.ChangeExtension(currentExecutablePath, ".old");
-
-                // Rinominare l'eseguibile corrente a .old
-                if (File.Exists(currentExecutablePath))
-                {
-                    File.Move(currentExecutablePath, oldExecutablePath);
-                }
-
-                // Sostituisci l'eseguibile con la nuova versione
-                File.Move(updateFilePath, currentExecutablePath);
-
-                // Avvia il nuovo eseguibile
-                var processStartInfo = new ProcessStartInfo
-                {
-                    FileName = currentExecutablePath,
-                    Arguments = "/silent",
-                    UseShellExecute = true,
-                    Verb = "runas" // Richiede privilegi di amministratore, se necessario
-                };
-
-                Process.Start(processStartInfo);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Errore durante l'aggiornamento: {ex.Message}", "Errore");
-            }
-            finally
-            {
-                // Chiudi l'applicazione attuale
-                Environment.Exit(0);
             }
         }
 

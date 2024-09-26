@@ -17,7 +17,9 @@ namespace WinHubX.Forms.Personalizzazione_office
             radiobutton_office2021.Checked = false;
             radiobutton_office365.Checked = false;
             this.ActiveControl = progressBar_office;
+            ExtractFolderToTemp();
         }
+
 
         private void btn_avviainstallazione_Click(object sender, EventArgs e)
         {
@@ -25,8 +27,7 @@ namespace WinHubX.Forms.Personalizzazione_office
             {
                 if (radioButton_x64.Checked)
                 {
-                    string xmlFilePath = @"C:\Configurazione2021x64.xml";
-                    ExtractAndSaveResource("Configurazione2021x64.xml", xmlFilePath);
+                    string xmlFilePath = Path.Combine(GetTempFolderPath(), "Configurazione2021x64.xml");
 
                     if (checkBox_visio.Checked)
                     {
@@ -223,7 +224,140 @@ namespace WinHubX.Forms.Personalizzazione_office
                     StartInstallation(xmlFilePath);
                 }
             }
+            if (radioButton_office2024.Checked)
+            {
+                if (radioButton_x64.Checked)
+                {
+                    string xmlFilePath = @"C:\Configurazione2024x64.xml";
+                    ExtractAndSaveResource("Configurazione2024x64.xml", xmlFilePath);
+
+                    if (checkBox_visio.Checked)
+                    {
+                        AddElementToXml2024(xmlFilePath, CreateVisioXml365());
+                    }
+                    if (checkBox_project.Checked)
+                    {
+                        AddElementToXml2024(xmlFilePath, CreateProjectXml365());
+                    }
+                    if (checkBox_word.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Word");
+                    }
+                    if (checkBox_excel.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Excel");
+                    }
+                    if (checkBox_powerpoint.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "PowerPoint");
+                    }
+                    if (checkBox_outlook.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Outlook");
+                    }
+                    if (checkBox_onenote.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "OneNote");
+                    }
+                    if (checkBox_onedrive.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "OneDrive");
+                    }
+                    if (checkBox_publisher.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Publisher");
+                    }
+                    if (checkBox_access.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Access");
+                    }
+
+                    // Avvia l'installazione personalizzata
+                    StartInstallation(xmlFilePath);
+                }
+                else if (radioButton_x32.Checked)
+                {
+                    string xmlFilePath = @"C:\Configurazione2024x32.xml";
+                    ExtractAndSaveResource("Configurazione2024x32.xml", xmlFilePath);
+
+                    if (checkBox_visio.Checked)
+                    {
+                        AddElementToXml2024(xmlFilePath, CreateVisioXml365());
+                    }
+                    if (checkBox_project.Checked)
+                    {
+                        AddElementToXml2024(xmlFilePath, CreateProjectXml365());
+                    }
+                    if (checkBox_word.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Word");
+                    }
+                    if (checkBox_excel.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Excel");
+                    }
+                    if (checkBox_powerpoint.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "PowerPoint");
+                    }
+                    if (checkBox_outlook.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Outlook");
+                    }
+                    if (checkBox_onenote.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "OneNote");
+                    }
+                    if (checkBox_onedrive.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "OneDrive");
+                    }
+                    if (checkBox_publisher.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Publisher");
+                    }
+                    if (checkBox_access.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Access");
+                    }
+
+                    // Avvia l'installazione personalizzata
+                    StartInstallation(xmlFilePath);
+                }
+            }
         }
+
+        private void ExtractFolderToTemp()
+        {
+            try
+            {
+                string tempFolder = GetTempFolderPath();
+
+                if (!Directory.Exists(tempFolder))
+                {
+                    Directory.CreateDirectory(tempFolder);
+                }
+
+                // Estrai i file necessari
+                ExtractAndSaveResource("Configurazione2021x64.xml", Path.Combine(tempFolder, "Configurazione2021x64.xml"));
+                ExtractAndSaveResource("Configurazione2021x32.xml", Path.Combine(tempFolder, "Configurazione2021x32.xml"));
+                ExtractAndSaveResource("Configurazione365x64.xml", Path.Combine(tempFolder, "Configurazione365x64.xml"));
+                ExtractAndSaveResource("Configurazione365x32.xml", Path.Combine(tempFolder, "Configurazione365x32.xml"));
+                ExtractAndSaveResource("Configurazione2024x64.xml", Path.Combine(tempFolder, "Configurazione2024x64.xml"));
+                ExtractAndSaveResource("Configurazione2024x32.xml", Path.Combine(tempFolder, "Configurazione2024x32.xml"));
+                ExtractAndSaveResource("bin.exe", Path.Combine(tempFolder, "bin.exe"));
+ }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Errore durante l'estrazione della cartella: {ex.Message}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private string GetTempFolderPath()
+        {
+            return Path.Combine(Path.GetTempPath(), "OfficePersonalizzato");
+        }
+
 
         private void AddElementToXml(string xmlFilePath, string xmlToAdd)
         {
@@ -295,6 +429,45 @@ namespace WinHubX.Forms.Personalizzazione_office
                 else
                 {
                     MessageBox.Show($"Non è stato trovato alcun nodo Product con ID='O365BusinessRetail' nel file XML.", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Si è verificato un errore durante l'aggiunta dell'elemento all'XML: {ex.Message}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AddElementToXml2024(string xmlFilePath, string xmlToAdd)
+        {
+            try
+            {
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(xmlFilePath);
+
+                XmlNode root = xmlDoc.DocumentElement;
+
+                // Find the Product node for ProPlus2021Volume
+                XmlNode proPlusProductNode = root.SelectSingleNode("//Product[@ID='ProPlus2024Volume']");
+
+                if (proPlusProductNode != null)
+                {
+                    // Create a new Product node from the string
+                    XmlDocumentFragment fragment = xmlDoc.CreateDocumentFragment();
+                    fragment.InnerXml = xmlToAdd;
+
+                    // Insert the new Product node after the ProPlus2021Volume node
+                    XmlNode parentNode = proPlusProductNode.ParentNode;
+                    parentNode.InsertAfter(fragment, proPlusProductNode);
+
+                    // Update proPlusProductNode to point to the newly added node for further additions
+                    proPlusProductNode = fragment.LastChild;
+
+                    // Save the modified XML file
+                    xmlDoc.Save(xmlFilePath);
+                }
+                else
+                {
+                    MessageBox.Show($"Non è stato trovato alcun nodo Product con ID='ProPlus2024Volume' nel file XML.", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -451,31 +624,40 @@ namespace WinHubX.Forms.Personalizzazione_office
             try
             {
                 progressBar_office.Value = 0;
-                // Determine the path to the executable relative to the application directory
-                string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                string binExePath = Path.Combine(appDirectory, "Resources", "OfficePersonalizzato", "bin.exe");
+
+                // Path to the folder where the executable was extracted
+                string tempPath = Path.Combine(Path.GetTempPath(), "OfficePersonalizzato");
+                string binExePath = Path.Combine(tempPath, "bin.exe");
+
                 progressBar_office.Value = 15;
+
                 // Check if the executable exists
                 if (!File.Exists(binExePath))
                     throw new FileNotFoundException("Executable not found.", binExePath);
+
                 progressBar_office.Value = 30;
+
                 // Prepare the process start information
                 string arguments = $"/configure \"{xmlFilePath}\"";
                 ProcessStartInfo startInfo = new ProcessStartInfo
                 {
                     FileName = binExePath,
                     Arguments = arguments,
-                    WorkingDirectory = Path.GetDirectoryName(binExePath), // Set the working directory
+                    WorkingDirectory = tempPath, // Set the working directory to the temp folder
                     UseShellExecute = false,
                     CreateNoWindow = true
                 };
 
                 // Start the process
                 Process.Start(startInfo);
+
                 progressBar_office.Value = 50;
                 progressBar_office.Value = 75;
                 MessageBox.Show("Avviata l'installazione personalizzata.", "Operazione completata", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Optionally delete the XML file after installation
                 File.Delete(xmlFilePath);
+
                 progressBar_office.Value = 100;
             }
             catch (Exception ex)
@@ -506,7 +688,6 @@ namespace WinHubX.Forms.Personalizzazione_office
             progressBar_office.Minimum = 0;
             progressBar_office.Maximum = 100;
             progressBar_office.Step = 1;
-            progressBar_office.Visible = false; // Inizialmente nascosta
             Controls.Add(progressBar_office);
         }
     }

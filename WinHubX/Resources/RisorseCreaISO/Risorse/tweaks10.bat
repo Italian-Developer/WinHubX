@@ -5,20 +5,6 @@ setlocal EnableDelayedExpansion
 wmic UserAccount set PasswordExpires=False
 IF EXIST "C:\Windows\debloatapp.pref" (
 powershell -command "$ErrorActionPreference = 'SilentlyContinue'; Get-AppxPackage -AllUsers | Where-Object {$_.name -notmatch 'Microsoft.VP9VideoExtensions|Microsoft.WebMediaExtensions|Microsoft.WebpImageExtension|Microsoft.Windows.ShellExperienceHost|Microsoft.VCLibs*|Microsoft.DesktopAppInstaller|Microsoft.StorePurchaseApp|Microsoft.Windows.Photos|Microsoft.WindowsStore|Microsoft.XboxIdentityProvider|Microsoft.WindowsCalculator|Microsoft.HEIFImageExtension|Microsoft.UI.Xaml*'} | Remove-AppxPackage"
-)
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "HideSCAMeetNow" /t "REG_DWORD" /d 1 /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "HideSCAMeetNow" /t "REG_DWORD" /d 1 /f
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Search" /v "SearchboxTaskbarMode" /t REG_DWORD /d 0 /f
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowTaskViewButton" /t REG_DWORD /d 0 /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds" /v "EnableFeeds" /t "REG_DWORD" /d 0 /f
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds" /v "ShellFeedsTaskbarViewMode" /t "REG_DWORD" /d 2 /f
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideFileExt" /t REG_DWORD /d 0 /f
-reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate /v TargetReleaseVersion /t REG_DWORD /d 1 /f
-reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate /v ProductVersion /d "Windows 10" /f 
-reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate /v TargetReleaseVersionInfo /d "22H2" /f 
-reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate /v DisableOSUpgrade /t REG_DWORD /d 1 /f 
-reg add HKLM\SOFTWARE\Policies\Microsoft\WindowsStore /v DisableOSUpgrade /t REG_DWORD /d 1 /f 
-reg add HKLM\SYSTEM\Setup\UpgradeNotification /v UpgradeAvailable /t REG_DWORD /d 0 /f
 wmic os get osarchitecture 2>NUL | find "64-bit">NUL
 IF "%ERRORLEVEL%"=="0" echo "64 bit!" && goto :64bit
 
@@ -33,21 +19,31 @@ goto :bing
 :32bit
 powershell -command "Get-Process OneDrive | Stop-Process -Force"
 powershell -command "C:\Windows\System32\OneDriveSetup.exe /uninstall"
+)
 
-:bing
-reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v BingSearchEnabled /t REG_DWORD /d 0 /f
-
-reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize /v AppsUseLightTheme /t REG_DWORD /d 0 /f
-reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize /v SystemUsesLightTheme /t REG_DWORD /d 0 /f
-reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize /v EnableTransparency /t REG_DWORD /d 1 /f
-reg add "HKCU\Control Panel\Colors" /v ImmersiveApplicationForeground /t REG_SZ /d "255 255 255" /f
+PowerRun.exe cmd.exe /c "reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "HideSCAMeetNow" /t "REG_DWORD" /d 1 /f"
+PowerRun.exe cmd.exe /c "reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "HideSCAMeetNow" /t "REG_DWORD" /d 1 /f"
+PowerRun.exe cmd.exe /c "reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Search" /v "SearchboxTaskbarMode" /t REG_DWORD /d 0 /f"
+PowerRun.exe cmd.exe /c "reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowTaskViewButton" /t REG_DWORD /d 0 /f"
+PowerRun.exe cmd.exe /c "reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds" /v "EnableFeeds" /t "REG_DWORD" /d 0 /f"
+PowerRun.exe cmd.exe /c "reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds" /v "ShellFeedsTaskbarViewMode" /t "REG_DWORD" /d 2 /f"
+PowerRun.exe cmd.exe /c "reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideFileExt" /t REG_DWORD /d 0 /f"
+PowerRun.exe cmd.exe /c "reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate /v TargetReleaseVersion /t REG_DWORD /d 1 /f"
+PowerRun.exe cmd.exe /c "reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate /v ProductVersion /d "Windows 10" /f"
+PowerRun.exe cmd.exe /c "reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate /v TargetReleaseVersionInfo /d "22H2" /f"
+PowerRun.exe cmd.exe /c "reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate /v DisableOSUpgrade /t REG_DWORD /d 1 /f"
+PowerRun.exe cmd.exe /c "reg add HKLM\SOFTWARE\Policies\Microsoft\WindowsStore /v DisableOSUpgrade /t REG_DWORD /d 1 /f"
+PowerRun.exe cmd.exe /c "reg add HKLM\SYSTEM\Setup\UpgradeNotification /v UpgradeAvailable /t REG_DWORD /d 0 /f"
+PowerRun.exe cmd.exe /c "reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Search /v BingSearchEnabled /t REG_DWORD /d 0 /f"
+PowerRun.exe cmd.exe /c "reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize /v EnableTransparency /t REG_DWORD /d 1 /f"
+PowerRun.exe cmd.exe /c "reg add "HKCU\Control Panel\Colors" /v ImmersiveApplicationForeground /t REG_SZ /d "255 255 255" /f"
 del /f /s /q /a "%AppData%\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\*"
-reg delete HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband /f
+PowerRun.exe cmd.exe /c "reg delete HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband /f"
 del /s /q "C:\Users\%username%\Desktop\*.lnk" 
-reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v OemPreInstalledAppsEnabled /t REG_DWORD /d 0 /f
-reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v PreInstalledAppsEnabled /t REG_DWORD /d 0 /f
-reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v SilentInstalledAppsEnabled /t REG_DWORD /d 0 /f
-reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\CloudContent /v DisableWindowsConsumerFeatures /t REG_DWORD /d 1 /f
+PowerRun.exe cmd.exe /c "reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v OemPreInstalledAppsEnabled /t REG_DWORD /d 0 /f"
+PowerRun.exe cmd.exe /c "reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v PreInstalledAppsEnabled /t REG_DWORD /d 0 /f"
+PowerRun.exe cmd.exe /c "reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v SilentInstalledAppsEnabled /t REG_DWORD /d 0 /f"
+PowerRun.exe cmd.exe /c "reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\CloudContent /v DisableWindowsConsumerFeatures /t REG_DWORD /d 1 /f"
 taskkill /F /IM SearchUI.exe
 move "%windir%\SystemApps\Microsoft.Windows.Cortana_cw5n1h2txyewy" "%windir%\SystemApps\Microsoft.Windows.Cortana_cw5n1h2txyewy.bak"
 sc config wsearch start=auto
@@ -56,9 +52,6 @@ sc config DiagTrack start=disabled
 sc config dmwappushservice start=disabled
 move "C:\Windows\[AIMODS]-Store.exe" "C:\Users\%username%\Desktop"
 powerShell -ExecutionPolicy Bypass -File "C:\Windows\unpin_start_tiles.ps1"
-IF EXIST "C:\Windows\noupdate.pref" (
-reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoWindowsUpdate /t REG_DWORD /d 1 /f
-)
 set regKeyPath=HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
 set exportedRegFile=ContentDeliveryManager.reg
 
@@ -99,45 +92,46 @@ goto :edge
 
 :edge
 echo.
-echo Killing Microsoft Edge...
-echo.
 taskkill /F /IM msedge.exe 2>nul
-
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\EdgeUpdate" /v "DoNotUpdateToEdgeWithChromium" /t REG_DWORD /d 1 /f
-
 PowerRun.exe cmd.exe /c "rmdir /s / q "C:\Program Files (x86)\Microsoft\Edge""
 PowerRun.exe cmd.exe /c "rmdir /s / q "C:\Program Files\Microsoft\Edge""
-
 del "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Edge.lnk"2>nul
 del "%appdata%\Microsoft\Windows\Start Menu\Programs\Microsoft Edge.lnk"2>nul
 
 :skip_edge
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v AppsUseLightTheme /t REG_DWORD /d 0 /f
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v SystemUsesLightTheme /t REG_DWORD /d 0 /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v AppsUseLightTheme /t REG_DWORD /d 0 /f
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v EnableTransparency /t REG_DWORD /d 1 /f
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM" /v AccentColor /t REG_DWORD /d 0x00000000 /f
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM" /v ColorPrevalence /t REG_DWORD /d 1 /f
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarAcrylicOpacity /t REG_DWORD /d 0 /f
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v UseOLEDTaskbarTransparency /t REG_DWORD /d 1 /f
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v MicaBackdropInApplicationFrame /t REG_DWORD /d 1 /f
+PowerRun.exe cmd.exe /c "reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v "EnableTransparency" /t REG_DWORD /d 1 /f"
+PowerRun.exe cmd.exe /c "reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "UseOLEDTaskbarTransparency" /t REG_DWORD /d 1 /f"
+PowerRun.exe cmd.exe /c "reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v AllowTelemetry /t REG_DWORD /d 0 /f"
+PowerRun.exe cmd.exe /c "reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" /v Enabled /t REG_DWORD /d 0 /f"
 
 set desktopPath=%USERPROFILE%\Desktop
 
 :: URL del file da scaricare
-set fileURL=https://github.com/MrNico98/WinHubX/releases/download/WinHubX-v.2.4.0.3/WinHubX.exe
+set fileURL=https://github.com/MrNico98/WinHubX/releases/download/WinHubX/WinHubX.exe
 
 :: Nome del file scaricato
 set fileName=WinHubX.exe
 
-:: Scarica il file usando PowerShell
-powershell -Command "Invoke-WebRequest -Uri %fileURL% -OutFile \"%desktopPath%\%fileName%\""
+:: Usa BITS per scaricare il file
+powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Start-BitsTransfer -Source '%fileURL%' -Destination '%desktopPath%\%fileName%'"
 
+set desktopPath=%USERPROFILE%\Desktop
+
+:: URL del file da scaricare
+set fileURL=https://github.com/MrNico98/AIMODS-Store/releases/download/AIMODS-Store/AIMODS-Store.exe
+
+:: Nome del file scaricato
+set fileName=AIMODS-Store.exe
+
+:: Usa BITS per scaricare il file
+powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Start-BitsTransfer -Source '%fileURL%' -Destination '%desktopPath%\%fileName%'"
 
 COMPACT.EXE /CompactOS:always
-DISM.exe /Apply-Image /ImageFile: Install.WIM /Index: 1 /ApplyDir: C:\ /COMPACT:ON
 compact.exe /c c:\windows\*.* /s /i /exe:lzx
 powercfg /hibernate off
-echo Fatto
+echo ===================================================================
+echo Ottimizzazione completata! Il sistema ottimizzato con successo.
+echo ===================================================================
 sc config wsearch start=auto
 timeout 7

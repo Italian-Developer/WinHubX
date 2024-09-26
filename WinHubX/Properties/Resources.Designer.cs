@@ -91,6 +91,16 @@ namespace WinHubX.Properties {
         }
         
         /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Byte[].
+        /// </summary>
+        internal static byte[] MSPCManagerSetup {
+            get {
+                object obj = ResourceManager.GetObject("MSPCManagerSetup", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap nicksparrow {

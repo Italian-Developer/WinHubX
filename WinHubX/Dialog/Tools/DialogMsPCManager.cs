@@ -34,8 +34,8 @@ namespace WinHubX.Dialog.Tools
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
-            string fileName = "MSPCManagerSetup.exe";
-            string resourceName = "WinHubX.Resources.MSPCManagerSetup.exe";
+            string fileName = "MSPCManagerSetup.msixbundle";
+            string resourceName = "WinHubX.Resources.MSPCManagerSetup.msixbundle";
             string tempPath = Path.GetTempPath();
             string tempFilePath = Path.Combine(tempPath, fileName);
 
@@ -52,7 +52,8 @@ namespace WinHubX.Dialog.Tools
                     }
                 }
 
-                Process.Start(tempFilePath);
+                // Use explorer.exe to handle the msixbundle installation
+                Process.Start("explorer.exe", tempFilePath);
                 this.Close();
             }
             catch (Exception ex)
@@ -60,5 +61,6 @@ namespace WinHubX.Dialog.Tools
                 MessageBox.Show($"Errore nell'avviare l'applicazione: {ex.Message}");
             }
         }
+
     }
 }

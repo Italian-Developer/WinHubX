@@ -202,4 +202,7 @@
   <data name="Product_Sans_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Product Sans Black.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="MSPCManagerSetup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MSPCManagerSetup.msixbundle;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

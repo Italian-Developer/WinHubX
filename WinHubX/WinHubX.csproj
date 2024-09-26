@@ -9,8 +9,8 @@
 	  <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Images\icoLogoWhite.ico</ApplicationIcon>
-    <AssemblyVersion>2.4.0.2</AssemblyVersion>
-    <FileVersion>2.4.0.2</FileVersion>
+    <AssemblyVersion>2.4.0.8</AssemblyVersion>
+    <FileVersion>2.4.0.8</FileVersion>
 	<ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
   </PropertyGroup>
 
@@ -80,21 +80,23 @@
     <None Remove="Resources\CheckHW.bat" />
     <None Remove="Resources\DriverRST.zip" />
     <None Remove="Resources\icoWinHubX.ico" />
-    <None Remove="Resources\MSPCManagerSetup.exe" />
+    <None Remove="Resources\MSPCManagerSetup.msixbundle" />
     <None Remove="Resources\OfficePersonalizzato\Configurazione2021x32.xml" />
     <None Remove="Resources\OfficePersonalizzato\Configurazione2021x64.xml" />
+    <None Remove="Resources\OfficePersonalizzato\Configurazione2024x32.xml" />
+    <None Remove="Resources\OfficePersonalizzato\Configurazione2024x64.xml" />
     <None Remove="Resources\OfficePersonalizzato\Configurazione365x32.xml" />
     <None Remove="Resources\OfficePersonalizzato\Configurazione365x64.xml" />
-    <None Remove="Resources\OfficePersonalizzato\immaginioffice\access.png" />
-    <None Remove="Resources\OfficePersonalizzato\immaginioffice\excel.png" />
-    <None Remove="Resources\OfficePersonalizzato\immaginioffice\onedrive.png" />
-    <None Remove="Resources\OfficePersonalizzato\immaginioffice\onenote.png" />
-    <None Remove="Resources\OfficePersonalizzato\immaginioffice\outlook.png" />
-    <None Remove="Resources\OfficePersonalizzato\immaginioffice\powerpoint.png" />
-    <None Remove="Resources\OfficePersonalizzato\immaginioffice\project.png" />
-    <None Remove="Resources\OfficePersonalizzato\immaginioffice\publisher.png" />
-    <None Remove="Resources\OfficePersonalizzato\immaginioffice\visio.png" />
-    <None Remove="Resources\OfficePersonalizzato\immaginioffice\word.png" />
+    <None Remove="Resources\immaginioffice\access.png" />
+    <None Remove="Resources\immaginioffice\excel.png" />
+    <None Remove="Resources\immaginioffice\onedrive.png" />
+    <None Remove="Resources\immaginioffice\onenote.png" />
+    <None Remove="Resources\immaginioffice\outlook.png" />
+    <None Remove="Resources\immaginioffice\powerpoint.png" />
+    <None Remove="Resources\immaginioffice\project.png" />
+    <None Remove="Resources\immaginioffice\publisher.png" />
+    <None Remove="Resources\immaginioffice\visio.png" />
+    <None Remove="Resources\immaginioffice\word.png" />
     <None Remove="Resources\PowerRun.exe" />
     <None Remove="Resources\Product Sans Black.ttf" />
     <None Remove="Resources\Product Sans.ttf" />
@@ -102,6 +104,7 @@
     <None Remove="Resources\RisorseCreaISO\isotool11.bat" />
     <None Remove="Resources\RisorseCreaISO\Risorse\7z.dll" />
     <None Remove="Resources\RisorseCreaISO\Risorse\7z.exe" />
+    <None Remove="Resources\RisorseCreaISO\Risorse\img0.jpg" />
     <None Remove="Resources\RisorseCreaISO\Risorse\lower-ram-usage.reg" />
     <None Remove="Resources\RisorseCreaISO\Risorse\OperaGXSetup.exe" />
     <None Remove="Resources\RisorseCreaISO\Risorse\oscdimg.exe" />
@@ -298,7 +301,7 @@
     <EmbeddedResource Include="Resources\DriverRST.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\MSPCManagerSetup.exe">
+    <EmbeddedResource Include="Resources\MSPCManagerSetup.msixbundle">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\OfficePersonalizzato\Configurazione2021x32.xml">
@@ -307,40 +310,46 @@
     <EmbeddedResource Include="Resources\OfficePersonalizzato\Configurazione2021x64.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\Configurazione2024x32.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\Configurazione2024x64.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\OfficePersonalizzato\Configurazione365x32.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\OfficePersonalizzato\Configurazione365x64.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\access.png">
+    <EmbeddedResource Include="Resources\immaginioffice\access.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\excel.png">
+    <EmbeddedResource Include="Resources\immaginioffice\excel.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\onedrive.png">
+    <EmbeddedResource Include="Resources\immaginioffice\onedrive.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\onenote.png">
+    <EmbeddedResource Include="Resources\immaginioffice\onenote.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\outlook.png">
+    <EmbeddedResource Include="Resources\immaginioffice\outlook.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\powerpoint.png">
+    <EmbeddedResource Include="Resources\immaginioffice\powerpoint.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\project.png">
+    <EmbeddedResource Include="Resources\immaginioffice\project.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\publisher.png">
+    <EmbeddedResource Include="Resources\immaginioffice\publisher.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\visio.png">
+    <EmbeddedResource Include="Resources\immaginioffice\visio.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\OfficePersonalizzato\immaginioffice\word.png">
+    <EmbeddedResource Include="Resources\immaginioffice\word.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\PowerRun.exe">
@@ -398,9 +407,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\unpin_start_tiles.ps1">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\RisorseCreaISO\Risorse\[AIMODS]-Store.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Rufus4Lite.exe">

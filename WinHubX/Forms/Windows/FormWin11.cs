@@ -123,7 +123,7 @@ namespace WinHubX.Forms.Windows
             if (e.Button == MouseButtons.Right)
             {
 
-                Clipboard.SetText("33f25e59292289c670db5cb414c64e4c85bf10da4e2bf2c8fe6ecfd05143ebef");
+                Clipboard.SetText("a3e7a1d08a42e68dda47715d33570ffe7fe16840450f1020a341ad40f6bafda6");
 
                 notifyIcon.BalloonTipTitle = "SHA256 copiato!";
                 notifyIcon.BalloonTipText = "Il codice hash è stato copiato negli appunti.";
@@ -135,10 +135,11 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/7tq1eq4xk1tv",
+                        FileName = "https://devuploads.com/91gwccktiv1f",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
+                    MessageBox.Show("Se possibile esporta i driver del pc cosi da non incorrere a problemi futuri. Per farlo puoi usare l'app DataLock presente in AIMODS-Store", "Informazione");
                 }
                 catch (Exception ex)
                 {
@@ -152,7 +153,7 @@ namespace WinHubX.Forms.Windows
             if (e.Button == MouseButtons.Right)
             {
 
-                Clipboard.SetText("3d16b8814451b0e9f01a2009d37d3449f7d32ea6f7a04c45384c2d7bd1bd2944");
+                Clipboard.SetText("31f05d2427bb914b3f3e5161820c3a6624eaebee036b7b66512a0b30ab332003");
 
                 notifyIcon.BalloonTipTitle = "SHA256 copiato!";
                 notifyIcon.BalloonTipText = "Il codice hash è stato copiato negli appunti.";
@@ -164,11 +165,12 @@ namespace WinHubX.Forms.Windows
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://devuploads.com/9irifuyttaf9",
+                        FileName = "https://devuploads.com/zgwc0mgcld5g",
                         UseShellExecute = true
                     };
                     Process.Start(psi);
                     MessageBox.Show("Usa 'Rufus4Lite' presente nella sezione Tools.", "Informazione");
+                    MessageBox.Show("Se possibile esporta i driver del pc cosi da non incorrere a problemi futuri. Per farlo puoi usare l'app DataLock presente in AIMODS-Store", "Informazione");
                 }
                 catch (Exception ex)
                 {
@@ -198,6 +200,7 @@ namespace WinHubX.Forms.Windows
                         UseShellExecute = true
                     };
                     Process.Start(psi);
+                    MessageBox.Show("Se possibile esporta i driver del pc cosi da non incorrere a problemi futuri. Per farlo puoi usare l'app DataLock presente in AIMODS-Store", "Informazione");
                 }
                 catch (Exception ex)
                 {

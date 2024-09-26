@@ -27,7 +27,7 @@ while (-not $success) {
 ########################################################
 
 # check for process
-Write-Host -fore Green 'Il processo di debloat inizierà a breve attendi.'
+Write-Host -fore Green 'Il processo di ottimizzazione iniziera a breve, il mouse e la tastiera sono disabilitate durante il processo'
 
 while ($true) {
     $process = Get-Process -Name SecurityHealthSystray -ErrorAction SilentlyContinue
@@ -116,105 +116,29 @@ foreach ($task in $tasks) {
    Disable-ScheduledTask -TaskName $task
 }
 
+
 $services = @(
-"diagnosticshub.standardcollector.service", 
-    "DiagTrack",                                    
-    "dmwappushservice",                             
-    "lfsvc",                                        
-    "MapsBroker",                                   
-    "NetTcpPortSharing",                            
-    "RemoteAccess",                                 
-    "RemoteRegistry",                               
-    "SharedAccess",                                 
-    "TrkWks",                                       
-    "WbioSrvc",                                     
-    "WMPNetworkSvc",                                
-    "XblAuthManager",                               
-    "XblGameSave",                                  
-    "XboxNetApiSvc",                                
-    "XboxGipSvc",                                   
-    "WerSvc",                                       
-    "Fax",                                          
-    "fhsvc",                                        
-    "gupdate",                                      
-    "gupdatem",                                     
-    "stisvc",                                       
-    "AJRouter",                                     
-    "MSDTC",                                        
-    "WpcMonSvc",                                    
-    "PcaSvc",                                       
-    "WPDBusEnum",                                   
-    "LicenseManager",                               
-    "seclogon",                                     
-    "SysMain",                                      
-    "lmhosts",                                      
-    "wisvc",                                        
-    "FontCache",                                    
-    "RetailDemo",                                   
-    "ALG",                                          
-    "SCPolicySvc",                                  
-    "MessagingService_34048",                       
-    "EntAppSvc",                                    
-    "Browser",                                      
-    "BthAvctpSvc",                                  
-    "BDESVC",                                       
-    "iphlpsvc",                                     
-    "edgeupdatem",                                  
-    "SEMgrSvc",                                     
-    "PerfHost",                                     
-    "BcastDVRUserService_48486de",                  
-    "CaptureService_48486de",                       
-    "cbdhsvc_48486de",                              
-    "SNMPTrap",                                     
-    "SECOMNService",                                
-    "AMD External Events Utility",                  
-    "cbdhsvc_34048",                                
-    "autotimesvc",                                  
-    "TokenBroker",                                  
-    "RmSvc",                                        
-    "SensorDataService",                            
-    "tzautoupdate",                                 
-    "SynTPEnhService",                              
-    "RasMan",                                       
-    "BcastDVRUserService_34048",                    
-    "PenService_34048",                             
-    "tapisrv",                                      
-    "HPAppHelperCap",                               
-    "HPDiagsCap",                                   
-    "HPNetworkCap",                                 
-    "HPSysInfoCap",                                 
-    "HpTouchpointAnalyticsService",                 
-    "HvHost",                                       
-    "vmickvpexchange",                              
-    "vmicguestinterface",                           
-    "vmicshutdown",                                 
-    "vmicheartbeat",                                
-    "vmicvmsession",                                
-    "vmicrdv",                                      
-    "vmictimesync",                                 
-    "SupportAssistAgent",                           
-    "DellUpService",                                
-    "DataVault",                                    
-    "DellCustomerConnect",                          
-    "Dell.Foundation.Agent",                        
-    "nosGetPlusHelper",                             
-    "ndu",
-    "AxInstSV",
-    "PimIndexMaintenanceSvc",
-    "CDPUserSvc",
-    "lltdsvc",
-    "AppVClient",
-    "CscService",
-    "QWAVE",
-    "SensrSvc"
-    Out-File -FilePath  ".\log.txt" -Append
+    "diagnosticshub.standardcollector.service" # Microsoft (R) Diagnostics Hub Standard Collector Service
+    "DiagTrack"                                # Diagnostics Tracking Service
+    "dmwappushservice"                         # WAP Push Message Routing Service (see known issues)
+    "lfsvc"                                    # Geolocation Service
+    "MapsBroker"                               # Downloaded Maps Manager
+    "NetTcpPortSharing"                        # Net.Tcp Port Sharing Service
+    "RemoteAccess"                             # Routing and Remote Access
+    "RemoteRegistry"                           # Remote Registry
+    "SharedAccess"                             # Internet Connection Sharing (ICS)
+    "TrkWks"                                   # Distributed Link Tracking Client
+    "WbioSrvc"                                 # Windows Biometric Service (required for Fingerprint reader / facial detection)
+    "WMPNetworkSvc"                            # Windows Media Player Network Sharing Service
+    "XblAuthManager"                           # Xbox Live Auth Manager
+    "XblGameSave"                              # Xbox Live Game Save Service
+    "XboxNetApiSvc"                            # Xbox Live Networking Service
+    "ndu"                                      # Windows Network Data Usage Monitor
 )
 
 foreach ($service in $services) {
-    Get-Service -Name $service | Stop-Service -Force | Out-File -FilePath  ".\log.txt" -Append
-    Get-Service -Name $service | Set-Service -StartupType Disabled | Out-File -FilePath  ".\log.txt" -Append
-    Write-Output "Trying to disable $service" | Out-File -FilePath  ".\log.txt" -Append
-    Write-Output "Trying to Stop $service" | Out-File -FilePath  ".\log.txt" -Append
+    Write-Output "Trying to disable $service"
+    Get-Service -Name $service | Set-Service -StartupType Disabled
 }
 
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\New-FolderForced.psm1
@@ -406,10 +330,6 @@ Remove-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\E
 # Remove 3D Objects from This PC
 Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
 Remove-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
-
-#echo "Disabling tile push notification"
-#New-FolderForced -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications"
-#sp "HKCU:\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" "NoTileApplicationNotification" 1
 
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\New-FolderForced.psm1
 
@@ -671,30 +591,12 @@ $ErrorActionPreference           = "SilentlyContinue"
     }
     Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "HideSCAMeetNow" -Type DWord -Value 1
 
-    #Disable LockScreen
-    If (!(Test-Path "HKLM:\Software\Policies\Microsoft\Windows\Personalization")) {
- 	    New-Item -Path "HKLM:\Software\Policies\Microsoft\Windows\Personalization" | Out-Null
-    }
-    Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\Personalization" -Name "NoLockScreen" -Type DWord -Value 1
-    write-host("Lock Screen has been disabled")
-
     #Disable Advertising ID
     If (!(Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo")) {
 	    New-Item -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo" | Out-Null
     }
     Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo" -Name "Enabled" -Type DWord -Value 0
     write-host("Advertising ID has been disabled")
-
-    #Disable SmartScreen
-    if (!(Test-Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Explorer")){
-        New-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Explorer" -Force | Out-Null
-    }
-    Set-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Explorer" -Name "SmartScreenEnabled" -Type String -Value "Off"
-    if (!(Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\AppHost")){
-        New-Item -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\AppHost" -Force | Out-Null
-    }
-    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\AppHost" -Name "EnableWebContentEvaluation" -Value 0
-    write-host("SmartScreen has been disabled")
 
     #Disable File History
     if (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\FileHistory")){
@@ -762,8 +664,6 @@ $ErrorActionPreference           = "SilentlyContinue"
     $Services = @(
         "MixedRealityOpenXRSvc" # Mixed Reality
         "WMPNetworkSvc" # Windows Media Player Sharing
-        #"LicenseManager" # License Manager for Microsoft Store
-        #"wisvc" # Insider Program
         "WerSvc" # write-host Reporting
         "WalletService" # Wallet Service
         "SysMain" # SuperFetch - Safe to disable if you have a SSD
@@ -789,11 +689,6 @@ $ErrorActionPreference           = "SilentlyContinue"
             write-host("Trying to disable $($Service.DisplayName)")
         }
     }
-
-    #Disable Delivery Optimization
-    #Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\DoSvc" -Name Start -Value 4
-    #Disable WinHTTP Web Proxy Auto-Discovery Service (Please do not disable this, this will fuck up Windows Explorer)
-    #Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySvc" -Name Start -Value 4
      
     [Array] @(
         "\Microsoft\Windows\ApplicationData\CleanupTemporaryState"
@@ -914,7 +809,7 @@ $ErrorActionPreference           = "SilentlyContinue"
     }
     Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications" -Name "GlobalUserDisabled" -Type DWord -Value 1
     write-host("Disabled Background application access")
-
+ if (Test-Path "C:\Windows\debloatapp.pref") {
     write-host("Disabling OneDrive...")
     If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive")) {
         New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" | Out-Null
@@ -980,6 +875,7 @@ $ErrorActionPreference           = "SilentlyContinue"
             
         }  
     }
+}
 $registryPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"
 $registryName = "dontdisplaylastusername"
 
