@@ -1,0 +1,47 @@
+# Contributing to WinHubX 🎉
+
+Thank you for your interest in contributing to **WinHubX**! We welcome contributions from everyone. Your involvement can help us improve the project and foster a vibrant community. 
+
+## How to Contribute 🤔
+
+### 1. Fork the Repository 🍴
+Start by forking the repository on GitHub. This creates your own copy where you can make changes freely.
+
+### 2. Create a Branch 🌿
+Once you have forked the repository, create a new branch for your feature or bug fix. You can do this using the following command:
+```bash
+git checkout -b your-feature-name
+```
+
+### 3. Make Your Changes ✏️
+Make the necessary changes to the code or documentation. Ensure your code adheres to the project’s coding standards and style.
+
+### 4. Test Your Changes ✅
+Before submitting your changes, please ensure that they are working correctly and do not break any existing functionality. Run the tests to confirm:
+```bash
+# Example test command (update with actual test command)
+npm test
+```
+
+### 5. Commit Your Changes 💾
+Commit your changes with a clear and concise commit message describing the changes you made. For example:
+```bash
+git commit -m "Add new feature for XYZ"
+```
+
+### 6. Push to Your Fork 🚀
+Push your changes back to your forked repository:
+```bash
+git push origin your-feature-name
+```
+
+### 7. Create a Pull Request 📥
+Navigate to the original repository where you want to contribute, and create a pull request. Provide a detailed description of your changes and why they should be merged.
+
+## Code of Conduct 📜
+Please make sure to read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing. We expect all contributors to adhere to the guidelines set forth in this document to ensure a welcoming environment for everyone.
+
+## Questions? 💬
+If you have any questions about contributing or need guidance, feel free to reach out to us via [Telegram](https://t.me/mrnico98) or open an issue in the repository.
+
+Thank you for your contribution to **WinHubX**! Your efforts help us grow and improve! 🚀
