@@ -1,15 +1,10 @@
 version: 2
-update-strategy:
-  # Aggiorna le dipendenze ogni giorno alle 5:00
-  schedule:
-    - cron: 0 5 * * *
-  # Aggiorna le dipendenze quando vengono rilasciate nuove versioni
-  rebase-strategy: auto
 
-# Configurazione delle dipendenze da aggiornare
 updates:
-  - package-manager: "nuget"
+  - package-ecosystem: "nuget"
     directory: "/"
+    schedule:
+      cron: 0 5 * * *
     update:
       - dependency-name: "Microsoft.NET.Sdk"
         version-strategy: "latest-major"
@@ -62,14 +57,18 @@ updates:
       - dependency-name: "System.Threading.Tasks.Extensions"
         version-strategy: "latest-major"
 
-  - package-manager: "nuget"
+  - package-ecosystem: "nuget"
     directory: "/MessagePack"
+    schedule:
+      cron: 0 5 * * *
     update:
       - dependency-name: "MessagePack"
         version-strategy: "latest-major"
 
-  - package-manager: "nuget"
+  - package-ecosystem: "nuget"
     directory: "/StreamLibrary"
+    schedule:
+      cron: 0 5 * * *
     update:
       - dependency-name: "System.IO.Pipelines"
         version-strategy: "latest-major"
