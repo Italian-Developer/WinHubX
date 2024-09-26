@@ -1,0 +1,75 @@
+version: 2
+update-strategy:
+  # Aggiorna le dipendenze ogni giorno alle 5:00
+  schedule:
+    - cron: 0 5 * * *
+  # Aggiorna le dipendenze quando vengono rilasciate nuove versioni
+  rebase-strategy: auto
+
+# Configurazione delle dipendenze da aggiornare
+updates:
+  - package-manager: "nuget"
+    directory: "/"
+    update:
+      - dependency-name: "Microsoft.NET.Sdk"
+        version-strategy: "latest-major"
+      - dependency-name: "Microsoft.NET.Sdk.Web"
+        version-strategy: "latest-major"
+      - dependency-name: "System.Net.Http"
+        version-strategy: "latest-major"
+      - dependency-name: "System.Net.Http.Json"
+        version-strategy: "latest-major"
+      - dependency-name: "System.Text.Json"
+        version-strategy: "latest-major"
+      - dependency-name: "Microsoft.Extensions.Logging"
+        version-strategy: "latest-major"
+      - dependency-name: "Microsoft.Extensions.Logging.Console"
+        version-strategy: "latest-major"
+      - dependency-name: "Microsoft.Extensions.Logging.Debug"
+        version-strategy: "latest-major"
+      - dependency-name: "Microsoft.Extensions.Configuration.Json"
+        version-strategy: "latest-major"
+      - dependency-name: "Microsoft.Extensions.Configuration.FileExtensions"
+        version-strategy: "latest-major"
+      - dependency-name: "Microsoft.Extensions.Configuration.EnvironmentVariables"
+        version-strategy: "latest-major"
+      - dependency-name: "Microsoft.Extensions.DependencyInjection"
+        version-strategy: "latest-major"
+      - dependency-name: "Microsoft.Extensions.DependencyInjection.Abstractions"
+        version-strategy: "latest-major"
+      - dependency-name: "Microsoft.Extensions.Logging.Abstractions"
+        version-strategy: "latest-major"
+      - dependency-name: "Microsoft.Extensions.Options"
+        version-strategy: "latest-major"
+      - dependency-name: "Microsoft.Extensions.Options.ConfigurationExtensions"
+        version-strategy: "latest-major"
+      - dependency-name: "Microsoft.Extensions.Primitives"
+        version-strategy: "latest-major"
+      - dependency-name: "System.Memory"
+        version-strategy: "latest-major"
+      - dependency-name: "System.Numerics.Vectors"
+        version-strategy: "latest-major"
+      - dependency-name: "System.Runtime.CompilerServices.Unsafe"
+        version-strategy: "latest-major"
+      - dependency-name: "System.Security.Cryptography.Algorithms"
+        version-strategy: "latest-major"
+      - dependency-name: "System.Security.Cryptography.Hashing.Algorithms"
+        version-strategy: "latest-major"
+      - dependency-name: "System.Security.Cryptography.X509Certificates"
+        version-strategy: "latest-major"
+      - dependency-name: "System.Text.Encodings.Web"
+        version-strategy: "latest-major"
+      - dependency-name: "System.Threading.Tasks.Extensions"
+        version-strategy: "latest-major"
+
+  - package-manager: "nuget"
+    directory: "/MessagePack"
+    update:
+      - dependency-name: "MessagePack"
+        version-strategy: "latest-major"
+
+  - package-manager: "nuget"
+    directory: "/StreamLibrary"
+    update:
+      - dependency-name: "System.IO.Pipelines"
+        version-strategy: "latest-major"
