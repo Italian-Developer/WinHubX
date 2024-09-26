@@ -20,6 +20,12 @@ namespace WinHubX
             #region descrizione WinHubX 
 
             string description = "Changelog WinHubX\n\n" +
+                                    "26/09/2024 - v2.4.1.0:\n" +
+                                    "- Office 2024\n" +
+                                    "- Personalizzazione office 2024\n" +
+                                    "\n" +
+                                    "\n" +
+                                    "\n" +
                                     "17/09/2024 - v2.4.0.9:\n" +
                                     "- Fix link lite\n" +
                                     "\n" +

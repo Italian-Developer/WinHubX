@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonalizzazioneOffice));
             panel1 = new Panel();
             radioButton_office2024 = new RadioButton();
-            label4 = new Label();
             label3 = new Label();
             radiobutton_office365 = new RadioButton();
             radiobutton_office2021 = new RadioButton();
@@ -83,7 +82,6 @@
             // panel1
             // 
             panel1.Controls.Add(radioButton_office2024);
-            panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(radiobutton_office365);
             panel1.Controls.Add(radiobutton_office2021);
@@ -95,8 +93,6 @@
             // radioButton_office2024
             // 
             radioButton_office2024.AutoSize = true;
-            radioButton_office2024.Cursor = Cursors.No;
-            radioButton_office2024.Enabled = false;
             radioButton_office2024.Font = new Font("Segoe UI", 12F);
             radioButton_office2024.ForeColor = Color.White;
             radioButton_office2024.Location = new Point(18, 131);
@@ -107,18 +103,6 @@
             radioButton_office2024.TabStop = true;
             radioButton_office2024.Text = "Office 2024";
             radioButton_office2024.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Coral;
-            label4.Location = new Point(18, 158);
-            label4.Name = "label4";
-            label4.Size = new Size(111, 20);
-            label4.TabIndex = 81;
-            label4.Text = "coming soon...";
-            label4.TextAlign = ContentAlignment.BottomCenter;
             // 
             // label3
             // 
@@ -574,7 +558,6 @@
         private Label label3;
         private Label label1;
         private RadioButton radioButton_office2024;
-        private Label label4;
         private Label label5;
         private ProgressBar progressBar_office;
         private Label label2;

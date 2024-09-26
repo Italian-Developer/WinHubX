@@ -1200,23 +1200,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maule\\.nuget\\packages\\": {},
+    "C:\\Users\\Nico\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maule\\Desktop\\Github\\WinHubX\\WinHubX\\WinHubX.csproj",
+      "projectUniqueName": "C:\\Users\\Nico\\Downloads\\WinHubX-main\\WinHubX\\WinHubX.csproj",
       "projectName": "WinHubX",
-      "projectPath": "C:\\Users\\maule\\Desktop\\Github\\WinHubX\\WinHubX\\WinHubX.csproj",
-      "packagesPath": "C:\\Users\\maule\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maule\\Desktop\\Github\\WinHubX\\WinHubX\\obj\\",
+      "projectPath": "C:\\Users\\Nico\\Downloads\\WinHubX-main\\WinHubX\\WinHubX.csproj",
+      "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nico\\Downloads\\WinHubX-main\\WinHubX\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\maule\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nico\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1278,7 +1278,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

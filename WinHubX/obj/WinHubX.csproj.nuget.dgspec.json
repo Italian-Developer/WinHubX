@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\maule\\Desktop\\Github\\WinHubX\\WinHubX\\WinHubX.csproj": {}
   },
   "projects": {
@@ -12,12 +13,29 @@
         "projectPath": "C:\\Users\\maule\\Desktop\\Github\\WinHubX\\WinHubX\\WinHubX.csproj",
         "packagesPath": "C:\\Users\\maule\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\maule\\Desktop\\Github\\WinHubX\\WinHubX\\obj\\",
+=======
+    "C:\\Users\\Nico\\Downloads\\WinHubX-main\\WinHubX\\WinHubX.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Nico\\Downloads\\WinHubX-main\\WinHubX\\WinHubX.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Nico\\Downloads\\WinHubX-main\\WinHubX\\WinHubX.csproj",
+        "projectName": "WinHubX",
+        "projectPath": "C:\\Users\\Nico\\Downloads\\WinHubX-main\\WinHubX\\WinHubX.csproj",
+        "packagesPath": "C:\\Users\\Nico\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nico\\Downloads\\WinHubX-main\\WinHubX\\obj\\",
+>>>>>>> f24985e8ec549a19625e7f607e78facc37e1149c
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\maule\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Nico\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> f24985e8ec549a19625e7f607e78facc37e1149c
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -79,7 +97,11 @@
               "privateAssets": "none"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+>>>>>>> f24985e8ec549a19625e7f607e78facc37e1149c
         }
       }
     }
