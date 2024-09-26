@@ -224,6 +224,107 @@ namespace WinHubX.Forms.Personalizzazione_office
                     StartInstallation(xmlFilePath);
                 }
             }
+            if (radioButton_office2024.Checked)
+            {
+                if (radioButton_x64.Checked)
+                {
+                    string xmlFilePath = @"C:\Configurazione2024x64.xml";
+                    ExtractAndSaveResource("Configurazione2024x64.xml", xmlFilePath);
+
+                    if (checkBox_visio.Checked)
+                    {
+                        AddElementToXml2024(xmlFilePath, CreateVisioXml365());
+                    }
+                    if (checkBox_project.Checked)
+                    {
+                        AddElementToXml2024(xmlFilePath, CreateProjectXml365());
+                    }
+                    if (checkBox_word.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Word");
+                    }
+                    if (checkBox_excel.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Excel");
+                    }
+                    if (checkBox_powerpoint.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "PowerPoint");
+                    }
+                    if (checkBox_outlook.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Outlook");
+                    }
+                    if (checkBox_onenote.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "OneNote");
+                    }
+                    if (checkBox_onedrive.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "OneDrive");
+                    }
+                    if (checkBox_publisher.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Publisher");
+                    }
+                    if (checkBox_access.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Access");
+                    }
+
+                    // Avvia l'installazione personalizzata
+                    StartInstallation(xmlFilePath);
+                }
+                else if (radioButton_x32.Checked)
+                {
+                    string xmlFilePath = @"C:\Configurazione2024x32.xml";
+                    ExtractAndSaveResource("Configurazione2024x32.xml", xmlFilePath);
+
+                    if (checkBox_visio.Checked)
+                    {
+                        AddElementToXml2024(xmlFilePath, CreateVisioXml365());
+                    }
+                    if (checkBox_project.Checked)
+                    {
+                        AddElementToXml2024(xmlFilePath, CreateProjectXml365());
+                    }
+                    if (checkBox_word.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Word");
+                    }
+                    if (checkBox_excel.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Excel");
+                    }
+                    if (checkBox_powerpoint.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "PowerPoint");
+                    }
+                    if (checkBox_outlook.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Outlook");
+                    }
+                    if (checkBox_onenote.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "OneNote");
+                    }
+                    if (checkBox_onedrive.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "OneDrive");
+                    }
+                    if (checkBox_publisher.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Publisher");
+                    }
+                    if (checkBox_access.Checked)
+                    {
+                        RemoveElementFromXml(xmlFilePath, "ExcludeApp", "Access");
+                    }
+
+                    // Avvia l'installazione personalizzata
+                    StartInstallation(xmlFilePath);
+                }
+            }
         }
 
         private void ExtractFolderToTemp()
@@ -242,6 +343,8 @@ namespace WinHubX.Forms.Personalizzazione_office
                 ExtractAndSaveResource("Configurazione2021x32.xml", Path.Combine(tempFolder, "Configurazione2021x32.xml"));
                 ExtractAndSaveResource("Configurazione365x64.xml", Path.Combine(tempFolder, "Configurazione365x64.xml"));
                 ExtractAndSaveResource("Configurazione365x32.xml", Path.Combine(tempFolder, "Configurazione365x32.xml"));
+                ExtractAndSaveResource("Configurazione2024x64.xml", Path.Combine(tempFolder, "Configurazione2024x64.xml"));
+                ExtractAndSaveResource("Configurazione2024x32.xml", Path.Combine(tempFolder, "Configurazione2024x32.xml"));
                 ExtractAndSaveResource("bin.exe", Path.Combine(tempFolder, "bin.exe"));
  }
             catch (Exception ex)
@@ -326,6 +429,45 @@ namespace WinHubX.Forms.Personalizzazione_office
                 else
                 {
                     MessageBox.Show($"Non è stato trovato alcun nodo Product con ID='O365BusinessRetail' nel file XML.", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Si è verificato un errore durante l'aggiunta dell'elemento all'XML: {ex.Message}", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AddElementToXml2024(string xmlFilePath, string xmlToAdd)
+        {
+            try
+            {
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(xmlFilePath);
+
+                XmlNode root = xmlDoc.DocumentElement;
+
+                // Find the Product node for ProPlus2021Volume
+                XmlNode proPlusProductNode = root.SelectSingleNode("//Product[@ID='ProPlus2024Volume']");
+
+                if (proPlusProductNode != null)
+                {
+                    // Create a new Product node from the string
+                    XmlDocumentFragment fragment = xmlDoc.CreateDocumentFragment();
+                    fragment.InnerXml = xmlToAdd;
+
+                    // Insert the new Product node after the ProPlus2021Volume node
+                    XmlNode parentNode = proPlusProductNode.ParentNode;
+                    parentNode.InsertAfter(fragment, proPlusProductNode);
+
+                    // Update proPlusProductNode to point to the newly added node for further additions
+                    proPlusProductNode = fragment.LastChild;
+
+                    // Save the modified XML file
+                    xmlDoc.Save(xmlFilePath);
+                }
+                else
+                {
+                    MessageBox.Show($"Non è stato trovato alcun nodo Product con ID='ProPlus2024Volume' nel file XML.", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -546,7 +688,6 @@ namespace WinHubX.Forms.Personalizzazione_office
             progressBar_office.Minimum = 0;
             progressBar_office.Maximum = 100;
             progressBar_office.Step = 1;
-            progressBar_office.Visible = false; // Inizialmente nascosta
             Controls.Add(progressBar_office);
         }
     }

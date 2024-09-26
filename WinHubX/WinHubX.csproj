@@ -83,6 +83,8 @@
     <None Remove="Resources\MSPCManagerSetup.msixbundle" />
     <None Remove="Resources\OfficePersonalizzato\Configurazione2021x32.xml" />
     <None Remove="Resources\OfficePersonalizzato\Configurazione2021x64.xml" />
+    <None Remove="Resources\OfficePersonalizzato\Configurazione2024x32.xml" />
+    <None Remove="Resources\OfficePersonalizzato\Configurazione2024x64.xml" />
     <None Remove="Resources\OfficePersonalizzato\Configurazione365x32.xml" />
     <None Remove="Resources\OfficePersonalizzato\Configurazione365x64.xml" />
     <None Remove="Resources\immaginioffice\access.png" />
@@ -306,6 +308,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\OfficePersonalizzato\Configurazione2021x64.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\Configurazione2024x32.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\OfficePersonalizzato\Configurazione2024x64.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\OfficePersonalizzato\Configurazione365x32.xml">

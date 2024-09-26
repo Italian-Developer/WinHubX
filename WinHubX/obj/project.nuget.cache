@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s7vAnXZlr2M=",
+  "dgSpecHash": "qa3vKfhG8mM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\utente\\Downloads\\1.WinHubX-development\\WinHubX\\WinHubX.csproj",
+  "projectFilePath": "C:\\Users\\utente\\Documents\\GitHub\\ItalianDevelopers\\WinHubX\\WinHubX\\WinHubX.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\utente\\.nuget\\packages\\microsoft.applicationinsights\\2.21.0\\microsoft.applicationinsights.2.21.0.nupkg.sha512",
     "C:\\Users\\utente\\.nuget\\packages\\microsoft.management.infrastructure\\3.0.0\\microsoft.management.infrastructure.3.0.0.nupkg.sha512",

@@ -36,8 +36,6 @@
             label3 = new Label();
             lblInfoOffice2024 = new Label();
             label1 = new Label();
-            label2 = new Label();
-            label4 = new Label();
             lblInfoWinAIO64 = new Label();
             btn_winhubxmonitor = new Button();
             ((System.ComponentModel.ISupportInitialize)imgHomeLogo).BeginInit();
@@ -119,7 +117,7 @@
             lblInfoOffice2024.AutoSize = true;
             lblInfoOffice2024.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblInfoOffice2024.ForeColor = Color.Coral;
-            lblInfoOffice2024.Location = new Point(777, 284);
+            lblInfoOffice2024.Location = new Point(778, 303);
             lblInfoOffice2024.Name = "lblInfoOffice2024";
             lblInfoOffice2024.Size = new Size(111, 24);
             lblInfoOffice2024.TabIndex = 98;
@@ -131,36 +129,12 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
             label1.ForeColor = Color.Coral;
-            label1.Location = new Point(812, 308);
+            label1.Location = new Point(753, 336);
             label1.Name = "label1";
-            label1.Size = new Size(76, 20);
+            label1.Size = new Size(136, 20);
             label1.TabIndex = 99;
-            label1.Text = "MrNico98";
+            label1.Text = "Italian Developers";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
-            label2.ForeColor = Color.Coral;
-            label2.Location = new Point(784, 328);
-            label2.Name = "label2";
-            label2.Size = new Size(104, 20);
-            label2.TabIndex = 100;
-            label2.Text = "GregSparrow";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
-            label4.ForeColor = Color.Coral;
-            label4.Location = new Point(840, 348);
-            label4.Name = "label4";
-            label4.Size = new Size(48, 20);
-            label4.TabIndex = 101;
-            label4.Text = "ilpirux";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblInfoWinAIO64
             // 
@@ -200,8 +174,6 @@
             BackColor = Color.FromArgb(37, 38, 39);
             ClientSize = new Size(901, 458);
             Controls.Add(btn_winhubxmonitor);
-            Controls.Add(label4);
-            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(lblInfoOffice2024);
             Controls.Add(tgWinHubX);
@@ -228,8 +200,6 @@
         private Label label3;
         private Label lblInfoOffice2024;
         private Label label1;
-        private Label label2;
-        private Label label4;
         private Label lblInfoWinAIO64;
         private Button btn_winhubxmonitor;
     }
