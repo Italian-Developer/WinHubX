@@ -167,8 +167,8 @@ namespace WinHubX
 
         private void btn2024Online_MouseUp(object sender, MouseEventArgs e)
         {
-            string link32 = "https://www.google.com";
-            string link64 = "https://www.google.com";
+            string link32 = "https://devuploads.com/udxq7u2nqfgt";
+            string link64 = "https://devuploads.com/q009rzo2u4z8";
 
             OfficeDialog officeDialog = new OfficeDialog()
             {
@@ -185,7 +185,7 @@ namespace WinHubX
             if (e.Button == MouseButtons.Right)
             {
 
-                Clipboard.SetText("HASH CODE 2024");
+                Clipboard.SetText("2ef0ee897892060b27da35b1e64ccc3efc22dc7b6ed03905a33ab4a672eb851e");
 
                 notifyIcon.BalloonTipTitle = "SHA256 copiato!";
                 notifyIcon.BalloonTipText = "Il codice hash è stato copiato negli appunti.";
@@ -197,7 +197,7 @@ namespace WinHubX
                 {
                     ProcessStartInfo psi = new ProcessStartInfo
                     {
-                        FileName = "https://www.google.com",
+                        FileName = "https://devuploads.com/cp3k76gumznb",
                         UseShellExecute = true
                     };
                     Process.Start(psi);

@@ -44,7 +44,6 @@
             btn365Offline = new Button();
             btn365Online = new Button();
             lblOffice365 = new Label();
-            lblInfoOffice2024 = new Label();
             btnAttivaOffice = new Button();
             btnScrubber = new Button();
             pictureBox3 = new PictureBox();
@@ -193,7 +192,6 @@
             // btn2024Offline
             // 
             btn2024Offline.Cursor = Cursors.Hand;
-            btn2024Offline.Enabled = false;
             btn2024Offline.FlatAppearance.BorderSize = 0;
             btn2024Offline.FlatStyle = FlatStyle.Flat;
             btn2024Offline.Font = new Font("Microsoft Sans Serif", 19.8000011F, FontStyle.Bold);
@@ -212,7 +210,6 @@
             // btn2024Online
             // 
             btn2024Online.Cursor = Cursors.Hand;
-            btn2024Online.Enabled = false;
             btn2024Online.FlatAppearance.BorderSize = 0;
             btn2024Online.FlatStyle = FlatStyle.Flat;
             btn2024Online.Font = new Font("Microsoft Sans Serif", 19.8000011F, FontStyle.Bold);
@@ -294,18 +291,6 @@
             lblOffice365.Text = "       Office\r\n       365";
             lblOffice365.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // lblInfoOffice2024
-            // 
-            lblInfoOffice2024.AutoSize = true;
-            lblInfoOffice2024.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblInfoOffice2024.ForeColor = Color.Coral;
-            lblInfoOffice2024.Location = new Point(699, 303);
-            lblInfoOffice2024.Name = "lblInfoOffice2024";
-            lblInfoOffice2024.Size = new Size(157, 29);
-            lblInfoOffice2024.TabIndex = 78;
-            lblInfoOffice2024.Text = "coming soon!\r\n";
-            lblInfoOffice2024.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // btnAttivaOffice
             // 
             btnAttivaOffice.Cursor = Cursors.Hand;
@@ -384,7 +369,6 @@
             Controls.Add(pictureBox3);
             Controls.Add(btnScrubber);
             Controls.Add(btnAttivaOffice);
-            Controls.Add(lblInfoOffice2024);
             Controls.Add(btn2024Offline);
             Controls.Add(btn2024Online);
             Controls.Add(lblOffice2024);
@@ -428,7 +412,6 @@
         private Button btn365Offline;
         private Button btn365Online;
         private Label lblOffice365;
-        private Label lblInfoOffice2024;
         private Button btnAttivaOffice;
         private Button btnScrubber;
         private PictureBox pictureBox3;
