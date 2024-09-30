@@ -1,5 +1,5 @@
 { 
-    "version": "2.4.1.0", 
-    "releaseNotes": "Aggiunto Office 2024 stabile e Personalizzazione Office 2024 stabile", 
+    "version": "2.4.1.1", 
+    "releaseNotes": "Fix visualizzazione installer personalizzato office 2024", 
     "updateUrl": "https://github.com/Italian-Developer/WinHubX/releases/download/WinHubX/WinHubX.exe" 
 }
