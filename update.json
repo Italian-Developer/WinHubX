@@ -1,5 +1,5 @@
 { 
-    "version": "2.4.1.1", 
-    "releaseNotes": "Fix visualizzazione installer personalizzato office 2024", 
+    "version": "2.4.1.2", 
+    "releaseNotes": "Inserita ISO Win11 24H2 rilascio ufficiale", 
     "updateUrl": "https://github.com/Italian-Developer/WinHubX/releases/download/WinHubX/WinHubX.exe" 
 }
