@@ -64,6 +64,9 @@
     <Compile Update="Forms\Bottoni\CircularProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Forms\Personalizzazione office\PersonalizzazioneOffice.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\ReinstallaAPP\FormReinstallaAPP.cs">
       <SubType>Form</SubType>
     </Compile>
