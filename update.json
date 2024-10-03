@@ -1,5 +1,5 @@
 { 
-    "version": "2.4.1.2", 
-    "releaseNotes": "Inserita ISO Win11 24H2 rilascio ufficiale", 
+    "version": "2.4.1.3", 
+    "releaseNotes": "Aggiunta iso Lite 24h2, Integrazione Monitoraggio, Aggiunta nuova schermata Settaggi-->Personalizzazione, Aggiornato disinstallatore office, Aggiornato attivatore windows, Implementata logica per usare winhubx sul cmd (prova winhubx.exe /help), Implementata verifica attivazione windows/office tramite comando cmd, Aggiunta iso stock ENT LTSC win10 x64 tramite comando cmd, Aggiunta iso stock IoT ENT LTSC win10 x64 tramite comando cmd, Aggiunta iso stock ENT LTSC win11 tramite comando cmd, Aggiunta iso stock IoT ENT LTSC win11 tramite comando cmd", 
     "updateUrl": "https://github.com/Italian-Developer/WinHubX/releases/download/WinHubX/WinHubX.exe" 
 }
